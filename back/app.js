@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {explorer: true }));
 
+
 indexRouter(app);
 app.use(errorMiddleware);
 

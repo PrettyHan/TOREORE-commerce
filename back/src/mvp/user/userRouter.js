@@ -59,6 +59,7 @@ userRouter.get("/list", loginRequired, async (req, res, next) => {
     }
 });
 
+
 userRouter.get("/current", loginRequired, async (req, res, next) => {
     try {
         const user_id = req.currentUserId;
@@ -75,6 +76,7 @@ userRouter.get("/current", loginRequired, async (req, res, next) => {
         next(error);
     }
 });
+
 
 userRouter.put("/:id", loginRequired, async (req, res, next) => {
     try {
@@ -139,5 +141,8 @@ userRouter.delete("/:id", loginRequired, async (req, res, next) => {
         next(err);
     }
 });
+
+
+
 
 export { userRouter };
