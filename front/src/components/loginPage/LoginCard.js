@@ -69,8 +69,8 @@ function LoginCard({ setIsSigning }) {
     }
 
     let body = {
-      Email: email,
-      password: password,
+      email,
+      password,
     };
 
     dispatch(loginUser(body)).then((response) => {
