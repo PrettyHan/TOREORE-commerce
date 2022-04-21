@@ -5,7 +5,7 @@ const { Schema, model } = pkg;
 const ProductSchema = new Schema(
     {
         product_id: {
-            type: Schema.Types.ObjectId,
+            type: String,
             required: true,
         },
         name: {
@@ -30,7 +30,7 @@ const ProductSchema = new Schema(
             required: false,
             default: "상품의 설명을 입력해 주세요."
         },
-        images: {
+        image: {
             type: String,
             required: false,
             default: "이미지 없음"
@@ -41,6 +41,6 @@ const ProductSchema = new Schema(
     },
 );
 
-const ProductModel = model("Order", ProductSchema);
+const ProductModel = model("Product", ProductSchema);
 
 export { ProductModel };
