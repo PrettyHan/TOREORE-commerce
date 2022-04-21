@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import { loginReducer } from "./reducer";
 // 컴포넌트들
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
+import Header from "./components/Layout/Header";
+import Main from "./components/Layout/Main";
+import Footer from "./components/Layout/Footer";
+import Introduce from "./components/introduce/Introduce";
 // import LoginForm from "./components/user/LoginForm";
 // import Main from "./components/Main";
 // import RegisterForm from "./components/user/RegisterForm";
@@ -62,6 +63,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" exact element={<Main />} />
+            <Route path="/introduce" element={<Introduce />} />
             {/* <Route path="/login" element={<LoginForm />} /> */}
             {/* <Route path="/register" element={<RegisterForm />} /> */}
             <Route path="/auth/:id" element={<Main />} />
@@ -69,6 +71,8 @@ function App() {
             <Route path="*" element={<Main />} />
           </Routes>
         </Router>
+        <br />
+        <br />
         <br />
         <br />
         <br />
