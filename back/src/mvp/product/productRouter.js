@@ -3,7 +3,7 @@ import { Router } from "express";
 const productRouter = Router();
 
 // 모든 상품 정보 리스트 조회
-productRouter.get("/list", (req, res) => {
+productRouter.get("/", (req, res) => {
     // productList : 상품 리스트 조회
     // getProductList
 });
