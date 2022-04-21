@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { loginReducer } from "./reducer";
 // 컴포넌트들
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
 // import LoginForm from "./components/user/LoginForm";
 // import Main from "./components/Main";
 // import RegisterForm from "./components/user/RegisterForm";
@@ -58,15 +60,23 @@ function App() {
       <UserStateContext.Provider>
         <Router>
           <Header />
-          {/* <Routes>
+          <Routes>
             <Route path="/" exact element={<Main />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
+            {/* <Route path="/login" element={<LoginForm />} /> */}
+            {/* <Route path="/register" element={<RegisterForm />} /> */}
             <Route path="/auth/:id" element={<Main />} />
-            <Route path="/network" element={<Network />} />
+            {/* <Route path="/network" element={<Network />} /> */}
             <Route path="*" element={<Main />} />
-          </Routes> */}
+          </Routes>
         </Router>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </UserStateContext.Provider>
     </DispatchContext.Provider>
   );
