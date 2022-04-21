@@ -2,7 +2,7 @@
 import pkg from "mongoose";
 const { Schema, model } = pkg;
 
-const OrderSchema = new Schema(
+const ProductSchema = new Schema(
     {
         product_id: {
             type: Schema.Types.ObjectId,
@@ -41,6 +41,6 @@ const OrderSchema = new Schema(
     },
 );
 
-const OrderModel = model("Order", OrderSchema);
+const ProductModel = model("Order", ProductSchema);
 
-export { OrderModel };
+export { ProductModel };
