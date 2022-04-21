@@ -1,5 +1,6 @@
 // import { Schema, model } from "mongoose";
 import pkg from "mongoose";
+
 const { Schema, model } = pkg;
 
 const UserSchema = new Schema(
@@ -30,6 +31,11 @@ const UserSchema = new Schema(
             required: true,
             unique: 1,
             trim: true,
+            lowercase: true,
+            validate:[function(email){
+                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            },"틀린 이메일 입니다." ],
+            
         },
         gender: {
             type: Number,
