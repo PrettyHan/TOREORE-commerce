@@ -61,7 +61,7 @@ userRouter.get("/list", loginRequired, async (req, res, next) => {
 
 userRouter.get("/current", loginRequired, async (req, res, next) => {
     try {
-        const userId = req.currentUserId;
+        const userId = req.user;
         const currentUserInfo = await userService.getUserInfo({
             userId,
         });
@@ -76,9 +76,9 @@ userRouter.get("/current", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.put("/:id", loginRequired, async (req, res, next) => {
+userRouter.put("/", loginRequired, async (req, res, next) => {
     try {
-        const userId = req.params.id;
+        const userId = req.user;
         const name = req.body.name ?? null;
         const password = req.body.password ?? null;
         const description = req.body.description ?? null;
@@ -103,9 +103,9 @@ userRouter.put("/:id", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.get("/:id", loginRequired, async (req, res, next) => {
+userRouter.get("/", loginRequired, async (req, res, next) => {
     try {
-        const userId = req.params.id;
+        const userId = req.user;
         const currentUserInfo = await userService.getUserInfo({
             userId,
         });
@@ -120,9 +120,9 @@ userRouter.get("/:id", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.delete("/:id", loginRequired, async (req, res, next) => {
+userRouter.delete("/", loginRequired, async (req, res, next) => {
     try {
-        const userId = req.params.id;
+        const userId = req.user;
 
         if (req.currentUserId !== userId) {
             throw new Error("접근권한이 없습니다.");

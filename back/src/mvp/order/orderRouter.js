@@ -1,69 +1,51 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
-import { productService } from "./productService";
+import { orderSerivce } from "./orderSerivce";
 const productRouter = Router();
 // register
 
 productRouter.use(loginRequired);
 
-
-// product 전체 조회
 productRouter.get("/", async function (req, res, next) {
   try {
-    const products = await productService.getProducts({});
+    const orders = await orderSerivce.getOrders({});
 
-    if (products.errorMessage) {
-      throw new Error(products.errorMessage);
+    if (orders.errorMessage) {
+      throw new Error(orders.errorMessage);
     }
 
-    res.status(200).send(products);
+    res.status(200).send(orders);
   } catch (error) {
     next(error);
   }
 });
 
-// productId 조회
-productRouter.get("/:productId", async function (req, res, next) {
+productRouter.get("/:orderId", async function (req, res, next) {
     try {
-      const productId = req.params.productId
-      const product = await productService.getProduct({productId});
+      const orderId = req.params.orderId
+      const order = await orderSerivce.getOrder({orderId});
   
-      if (product.errorMessage) {
-        throw new Error(product.errorMessage);
+      if (order.errorMessage) {
+        throw new Error(order.errorMessage);
       }
   
-      res.status(200).send(product);
+      res.status(200).send(order);
     } catch (error) {
       next(error);
     }
   });
   
-  productRouter.get("/?category=categoryName", async function (req, res, next) {
+  productRouter.get("/?ispayed=TrueOrFalse", async function (req, res, next) {
     try {
-      const categoryquery = req.query
-      const product = await productService.getProductByQuery(categoryquery);
+      const ispayed = req.query
+      const order = await orderSerivce.getIspayedByQuery(ispayed);
   
-      if (product.errorMessage) {
-        throw new Error(product.errorMessage);
+      if (order.errorMessage) {
+        throw new Error(order.errorMessage);
       }
   
-      res.status(200).send(product);
-    } catch (error) {
-      next(error);
-    }
-  });
-
-  productRouter.get("/?category=categoryName&productId=productId", async function (req, res, next) {
-    try {
-      const categoryquery = req.query
-      const product = await productService.getProductByQuery(categoryquery);
-  
-      if (product.errorMessage) {
-        throw new Error(product.errorMessage);
-      }
-  
-      res.status(200).send(product);
+      res.status(200).send(order);
     } catch (error) {
       next(error);
     }
@@ -71,5 +53,4 @@ productRouter.get("/:productId", async function (req, res, next) {
 
 
 
-
-export { productRouter }
+export { orderRouter }
