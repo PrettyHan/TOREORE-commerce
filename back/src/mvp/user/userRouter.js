@@ -37,7 +37,7 @@ userRouter.post("/signup", async (req, res, next) => {
             throw new Error(newUser.errorMessage);
         }
 
-        res.status(201).json({ message: "회원가입에 성공했습니다." });
+        res.status(201).json(newUser);
     } catch (error) {
         next(error);
     }
