@@ -13,15 +13,25 @@ userRouter.post("/signup", async (req, res, next) => {
             );
         }
 
-        const name = req.body.name;
-        const email = req.body.email;
-        const password = req.body.password;
+        const userId = req.body.userId ?? null;
+        const name = req.body.name ?? null;
+        const email = req.body.email ?? null;
+        const password = req.body.password ?? null;
+        const gender = req.body.gender ?? null;
+        const phone = req.body.phone ?? null;
+        const birth = req.body.birth ?? null;
 
-        const newUser = await userService.createUser({
+        const userData = {
+            userId,
+            password,
             name,
             email,
-            password,
-        });
+            gender,
+            phone,
+            birth,
+        };
+
+        const newUser = await userService.createUser(userData);
 
         if (newUser.errorMessage) {
             throw new Error(newUser.errorMessage);
@@ -35,10 +45,10 @@ userRouter.post("/signup", async (req, res, next) => {
 
 userRouter.post("/login", async (req, res, next) => {
     try {
-        const email = req.body.email;
+        const userId = req.body.userId;
         const password = req.body.password;
 
-        const user = await userService.getUser({ email, password });
+        const user = await userService.getUser({ userId, password });
 
         if (user.errorMessage) {
             throw new Error(user.errorMessage);

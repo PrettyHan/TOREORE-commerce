@@ -1,24 +1,30 @@
 import { User } from "../../db";
 import bcrypt from "bcrypt";
-import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 
 class userService {
-    static async createUser({ name, email, password }) {
-        // 이메일 중복 확인
-        const user = await User.findByEmail({ email });
+    static async createUser(userData) {
+        // 유저 아이디 중복 확인
+        const { userId, password, name, email, gender, phone, birth } =
+            userData;
+        const user = await User.findByEmail({ userId });
         if (user) {
             const errorMessage =
-                "이 이메일은 현재 사용중입니다. 다른 이메일을 입력해 주세요.";
+                "이 아이디는 현재 사용중입니다. 다른 아이디를 입력해 주세요.";
             return { errorMessage };
         }
 
         // 비밀번호 해쉬화
         const hashedPassword = await bcrypt.hash(password, 10);
-
-        // id 는 유니크 값 부여
-        const id = uuidv4();
-        const newUser = { id, name, email, password: hashedPassword };
+        const newUser = {
+            userId,
+            password: hashedPassword,
+            name,
+            email,
+            gender,
+            phone,
+            birth,
+        };
 
         // db에 저장
         const createdNewUser = await User.create({ newUser });
