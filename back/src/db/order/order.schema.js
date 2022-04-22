@@ -4,6 +4,11 @@ const { Schema, model } = pkg;
 
 const OrderSchema = new Schema(
     {
+        userId: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         orderId : {
             type: String,
             required: true,

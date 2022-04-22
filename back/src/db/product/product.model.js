@@ -6,8 +6,8 @@ class Product {
         return createdNewProduct;
     }
 
-    static async findByProductId({ product_id }) {
-        const product = await ProductModel.findOne({ product_id });
+    static async findByProductId({ productId }) {
+        const product = await ProductModel.findOne({ productId });
         return product;
     }
 
@@ -16,23 +16,23 @@ class Product {
         return products;
     }
 
-    static async update({ product_id, fieldToUpdate, newValue }) {
-        const filteredById = { product_id };
+    static async update({ productId, fieldToUpdate, newValue }) {
+        const filteredById = { productId };
         const updateData = { [fieldToUpdate]: newValue };
         const option = { returnOriginal: false };
 
-        const update_product = await ProductModel.findOneAndUpdate(
+        const updateProduct = await ProductModel.findOneAndUpdate(
             filteredById,
             updateData,
             option
         );
 
-        return update_product;
+        return updateProduct;
     }
 
-    static async deleteByProductId({ product_id }) {
-        const delete_product = await ProductModel.deleteOne({ product_id });
-        return delete_product;
+    static async deleteByProductId({ productId }) {
+        const deleteProduct = await ProductModel.deleteOne({ productId });
+        return deleteProduct;
     }
 }
 
