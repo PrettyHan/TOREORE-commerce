@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 import { ProductStateContext } from "../Main";
 
@@ -8,21 +8,17 @@ const ProductList = () => {
     const productList = React.useContext(ProductStateContext);
 
     return (
-        <Box
-            sx={{
+        <Container
+            style={{
                 display: "flex",
                 flexWrap: "wrap",
-                p: 1,
-                m: 1,
-                bgcolor: "background.paper",
                 justifyContent: "flex-start",
-                border: "solid",
             }}
         >
             {productList.map((item) => (
                 <ProductItem key={item.productId} {...item} />
             ))}
-        </Box>
+        </Container>
     );
 };
 
