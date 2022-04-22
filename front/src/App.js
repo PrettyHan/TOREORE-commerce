@@ -9,6 +9,7 @@ import Header from "./components/Layout/Header";
 import Main from "./components/Layout/Main";
 import Footer from "./components/Layout/Footer";
 import Introduce from "./components/introduce/Introduce";
+import MyPage from "./components/user/MyPage";
 // import LoginForm from "./components/user/LoginForm";
 // import Main from "./components/Main";
 // import RegisterForm from "./components/user/RegisterForm";
@@ -64,6 +65,7 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Main />} />
             <Route path="/introduce" element={<Introduce />} />
+            <Route path="/myPage" element={<MyPage />} />
             {/* <Route path="/login" element={<LoginForm />} /> */}
             {/* <Route path="/register" element={<RegisterForm />} /> */}
             <Route path="/auth/:id" element={<Main />} />
