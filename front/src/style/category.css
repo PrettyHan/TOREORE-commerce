@@ -1,0 +1,41 @@
+.category-container {
+    display: flex;
+    justify-content: center;
+}
+
+.category-btn {
+    border: 2px solid black;
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    font-size: larger;
+}
+
+.category {
+    position: relative;
+}
+
+.category:hover .sub-category {
+    display: block;
+}
+
+.category:hover .category-btn{
+    background-color: black;
+    color: white
+}
+
+.sub-category {
+    display: none;
+    /* background-color: white; */
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: rgba( 255, 255, 255, 0.7 );
+    /* border: 2px solid black; */
+}
+
+.sub-category-btn {
+    margin: 5px;
+}
