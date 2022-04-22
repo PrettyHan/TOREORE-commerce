@@ -61,9 +61,9 @@ userRouter.get("/list", loginRequired, async (req, res, next) => {
 
 userRouter.get("/current", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.currentUserId;
+        const userId = req.currentUserId;
         const currentUserInfo = await userService.getUserInfo({
-            user_id,
+            userId,
         });
 
         if (currentUserInfo.errorMessage) {
@@ -78,18 +78,18 @@ userRouter.get("/current", loginRequired, async (req, res, next) => {
 
 userRouter.put("/:id", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.params.id;
         const name = req.body.name ?? null;
         const password = req.body.password ?? null;
         const description = req.body.description ?? null;
 
-        if (req.currentUserId !== user_id) {
+        if (req.currentUserId !== userId) {
             throw new Error("접근권한이 없습니다.");
         }
 
         const toUpdate = { name, password, description };
         const updatedUser = await userService.updateUser({
-            user_id,
+            userId,
             toUpdate,
         });
 
@@ -105,9 +105,9 @@ userRouter.put("/:id", loginRequired, async (req, res, next) => {
 
 userRouter.get("/:id", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.params.id;
         const currentUserInfo = await userService.getUserInfo({
-            user_id,
+            userId,
         });
 
         if (currentUserInfo.errorMessage) {
@@ -122,13 +122,13 @@ userRouter.get("/:id", loginRequired, async (req, res, next) => {
 
 userRouter.delete("/:id", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.params.id;
 
-        if (req.currentUserId !== user_id) {
+        if (req.currentUserId !== userId) {
             throw new Error("접근권한이 없습니다.");
         }
 
-        const deletdUser = await userService.deleteUser({ user_id });
+        const deletdUser = await userService.deleteUser({ userId });
 
         if (deletdUser.errorMessage) {
             throw new Error(deletdUser.errorMessage);

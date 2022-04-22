@@ -91,26 +91,26 @@ class userService {
         if (toUpdate.name) {
             const fieldToUpdate = "name";
             const newValue = toUpdate.name;
-            user = await User.update({ user_id, fieldToUpdate, newValue });
+            user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
         if (toUpdate.password) {
             const fieldToUpdate = "password";
             const newValue = toUpdate.password;
-            user = await User.update({ user_id, fieldToUpdate, newValue });
+            user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
         if (toUpdate.description) {
             const fieldToUpdate = "description";
             const newValue = toUpdate.description;
-            user = await User.update({ user_id, fieldToUpdate, newValue });
+            user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
         return user;
     }
 
-    static async getUserInfo({ user_id }) {
-        const user = await User.findById({ user_id });
+    static async getUserInfo({ userId }) {
+        const user = await User.findById({ userId });
 
         // db에서 찾지 못한 경우, 에러 메시지 반환
         if (!user) {
@@ -122,9 +122,9 @@ class userService {
         return user;
     }
 
-    static async deleteUser({ user_id }) {
-        const deletedUser = await User.deleteById({ user_id });
-        await Checker.deleteChild({ user_id }); //* user가 아닌 각각의 mvp별로 user_id를 가진 모든 게시글을 삭제하는 기능.
+    static async deleteUser({ userId }) {
+        const deletedUser = await User.deleteById({ userId });
+        await Checker.deleteChild({ userId }); //* user가 아닌 각각의 mvp별로 user_id를 가진 모든 게시글을 삭제하는 기능.
 
         if (!deletedUser) {
             const errorMessage = "일치하는 유저가 없습니다.";
