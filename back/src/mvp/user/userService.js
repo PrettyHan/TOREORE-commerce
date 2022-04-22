@@ -7,7 +7,7 @@ class userService {
         // 유저 아이디 중복 확인
         const { userId, password, name, email, gender, phone, birth } =
             userData;
-        const user = await User.findByEmail({ userId });
+        const user = await User.findByUserId({ userId });
         if (user) {
             const errorMessage =
                 "이 아이디는 현재 사용중입니다. 다른 아이디를 입력해 주세요.";
@@ -34,7 +34,7 @@ class userService {
 
     static async getUser({ userId, password }) {
         // 이메일 db에 존재 여부 확인
-        const user = await User.findByEmail({ userId });
+        const user = await User.findByUserId({ userId });
         if (!user) {
             const errorMessage =
                 "해당 아이디는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
@@ -73,7 +73,7 @@ class userService {
     }
 
     static async updateUser({ userId, toUpdate }) {
-        let user = await User.findById({ userId });
+        let user = await User.findByUserId({ userId });
 
         if (!user) {
             const errorMessage =
@@ -121,7 +121,7 @@ class userService {
     }
 
     static async getUserInfo({ userId }) {
-        const user = await User.findById({ userId });
+        const user = await User.findByUserId({ userId });
 
         if (!user) {
             const errorMessage =
@@ -132,9 +132,8 @@ class userService {
         return user;
     }
 
-    static async deleteUser({ user_id }) {
-        const deletedUser = await User.deleteById({ user_id });
-        await Checker.deleteChild({ user_id }); //* user가 아닌 각각의 mvp별로 user_id를 가진 모든 게시글을 삭제하는 기능.
+    static async deleteUser({ userId }) {
+        const deletedUser = await User.deleteById({ userId });
 
         if (!deletedUser) {
             const errorMessage = "일치하는 유저가 없습니다.";

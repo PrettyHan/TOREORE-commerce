@@ -114,11 +114,11 @@ userRouter.put("/user", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.get("/:id", loginRequired, async (req, res, next) => {
+userRouter.get("/user", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.currentUserId;
         const currentUserInfo = await userService.getUserInfo({
-            user_id,
+            userId,
         });
 
         if (currentUserInfo.errorMessage) {
@@ -131,15 +131,11 @@ userRouter.get("/:id", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.delete("/:id", loginRequired, async (req, res, next) => {
+userRouter.delete("/user", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.currentUserId;
 
-        if (req.currentUserId !== user_id) {
-            throw new Error("접근권한이 없습니다.");
-        }
-
-        const deletdUser = await userService.deleteUser({ user_id });
+        const deletdUser = await userService.deleteUser({ userId });
 
         if (deletdUser.errorMessage) {
             throw new Error(deletdUser.errorMessage);
