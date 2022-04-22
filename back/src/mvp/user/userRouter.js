@@ -13,13 +13,13 @@ userRouter.post("/signup", async (req, res, next) => {
             );
         }
 
-        const userId = req.body.userId ?? null;
-        const name = req.body.name ?? null;
-        const email = req.body.email ?? null;
-        const password = req.body.password ?? null;
-        const gender = req.body.gender ?? null;
-        const phone = req.body.phone ?? null;
-        const birth = req.body.birth ?? null;
+        const userId = req.body.userId;
+        const name = req.body.name;
+        const email = req.body.email;
+        const password = req.body.password;
+        const gender = req.body.gender;
+        const phone = req.body.phone;
+        const birth = req.body.birth;
 
         const userData = {
             userId,
@@ -60,36 +60,16 @@ userRouter.post("/login", async (req, res, next) => {
     }
 });
 
-userRouter.get("/current", loginRequired, async (req, res, next) => {
-    try {
-        const user_id = req.currentUserId;
-        const currentUserInfo = await userService.getUserInfo({
-            user_id,
-        });
-
-        if (currentUserInfo.errorMessage) {
-            throw new Error(currentUserInfo.errorMessage);
-        }
-
-        res.status(200).json(currentUserInfo);
-    } catch (error) {
-        next(error);
-    }
-});
-
 userRouter.put("/user", loginRequired, async (req, res, next) => {
     try {
         const userId = req.currentUserId;
+
         const name = req.body.name ?? null;
         const email = req.body.email ?? null;
         const password = req.body.password ?? null;
         const gender = req.body.gender ?? null;
         const phone = req.body.phone ?? null;
         const birth = req.body.birth ?? null;
-
-        // if (req.currentUserId !== userId) {
-        //     throw new Error("접근권한이 없습니다.");
-        // }
 
         const toUpdate = {
             password,
@@ -146,15 +126,5 @@ userRouter.delete("/user", loginRequired, async (req, res, next) => {
         next(err);
     }
 });
-
-// 전체 유저 리스트 조회 필요한가??
-// userRouter.get("/list", loginRequired, async (req, res, next) => {
-//     try {
-//         const users = await userService.getAllUsers();
-//         res.status(200).json(users);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
 
 export { userRouter };

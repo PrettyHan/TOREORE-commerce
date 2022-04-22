@@ -15,11 +15,12 @@ const UserSchema = new Schema(
             type: String,
             required: true,
             trim: true,
-            validate:[
-                function(password){
-                 return password&&password.length>6;
-                },'비밀번호를 입력하거나 길이가 6보다커야합니다.'
-               ]
+            validate: [
+                function (password) {
+                    return password && password.length > 6;
+                },
+                "비밀번호를 입력하거나 길이가 6보다커야합니다.",
+            ],
         },
         name: {
             type: String,
@@ -32,21 +33,25 @@ const UserSchema = new Schema(
             unique: 1,
             trim: true,
             lowercase: true,
-            validate:[function(email){
-                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-            },"틀린 이메일 입니다." ],
-            
+            validate: [
+                function (email) {
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                        email,
+                    );
+                },
+                "잘못된 이메일 입니다.",
+            ],
         },
         gender: {
             type: Number,
             required: true,
         },
         phone: {
-            type: Number,
+            type: String,
             required: true,
             maxlength: 13,
             trim: true,
-            match: /^\d{2,3}-\d{3,4}-\d{4}$/
+            match: /^\d{2,3}-\d{3,4}-\d{4}$/,
         },
         birth: {
             type: Date,
@@ -57,7 +62,7 @@ const UserSchema = new Schema(
         preferColor: {
             type: Array,
             required: false,
-            default: null
+            default: null,
         },
         zipcode: {
             type: Object,
@@ -68,23 +73,21 @@ const UserSchema = new Schema(
                     type: String,
                 },
                 do: {
-                    type: String
+                    type: String,
                 },
                 si: {
-                    type: String
+                    type: String,
                 },
                 gu: {
-                    type: String
+                    type: String,
                 },
                 ro: {
-                    type: String
+                    type: String,
                 },
                 rest: {
-                    type: String
+                    type: String,
                 },
-                
-            }
-            
+            },
         },
         bookmark: {
             type: Array,
