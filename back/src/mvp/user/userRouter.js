@@ -60,15 +60,6 @@ userRouter.post("/login", async (req, res, next) => {
     }
 });
 
-userRouter.get("/list", loginRequired, async (req, res, next) => {
-    try {
-        const users = await userService.getAllUsers();
-        res.status(200).json(users);
-    } catch (error) {
-        next(error);
-    }
-});
-
 userRouter.get("/current", loginRequired, async (req, res, next) => {
     try {
         const user_id = req.currentUserId;
@@ -86,20 +77,30 @@ userRouter.get("/current", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.put("/:id", loginRequired, async (req, res, next) => {
+userRouter.put("/user", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.currentUserId;
         const name = req.body.name ?? null;
+        const email = req.body.email ?? null;
         const password = req.body.password ?? null;
-        const description = req.body.description ?? null;
+        const gender = req.body.gender ?? null;
+        const phone = req.body.phone ?? null;
+        const birth = req.body.birth ?? null;
 
-        if (req.currentUserId !== user_id) {
-            throw new Error("접근권한이 없습니다.");
-        }
+        // if (req.currentUserId !== userId) {
+        //     throw new Error("접근권한이 없습니다.");
+        // }
 
-        const toUpdate = { name, password, description };
+        const toUpdate = {
+            password,
+            name,
+            email,
+            gender,
+            phone,
+            birth,
+        };
         const updatedUser = await userService.updateUser({
-            user_id,
+            userId,
             toUpdate,
         });
 
@@ -149,5 +150,15 @@ userRouter.delete("/:id", loginRequired, async (req, res, next) => {
         next(err);
     }
 });
+
+// 전체 유저 리스트 조회 필요한가??
+// userRouter.get("/list", loginRequired, async (req, res, next) => {
+//     try {
+//         const users = await userService.getAllUsers();
+//         res.status(200).json(users);
+//     } catch (error) {
+//         next(error);
+//     }
+// });
 
 export { userRouter };
