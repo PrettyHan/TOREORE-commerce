@@ -26,19 +26,18 @@ class userService {
             birth,
         };
 
-        // db에 저장
         const createdNewUser = await User.create({ newUser });
         createdNewUser.errorMessage = null; // 문제 없이 db 저장 완료되었으므로 에러가 없음.
 
         return createdNewUser;
     }
 
-    static async getUser({ email, password }) {
+    static async getUser({ userId, password }) {
         // 이메일 db에 존재 여부 확인
-        const user = await User.findByEmail({ email });
+        const user = await User.findByEmail({ userId });
         if (!user) {
             const errorMessage =
-                "해당 이메일은 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
+                "해당 아이디는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
             return { errorMessage };
         }
 
@@ -56,21 +55,12 @@ class userService {
 
         // 로그인 성공 -> JWT 웹 토큰 생성
         const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
-        const token = jwt.sign({ user_id: user.id }, secretKey, {
+        const accessToken = jwt.sign({ userId: user.userId }, secretKey, {
             expiresIn: "6h",
         });
 
-        // 반환할 loginuser 객체를 위한 변수 설정
-        const id = user.id;
-        const name = user.name;
-        const description = user.description;
-
         const loginUser = {
-            token,
-            id,
-            email,
-            name,
-            description,
+            accessToken,
             errorMessage: null,
         };
 
