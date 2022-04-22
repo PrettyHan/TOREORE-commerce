@@ -10,6 +10,10 @@ class Product {
         const product = await ProductModel.findOne({ productId });
         return product;
     }
+    static async findByQuery( categoryquery ) {
+        const product = await ProductModel.find( categoryquery );
+        return product;
+    }
 
     static async findAll() {
         const products = await ProductModel.find({});

@@ -23,6 +23,7 @@ productRouter.get("/", async function (req, res, next) {
   }
 });
 
+// productId 조회
 productRouter.get("/:productId", async function (req, res, next) {
     try {
       const productId = req.params.productId
@@ -38,7 +39,35 @@ productRouter.get("/:productId", async function (req, res, next) {
     }
   });
   
+  productRouter.get("/?category=categoryName", async function (req, res, next) {
+    try {
+      const categoryquery = req.query
+      const product = await productService.getProductByQuery(categoryquery);
+  
+      if (product.errorMessage) {
+        throw new Error(product.errorMessage);
+      }
+  
+      res.status(200).send(product);
+    } catch (error) {
+      next(error);
+    }
+  });
 
+  productRouter.get("/?category=categoryName&productId=productId", async function (req, res, next) {
+    try {
+      const categoryquery = req.query
+      const product = await productService.getProductByQuery(categoryquery);
+  
+      if (product.errorMessage) {
+        throw new Error(product.errorMessage);
+      }
+  
+      res.status(200).send(product);
+    } catch (error) {
+      next(error);
+    }
+  });
 
 
 

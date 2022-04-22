@@ -21,7 +21,15 @@ class productService {
         }
         return product
       }
-
+      static async getProductByQuery(categoryquery) {
+      
+        const product = await Product.findByQuery(categoryquery)
+        if (!product) {
+          const errorMessage = "해당 데이터가 없습니다."
+          return { errorMessage }
+        }
+        return product
+      }
   }
   
   export { productService }
