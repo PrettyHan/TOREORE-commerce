@@ -6,8 +6,8 @@ class Order {
         return createdNewOrder;
     }
 
-    static async findByProductId({ order_id }) {
-        const order = await OrderModel.findOne({ order_id });
+    static async findByProductId({ orderId }) {
+        const order = await OrderModel.findOne({ orderId });
         return order;
     }
 
@@ -16,23 +16,23 @@ class Order {
         return orders;
     }
 
-    static async update({ order_id, fieldToUpdate, newValue }) {
-        const filteredById = { order_id };
+    static async update({ orderId, fieldToUpdate, newValue }) {
+        const filteredById = { orderId };
         const updateData = { [fieldToUpdate]: newValue };
         const option = { returnOriginal: false };
 
-        const update_product = await OrderModel.findOneAndUpdate(
+        const updateProduct = await OrderModel.findOneAndUpdate(
             filteredById,
             updateData,
             option
         );
 
-        return update_product;
+        return updateProduct;
     }
 
-    static async deleteByProductId({ order_id }) {
-        const delete_order = await OrderModel.deleteOne({ order_id });
-        return delete_order;
+    static async deleteByProductId({ orderId }) {
+        const deleteOrder = await OrderModel.deleteOne({ orderId });
+        return deleteOrder;
     }
 }
 

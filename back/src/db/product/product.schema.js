@@ -4,7 +4,7 @@ const { Schema, model } = pkg;
 
 const ProductSchema = new Schema(
     {
-        product_id: {
+        productId: {
             type: String,
             required: true,
         },
@@ -16,7 +16,7 @@ const ProductSchema = new Schema(
             type: String,
             required: true,
         },
-        Price: {
+        price: {
             type: Number,
             required: true,
         },

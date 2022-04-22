@@ -11,8 +11,8 @@ class User {
         return user;
     }
 
-    static async findById({ user_id }) {
-        const user = await UserModel.findOne({ id: user_id });
+    static async findById({ userId }) {
+        const user = await UserModel.findOne({ userId });
         return user;
     }
 
@@ -21,8 +21,8 @@ class User {
         return users;
     }
 
-    static async update({ user_id, fieldToUpdate, newValue }) {
-        const filteredById = { id: user_id };
+    static async update({ userId, fieldToUpdate, newValue }) {
+        const filteredById = { userId };
         const updateData = { [fieldToUpdate]: newValue };
         const option = { returnOriginal: false };
 
@@ -35,8 +35,8 @@ class User {
         return updatedUser;
     }
 
-    static async deleteById({ user_id }) {
-        const deletdUser = await UserModel.deleteOne({ id: user_id });
+    static async deleteById({ userId }) {
+        const deletdUser = await UserModel.deleteOne({ userId });
         return deletdUser;
     }
 }

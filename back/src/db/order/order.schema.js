@@ -4,7 +4,7 @@ const { Schema, model } = pkg;
 
 const OrderSchema = new Schema(
     {
-        order_id : {
+        orderId : {
             type: String,
             required: true,
         },
@@ -12,19 +12,19 @@ const OrderSchema = new Schema(
             type: Array,
             required: true,
         },
-        total_price: {
+        totalPrice: {
             type: Number,
             required: true,
         },
-        order_name: {
+        orderName: {
             type: String,
             required: true,
         },
-        total_price: {
+        totalPrice: {
             type: Number,
             required: true,
         },
-        order_name: {
+        orderName: {
             type: String,
             required: true,
         },
@@ -58,11 +58,11 @@ const OrderSchema = new Schema(
             required: false,
             default: "요청사항이 없습니다"
         },
-        payment_method: {
+        paymentMethod: {
             type: String,
             required: true,
         },
-        is_payed: {
+        isPayed: {
             type: Boolean,
             required: true,
             default: false

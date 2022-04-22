@@ -41,7 +41,7 @@ const UserSchema = new Schema(
             type: Number,
             required: true,
         },
-        Phone: {
+        phone: {
             type: Number,
             required: true,
             maxlength: 13,
@@ -54,7 +54,7 @@ const UserSchema = new Schema(
             maxlength: 10,
             trim: true,
         },
-        prefer_color: {
+        preferColor: {
             type: Array,
             required: false,
             default: null
