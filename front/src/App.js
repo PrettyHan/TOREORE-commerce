@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as Api from "./api";
 import { loginReducer } from "./reducer";
 
-import Login from "./components/loginPage/LoginCard";
+import Login from "./Auth/Login";
 
 export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
