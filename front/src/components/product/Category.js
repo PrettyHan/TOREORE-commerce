@@ -2,8 +2,24 @@ import "../../style/category.css";
 
 const Category = () => {
     // 임시 data
-    const category1 = ["여성", "남성", "청소년", "아동", "홈"];
-    const category2 = ["상의", "하의", "신발", "가방", "액세서리"];
+    // 대분류 : index_group_name
+    // 중분류 : product_group_name
+    // 소분류 : product_type_name
+    const category1 = [
+        "Ladieswear",
+        "Menswear",
+        "Divided",
+        "Baby/Children",
+        "Sport",
+    ];
+    const category2 = [
+        "Garment Upper body",
+        "Garment Lower body",
+        "Shoes",
+        "Socks & Tights",
+        "Bags",
+        "Accessories",
+    ];
 
     return (
         <>

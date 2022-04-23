@@ -1,13 +1,14 @@
 .category-container {
     display: flex;
     justify-content: center;
+    margin: 30px;
 }
 
 .category-btn {
     border: 2px solid black;
-    width: 150px;
+    width: 180px;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
     text-align: center;
     font-size: larger;
 }
@@ -27,13 +28,13 @@
 
 .sub-category {
     display: none;
-    /* background-color: white; */
     position: absolute;
-    width: 100%;
+    width: 90%;
     left: 0;
     z-index: 1;
     background-color: rgba( 255, 255, 255, 0.7 );
-    /* border: 2px solid black; */
+    padding: 10px;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
 
 .sub-category-btn {

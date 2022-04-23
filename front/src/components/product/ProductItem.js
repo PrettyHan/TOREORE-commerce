@@ -1,22 +1,23 @@
 import Button from "@mui/material/Button";
 
+import "../../style/productItem.css";
+
 const ProductItem = ({ groupId, productId, imgUrl, description }) => {
     return (
-        <div style={{ width: 350, margin: 5 }}>
-            <img src={imgUrl} style={{ width: "100%", height: 450 }}></img>
-            <ul>
-                <li>그룹 id : {groupId}</li>
-                <li>제품 id : {productId}</li>
-                <li>설명 : {description}</li>
+        <div className="item-container">
+            <img src={imgUrl} alt={"상품 이미지"} className="item-img"></img>
+            <ul className="item">
+                <li className="item-name">제품명_{productId} </li>
+                <li className="item-desc">제품 설명_{description}</li>
             </ul>
-            <div style={{ margin: 10 }}>
-                <Button size="small" variant="outlined">
+            <div className="item-btn-group">
+                <Button size="small" variant="outlined" sx={{ ml: 1, mr: 1 }}>
                     👜 장바구니
                 </Button>
-                <Button size="small" variant="outlined">
+                <Button size="small" variant="outlined" sx={{ ml: 1, mr: 1 }}>
                     💰 바로 구매
                 </Button>
-                <Button size="small" variant="outlined">
+                <Button size="small" variant="outlined" sx={{ ml: 1, mr: 1 }}>
                     💗 찜
                 </Button>
             </div>
