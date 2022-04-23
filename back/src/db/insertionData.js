@@ -31,7 +31,8 @@ db.on("connected", async () => {
                     description: product.detail_desc,
                     image:
                         "https://data-project-12-team.s3.ap-northeast-2.amazonaws.com/codingSoon/" +
-                        product.article_id,
+                        product.article_id +
+                        ".jpg",
                 };
 
                 await ProductModel.create([data], { session });
