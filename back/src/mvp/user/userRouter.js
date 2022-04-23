@@ -13,15 +13,25 @@ userRouter.post("/signup", async (req, res, next) => {
             );
         }
 
+        const userId = req.body.userId;
         const name = req.body.name;
         const email = req.body.email;
         const password = req.body.password;
+        const gender = req.body.gender;
+        const phone = req.body.phone;
+        const birth = req.body.birth;
 
-        const newUser = await userService.createUser({
+        const userData = {
+            userId,
+            password,
             name,
             email,
-            password,
-        });
+            gender,
+            phone,
+            birth,
+        };
+
+        const newUser = await userService.createUser(userData);
 
         if (newUser.errorMessage) {
             throw new Error(newUser.errorMessage);
@@ -35,10 +45,10 @@ userRouter.post("/signup", async (req, res, next) => {
 
 userRouter.post("/login", async (req, res, next) => {
     try {
-        const email = req.body.email;
+        const userId = req.body.userId;
         const password = req.body.password;
 
-        const user = await userService.getUser({ email, password });
+        const user = await userService.getUser({ userId, password });
 
         if (user.errorMessage) {
             throw new Error(user.errorMessage);
@@ -50,46 +60,27 @@ userRouter.post("/login", async (req, res, next) => {
     }
 });
 
-userRouter.get("/list", loginRequired, async (req, res, next) => {
+userRouter.put("/user", loginRequired, async (req, res, next) => {
     try {
-        const users = await userService.getAllUsers();
-        res.status(200).json(users);
-    } catch (error) {
-        next(error);
-    }
-});
+        const userId = req.currentUserId;
 
-userRouter.get("/current", loginRequired, async (req, res, next) => {
-    try {
-        const user_id = req.currentUserId;
-        const currentUserInfo = await userService.getUserInfo({
-            user_id,
-        });
-
-        if (currentUserInfo.errorMessage) {
-            throw new Error(currentUserInfo.errorMessage);
-        }
-
-        res.status(200).json(currentUserInfo);
-    } catch (error) {
-        next(error);
-    }
-});
-
-userRouter.put("/:id", loginRequired, async (req, res, next) => {
-    try {
-        const user_id = req.params.id;
         const name = req.body.name ?? null;
+        const email = req.body.email ?? null;
         const password = req.body.password ?? null;
-        const description = req.body.description ?? null;
+        const gender = req.body.gender ?? null;
+        const phone = req.body.phone ?? null;
+        const birth = req.body.birth ?? null;
 
-        if (req.currentUserId !== user_id) {
-            throw new Error("접근권한이 없습니다.");
-        }
-
-        const toUpdate = { name, password, description };
+        const toUpdate = {
+            password,
+            name,
+            email,
+            gender,
+            phone,
+            birth,
+        };
         const updatedUser = await userService.updateUser({
-            user_id,
+            userId,
             toUpdate,
         });
 
@@ -103,11 +94,11 @@ userRouter.put("/:id", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.get("/:id", loginRequired, async (req, res, next) => {
+userRouter.get("/user", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.currentUserId;
         const currentUserInfo = await userService.getUserInfo({
-            user_id,
+            userId,
         });
 
         if (currentUserInfo.errorMessage) {
@@ -120,15 +111,11 @@ userRouter.get("/:id", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.delete("/:id", loginRequired, async (req, res, next) => {
+userRouter.delete("/user", loginRequired, async (req, res, next) => {
     try {
-        const user_id = req.params.id;
+        const userId = req.currentUserId;
 
-        if (req.currentUserId !== user_id) {
-            throw new Error("접근권한이 없습니다.");
-        }
-
-        const deletdUser = await userService.deleteUser({ user_id });
+        const deletdUser = await userService.deleteUser({ userId });
 
         if (deletdUser.errorMessage) {
             throw new Error(deletdUser.errorMessage);
