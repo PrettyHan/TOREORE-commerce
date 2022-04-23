@@ -2,21 +2,15 @@ import React from "react";
 import { Button } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
+import styled from "styled-components";
+
 function Footer() {
   return (
     <footer
-      style={{ backgroundColor: "#EEFC57", height: "150px", marginTop: "auto" }}
+      style={{ backgroundColor: "#EEFC57", height: "160px", marginTop: "auto" }}
     >
       <hr style={{ border: "1px solid #5E5B52" }} />
-      <div
-        style={{
-          width: "98%",
-          height: "100%",
-          justifyContent: "center",
-          marginTop: "0 auto",
-          backgroundColor: "#EEFC57",
-        }}
-      >
+      <FooterZone>
         <h2
           style={{
             fontWeight: "700",
@@ -51,9 +45,17 @@ function Footer() {
         <p style={{ fontSize: "15px", color: "#5E5B52", textAlign: "center" }}>
           이 사이트는 12팀 Coding Soon에 의해 제작되었으며 코딩 순의 자산입니다.
         </p>
-      </div>
+      </FooterZone>
     </footer>
   );
 }
 
 export default Footer;
+
+const FooterZone = styled.div`
+  width: 98%,
+  height: 100%,
+  justify-content: center,
+  margin-top: 0 auto,
+  background-color: #EEFC57,
+`;

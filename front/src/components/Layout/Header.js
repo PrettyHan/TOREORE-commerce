@@ -7,6 +7,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
+import styled from "styled-components";
+
 // import { UserStateContext, DispatchContext } from "../App";
 
 function Header() {
@@ -28,99 +30,43 @@ function Header() {
   //   navigate("/");
   // };
 
-  const navStyle = {
-    cursor: "pointer",
-    float: "left",
-    width: "13%",
-    height: "80px",
-    textAlign: "center",
-    lineHeight: "80px",
-  };
   return (
     <Box sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
       <AppBar position="fixed" color="transparent" sx={{ boxShadow: 0 }}>
         <Toolbar>
           <Tab
             icon={<HelpOutlineOutlinedIcon />}
+            onClick={() => navigate("/introduce")}
             style={{ paddingRight: 0, minWidth: "50px" }}
-            textColor="secondary"
-            indicatorColor="secondary"
             disableElevation
             disableRipple
-            onClick={() => navigate("/introduce")}
           />
-          <Typography
-            style={{ paddingLeft: "1px", paddingTop: "6px", fontSize: "10px" }}
-          >
-            About TOREOLRE
-          </Typography>
+          <Details>About TOREOLRE</Details>
           <Box sx={{ flexGrow: 1, padding: 0 }} />
-          <Typography
-            style={{
-              float: "left",
-              width: "12%",
-              marginTop: "30px",
-            }}
-          >
-            <Typography
-              style={{
-                height: "50%",
-                textAlign: "center",
-              }}
-            >
-              또래와 함께 하는 쇼핑 ,
-            </Typography>
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/")}
-            style={{
-              cursor: "pointer",
-              color: "#5E5B52",
-              fontSize: "70px",
-              float: "left",
-              marginTop: "5px",
-            }}
-          >
-            TOREOLRE
-          </Typography>
-          <Box sx={{ flexGrow: 1 }} />
+          <Wrap>
+            <Typography>또래와 함께 하는 쇼핑 ,</Typography>
+          </Wrap>
+          <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
+          <Box sx={{ flexGrow: 1, padding: 0 }} />
           <Box sx={{ display: { xs: "flex", md: "flex" } }}>
-            {isLogin ? (
-              <Tab
-                icon={<LogoutIcon />}
-                onClick={() => navigate("/login")}
-                style={navStyle}
-                textColor="secondary"
-                indicatorColor="secondary"
-                disableElevation
-                disableRipple
-              />
-            ) : (
-              <Tab
-                icon={<LoginIcon />}
-                onClick={() => navigate("/login")}
-                style={navStyle}
-                textColor="secondary"
-                indicatorColor="secondary"
-                disableElevation
-                disableRipple
-              />
-            )}
-            <Tab
+            <NavIcon
+              icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
+              onClick={() => navigate("/login")}
+              disableElevation
+              disableRipple
+            />
+            <NavIcon
               icon={<ShoppingCartOutlinedIcon />}
               onClick={() => navigate("/cart")}
-              style={navStyle}
-            >
-              Cart
-            </Tab>
-            <Tab
+              disableElevation
+              disableRipple
+            />
+            <NavIcon
               icon={<PersonOutlinedIcon />}
               onClick={() => navigate("/myPage")}
-              style={navStyle}
-            >
-              MyPage
-            </Tab>
+              disableElevation
+              disableRipple
+            />
           </Box>
         </Toolbar>
       </AppBar>
@@ -128,3 +74,32 @@ function Header() {
   );
 }
 export default Header;
+
+const NavIcon = styled(Tab)`
+  cursor: pointer;
+  float: left;
+  width: 13%;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+`;
+
+const Wrap = styled.div`
+  margin-top: 50px;
+  float: left;
+  width: 12%;
+  text-align: center;
+`;
+
+const Details = styled.p`
+  font-size: 12px;
+  padding-left: 1px;
+  padding-top: 6px;
+`;
+
+const MainTitle = styled.div`
+  cursor: pointer;
+  color: #5e5b52;
+  font-size: 80px;
+  float: left;
+`;
