@@ -6,11 +6,6 @@ class Product {
         return createdNewProduct;
     }
 
-    static async createMany(productList) {
-        const createdNewProducts = await ProductModel.create(productList);
-        return createdNewProducts;
-    }
-
     static async findByProductId({ productId }) {
         const product = await ProductModel.findOne({ productId });
         return product;
