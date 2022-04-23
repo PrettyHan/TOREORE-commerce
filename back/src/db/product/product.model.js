@@ -6,12 +6,17 @@ class Product {
         return createdNewProduct;
     }
 
+    static async createMany(productList) {
+        const createdNewProducts = await ProductModel.create(productList);
+        return createdNewProducts;
+    }
+
     static async findByProductId({ productId }) {
         const product = await ProductModel.findOne({ productId });
         return product;
     }
-    static async findByQuery( categoryquery ) {
-        const product = await ProductModel.find( categoryquery );
+    static async findByQuery(categoryquery) {
+        const product = await ProductModel.find(categoryquery);
         return product;
     }
 
@@ -28,7 +33,7 @@ class Product {
         const updateProduct = await ProductModel.findOneAndUpdate(
             filteredById,
             updateData,
-            option
+            option,
         );
 
         return updateProduct;
