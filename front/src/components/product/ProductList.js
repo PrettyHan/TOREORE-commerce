@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductStateContext } from "../Main";
+import { ProductStateContext } from "../Layout/Main";
 
 import ProductItem from "./ProductItem";
 

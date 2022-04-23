@@ -1,4 +1,5 @@
 import "../../style/category.css";
+import ProductList from "./ProductList";
 
 const Category = () => {
     // 임시 data
@@ -23,6 +24,14 @@ const Category = () => {
 
     return (
         <>
+            <div
+                style={{
+                    marginTop: "100px",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+                }}
+            ></div>
             <div className="category-container">
                 {category1.map((item) => (
                     <div className="category">
