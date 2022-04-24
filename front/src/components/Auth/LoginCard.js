@@ -19,8 +19,8 @@ import styled from "styled-components";
 import { useCookies } from "react-cookie";
 import crypto from "crypto-js";
 
-import { DispatchContext } from "../App";
-import * as Api from "../api";
+import { DispatchContext } from "../../App";
+import * as Api from "../../api";
 
 const FormHelperTexts = styled(FormHelperText)`
   width: 100%;

@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 // import { UserStateContext, DispatchContext } from "../App";
 
-function Header() {
+function Header({ handleOpen }) {
   const navigate = useNavigate();
   // const useState = useContext(UserStateContext);
   // const dispatch = useContext(DispatchContext);
@@ -51,7 +51,7 @@ function Header() {
           <Box sx={{ display: { xs: "flex", md: "flex" } }}>
             <NavIcon
               icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
-              onClick={() => navigate("/login")}
+              onClick={handleOpen}
               disableElevation
               disableRipple
             />
