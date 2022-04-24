@@ -1,10 +1,10 @@
 /app/auth:
-    $ref: "./auth.yaml"
+  $ref: './auth.yaml'
 /app/product:
-    $ref: "./product.yaml"
+  $ref: './product.yaml'
 /app/order:
-    $ref: "./order.yaml"
+  $ref: './order.yaml'
 /app/cart:
-    $ref: "./cart.yaml"
+  $ref: './cart.yaml'
 /app/bookmark:
-    $ref: "./bookmark.yaml"
+  $ref: './bookmark.yaml'

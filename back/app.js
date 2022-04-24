@@ -4,8 +4,9 @@ import express from "express";
 import { indexRouter } from "./src/mvp/index";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware";
 import logger, { logStream } from "./src/utils/logger";
-import { swaggerUi, specs } from "./src/swagger/swagger";
+import swaggerUi from "swagger-ui-express";
 import morgan from "morgan";
+import yaml from "yamljs";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -17,14 +18,14 @@ app.use(express.urlencoded({ extended: true }));
 
 indexRouter(app);
 app.use(errorMiddleware);
-app.use("/apis", swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 
-/**
- *  @swagger
- *  tags:
- *    name: MAIN
- *    description: Welcome to Data Project by CODING SOON.
- */
+const swaggerSpec = yaml.load(path.join(__dirname, "./src/swagger/build.yaml"));
+app.use(
+    "/apis",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, { explorer: true }),
+);
+
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to Data Project by CODING SOON." });
 });
