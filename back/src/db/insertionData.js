@@ -18,7 +18,7 @@ db.on("connected", async () => {
     await session.withTransaction(async () => {
         try {
             const dataBuffer = fs.readFileSync(
-                "/Users/yanghaechan/vscode_workspace/elice_project/data-project/sample-project/back/product-data/Trousers.json",
+                "/Users/yanghaechan/vscode_workspace/elice_project/data-project/sample-project/back/product-data/T-shirt.json",
             );
             const originData = JSON.parse(dataBuffer.toString());
             originData.forEach(async (product) => {
