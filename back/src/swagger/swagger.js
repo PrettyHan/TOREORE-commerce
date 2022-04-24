@@ -1,5 +1,5 @@
 import swaggerUi from "swagger-ui-express";
-import swaggereJsdoc from "swagger-jsdoc";
+import swaggerJsdoc from "swagger-jsdoc";
 
 const options = {
     swaggerDefinition: {
@@ -16,8 +16,12 @@ const options = {
             },
         ],
     },
-    apis: ["../mvp/user/userRouter.js", "../mvp/product/productRouter.js"], //Swagger 파일 연동, "../mvp/order/orderRouter.js"
+    apis: [
+        "../mvp/user/userRouter",
+        "../mvp/product/productRouter",
+        "../mvp/index",
+    ], //Swagger 파일 연동, "../mvp/order/orderRouter.js"
 };
-const specs = swaggereJsdoc(options);
+const specs = swaggerJsdoc(options);
 
 export { swaggerUi, specs };
