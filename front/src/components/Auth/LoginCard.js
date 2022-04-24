@@ -23,13 +23,17 @@ import { DispatchContext } from "../../App";
 import * as Api from "../../api";
 
 const FormHelperTexts = styled(FormHelperText)`
-  width: 100%;
-  padding-left: 16px;
-  font-weight: 700;
-  color: #d32f2f;
+  && {
+    width: 100%;
+    padding-left: 16px;
+    font-weight: 300;
+    color: #d32f2f;
+  }
 `;
 const Boxs = styled(Box)`
-  padding-bottom: 40px;
+  && {
+    padding-bottom: 40px;
+  }
 `;
 
 function LoginCard({ setIsSigning }) {
