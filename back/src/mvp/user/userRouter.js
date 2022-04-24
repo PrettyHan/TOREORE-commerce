@@ -5,6 +5,34 @@ import { userService } from "./userService";
 
 const userRouter = Router();
 
+/**
+ * @swagger
+ * /api/user/user?user_id={user_id}:
+ *  get:
+ *    summary: "특정 유저조회 Query 방식"
+ *    description: "요청 경로에 값을 담아 서버에 보낸다."
+ *    tags: [Users]
+ *    parameters:
+ *      - in: query
+ *        name: user_id
+ *        required: true
+ *        description: 유저 아이디
+ *        schema:
+ *          type: string
+ *    responses:
+ *      "200":
+ *        description: 사용자가 서버로 전달하는 값에 따라 결과 값은 다릅니다. (유저 조회)
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                ok:
+ *                  type: boolean
+ *                users:
+ *                  type: object
+ *                  example: [{ "id": 1, "name": "유저1" }]
+ */
 userRouter.post("/signup", async (req, res, next) => {
     try {
         if (is.emptyObject(req.body)) {
