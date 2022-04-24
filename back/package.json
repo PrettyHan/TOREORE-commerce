@@ -4,6 +4,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
+        "api-docs": "swagger-cli bundle src/swagger/openapi.yaml --outfile src/swagger/build.yaml --type yaml",
+        "start:prev": "yarn api-docs",
         "start": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
         "dev": "nodemon --es-module-specifier-resolution=node app.js"
     },
@@ -18,7 +20,8 @@
         "morgan": "^1.10.0",
         "uuid": "^8.3.2",
         "winston": "^3.7.2",
-        "winston-daily-rotate-file": "^4.6.1"
+        "winston-daily-rotate-file": "^4.6.1",
+        "yamljs": "^0.3.0"
     },
     "devDependencies": {
         "dotenv": "^16.0.0",
