@@ -4,31 +4,23 @@ import { useNavigate } from "react-router-dom";
 import LoginCard from "./LoginCard";
 import RegisterCard from "./RegisterCard";
 import { UserStateContext } from "../../App";
-import { Modal, Box } from "@mui/material";
-import styled from "styled-components";
+import {
+  Box,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
-const LoginBox = styled(Box)`
-  && {
-    position: "absolute";
-    top: "50%";
-    left: "50%";
-    transform: "translate(-50%, -50%)";
-    width: 400;
-    bgcolor: #ffffff;
-    border: "2px solid #000";
-    boxshadow: 24;
-    p: 4;
-  }
-`;
-
-const LoginModal = styled(Modal)`
-&& {position:'absolute';
-top:'10%';
-left:'10%';
-overflow:'scroll';
-height:'100%';
-display:'block;}
-`;
+// const LoginModal = styled(Modal)`
+// && {position:'absolute';
+// top:'10%';
+// left:'10%';
+// overflow:'scroll';
+// height:'100%';
+// display:'block;}
+// `;
 
 function Login({ open, handleClose }) {
   const navigate = useNavigate();
@@ -45,20 +37,37 @@ function Login({ open, handleClose }) {
   // }, [userState, navigate]);
 
   return (
-    <LoginModal
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+    <Dialog
       open={open}
       onClose={handleClose}
+      scroll={"body"}
+      aria-labelledby="scroll-dialog-title"
     >
-      <LoginBox sx={{ backgroundColor: "#FFFFFF" }}>
-        {!isSigning ? (
-          <LoginCard setIsSigning={setIsSigning} />
-        ) : (
-          <RegisterCard setIsSigning={setIsSigning} />
-        )}
-      </LoginBox>
-    </LoginModal>
+      <DialogTitle id="scroll-dialog-title">
+        {!isSigning ? "로그인" : "회원가입"}
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent>
+        <Box>
+          {!isSigning ? (
+            <LoginCard setIsSigning={setIsSigning} />
+          ) : (
+            <RegisterCard setIsSigning={setIsSigning} />
+          )}
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 }
 

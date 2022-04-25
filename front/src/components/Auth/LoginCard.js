@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  Avatar,
   Button,
   CssBaseline,
   TextField,
@@ -11,7 +10,6 @@ import {
   FormHelperText,
   Grid,
   Box,
-  Typography,
   Container,
 } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -53,8 +51,8 @@ function LoginCard({ setIsSigning }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState({
-    emailError: "",
-    passwordError: "",
+    emailError: "올바른 형식의 이메일을 입력해주세요.",
+    passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
   });
 
   const validateEmail = (email) => {
@@ -64,9 +62,13 @@ function LoginCard({ setIsSigning }) {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
-
+  const validatePassword = (password) => {
+    return password.match(
+      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
+    );
+  };
   const isEmailValid = validateEmail(email);
-  const isPasswordValid = password.length >= 4;
+  const isPasswordValid = validatePassword(password);
   const isFormValid = isEmailValid && isPasswordValid;
 
   // 로그인페이지 접속 시 쿠키에 정보가 있다면 저장된 정보로 이메일과 패스워드 설정
@@ -85,6 +87,42 @@ function LoginCard({ setIsSigning }) {
       setIsRemember(true);
     }
   }, [cookies.rememberEmail, cookies.rememberPassword]);
+
+  useEffect(() => {
+    if (!isEmailValid) {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          emailError: "올바른 형식의 이메일을 입력해주세요.",
+        };
+      });
+    } else {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          emailError: "",
+        };
+      });
+    }
+  }, [isEmailValid]);
+
+  useEffect(() => {
+    if (!isPasswordValid) {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
+        };
+      });
+    } else {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          passwordError: "",
+        };
+      });
+    }
+  }, [isPasswordValid]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -136,16 +174,11 @@ function LoginCard({ setIsSigning }) {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
-          <Typography component="h1" variant="h5">
-            로그인
-          </Typography>
           <Boxs
             component="form"
             noValidate
@@ -164,17 +197,26 @@ function LoginCard({ setIsSigning }) {
                     name="email"
                     label="이메일 주소"
                     autoComplete="email"
+                    size="small"
                     value={email}
                     onChange={(event) => {
-                      if (!isEmailValid) {
-                        setErrorMessage((current) => {
-                          return {
-                            ...current,
-                            emailError: "올바른 형식의 이메일을 입력해주세요.",
-                          };
-                        });
-                      }
-                      return setEmail(event.target.value);
+                      setEmail(event.target.value);
+                      // if (isEmailValid) {
+                      //   setErrorMessage((current) => {
+                      //     return {
+                      //       ...current,
+                      //       emailError: "",
+                      //     };
+                      //   });
+                      // } else {
+                      //   setErrorMessage((current) => {
+                      //     return {
+                      //       ...current,
+                      //       emailError: "올바른 형식의 이메일을 입력해주세요.",
+                      //     };
+                      //   });
+                      // }
+                      return;
                     }}
                     error={(errorMessage.emailError !== "") | false}
                   />
@@ -189,18 +231,27 @@ function LoginCard({ setIsSigning }) {
                     name="password"
                     label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
                     autoComplete="off"
+                    size="small"
                     value={password}
                     onChange={(event) => {
-                      if (!isPasswordValid) {
-                        setErrorMessage((current) => {
-                          return {
-                            ...current,
-                            passwordError:
-                              "올바른 형식의 비밀번호를 입력해주세요.",
-                          };
-                        });
-                      }
-                      return setPassword(event.target.value);
+                      setPassword(event.target.value);
+                      // if (isPasswordValid) {
+                      //   setErrorMessage((current) => {
+                      //     return {
+                      //       ...current,
+                      //       passwordError: "",
+                      //     };
+                      //   });
+                      // } else {
+                      //   setErrorMessage((current) => {
+                      //     return {
+                      //       ...current,
+                      //       passwordError:
+                      //         "올바른 형식의 비밀번호를 입력해주세요.",
+                      //     };
+                      //   });
+                      // }
+                      return;
                     }}
                     error={(errorMessage.passwordError !== "") | false}
                   />
