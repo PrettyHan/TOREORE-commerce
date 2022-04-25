@@ -13,13 +13,7 @@ userRouter.post("/signup", async (req, res, next) => {
             );
         }
 
-        const userId = req.body.userId;
-        const name = req.body.name;
-        const email = req.body.email;
-        const password = req.body.password;
-        const gender = req.body.gender;
-        const phone = req.body.phone;
-        const birth = req.body.birth;
+        const { userId, name, email, password, gender, phone, birth } = req.body;
 
         const userData = {
             userId,

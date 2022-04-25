@@ -38,10 +38,8 @@ db.on("connected", async () => {
                 await ProductModel.create([data], { session });
             });
 
-            await session.commitTransaction();
             console.log("데이터를 정상적으로 저장했습니다.");
         } catch (error) {
-            await session.abortTransaction();
             console.log(error);
             throw new Error(error);
         } finally {
