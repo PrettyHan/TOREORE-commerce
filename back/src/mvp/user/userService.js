@@ -5,8 +5,7 @@ import jwt from "jsonwebtoken";
 class userService {
     static async createUser(userData) {
         // 유저 아이디 중복 확인
-        const { userId, password, name, email, gender, phone, birth } =
-            userData;
+        const { userId, password, name, email, gender, phone, birth } = userData;
         const user = await User.findByUserId({ userId });
         if (user) {
             const errorMessage =
@@ -43,10 +42,7 @@ class userService {
 
         // 비밀번호 일치 여부 확인
         const correctPasswordHash = user.password;
-        const isPasswordCorrect = await bcrypt.compare(
-            password,
-            correctPasswordHash,
-        );
+        const isPasswordCorrect = await bcrypt.compare(password, correctPasswordHash);
         if (!isPasswordCorrect) {
             const errorMessage =
                 "비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.";
@@ -76,8 +72,7 @@ class userService {
         let user = await User.findByUserId({ userId });
 
         if (!user) {
-            const errorMessage =
-                "가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
+            const errorMessage = "가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
             return { errorMessage };
         }
 

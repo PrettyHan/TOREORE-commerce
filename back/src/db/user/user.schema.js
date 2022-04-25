@@ -35,9 +35,7 @@ const UserSchema = new Schema(
             lowercase: true,
             validate: [
                 function (email) {
-                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-                        email,
-                    );
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
                 },
                 "잘못된 이메일 입니다.",
             ],
