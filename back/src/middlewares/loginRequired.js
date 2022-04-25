@@ -19,7 +19,7 @@ const loginRequired = (req, res, next) => {
         const secretKey = process.env.JWT_SECRET_KEY || "secret-key";
         const jwtDecoded = jwt.verify(userToken, secretKey);
 
-        req.currentUserId = jwtDecoded.user_id;
+        req.currentUserId = jwtDecoded.userId;
         next();
     } catch (error) {
         res.status(400).json({ errorMessage: error.message }); // 토큰 만료시, { "jwt expired" } 객체 반환
