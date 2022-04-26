@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+
+import OrderHistory from "./myPageComponents/OrderHistory";
+import LikedHistory from "./myPageComponents/LikedHistory";
+import Coupon from "./myPageComponents/Coupon";
+import Points from "./myPageComponents/Points";
+
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
 function MyPage() {
+  const constantsFirstState = {
+    orderHistory: false,
+    likedHistory: false,
+    coupon: false,
+    points: false,
+  };
+  const [isOpen, setIsOpen] = useState(constantsFirstState);
+
+  const components = {
+    orderHistory: <OrderHistory />,
+    likedHistory: <LikedHistory />,
+    coupon: <Coupon />,
+    points: <Points />,
+  };
+
+  function whatIsOpen() {
+    for (const [key, value] of Object.entries(isOpen)) {
+      if (value === true) {
+        return components[key];
+      }
+    }
+    return <div></div>;
+  }
+
   return (
     <div style={{ minHeight: "calc(100vh - 180px)" }}>
       <Container>
@@ -12,15 +42,38 @@ function MyPage() {
             <p> (user123, Green-Class)</p>
           </div>
           <div>
-            <Button>회원 정보 수정</Button>
+            <Button disableElevation disableRipple>
+              회원 정보 수정
+            </Button>
           </div>
         </UserContainer>
         <ItemsContainer>
-          <Items cursor="pointer">주문 내역</Items>
-          <Items cursor="pointer">좋아요</Items>
-          <Items>쿠폰</Items>
-          <Items>적립금</Items>
+          <Items
+            onClick={() =>
+              setIsOpen({ ...constantsFirstState, orderHistory: true })
+            }
+          >
+            주문 내역
+          </Items>
+          <Items
+            onClick={() =>
+              setIsOpen({ ...constantsFirstState, likedHistory: true })
+            }
+          >
+            좋아요
+          </Items>
+          <Items
+            onClick={() => setIsOpen({ ...constantsFirstState, coupon: true })}
+          >
+            쿠폰
+          </Items>
+          <Items
+            onClick={() => setIsOpen({ ...constantsFirstState, points: true })}
+          >
+            적립금
+          </Items>
         </ItemsContainer>
+        {whatIsOpen()}
       </Container>
     </div>
   );
@@ -59,7 +112,8 @@ const Items = styled.div`
   height: 80px;
   text-align: center;
   line-height: 80px;
-  cursor: ${(props) => (props.cursor === "pointer" ? "pointer" : "default")};
+  cursor: pointer;
 `;
+// ${(props) => (props.cursor === "pointer" ? "pointer" : "default")}
 
 export default MyPage;
