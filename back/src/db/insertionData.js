@@ -17,28 +17,32 @@ db.on("connected", async () => {
 
     await session.withTransaction(async () => {
         try {
-            const dataBuffer = fs.readFileSync(
-                "/Users/yanghaechan/vscode_workspace/elice_project/data-project/sample-project/back/product-data/Trousers.json",
-            );
-            const originData = JSON.parse(dataBuffer.toString());
-            originData.forEach(async (product) => {
-                const data = {
-                    productId: product.article_id,
-                    name: product.prod_name,
-                    category: product.product_type_name,
-                    price: product.price,
-                    color: product.colour_group_name,
-                    description: product.detail_desc,
-                    image:
-                        "https://data-project-12-team.s3.ap-northeast-2.amazonaws.com/codingSoon/" +
-                        product.article_id +
-                        ".jpg",
-                };
+            const categoryArr = ["Skirt", "Sneakers", "Sweater", "T-shirt", "Trousers"];
+            categoryArr.forEach((categoryName) => {
+                const dataBuffer = fs.readFileSync(
+                    `/Users/yanghaechan/vscode_workspace/elice_project/data-project/sample-project/back/product-data/${categoryName}.json`,
+                );
+                const originData = JSON.parse(dataBuffer.toString());
+                originData.forEach(async (product) => {
+                    const data = {
+                        productId: product.article_id,
+                        name: product.prod_name,
+                        category: product.product_type_name,
+                        price: product.price,
+                        color: product.colour_group_name,
+                        description: product.detail_desc,
+                        image:
+                            "https://data-project-12-team.s3.ap-northeast-2.amazonaws.com/codingSoon/" +
+                            product.article_id +
+                            ".jpg",
+                        likeCount: 0,
+                    };
 
-                await ProductModel.create([data], { session });
+                    await ProductModel.create([data], { session });
+                });
+
+                console.log(`${categoryName} 데이터를 정상적으로 저장했습니다.`);
             });
-
-            console.log("데이터를 정상적으로 저장했습니다.");
         } catch (error) {
             console.log(error);
             throw new Error(error);
