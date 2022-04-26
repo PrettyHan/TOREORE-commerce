@@ -1,67 +1,65 @@
 import React from "react";
-import { Box, Grid, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import styled from "styled-components";
 
 function MyPage() {
   return (
     <div style={{ minHeight: "calc(100vh - 180px)" }}>
-      <div
-        style={{
-          marginTop: "200px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Box
-          style={{
-            boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-            width: "60%",
-          }}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={8}>
-              <p> 000님 안녕하세요!</p>
-              <p> (user123, Green-Class)</p>
-            </Grid>
-            <Grid item xs={4}>
-              <Button>회원 정보 수정</Button>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid
-              item
-              xs={8}
-              style={{
-                boxShadow:
-                  "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-              }}
-            >
-              <p>TOREOLRE는 그냥 쇼핑몰이 아닙니다!</p>
-              <p>
-                더 이상의 무분별한 추천! 견딜 수 없었습니다. <br />
-                <br /> 내가 정말 필요하는 제품들, 또래들 사이 인기 있는 상품이
-                먼저 나와 추천해준다면?
-              </p>
-            </Grid>
-            <Grid
-              item
-              xs={8}
-              style={{
-                height: "auto",
-                border: "1px solid #5E5B52",
-                textAlign: "center",
-                borderRadius: "60%",
-              }}
-            >
-              <p>안녕하십니까</p>
-            </Grid>
-          </Grid>
-        </Box> */}
-      </div>
+      <Container>
+        <UserContainer>
+          <div>
+            <p> 000님 안녕하세요!</p>
+            <p> (user123, Green-Class)</p>
+          </div>
+          <div>
+            <Button>회원 정보 수정</Button>
+          </div>
+        </UserContainer>
+        <ItemsContainer>
+          <Items cursor="pointer">주문 내역</Items>
+          <Items cursor="pointer">좋아요</Items>
+          <Items>쿠폰</Items>
+          <Items>적립금</Items>
+        </ItemsContainer>
+      </Container>
     </div>
   );
 }
+
+const Container = styled.div`
+  margin-top: 200px;
+  display: grid;
+  row-gap: 20px;
+  place-items: center center;
+`;
+
+const UserContainer = styled(Box)`
+  width: 61%;
+  box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+`;
+
+const ItemsContainer = styled(Box)`
+  width: 63.5%;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+`;
+
+const Items = styled.div`
+  box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+  width: 24%;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  cursor: ${(props) => (props.cursor === "pointer" ? "pointer" : "default")};
+`;
 
 export default MyPage;
