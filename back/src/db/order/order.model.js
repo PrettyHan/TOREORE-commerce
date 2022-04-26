@@ -6,7 +6,7 @@ class Order {
         return createdNewOrder;
     }
 
-    static async findByProductId({ orderId }) {
+    static async findByOrderId({ orderId }) {
         const order = await OrderModel.findOne({ orderId });
         return order;
     }
@@ -24,13 +24,13 @@ class Order {
         const updateProduct = await OrderModel.findOneAndUpdate(
             filteredById,
             updateData,
-            option
+            option,
         );
 
         return updateProduct;
     }
 
-    static async deleteByProductId({ orderId }) {
+    static async deleteByOrderId({ orderId }) {
         const deleteOrder = await OrderModel.deleteOne({ orderId });
         return deleteOrder;
     }

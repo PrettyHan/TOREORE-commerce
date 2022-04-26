@@ -6,12 +6,7 @@ class User {
         return createdNewUser;
     }
 
-    static async findByEmail({ email }) {
-        const user = await UserModel.findOne({ email });
-        return user;
-    }
-
-    static async findById({ userId }) {
+    static async findByUserId({ userId }) {
         const user = await UserModel.findOne({ userId });
         return user;
     }
@@ -29,7 +24,7 @@ class User {
         const updatedUser = await UserModel.findOneAndUpdate(
             filteredById,
             updateData,
-            option
+            option,
         );
 
         return updatedUser;

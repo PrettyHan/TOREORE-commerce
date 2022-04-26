@@ -1,0 +1,162 @@
+[
+    {
+        "article_id": "0856968001",
+        "prod_name": "루나 실크 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "라운드 네크라인, 목 뒤쪽의 버튼 여밈, 라운드 헴. 뒤쪽이 약간 더 길고 안감 없고, 부드럽게 드레이핑되는 실크 소재의 스트레이트 컷 반소매 베이지 색 블라우스입니다.",
+        "price": 142400
+    },
+    {
+        "article_id": "0856968002",
+        "prod_name": "루나 실크 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "라운드 네크라인, 목 뒤쪽의 버튼 여밈, 라운드 헴. 뒤쪽이 약간 더 길고 안감 없고, 부드럽게 드레이핑되는 실크 소재의 스트레이트 컷 반소매 검정색 블라우스입니다.",
+        "price": 113900
+    },
+    {
+        "article_id": "0797636001",
+        "prod_name": "차크라 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "라운드 넥과 앞면의 수직 솔기가 있는 실크 저지 소재의 꼭 맞는 상의입니다.",
+        "price": 101700
+    },
+    {
+        "article_id": "0714637001",
+        "prod_name": "2팩 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "반소매와 네크라인의 골지 디테일을 가지고 있는 면과 실크 혼방 소재의 부드러운 저지 티셔츠입니다.",
+        "price": 81300
+    },
+    {
+        "article_id": "0812179004",
+        "prod_name": "셀리아 울 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "앞면의 플랫록 솔기, 골지 네크라인, 둥근 밑단이 있는 울 저지 소재의 꼭 맞는 티셔츠입니다",
+        "price": 81300
+    },
+    {
+        "article_id": "0832824003",
+        "prod_name": "쿨라 실크 탑",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "발레리나 네크라인, 매우 긴 소매인 실크와 면 혼방 소재로 만든 부드러운 저지 소재의 꼭 맞는 탑입니다.",
+        "price": 81300
+    },
+    {
+        "article_id": "0810921002",
+        "prod_name": "프리미엄 ICE 저지 폴로",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "긴소매이고, 목, 소맷단, 밑단 가장자리에 오버록 처리된 실크와 비스코스 혼방 소재로 만든 부드러운 골지 저지 소재의 꼭 맞는 폴로넥 탑입니다.",
+        "price": 80600
+    },
+    {
+        "article_id": "0776781002",
+        "prod_name": "라라 울 저지",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Turquoise",
+        "detail_desc": "부드러운 울 저지 소재의 핏 탑입니다.",
+        "price": 80000
+    },
+    {
+        "article_id": "0714637002",
+        "prod_name": "2팩 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "반소매와 네크라인의 골지 디테일을 가지고 있는 면과 실크 혼방 소재의 부드러운 저지 티셔츠입니다.",
+        "price": 65100
+    },
+    {
+        "article_id": "0776781001",
+        "prod_name": "라라 울 저지",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "부드러운 울 저지 소재의 핏 탑입니다.",
+        "price": 65100
+    },
+    {
+        "article_id": "0832824001",
+        "prod_name": "쿨라 실크 탑",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Pink",
+        "detail_desc": "발레리나 네크라인, 매우 긴 소매인 실크와 면 혼방 소재로 만든 부드러운 저지 소재의 꼭 맞는 탑입니다.",
+        "price": 65100
+    },
+    {
+        "article_id": "0776746004",
+        "prod_name": "실크 믹스 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "반소매 스트레이트 컷, 면과 실크 혼방으로 만들어서 부드럽게 드레이핑되는 저지 소재의 클래식 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0849588002",
+        "prod_name": "스콧 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "라운드 네크라인, 부드럽게 드롭된 어깨, 넓은 소매가 있는 견고한 면 저지 소재의 오버사이즈 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0713743001",
+        "prod_name": "R넥 알링턴 2팩",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "프리미엄 면 저지 소재의 하얀색 티셔츠 2장입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0624684001",
+        "prod_name": "슬림 RN 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "부드러운 면 저지 소재의 라운드넥 하얀색 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0791803001",
+        "prod_name": "저스틴 탑",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "안쪽 처리와 커버된 신축성이 있는 짧은 퍼프 소매, 라운드 네크라인과 밑단에 타이 디테일이 있는 로우 컷 등의 패턴이 있는 린넨 및 면 직조 소재의 짧은 블라우스입니다. ",
+        "price": 61000
+    },
+    {
+        "article_id": "0689108001",
+        "prod_name": "폴로 SS 피닉스",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "측면에 슬릿이 있는 편안한 핏의 가느다란 면과 실크 소재의 스트레이트 컷 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0856395004",
+        "prod_name": "스트라이프 리넨 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "라운드 네크라인이 있는 통풍이 잘되는 린넨 저지 소재의 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0624684002",
+        "prod_name": "알넥 SS 슬림",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "부드러운 면 저지 소재의 라운드넥 검정색 티셔츠입니다.",
+        "price": 61000
+    },
+    {
+        "article_id": "0856395005",
+        "prod_name": "스트라이프 리넨 티셔츠",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "라운드 네크라인이 있는 통풍이 잘되는 린넨 저지 소재의 다크 블루 티셔츠입니다.",
+        "price": 61000
+    }
+]
