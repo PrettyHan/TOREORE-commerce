@@ -47,4 +47,6 @@ cartRouter.delete("/:productId", async (req, res, next) => {
     }
 });
 
+// 장바구니 리스트 전체 비우는 api도 추가해야?
+
 export { cartRouter };
