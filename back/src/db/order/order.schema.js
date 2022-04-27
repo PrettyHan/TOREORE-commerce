@@ -10,8 +10,7 @@ const OrderSchema = new Schema(
             trim: true,
         },
         orderId: {
-            type: String,
-            required: true,
+            type: Schema.Types.ObjectId,
         },
         products: {
             type: Array,

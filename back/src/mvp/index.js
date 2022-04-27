@@ -4,7 +4,7 @@ import { orderRouter } from "./order/orderRouter"
 const indexRouter = (app) => {
     app.use("/auth", userRouter);
     app.use("/products", productRouter)
-    app.use("/orders", productRouter)
+    app.use("/orders", orderRouter)
 };
 
 export { indexRouter };
