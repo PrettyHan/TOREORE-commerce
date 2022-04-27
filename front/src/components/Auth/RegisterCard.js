@@ -188,6 +188,21 @@ function RegisterCard({ setIsSigning }) {
                   <TextField
                     required
                     fullWidth
+                    id="userId"
+                    name="userId"
+                    label="아이디"
+                    autoComplete="userId"
+                    size="small"
+                    value={body.userId}
+                    onChange={handleChange}
+                    error={(errorMessage.userIdError !== "") | false}
+                  />
+                </Grid>
+                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
                     id="name"
                     name="name"
                     label="이름"
@@ -222,21 +237,6 @@ function RegisterCard({ setIsSigning }) {
                   </RadioGroup>
                 </Grid>
                 <FormHelperTexts>{errorMessage.genderError}</FormHelperTexts>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
-                    id="userId"
-                    name="userId"
-                    label="닉네임"
-                    autoComplete="userId"
-                    size="small"
-                    value={body.userId}
-                    onChange={handleChange}
-                    error={(errorMessage.userIdError !== "") | false}
-                  />
-                </Grid>
-                <FormHelperTexts>{}</FormHelperTexts>
                 <Grid item xs={12}>
                   <TextField
                     required
