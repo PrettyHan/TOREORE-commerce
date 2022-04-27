@@ -56,8 +56,8 @@ productRouter.get(
     "/?category=category&productId=productId",
     async function (req, res, next) {
         try {
-            const categoryquery = req.query;
-            const product = await productService.getProductByQuery(categoryquery);
+            const categoryQuery = req.query;
+            const product = await productService.getProductByQuery(categoryQuery);
 
             if (product.errorMessage) {
                 throw new Error(product.errorMessage);
