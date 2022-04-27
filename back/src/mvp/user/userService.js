@@ -137,6 +137,17 @@ class userService {
 
         return deletedUser;
     }
+    static async getUserCarts({ userId }) {
+        const user = await User.findCartsByUserId({ userId });
+
+        if (!user) {
+            const errorMessage =
+                "해당 아이디는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
+            return { errorMessage };
+        }
+
+        return user;
+    }
 }
 
 export { userService };

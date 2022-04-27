@@ -24,7 +24,8 @@ orderRouter.post("/orders", async (req, res, next) => {
     if (products.errorMessage) {
         throw new Error(products.errorMessage);
     }
-      const totalPrice = 5000000
+      const ArrayProducts = products // 가공 할 것, or req.user로 접근가능한지 확인
+      const totalPrice = 5000000 // total price 가공 필요
       const isPayed = false
 
       const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
@@ -58,7 +59,6 @@ orderRouter.post("/orders", async (req, res, next) => {
 orderRouter.get("/", async function (req, res, next) {
   try {
     const orders = await orderSerivce.getOrders({});
-
     if (orders.errorMessage) {
       throw new Error(orders.errorMessage);
     }
