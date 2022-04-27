@@ -8,6 +8,7 @@ import { loginReducer } from "./reducer";
 import Header from "./components/Layout/Header";
 import Main from "./components/Layout/Main";
 import Footer from "./components/Layout/Footer";
+import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
 import Login from "./components/Auth/Login";
@@ -76,19 +77,10 @@ function App() {
             <Route path="/introduce" element={<Introduce />} />
             <Route path="/myPage" element={<MyPage />} />
             <Route path="/auth/:id" element={<Main />} />
-            <Route path="*" element={<Main />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </Router>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Footer />
       </UserStateContext.Provider>
     </DispatchContext.Provider>
   );
