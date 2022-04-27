@@ -14,8 +14,8 @@ import {
 } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styled from "styled-components";
-import { useCookies } from "react-cookie";
-import crypto from "crypto-js";
+// import { useCookies } from "react-cookie";
+// import crypto from "crypto-js";
 
 import { DispatchContext } from "../../App";
 import * as Api from "../../api";
@@ -43,112 +43,108 @@ function LoginCard({ setIsSigning }) {
   // 이메일 및 패스워드 저장 여부
   const [isRemember, setIsRemember] = useState(false);
   // 이메일 및 패스워드 저장을 위한 쿠키 설정
-  const [cookies, setCookie, removeCookie] = useCookies([
-    "rememberEmail",
-    "rememberPassword",
-  ]);
+  // const [cookies, setCookie, removeCookie] = useCookies([
+  //   "rememberEmail",
+  //   "rememberPassword",
+  // ]);
 
-  const [email, setEmail] = useState("");
+  const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState({
-    emailError: "올바른 형식의 이메일을 입력해주세요.",
-    passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
+    emailError: "",
+    passwordError: "",
   });
 
-  const validateEmail = (email) => {
-    return email
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
+  const validateId = (userId) => {
+    return userId.length >= 2;
   };
   const validatePassword = (password) => {
     return password.match(
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
     );
   };
-  const isEmailValid = validateEmail(email);
+  const isEmailValid = validateId(userId);
   const isPasswordValid = validatePassword(password);
   const isFormValid = isEmailValid && isPasswordValid;
 
   // 로그인페이지 접속 시 쿠키에 정보가 있다면 저장된 정보로 이메일과 패스워드 설정
-  useEffect(() => {
-    if (
-      cookies.rememberEmail !== undefined &&
-      cookies.rememberPassword !== undefined
-    ) {
-      let bytes = crypto.AES.decrypt(
-        cookies.rememberPassword,
-        "cookiePassword"
-      );
-      let rememberPassword = bytes.toString(crypto.enc.Utf8);
-      setEmail(cookies.rememberEmail);
-      setPassword(rememberPassword);
-      setIsRemember(true);
-    }
-  }, [cookies.rememberEmail, cookies.rememberPassword]);
+  // useEffect(() => {
+  //   if (
+  //     cookies.rememberEmail !== undefined &&
+  //     cookies.rememberPassword !== undefined
+  //   ) {
+  //     let bytes = crypto.AES.decrypt(
+  //       cookies.rememberPassword,
+  //       "cookiePassword"
+  //     );
+  //     let rememberPassword = bytes.toString(crypto.enc.Utf8);
+  //     setEmail(cookies.rememberEmail);
+  //     setPassword(rememberPassword);
+  //     setIsRemember(true);
+  //   }
+  // }, [cookies.rememberEmail, cookies.rememberPassword]);
 
-  useEffect(() => {
-    if (!isEmailValid) {
-      setErrorMessage((current) => {
-        return {
-          ...current,
-          emailError: "올바른 형식의 이메일을 입력해주세요.",
-        };
-      });
-    } else {
-      setErrorMessage((current) => {
-        return {
-          ...current,
-          emailError: "",
-        };
-      });
-    }
-  }, [isEmailValid]);
+  // useEffect(() => {
+  //   if (!isEmailValid) {
+  //     setErrorMessage((current) => {
+  //       return {
+  //         ...current,
+  //         emailError: "올바른 형식의 이메일을 입력해주세요.",
+  //       };
+  //     });
+  //   } else {
+  //     setErrorMessage((current) => {
+  //       return {
+  //         ...current,
+  //         emailError: "",
+  //       };
+  //     });
+  //   }
+  // }, [isEmailValid]);
 
-  useEffect(() => {
-    if (!isPasswordValid) {
-      setErrorMessage((current) => {
-        return {
-          ...current,
-          passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
-        };
-      });
-    } else {
-      setErrorMessage((current) => {
-        return {
-          ...current,
-          passwordError: "",
-        };
-      });
-    }
-  }, [isPasswordValid]);
+  // useEffect(() => {
+  //   if (!isPasswordValid) {
+  //     setErrorMessage((current) => {
+  //       return {
+  //         ...current,
+  //         passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
+  //       };
+  //     });
+  //   } else {
+  //     setErrorMessage((current) => {
+  //       return {
+  //         ...current,
+  //         passwordError: "",
+  //       };
+  //     });
+  //   }
+  // }, [isPasswordValid]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (isRemember) {
-      setCookie("rememberEmail", email, { maxAge: 30000000 });
-      setCookie(
-        "rememberPassword",
-        crypto.AES.encrypt(password, "cookiePassword").toString(),
-        { maxAge: 30000000 }
-      );
-    } else {
-      removeCookie("rememberEmail");
-      removeCookie("rememberPassword");
-    }
+    // if (isRemember) {
+    //   setCookie("rememberEmail", email, { maxAge: 30000000 });
+    //   setCookie(
+    //     "rememberPassword",
+    //     crypto.AES.encrypt(password, "cookiePassword").toString(),
+    //     { maxAge: 30000000 }
+    //   );
+    // } else {
+    //   removeCookie("rememberEmail");
+    //   removeCookie("rememberPassword");
+    // }
 
     try {
       // "auth/login" 엔드포인트로 post요청함.
       const res = await Api.post("auth/login", {
-        email,
+        userId,
         password,
       });
       // 유저 정보는 response의 data임.
       const user = res.data;
       // JWT 토큰은 유저 정보의 token임.
-      const jwtToken = user.token;
+      const jwtToken = user.accessToken;
       // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
       sessionStorage.setItem("userToken", jwtToken);
       // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
@@ -157,14 +153,14 @@ function LoginCard({ setIsSigning }) {
         payload: user,
       });
 
-      // location의 state가 없다면 기본 페이지로 이동하고 state가 있다면 이전페이지인 state.from으로 이동함
-      if (!location.state?.from) {
-        navigate("/", { replace: true });
+      // location의 pathname이 "/"이면 새로고침 아니면 뒤로가기
+      if (location.pathname === "/") {
+        navigate(0);
       } else {
-        navigate(location.state.from, { replace: true });
+        navigate(-1);
       }
     } catch (err) {
-      alert("로그인에 실패하였습니다.\n", err);
+      console.log(err);
     }
   };
 
@@ -192,15 +188,15 @@ function LoginCard({ setIsSigning }) {
                     required
                     autoFocus
                     fullWidth
-                    type="email"
-                    id="email"
-                    name="email"
-                    label="이메일 주소"
-                    autoComplete="email"
+                    type="userId"
+                    id="userId"
+                    name="userId"
+                    label="아이디"
+                    autoComplete="userId"
                     size="small"
-                    value={email}
+                    value={userId}
                     onChange={(event) => {
-                      setEmail(event.target.value);
+                      setUserId(event.target.value);
                       // if (isEmailValid) {
                       //   setErrorMessage((current) => {
                       //     return {

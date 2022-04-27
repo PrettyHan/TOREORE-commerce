@@ -60,7 +60,7 @@ export function ValidateData(data, confirmPassword, checked) {
   if (!isPasswordSame)
     message.passwordNotSameError = "비밀번호가 일치하지 않습니다.";
   if (!isNameValid) message.nameError = "올바른 이름을 입력해주세요.";
-  if (!isUserIdValid) message.userIdError = "닉네임은 두글자 이상이여야합니다.";
+  if (!isUserIdValid) message.userIdError = "아이디는 두글자 이상이여야합니다.";
   if (!isGenderValid) message.genderError = "성별을 입력해주세요";
   if (!isPhoneValid)
     message.phoneError = "하이픈이 포함된 올바른 번호를 입력해주세요.";
