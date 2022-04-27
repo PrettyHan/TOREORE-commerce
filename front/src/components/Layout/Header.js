@@ -13,11 +13,11 @@ import { UserStateContext, DispatchContext } from "../../App";
 
 function Header({ handleOpen }) {
   const navigate = useNavigate();
-  const useState = useContext(UserStateContext);
+  const userState = useContext(UserStateContext);
   const dispatch = useContext(DispatchContext);
 
   // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
-  const isLogin = !!useState.user;
+  const isLogin = !!userState.user;
 
   // // 로그아웃 함수
   // const logout = () => {
