@@ -27,6 +27,7 @@ function OrderCard({ order }) {
   return (
     <Container>
       <Items>{order.orderNo}</Items>
+      <Items>{order.orderId}</Items>
       <Items>{spreadProductName()}</Items>
       <Items>{order.orderPrice}원</Items>
       <OrderStatus color={orderStatus} onClick={sendOrder}>

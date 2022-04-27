@@ -5,24 +5,24 @@ import OrderCard from "./OrderCard";
 const orderList = [
   {
     orderNo: 1,
+    orderId: 56890014564,
     orderProduct: ["jaket", "pinkpants", "redsocks"],
     orderPrice: "15,000",
     orderStatus: "done",
-    orderId: 56890014564,
   },
   {
     orderNo: 2,
+    orderId: 56890014544,
     orderProduct: ["blouse", "trouser", "muffler"],
     orderPrice: "37,000",
     orderStatus: "doing",
-    orderId: 56890014544,
   },
   {
     orderNo: 3,
+    orderId: 56890014532,
     orderProduct: ["skirt", "sunglass"],
     orderPrice: "165,000",
     orderStatus: "doing",
-    orderId: 56890014532,
   },
 ];
 
