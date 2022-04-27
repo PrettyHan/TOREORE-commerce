@@ -89,7 +89,7 @@ function App() {
                         <Route path="/auth/:id" element={<Main />} />
                         <Route path="*" element={<Main />} />
                         <Route path="/products" element={<ProductList />}/>
-                        <Route exact path="/products/:id" element={<ProductDetail/>}/>
+                        <Route exact path="/products/:categoryId/:productId" element={<ProductDetail/>}/>
                     </Routes>
                 </Router>
                 </React.Suspense>

@@ -9,8 +9,8 @@ const ProductItem = ({ groupId, productId, imgUrl, description }) => {
     const navigate = useNavigate();
 
     const handleItemClick = React.useCallback(() => {
-        navigate(`${productId }`)
-    }, [navigate, productId]);
+        navigate(`/products/${groupId}/${productId}`);
+    }, [navigate, groupId, productId]);
 
     return (
         <div className="item-container" onClick={handleItemClick}>
