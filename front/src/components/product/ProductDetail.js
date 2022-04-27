@@ -1,9 +1,17 @@
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "../../style/productDetail.css";
 
 const ProductDetail = () => {
+    // 임시 data
+    const product = {
+        name: "어깨 꼬임 포인트 니트",
+        price: 50000,
+        desc: "광택감 있는 소재의 짧은 원피스. 깊게 파인 앞뒷면 V넥 디자인. 목 뒷면을 가로질러 끈을 묶는 스타일. 풍성하고 와이드한 7부 소매. 가는 신축성 소맷단. 가슴 아래와 허리 뒷면에 주름이 잡힌 솔기가 있음. 안감 생략.",
+        url: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
+    };
+
     const [cnt, setCnt] = useState(1);
 
     const handleClick = (e) => {
@@ -16,13 +24,9 @@ const ProductDetail = () => {
         }
     };
 
-    // 임시 data
-    const product = {
-        name: "어깨 꼬임 포인트 니트",
-        price: 50000,
-        desc: "광택감 있는 소재의 짧은 원피스. 깊게 파인 앞뒷면 V넥 디자인. 목 뒷면을 가로질러 끈을 묶는 스타일. 풍성하고 와이드한 7부 소매. 가는 신축성 소맷단. 가슴 아래와 허리 뒷면에 주름이 잡힌 솔기가 있음. 안감 생략.",
-        url: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
-    };
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <section className="item-detail-container">

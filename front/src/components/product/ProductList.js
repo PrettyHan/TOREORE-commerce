@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from "react";
+import { useParams } from 'react-router-dom';
 
 import ProductItem from "./ProductItem";
 
@@ -17,6 +18,8 @@ const reducer = (state, action) => {
 
 const ProductList = () => {
     const [fake_data, dispatch] = useReducer(reducer, []);
+    // const {id} = useParams();
+    // console.log(id)
 
     const getData = async () => {
         const res = await fetch(

@@ -14,6 +14,11 @@ import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 
+/**
+ * https://ko.reactjs.org/docs/code-splitting.html
+ */
+const ProductDetail =  React.lazy(() => import('./components/product/ProductDetail'));
+
 // import RegisterForm from "./components/user/RegisterForm";
 // import Portfolio from "./components/Portfolio";
 // import Loading from "./components/Loading";
@@ -72,6 +77,7 @@ function App() {
     return (
         <DispatchContext.Provider>
             <UserStateContext.Provider>
+            <React.Suspense fallback={<div>Loading...</div>}>
                 <Router>
                     <Header handleOpen={handleOpen} />
                     <Login open={open} handleClose={handleClose} />
@@ -82,9 +88,11 @@ function App() {
                         <Route path="/myPage" element={<MyPage />} />
                         <Route path="/auth/:id" element={<Main />} />
                         <Route path="*" element={<Main />} />
-                        <Route path="/products" element={<ProductList />} />
+                        <Route path="/products" element={<ProductList />}/>
+                        <Route exact path="/products/:id" element={<ProductDetail/>}/>
                     </Routes>
                 </Router>
+                </React.Suspense>
                 <br />
                 <br />
                 <br />
