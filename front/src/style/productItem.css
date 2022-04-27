@@ -13,16 +13,17 @@
 
 .item {
     list-style: none;
-    padding: 0px 20px;
+    margin: 10px 20px;
 }
 
 .item-name {
     font-size: larger;
-    font: bold;
-    padding-bottom: 5px;
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
-.item-desc {
+.item-price {
+    font-size: larger;
     color: gray;
 }
 
