@@ -1,10 +1,19 @@
+
+import React from 'react';
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 import "../../style/productItem.css";
 
 const ProductItem = ({ groupId, productId, imgUrl, description }) => {
+    const navigate = useNavigate();
+
+    const handleItemClick = React.useCallback(() => {
+        navigate(`/products/${groupId}/${productId}`);
+    }, [navigate, groupId, productId]);
+
     return (
-        <div className="item-container">
+        <div className="item-container" onClick={handleItemClick}>
             <img src={imgUrl} alt={"상품 이미지"} className="item-img"></img>
             <ul className="item">
                 <li className="item-name">제품명_{productId} </li>
