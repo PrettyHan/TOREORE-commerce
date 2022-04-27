@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Box, Typography, Tab } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -9,26 +9,25 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
 import styled from "styled-components";
 
-// import { UserStateContext, DispatchContext } from "../App";
+import { UserStateContext, DispatchContext } from "../App";
 
 function Header({ handleOpen }) {
   const navigate = useNavigate();
-  // const useState = useContext(UserStateContext);
-  // const dispatch = useContext(DispatchContext);
+  const useState = useContext(UserStateContext);
+  const dispatch = useContext(DispatchContext);
 
-  // // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
-  // const isLogin = !!useState.user;
-  const isLogin = true;
+  // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
+  const isLogin = !!useState.user;
 
-  // // 로그아웃 함수
-  // const logout = () => {
-  //   // sessionStorage에 저장했던 JWT 토큰 삭제
-  //   sessionStorage.removeItem("userToken");
-  //   // dispatch 함수를 이용해 로그아웃함.
-  //   dispatch({ type: "LOGOUT" });
-  //   // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
-  //   navigate("/");
-  // };
+  // 로그아웃 함수
+  const logout = () => {
+    // sessionStorage에 저장했던 JWT 토큰 삭제
+    sessionStorage.removeItem("userToken");
+    // dispatch 함수를 이용해 로그아웃함.
+    dispatch({ type: "LOGOUT" });
+    // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
+    navigate("/");
+  };
 
   return (
     <Box sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
@@ -51,7 +50,7 @@ function Header({ handleOpen }) {
           <Box sx={{ display: { xs: "flex", md: "flex" } }}>
             <NavIcon
               icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
-              onClick={handleOpen}
+              onClick={isLogin ? logout : handleOpen}
               disableElevation
               disableRipple
             />
