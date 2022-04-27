@@ -1,4 +1,4 @@
-import { User, Product } from "../../db";
+import { User } from "../../db";
 
 class cartService {
     // 유저의 카트 리스트 조회
@@ -7,7 +7,7 @@ class cartService {
         return user.cart; // array
     }
 
-    // 유저의 카트 리스트 조회 -> 수량 정보 업데이트
+    // 유저의 카트 리스트 조회 -> 수량 정보 업데이트 -> output??
     static async updateCartList({ userId, productId, quantity }) {
         const user = await User.findByUserId({ userId });
         const carts = user.cart; // cart list
