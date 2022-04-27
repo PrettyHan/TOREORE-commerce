@@ -32,12 +32,12 @@ function OrderHistory() {
       <Title>주문 내역</Title>
       <ListContainer>
         <Columns>
-          {Object.keys(orderList[0]).map((column) => (
-            <Items>{column}</Items>
+          {Object.keys(orderList[0]).map((column, idx) => (
+            <Items key={`item-${idx}`}>{column}</Items>
           ))}
         </Columns>
         {orderList.map((order) => (
-          <OrderCard key={order.orderNo} order={order} />
+          <OrderCard key={`order-${order.orderNo}`} order={order} />
         ))}
       </ListContainer>
     </Container>
