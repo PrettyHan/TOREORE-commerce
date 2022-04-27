@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function OrderCard({ order }) {
@@ -15,11 +15,10 @@ function OrderCard({ order }) {
 
   // 미결제 건 클릭 시, order로 navigate 하여 결제 유도
   const navigate = useNavigate();
-  const { state } = useLocation();
 
   function sendOrder() {
     if (orderStatus !== "done") {
-      navigate("/order", { state });
+      navigate(`/order/${order.orderId}`);
     } else {
       console.log("디테일보여주자");
     }
