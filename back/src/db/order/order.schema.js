@@ -9,9 +9,8 @@ const OrderSchema = new Schema(
             required: true,
             trim: true,
         },
-        orderId : {
-            type: String,
-            required: true,
+        orderId: {
+            type: Schema.Types.ObjectId,
         },
         products: {
             type: Array,
@@ -42,26 +41,26 @@ const OrderSchema = new Schema(
                     type: String,
                 },
                 do: {
-                    type: String
+                    type: String,
                 },
                 si: {
-                    type: String
+                    type: String,
                 },
                 gu: {
-                    type: String
+                    type: String,
                 },
                 ro: {
-                    type: String
+                    type: String,
                 },
                 rest: {
-                    type: String
-                }, 
-            }  
+                    type: String,
+                },
+            },
         },
         message: {
             type: String,
             required: false,
-            default: "요청사항이 없습니다"
+            default: "요청사항이 없습니다",
         },
         paymentMethod: {
             type: String,
@@ -70,8 +69,8 @@ const OrderSchema = new Schema(
         isPayed: {
             type: Boolean,
             required: true,
-            default: false
-        }
+            default: false,
+        },
     },
     {
         timestamps: true,

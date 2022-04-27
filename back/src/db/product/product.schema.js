@@ -1,5 +1,5 @@
-// import { Schema, model } from "mongoose";
 import pkg from "mongoose";
+
 const { Schema, model } = pkg;
 
 const ProductSchema = new Schema(
@@ -28,12 +28,17 @@ const ProductSchema = new Schema(
         description: {
             type: String,
             required: false,
-            default: "상품의 설명을 입력해 주세요."
+            default: "",
         },
         image: {
             type: String,
             required: false,
-            default: "이미지 없음"
+            default: "",
+        },
+        likeCount: {
+            type: Number,
+            required: false,
+            default: 0,
         },
     },
     {

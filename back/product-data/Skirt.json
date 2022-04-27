@@ -1,0 +1,162 @@
+[
+    {
+        "article_id": "0694860002",
+        "prod_name": "가죽 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "위에 단추가 달린 가죽 소재의 롱 랩오버 치마입니다.",
+        "price": 262400
+    },
+    {
+        "article_id": "0839473001",
+        "prod_name": "라미레즈 스모크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "리오셀 섬유와 빛이 어떻게 잡느냐에 따라 색이 변하는 실크 블렌드로 만들어진 가볍고 부드럽게 드리핑된 종아리 길이의 치마입니다.",
+        "price": 260300
+    },
+    {
+        "article_id": "0839473002",
+        "prod_name": "라미레즈 스모크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "리오셀 섬유와 빛이 어떻게 잡느냐에 따라 색이 변하는 실크 블렌드로 만들어진 가볍고 부드럽게 드리핑된 종아리 길이의 치마입니다.",
+        "price": 205800
+    },
+    {
+        "article_id": "0860904001",
+        "prod_name": "칸 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "폴리에스테르로 만든 튤의 플레어, 무릎 길이의 치마입니다. 장식적인 그로그레인 수평 트림, 허리에는 그로스 그레인 허리 밴드가 있으며 한쪽에는 훅 앤 아이 체결로 지퍼를 숨겼습니다. 상부에 모이고 폭과 안정성을 위해 두 겹의 추가 툴이 있습니다. 재활용 폴리에스테르로 만든 쉬폰 안감입니다. 폴리에스터는 사용한 직물로부터 재활용된 원료로 만들어진 고품질의 폴리에스터입니다.",
+        "price": 201400
+    },
+    {
+        "article_id": "0863732001",
+        "prod_name": "실크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "통기성 실크와 면 혼방의 발목까지 오는 치마입니다. 높은 주름의 허리에는 커버된 탄력이 있고 솔기는 치마를 아래로 내려와 폭이 좁고 집속된 스모킹으로 볼륨을 더합니다.",
+        "price": 193200
+    },
+    {
+        "article_id": "0774126005",
+        "prod_name": "벨 실크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "허리 밴딩이 있는 종아리 길이의 실크 치마입니다.",
+        "price": 183000
+    },
+    {
+        "article_id": "0789368001",
+        "prod_name": "알비나 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "스튜디오 컬렉션으로 종아리 길이의 비대칭 치마입니다. 통기성, 패턴, 주름 짜임이 특징입니다. 허리 밴드가 강화된 높은 허리, 그리고 한쪽에는 숨겨진 지퍼와 갈고리 모양의 고정 장치가 있습니다.",
+        "price": 162700
+    },
+    {
+        "article_id": "0844099002",
+        "prod_name": "아슬란 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "스튜디오 컬렉션으로 주름 짜임새 있는 종아리 길이의 치마입니다. 한쪽에는 숨겨진 지퍼가 있고 금속 프레스 스터드가 보입니다. 치마는 네모난 컷으로 더 긴 면과 비대칭 드레이핑을 연출하며 밑단에는 통기성 있는 메쉬 디테일로 마무리된 솔기가 있습니다.",
+        "price": 162700
+    },
+    {
+        "article_id": "0844990001",
+        "prod_name": "사이먼 실크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "바삭바삭한 피마 면 짜임으로 종아리 길이 치마입니다. 양쪽에 탭과 단추가 있으며, 뒷면에 숨겨진 지퍼, 플랩과 단추가 있는 큰 패치 앞주머니가 있습니다.",
+        "price": 157000
+    },
+    {
+        "article_id": "0850191001",
+        "prod_name": "카르멜 BA 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Pink",
+        "detail_desc": "브로데리 앵글레이즈가 있는 면 짜임으로 플레어한 종아리 길이의 치마입니다. 한쪽 면에는 숨겨진 지퍼가 있고, 옷자락은 비대칭입니다.",
+        "price": 142400
+    },
+    {
+        "article_id": "0885199005",
+        "prod_name": "마시멜로 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "여유로운 움직임과 폭을 연출할 수 있는 튤의 이중 레이어드 롱 원형 치마입니다. 높은 허리에는 넓고 덮인 탄력성이 있으며 윗부분에는 작은 프릴 트림이 있습니다.",
+        "price": 142400
+    },
+    {
+        "article_id": "0835044007",
+        "prod_name": "마시멜로 튤 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "이동과 폭을 위한 더블 레이어드 툴의 긴 원형 치마입니다. 보통 허리에는 넓고 덮인 탄력이 있고, 윗부분에는 작은 프릴이 있으며, 가장자리는 날것으로 되어 있습니다.",
+        "price": 142400
+    },
+    {
+        "article_id": "0659301001",
+        "prod_name": "칼라 스웨이드 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "부드럽고 부드러운 스웨이드로 색상과 대비되는 솔기, 윗부분에 숨겨진 단추가 있는 짧은 치마입니다.",
+        "price": 138800
+    },
+    {
+        "article_id": "0774126003",
+        "prod_name": "벨 실크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "허리밴드가 달린 종아리 기장 실크 치마입니다.",
+        "price": 128100
+    },
+    {
+        "article_id": "0774126004",
+        "prod_name": "벨 실크 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "허리밴드가 달린 종아리 기장 실크 치마입니다.",
+        "price": 128100
+    },
+    {
+        "article_id": "0844935002",
+        "prod_name": "설리 실크 믹스 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "부드러운 텐셀 2122 리요셀 저지의 긴 치마입니다. 높은 허리, 커버된 탄성이 특징입니다.",
+        "price": 122000
+    },
+    {
+        "article_id": "0807770001",
+        "prod_name": "안젤리나 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "주름진 종아리 길이의 치마입니다. 한쪽은 지퍼와 훅 앤 아이로 고정하며, 가장자리는 날끝으로 되어 있습니다.",
+        "price": 122000
+    },
+    {
+        "article_id": "0876737001",
+        "prod_name": "글로리아 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Turquoise",
+        "detail_desc": "통풍이 잘 되는 짜임새로 덮여 있는 송아지 길이의 주름 치마입니다. 높은 허리, 눈에 보이는 신축성 있는 리빙, 부드러운 드레이핑이 특징입니다.",
+        "price": 122000
+    },
+    {
+        "article_id": "0840021001",
+        "prod_name": "페라 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "반짝이는 실과 함께 통기성이 좋은 짜임새로 덮여 있는 송아지 길이의 주름 치마입니다. 부드럽게 드레이핑하고 뒷부분에 숨겨진 지퍼가 달려 있습니다.",
+        "price": 122000
+    },
+    {
+        "article_id": "0878082001",
+        "prod_name": "클레마티스 프릴 치마",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "바람이 잘 통하고 가볍게 구겨지는 짜임새 있는 면 혼방과 뒤쪽에 숨겨진 지퍼와 세로로 부풀어 오르는 수직 플라워로 만들어진 플레어 치마입니다.",
+        "price": 120400
+    }
+]
