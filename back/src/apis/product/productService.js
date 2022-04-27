@@ -2,7 +2,7 @@ import { Product } from "../../db";
 import { v4 as uuidv4 } from "uuid";
 
 class productService {
-    static async getProducts() {
+    static async getProductList() {
         const products = await Product.findAll();
         if (!products) {
             const errorMessage = "해당 데이터가 없습니다.";

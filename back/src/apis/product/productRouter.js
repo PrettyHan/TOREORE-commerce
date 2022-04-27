@@ -1,15 +1,13 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
-import { loginRequired } from "../../middlewares/loginRequired";
 import { productService } from "./productService";
 
 const productRouter = Router();
-productRouter.use(loginRequired);
 
 // product 전체 조회
 productRouter.get("/", async function (req, res, next) {
     try {
-        const products = await productService.getProducts();
+        const products = await productService.getProductList();
 
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
