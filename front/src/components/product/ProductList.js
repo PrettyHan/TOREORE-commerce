@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer } from "react";
-import { useParams } from 'react-router-dom';
 
 import ProductItem from "./ProductItem";
 
 import "../../style/productList.css";
+import * as Api from "../../api";
 
 export const ProductStateContext = React.createContext();
 
@@ -17,25 +17,12 @@ const reducer = (state, action) => {
 };
 
 const ProductList = () => {
-    const [fake_data, dispatch] = useReducer(reducer, []);
-    // const {id} = useParams();
-    // console.log(id)
+    const [productList, dispatch] = useReducer(reducer, []);
 
     const getData = async () => {
-        const res = await fetch(
-            "https://jsonplaceholder.typicode.com/photos"
-        ).then((res) => res.json());
-
-        const initData = res.slice(0, 26).map((item) => {
-            return {
-                groupId: item.albumId,
-                productId: item.id,
-                imgUrl: item.thumbnailUrl,
-                description: item.title,
-            };
+        Api.get("products").then((res) => {
+            dispatch({ type: "INIT", data: res.data });
         });
-
-        dispatch({ type: "INIT", data: initData });
     };
 
     useEffect(() => {
@@ -43,9 +30,9 @@ const ProductList = () => {
     }, []);
 
     return (
-        <ProductStateContext.Provider value={fake_data}>
+        <ProductStateContext.Provider value={productList}>
             <div className="productList-container">
-                {fake_data.map((item) => (
+                {productList.map((item) => (
                     <ProductItem key={item.productId} {...item} />
                 ))}
             </div>
