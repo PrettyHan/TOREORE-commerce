@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Box, Typography, Tab } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -29,51 +29,76 @@ function Header({ handleOpen }) {
   //   // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
   //   navigate("/");
   // };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
 
   return (
-    <Box sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
-      <AppBar position="fixed" color="transparent" sx={{ boxShadow: 0 }}>
-        <Toolbar>
-          <Tab
-            icon={<HelpOutlineOutlinedIcon />}
-            onClick={() => navigate("/introduce")}
-            style={{ paddingRight: 0, minWidth: "50px" }}
-            disableElevation
-            disableRipple
-          />
-          <Details>About TOREOLRE</Details>
-          <Box sx={{ flexGrow: 1, padding: 0 }} />
-          <Wrap>
-            <Typography>또래와 함께 하는 쇼핑 ,</Typography>
-          </Wrap>
-          <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
-          <Box sx={{ flexGrow: 1, padding: 0 }} />
-          <Box sx={{ display: { xs: "flex", md: "flex" } }}>
-            <NavIcon
-              icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
-              onClick={handleOpen}
+    <Container sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
+      {scrollPosition < 110 ? (
+        <HeaderVar color="transparent" sx={{ boxShadow: 0 }}>
+          <Toolbar>
+            <Tab
+              icon={<HelpOutlineOutlinedIcon />}
+              onClick={() => navigate("/introduce")}
+              style={{ paddingRight: 0, minWidth: "50px" }}
               disableElevation
               disableRipple
             />
-            <NavIcon
-              icon={<ShoppingCartOutlinedIcon />}
-              onClick={() => navigate("/cart")}
-              disableElevation
-              disableRipple
-            />
-            <NavIcon
-              icon={<PersonOutlinedIcon />}
-              onClick={() => navigate("/myPage")}
-              disableElevation
-              disableRipple
-            />
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <Details>About TOREOLRE</Details>
+            <Box sx={{ flexGrow: 1, padding: 0 }} />
+            <Wrap>
+              <Typography>또래와 함께 하는 쇼핑 ,</Typography>
+            </Wrap>
+            <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
+            <Box sx={{ flexGrow: 1, padding: 0 }} />
+            <Box sx={{ display: { xs: "flex", md: "flex" } }}>
+              <NavIcon
+                icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
+                onClick={handleOpen}
+                disableElevation
+                disableRipple
+              />
+              <NavIcon
+                icon={<ShoppingCartOutlinedIcon />}
+                onClick={() => navigate("/cart")}
+                disableElevation
+                disableRipple
+              />
+              <NavIcon
+                icon={<PersonOutlinedIcon />}
+                onClick={() => navigate("/myPage")}
+                disableElevation
+                disableRipple
+              />
+            </Box>
+          </Toolbar>
+        </HeaderVar>
+      ) : (
+        <></>
+      )}
+    </Container>
   );
 }
 export default Header;
+
+const Container = styled(Box)`
+  position: relative;
+  padding-top: 50px;
+`;
+
+const HeaderVar = styled(AppBar)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+`;
 
 const NavIcon = styled(Tab)`
   cursor: pointer;
