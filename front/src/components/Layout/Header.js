@@ -19,15 +19,6 @@ function Header({ handleOpen }) {
   // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
   const isLogin = !!userState.user;
 
-  // // 로그아웃 함수
-  // const logout = () => {
-  //   // sessionStorage에 저장했던 JWT 토큰 삭제
-  //   sessionStorage.removeItem("userToken");
-  //   // dispatch 함수를 이용해 로그아웃함.
-  //   dispatch({ type: "LOGOUT" });
-  //   // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
-  //   navigate("/");
-  // };
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -56,20 +47,6 @@ function Header({ handleOpen }) {
               icon={<HelpOutlineOutlinedIcon />}
               onClick={() => navigate("/introduce")}
               style={{ paddingRight: 0, minWidth: "50px" }}
-              disableElevation
-              disableRipple
-            />
-            <Details>About TOREOLRE</Details>
-            <Box sx={{ flexGrow: 1, padding: 0 }} />
-            <Wrap>
-              <Typography>또래와 함께 하는 쇼핑 ,</Typography>
-            </Wrap>
-            <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
-            <Box sx={{ flexGrow: 1, padding: 0 }} />
-            <Box sx={{ display: { xs: "flex", md: "flex" } }} />
-            <NavIcon
-              icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
-              onClick={isLogin ? logout : handleOpen}
               disableElevation
               disableRipple
             />
