@@ -1,9 +1,24 @@
 import { Order } from "../../db";
 import { v4 as uuidv4 } from "uuid";
 
-class orderSerivce {
-    static async getOrders() {
-        const orders = await Order.findAll();
+class orderService {
+    static async createOrder(orderData) {
+        const {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} = orderData
+
+        const newOrder = {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} 
+        // db에 저장
+        const createdNewOrder = await Order.create( {newOrder} );
+        createdNewOrder.errorMessage = null; // 문제 없이 db 저장 완료되었으므로 에러가 없음.
+    
+        return createdNewOrder;
+      }
+
+      
+    
+    
+    
+    static async getOrders({userId}) {
+        const orders = await Order.findByUserId({userId});
         if (!orders) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };
@@ -20,8 +35,8 @@ class orderSerivce {
         return order;
     }
 
-    static async getIspayedByQuery({ ispayed }) {
-        const order = await Order.findByIspayed({ ispayed });
+    static async getIspayedByQuery({ isPayed, userId }) {
+        const order = await Order.findByIspayed({ isPayed, userId });
         if (!order) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };
@@ -86,4 +101,4 @@ class orderSerivce {
     }
 }
 
-export { orderSerivce };
+export { orderService };
