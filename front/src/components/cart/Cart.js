@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
-  Grid,
   Box,
   Button,
   Checkbox,
   Table,
   TableHead,
   TableRow,
-  TableCell,
   TableBody,
 } from "@mui/material/";
 import CartItem from "./CartItem";
@@ -20,8 +18,7 @@ import * as Api from "../../api";
 function Cart() {
   const navigate = useNavigate();
 
-  const theme = {};
-
+  // 목업 데이터
   const fakeData = [
     {
       productId: 1234,
@@ -49,7 +46,9 @@ function Cart() {
     },
   ];
 
+  // 카트아이템들 상태 설정
   const [cartItems, setCartItems] = useState(fakeData);
+  // 카트아이템카드 컴포넌트 맵핑
   const cartItemList = cartItems.map((cartItem, index) => (
     <CartItem
       cartItem={cartItem}
@@ -58,15 +57,19 @@ function Cart() {
     />
   ));
 
+  // 체크된 카트 아이템들
   const checkedCartItems = cartItems.filter(
     (cartItem) => cartItem.checked === true
   );
+  // 체크된 카트 아이템들 주문가격 합산, 이후 쿠폰이나 적립금 추가 시 수정
   const carculateTotal = checkedCartItems.reduce(
     (total, cartItem) => total + cartItem.price * cartItem.quantity,
     0
   );
 
+  // 카트가 비었는지 체크
   const isCartEmpty = Array.isArray(cartItems) && cartItems.length === 0;
+  // 카트가 모두 체크되었는지 확인하는 함수
   const isCheckedAll = (cartItems) => {
     if (cartItems.some((cartItem) => cartItem.checked === false)) {
       return false;
@@ -75,6 +78,7 @@ function Cart() {
     }
   };
 
+  // 처음에 받아올 카트 아이템들 체크 추가해 주는 함수
   const handleCartData = (cartItems) => {
     return cartItems.map((item) => {
       return {
@@ -84,6 +88,7 @@ function Cart() {
     });
   };
 
+  // 전체 선택 체크박스 핸들링 함수
   const handleCheck = (event) => {
     setCartItems((current) => {
       return current.map((item) => {
@@ -95,6 +100,7 @@ function Cart() {
     });
   };
 
+  // 선택 삭제 버튼 클릭 핸들링 함수
   const handleSelectRemove = async () => {
     try {
       // const deleteProducts = checkedCartItems.map((item) => {
@@ -112,28 +118,28 @@ function Cart() {
     }
   };
 
+  // 주문하기 버튼 클릭 핸들링 함수
   const handleOrder = async () => {
     try {
-      const orderProduts = checkedCartItems.map((item) => {
-        return {
-          productId: item.productId,
-          quantity: item.quantity,
-        };
-      });
-      const res = await Api.post("orders", orderProduts);
-
-      const orderId = res.data.orderId;
-      navigate(`/order/${orderId}`);
+      // const orderProduts = checkedCartItems.map((item) => {
+      //   return {
+      //     productId: item.productId,
+      //     quantity: item.quantity,
+      //   };
+      // });
+      // const res = await Api.post("orders", orderProduts);
+      // const orderId = res.data.orderId;
+      // navigate(`/order/${orderId}`);
     } catch (err) {
       console.log(err);
     }
   };
 
+  // 페이지 열릴 때 카트 아이템들을 받아오는 함수
   const fetchCartItems = async () => {
     try {
-      const res = await Api.get("carts");
-
-      setCartItems(handleCartData(res.data));
+      // const res = await Api.get("carts");
+      // setCartItems(handleCartData(res.data));
     } catch (err) {
       console.log(err);
     }
@@ -145,24 +151,6 @@ function Cart() {
 
   return (
     <div>
-      {/* <Box>
-        <Grid>
-        </Grid>
-        <Grid>
-        <Checkbox>모두 선택</Checkbox>
-        
-            <Button>선택 삭제</Button>
-            </Grid>
-            <Grid>
-            <Typography>총 결제 금액: {carculateTotal}원</Typography>
-            </Grid>
-            <Grid>
-            <Button variant="text" onClick={() => navigate("/order")}>
-            주문하기
-            </Button>
-            </Grid>
-          </Box> */}
-
       <Box>
         <Typography component="h2" variant="h6" color="primary" gutterBottom>
           장바구니
