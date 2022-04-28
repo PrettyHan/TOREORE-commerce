@@ -55,12 +55,23 @@ orderRouter.post("/orders", async (req, res, next) => {
 orderRouter.get("/", async function (req, res, next) {
     try {
         const userId = req.currentUserId;
-        const orders = await orderSerivce.getOrders({ userId });
-        if (orders.errorMessage) {
-            throw new Error(orders.errorMessage);
-        }
+        const isPayed = req.query.ispayed;
+        if (isPayed == "true" || isPayed == "false") {
+            const order = await orderSerivce.getIspayedByQuery({ isPayed, userId });
 
-        res.status(200).send(orders);
+            if (order.errorMessage) {
+                throw new Error(order.errorMessage);
+            }
+
+            res.status(200).send(order);
+        } else {
+            const orders = await orderSerivce.getOrders({ userId });
+
+            if (orders.errorMessage) {
+                throw new Error(orders.errorMessage);
+            }
+            res.status(200).send(orders);
+        }
     } catch (error) {
         next(error);
     }

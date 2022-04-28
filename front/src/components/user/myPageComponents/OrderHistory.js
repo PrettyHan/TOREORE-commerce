@@ -28,17 +28,23 @@ import * as Api from "../../../api";
 //         orderStatus: "doing",
 //     },
 // ];
+// 기본 주문 내역 최상단 컬럼 목록
+const columns = ["주문번호", "주문상품", "합계", "결제여부"];
 
 function OrderHistory() {
     const [orderList, setOrderList] = useState([]);
+    const [isOrder, setIsOrder] = useState(false); // 주문 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
 
     const fetchOrderList = async () => {
         try {
             const res = await Api.get("orders");
+            console.log(res.data[0].products[0].cart);
             if (res.date) {
+                setIsOrder(true);
                 setOrderList(res.data);
             } else {
                 console.log("빈내역 입니다");
+                setIsOrder(false);
             }
         } catch (err) {
             console.log(err);
@@ -53,20 +59,22 @@ function OrderHistory() {
         <Container>
             <Title>주문 내역</Title>
             <ListContainer>
-                {/* <Columns>
-                            {Object.keys(orderList[0]).map((column, idx) => (
-                                <Items key={`item-${idx}`}>{column}</Items>
-                            ))}
-                        </Columns> */}
-                {orderList.map((order, idx) => (
-                    <OrderCard key={`order-${idx}`} order={order} />
-                ))}
+                <Columns>
+                    {columns.map((column, idx) => (
+                        <Items key={`item-${idx}`}>{column}</Items>
+                    ))}
+                </Columns>
+                {isOrder ? (
+                    orderList.map((order, idx) => (
+                        <OrderCard key={`order-${idx}`} order={order} />
+                    ))
+                ) : (
+                    <NoOrder>"주문 내역이 없습니다."</NoOrder>
+                )}
             </ListContainer>
         </Container>
     );
 }
-
-// columns 는 어떤 목록을 보여줄 지 결정하여 만들기 !
 
 const Container = styled.div`
     width: 63.5%;
@@ -110,6 +118,13 @@ const Items = styled.div`
     text-align: center;
     line-height: 25px;
     font-weight: bold;
+`;
+
+const NoOrder = styled.div`
+    margin: 20px 0 30px 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #5e5b52;
 `;
 
 export default OrderHistory;

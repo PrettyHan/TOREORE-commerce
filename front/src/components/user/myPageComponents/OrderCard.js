@@ -4,25 +4,23 @@ import styled from "styled-components";
 
 function OrderCard({ order }) {
     const navigate = useNavigate();
+    const cartList = order.products[0].cart; // 주문내역 1개
 
     const productName = React.useMemo(() => {
-        if (order.orderProduct.length === 1) {
-            return order.orderProduct;
+        if (cartList.length === 1) {
+            return cartList;
         } else {
-            return `${order.orderProduct[0]} 외 ${
-                order.orderProduct.length - 1
-            }건`;
+            return `${cartList[0]} 외 ${cartList.length - 1}건`;
         }
-    }, [order.orderProduct]);
+    }, [cartList]);
 
     // 주문 완료 vs 진행 중 상태를 구분자로 색상, 상태, 클릭시 nav 까지 달라져 변수로 저장
-    const orderStatus = order.orderStatus;
+    const orderStatus = order.isPayed;
 
     // 미결제 건 클릭 시, order로 navigate 하여 결제 유도
-
     function sendOrder() {
-        if (orderStatus !== "done") {
-            navigate(`/order/${order.orderId}`);
+        if (orderStatus) {
+            navigate(`/order/${order._id}`);
         } else {
             console.log("디테일보여주자");
         }
@@ -30,12 +28,11 @@ function OrderCard({ order }) {
 
     return (
         <Container>
-            <Items>{order.orderNo}</Items>
-            <Items>{order.orderId}</Items>
+            <Items>{order._id}</Items>
             <Items>{productName}</Items>
-            <Items>{order.orderPrice}원</Items>
+            <Items>{order.totalPrice}원</Items>
             <OrderStatus color={orderStatus} onClick={sendOrder}>
-                {orderStatus === "done" ? "주문완료" : "진행 중"}
+                {orderStatus ? "주문완료" : "진행 중"}
             </OrderStatus>
         </Container>
     );
