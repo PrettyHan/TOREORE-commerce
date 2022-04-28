@@ -18,8 +18,8 @@ class Order {
         const orders = await OrderModel.find({});
         return orders;
     }
-    static async findByIspayed({isPayed}) {
-        const orders = await OrderModel.find({isPayed});
+    static async findByIspayed({isPayed, userId}) {
+        const orders = await OrderModel.find({isPayed, userId});
         return orders;
     }
 

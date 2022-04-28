@@ -59,7 +59,7 @@ orderRouter.get("/", async function (req, res, next) {
         const userId = req.currentUserId;
         const isPayed = req.query.ispayed;
         if (isPayed == "true" || isPayed == "false") {
-            const order = await orderService.getIspayedByQuery({isPayed});
+            const order = await orderService.getIspayedByQuery({isPayed, userId});
 
             if (order.errorMessage) {
                 throw new Error(order.errorMessage);

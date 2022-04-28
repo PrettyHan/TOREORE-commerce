@@ -35,8 +35,8 @@ class orderService {
         return order;
     }
 
-    static async getIspayedByQuery({ isPayed }) {
-        const order = await Order.findByIspayed({ isPayed });
+    static async getIspayedByQuery({ isPayed, userId }) {
+        const order = await Order.findByIspayed({ isPayed, userId });
         if (!order) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };
