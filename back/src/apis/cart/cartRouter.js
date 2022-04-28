@@ -30,7 +30,7 @@ cartRouter.post("/:productId", async (req, res, next) => {
         });
 
         if (newCarts.errorMessage) {
-            throw new Error(errorMessage(newCarts.errorMessage));
+            throw new Error(newCarts.errorMessage);
         }
 
         res.status(200).json(newCarts);
@@ -43,7 +43,7 @@ cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
         const productId = req.params.productId;
-        const { quantity } = req.body; // body로 수량 몇개로 수정하는지 or 기존에서 몇개 추가/제거 됐는지(+1 or -3 ...)
+        const quantity = req.body.quantity; // body로 수량 몇개로 수정하는지 or 기존에서 몇개 추가/제거 됐는지(+1 or -3 ...)
 
         const newCarts = await cartService.updateCartList({
             userId,

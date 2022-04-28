@@ -61,11 +61,13 @@ class cartService {
 
         // 트랜잭션을 적용할 수 있을지?
         // 수량정보 수정한 새로운 배열 반환
-        const newCartList = carts.map((objectId) => {
-            if (objectId === productId) {
-                objectId.quantity = quantity;
+        const newCartList = carts.map((productObject) => {
+            if (productObject.productId === productId) {
+                console.log(productObject.productId, productObject.quantity);
+                return { ...productObject, quantity: quantity };
             }
         });
+        console.log(newCartList);
 
         const fieldToUpdate = "cart";
         const newValue = newCartList;
