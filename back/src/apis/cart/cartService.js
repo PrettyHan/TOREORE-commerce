@@ -63,11 +63,9 @@ class cartService {
         // 수량정보 수정한 새로운 배열 반환
         const newCartList = carts.map((productObject) => {
             if (productObject.productId === productId) {
-                console.log(productObject.productId, productObject.quantity);
                 return { ...productObject, quantity: quantity };
             }
         });
-        console.log(newCartList);
 
         const fieldToUpdate = "cart";
         const newValue = newCartList;
@@ -78,14 +76,15 @@ class cartService {
     }
 
     // 유저의 카트 리스트 삭제 -> id가 일치하는 product를 리스트에서 삭제
-    static async deleteProductIdOfCart({ userId, productId }) {
+    static async deleteProductOfCart({ userId, productId }) {
         const user = await User.findByUserId({ userId });
         const carts = user.cart; // cart list
 
         // 일치하는 product를 제외한 새로운 배열 반환
-        const newCartList = carts.filter((objectId) => {
-            return objectId !== productId;
+        const newCartList = carts.filter((productObject) => {
+            return productObject.productId !== productId;
         });
+        console.log(newCartList);
 
         const fieldToUpdate = "cart";
         const newValue = newCartList;
