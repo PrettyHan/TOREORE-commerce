@@ -40,7 +40,12 @@ class Product {
         return deleteProduct;
     }
 
-    static async findByLikeProductId({ productDelId }) {
+    static async findByLikeProductId({ proudctlikeId }) {
+        const product = await ProductModel.findOne({ productId : proudctlikeId });
+        return product;
+    }
+
+    static async findByLikeDelProductId({ productDelId }) {
         const product = await ProductModel.findOne({ productId : productDelId });
         return product;
     }

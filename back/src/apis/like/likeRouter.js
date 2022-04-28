@@ -13,7 +13,7 @@ likeRouter.use(loginRequired);
   - 이미 bookmark 리스트에 해당 제품 객체가 있다면 좋아요를 누르면 취소가 된다.
   - 좋아요 수는 저장하지 않음.
 */
-likeRouter.post("/liked", loginRequired, async function (req, res, next) {
+likeRouter.post("/", loginRequired, async function (req, res, next) {
   try {
     const currentUserId = req.currentUserId;
     const proudctlikeId = req.body.productId;
@@ -22,7 +22,6 @@ likeRouter.post("/liked", loginRequired, async function (req, res, next) {
       currentUserId,
       proudctlikeId,
     });
-    console.log(updatedlike);
     res.status(200).json(updatedlike);
   } catch (error) {
     next(error);
@@ -34,7 +33,7 @@ likeRouter.post("/liked", loginRequired, async function (req, res, next) {
 
 - 즐겨찾기에서 좋아요한 모든 상품 리스트 조회하기
 */
-likeRouter.get("/liked", loginRequired, async function (req, res, next) {
+likeRouter.get("/", loginRequired, async function (req, res, next) {
     try {
         const currentUserId = req.currentUserId;
         const likeproducts = await likeService.getlikeProducts({
@@ -57,7 +56,7 @@ likeRouter.get("/liked", loginRequired, async function (req, res, next) {
   - 즐겨찾기에서 좋아요한 특정 상품 삭제하기
 */
 
-likeRouter.delete("/liked/:product_id", loginRequired, async function (req, res, next) {
+likeRouter.delete("/:product_id", loginRequired, async function (req, res, next) {
   try {
       const currentUserId = req.currentUserId;
       const productDelId = req.params.product_id
