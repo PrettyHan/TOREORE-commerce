@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import OrderHistory from "./myPageComponents/OrderHistory";
 import LikedHistory from "./myPageComponents/LikedHistory";
@@ -8,7 +8,12 @@ import Points from "./myPageComponents/Points";
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
+import { UserStateContext } from "../../App";
+
 function MyPage() {
+    const userState = useContext(UserStateContext);
+    const user = userState.user;
+
     const constantsFirstState = {
         orderHistory: false,
         likedHistory: false,
@@ -38,8 +43,11 @@ function MyPage() {
             <Container>
                 <UserContainer>
                     <div>
-                        <p> 000님 안녕하세요!</p>
-                        <p> (user123, Green-Class)</p>
+                        <p> "{user.name}" 님 안녕하세요!</p>
+                        <p>
+                            {" "}
+                            ID ▶ {user.userId} {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                        </p>
                     </div>
                     <div>
                         <Button disableElevation disableRipple>
@@ -90,11 +98,7 @@ function MyPage() {
 }
 
 const Container = styled.div`
-<<<<<<< HEAD
-    margin-top: 200px;
-=======
     margin-top: 100px;
->>>>>>> 2926304c8f251b2f3020d3a49b1a3d12d538637b
     display: grid;
     row-gap: 20px;
     place-items: center center;

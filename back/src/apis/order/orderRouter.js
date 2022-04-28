@@ -54,7 +54,8 @@ orderRouter.post("/orders", async (req, res, next) => {
 
 orderRouter.get("/", async function (req, res, next) {
     try {
-        const orders = await orderSerivce.getOrders({});
+        const userId = req.currentUserId;
+        const orders = await orderSerivce.getOrders({ userId });
         if (orders.errorMessage) {
             throw new Error(orders.errorMessage);
         }

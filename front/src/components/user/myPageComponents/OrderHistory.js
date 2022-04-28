@@ -1,48 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import OrderCard from "./OrderCard";
 
-const orderList = [
-    {
-        orderNo: 1,
-        orderId: 56890014564,
-        orderProduct: ["jaket", "pinkpants", "redsocks"],
-        orderPrice: "15,000",
-        orderStatus: "done",
-    },
-    {
-        orderNo: 2,
-        orderId: 56890014544,
-        orderProduct: ["blouse", "trouser", "muffler"],
-        orderPrice: "37,000",
-        orderStatus: "doing",
-    },
-    {
-        orderNo: 3,
-        orderId: 56890014532,
-        orderProduct: ["skirt", "sunglass"],
-        orderPrice: "165,000",
-        orderStatus: "doing",
-    },
-];
+import * as Api from "../../../api";
+
+// test용 데이터
+// const orderLists = [
+//     {
+//         orderNo: 1,
+//         orderId: 56890014564,
+//         orderProduct: ["jaket", "pinkpants", "redsocks"],
+//         orderPrice: "15,000",
+//         orderStatus: "done",
+//     },
+//     {
+//         orderNo: 2,
+//         orderId: 56890014544,
+//         orderProduct: ["blouse", "trouser", "muffler"],
+//         orderPrice: "37,000",
+//         orderStatus: "doing",
+//     },
+//     {
+//         orderNo: 3,
+//         orderId: 56890014532,
+//         orderProduct: ["skirt", "sunglass"],
+//         orderPrice: "165,000",
+//         orderStatus: "doing",
+//     },
+// ];
 
 function OrderHistory() {
+    const [orderList, setOrderList] = useState([]);
+
+    const fetchOrderList = async () => {
+        try {
+            const res = await Api.get("orders");
+            if (res.date) {
+                setOrderList(res.data);
+            } else {
+                console.log("빈내역 입니다");
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchOrderList();
+    }, []);
+
     return (
         <Container>
             <Title>주문 내역</Title>
             <ListContainer>
-                <Columns>
-                    {Object.keys(orderList[0]).map((column, idx) => (
-                        <Items key={`item-${idx}`}>{column}</Items>
-                    ))}
-                </Columns>
-                {orderList.map((order) => (
-                    <OrderCard key={`order-${order.orderNo}`} order={order} />
+                {/* <Columns>
+                            {Object.keys(orderList[0]).map((column, idx) => (
+                                <Items key={`item-${idx}`}>{column}</Items>
+                            ))}
+                        </Columns> */}
+                {orderList.map((order, idx) => (
+                    <OrderCard key={`order-${idx}`} order={order} />
                 ))}
             </ListContainer>
         </Container>
     );
 }
+
+// columns 는 어떤 목록을 보여줄 지 결정하여 만들기 !
 
 const Container = styled.div`
     width: 63.5%;
