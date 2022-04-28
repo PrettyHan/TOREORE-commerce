@@ -29,6 +29,10 @@ cartRouter.post("/:productId", async (req, res, next) => {
             quantity,
         });
 
+        if (newCarts.errorMessage) {
+            throw new Error(errorMessage(newCarts.errorMessage));
+        }
+
         res.status(200).json(newCarts);
     } catch (error) {
         next(error);

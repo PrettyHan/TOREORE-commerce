@@ -7,15 +7,25 @@ class cartService {
         return user.cart; // array
     }
 
-    static async AddProductToCart({ userId, productId }) {
+    static async AddProductToCart({ userId, productId, quantity }) {
         const user = await User.findByUserId({ userId });
         const carts = user.cart;
 
         const productInfo = await Product.findByProductId({ productId });
-        const newProductInfo = { ...productInfo, quantity: quantity };
+        const newProductInfo = {
+            productId: productInfo.productId,
+            name: productInfo.name,
+            category: productInfo.category,
+            price: productInfo.price,
+            color: productInfo.color,
+            description: productInfo.description,
+            image: productInfo.image,
+            quantity: quantity,
+        };
 
         if (carts.length === 0) {
-            var newCartList = carts.push(newProductInfo);
+            var newCartList = [];
+            newCartList.push(newProductInfo);
         } else {
             // 기존 카트에 해당 상품이 존재하는지
             const checkedCartItems = carts.filter((productObject) => {
@@ -23,7 +33,12 @@ class cartService {
             });
 
             if (checkedCartItems.length === 0) {
-                var newCartList = carts.push(newProductInfo);
+                var newCartList = [...carts];
+                newCartList.push(newProductInfo);
+                console.log(newCartList);
+            } else {
+                const errorMessage = "장바구니에 동일한 상품이 이미 등록되어 있습니다.";
+                return { errorMessage };
             }
         }
 
