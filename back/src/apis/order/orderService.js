@@ -17,7 +17,7 @@ class orderService {
     
     
     
-    static async getOrders() {
+    static async getOrders({userId}) {
         const orders = await Order.findByUserId({userId});
         if (!orders) {
             const errorMessage = "해당 데이터가 없습니다.";
@@ -35,8 +35,8 @@ class orderService {
         return order;
     }
 
-    static async getIspayedByQuery({ ispayed }) {
-        const order = await Order.findByIspayed({ ispayed });
+    static async getIspayedByQuery({ isPayed }) {
+        const order = await Order.findByIspayed({ isPayed });
         if (!order) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };

@@ -7,7 +7,7 @@ class Order {
     }
 
     static async findByOrderId({ orderId }) {
-        const order = await OrderModel.findOne({ _id : orderId });
+        const order = await OrderModel.findOne({ orderId });
         return order;
     }
     static async findByUserId({ userId }) {
@@ -18,8 +18,8 @@ class Order {
         const orders = await OrderModel.find({});
         return orders;
     }
-    static async findByIspayed({ispayed}) {
-        const orders = await OrderModel.find({ispayed});
+    static async findByIspayed({isPayed}) {
+        const orders = await OrderModel.find({isPayed});
         return orders;
     }
 

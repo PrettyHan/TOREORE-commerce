@@ -24,7 +24,7 @@ orderRouter.post("/", async (req, res, next) => {
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const ArrayProducts = products; // 가공 할 것, or req.user로 접근가능한지 확인
+        const ArrayProducts = products; // 가공 할 것, Array 확인
         const totalPrice = 5000000; // total price 가공 필요
         const isPayed = false;
 
@@ -56,13 +56,25 @@ orderRouter.post("/", async (req, res, next) => {
 
 orderRouter.get("/", async function (req, res, next) {
     try {
-        const userId = req.currentUserId
-        const orders = await orderService.getOrders({userId});
+        const userId = req.currentUserId;
+        const isPayed = req.query.ispayed;
+        if (isPayed == "true" || isPayed == "false") {
+            const order = await orderService.getIspayedByQuery({isPayed});
+
+            if (order.errorMessage) {
+                throw new Error(order.errorMessage);
+            }
+    
+            res.status(200).send(order);
+        }
+        else {
+            const orders = await orderService.getOrders({userId});
+        
         if (orders.errorMessage) {
             throw new Error(orders.errorMessage);
         }
-
         res.status(200).send(orders);
+    }
     } catch (error) {
         next(error);
     }
@@ -83,10 +95,10 @@ orderRouter.get("/:orderId", async function (req, res, next) {
     }
 });
 
-orderRouter.get("/?ispayed=TrueOrFalse", async function (req, res, next) {
+orderRouter.get("/?ispayed=boolean", async function (req, res, next) {
     try {
-        const ispayed = req.query;
-        const order = await orderService.getIspayedByQuery(ispayed);
+        const isPayed = req.query.ispayed;
+        const order = await orderService.getIspayedByQuery({isPayed});
 
         if (order.errorMessage) {
             throw new Error(order.errorMessage);
