@@ -86,10 +86,14 @@ function App() {
                             <Route path="/myPage" element={<MyPage />} />
                             <Route path="/auth/:id" element={<Main />} />
                             <Route path="*" element={<Main />} />
-                            <Route path="/products" element={<ProductList />} />
                             <Route
                                 exact
-                                path="/products/:categoryId/:productId"
+                                path="/products/:category"
+                                element={<ProductList />}
+                            />
+                            <Route
+                                exact
+                                path="/products/:category/:productId"
                                 element={<ProductDetail />}
                             />
                         </Routes>

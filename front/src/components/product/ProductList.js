@@ -1,11 +1,10 @@
 import React, { useEffect, useReducer } from "react";
+import { useParams } from "react-router-dom";
 
 import ProductItem from "./ProductItem";
 
 import "../../style/productList.css";
 import * as Api from "../../api";
-
-export const ProductStateContext = React.createContext();
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -17,26 +16,25 @@ const reducer = (state, action) => {
 };
 
 const ProductList = () => {
+    const { category } = useParams();
+
     const [productList, dispatch] = useReducer(reducer, []);
 
     const getData = async () => {
-        Api.get("products").then((res) => {
-            dispatch({ type: "INIT", data: res.data });
-        });
+        const res = await Api.get(`products?cid=${category}`);
+        dispatch({ type: "INIT", data: res.data });
     };
 
     useEffect(() => {
         getData();
-    }, []);
+    }, [category]);
 
     return (
-        <ProductStateContext.Provider value={productList}>
-            <div className="productList-container">
-                {productList.map((item) => (
-                    <ProductItem key={item.productId} {...item} />
-                ))}
-            </div>
-        </ProductStateContext.Provider>
+        <div className="productList-container">
+            {productList.map((item) => (
+                <ProductItem key={item.productId} {...item} />
+            ))}
+        </div>
     );
 };
 
