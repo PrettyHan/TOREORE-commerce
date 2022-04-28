@@ -1,5 +1,5 @@
-// import { Schema, model } from "mongoose";
 import pkg from "mongoose";
+
 const { Schema, model } = pkg;
 
 const ProductSchema = new Schema(
@@ -34,6 +34,11 @@ const ProductSchema = new Schema(
             type: String,
             required: false,
             default: "",
+        },
+        likeCount: {
+            type: Number,
+            required: false,
+            default: 0,
         },
     },
     {

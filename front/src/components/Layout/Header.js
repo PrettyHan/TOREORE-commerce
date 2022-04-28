@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Box, Typography, Tab } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -9,71 +9,96 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
 import styled from "styled-components";
 
-// import { UserStateContext, DispatchContext } from "../App";
+import { UserStateContext, DispatchContext } from "../../App";
 
-function Header() {
+function Header({ handleOpen }) {
   const navigate = useNavigate();
-  // const useState = useContext(UserStateContext);
-  // const dispatch = useContext(DispatchContext);
+  const userState = useContext(UserStateContext);
+  const dispatch = useContext(DispatchContext);
 
-  // // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
-  // const isLogin = !!useState.user;
-  const isLogin = true;
+  // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
+  const isLogin = !!userState.user;
 
-  // // 로그아웃 함수
-  // const logout = () => {
-  //   // sessionStorage에 저장했던 JWT 토큰 삭제
-  //   sessionStorage.removeItem("userToken");
-  //   // dispatch 함수를 이용해 로그아웃함.
-  //   dispatch({ type: "LOGOUT" });
-  //   // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
-  //   navigate("/");
-  // };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+
+  // 로그아웃 함수
+  const logout = () => {
+    // sessionStorage에 저장했던 JWT 토큰 삭제
+    sessionStorage.removeItem("userToken");
+    // dispatch 함수를 이용해 로그아웃함.
+    dispatch({ type: "LOGOUT" });
+    // 메인 화면으로 돌아감. ( 로그인 화면으로 돌아갈지는 생각 )
+    navigate("/");
+  };
 
   return (
-    <Box sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
-      <AppBar position="fixed" color="transparent" sx={{ boxShadow: 0 }}>
-        <Toolbar>
-          <Tab
-            icon={<HelpOutlineOutlinedIcon />}
-            onClick={() => navigate("/introduce")}
-            style={{ paddingRight: 0, minWidth: "50px" }}
-            disableElevation
-            disableRipple
-          />
-          <Details>About TOREOLRE</Details>
-          <Box sx={{ flexGrow: 1, padding: 0 }} />
-          <Wrap>
-            <Typography>또래와 함께 하는 쇼핑 ,</Typography>
-          </Wrap>
-          <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
-          <Box sx={{ flexGrow: 1, padding: 0 }} />
-          <Box sx={{ display: { xs: "flex", md: "flex" } }}>
-            <NavIcon
-              icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
-              onClick={() => navigate("/login")}
+    <Container sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
+      {scrollPosition < 110 ? (
+        <HeaderVar color="transparent" sx={{ boxShadow: 0 }}>
+          <Toolbar>
+            <Tab
+              icon={<HelpOutlineOutlinedIcon />}
+              onClick={() => navigate("/introduce")}
+              style={{ paddingRight: 0, minWidth: "50px" }}
               disableElevation
               disableRipple
             />
-            <NavIcon
-              icon={<ShoppingCartOutlinedIcon />}
-              onClick={() => navigate("/cart")}
-              disableElevation
-              disableRipple
-            />
-            <NavIcon
-              icon={<PersonOutlinedIcon />}
-              onClick={() => navigate("/myPage")}
-              disableElevation
-              disableRipple
-            />
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <Details>About TOREOLRE</Details>
+            <Box sx={{ flexGrow: 1, padding: 0 }} />
+            <Wrap>
+              <Typography>또래와 함께 하는 쇼핑 ,</Typography>
+            </Wrap>
+            <MainTitle onClick={() => navigate("/")}>TOREOLRE</MainTitle>
+            <Box sx={{ flexGrow: 1, padding: 0 }} />
+            <Box sx={{ display: { xs: "flex", md: "flex" } }}>
+              <NavIcon
+                icon={isLogin ? <LogoutIcon /> : <LoginIcon />}
+                onClick={isLogin ? logout : handleOpen}
+                disableElevation
+                disableRipple
+              />
+              <NavIcon
+                icon={<ShoppingCartOutlinedIcon />}
+                onClick={() => navigate("/cart")}
+                disableElevation
+                disableRipple
+              />
+              <NavIcon
+                icon={<PersonOutlinedIcon />}
+                onClick={() => navigate("/myPage")}
+                disableElevation
+                disableRipple
+              />
+            </Box>
+          </Toolbar>
+        </HeaderVar>
+      ) : (
+        <></>
+      )}
+    </Container>
   );
 }
 export default Header;
+
+const Container = styled(Box)`
+  position: relative;
+  padding-top: 50px;
+`;
+
+const HeaderVar = styled(AppBar)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+`;
 
 const NavIcon = styled(Tab)`
   cursor: pointer;

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  Avatar,
   Button,
   CssBaseline,
   TextField,
@@ -11,26 +10,28 @@ import {
   FormHelperText,
   Grid,
   Box,
-  Typography,
   Container,
   RadioGroup,
   Radio,
 } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styled from "styled-components";
-import DatePicker from "react-datepicker";
 
-import * as Api from "../api";
+import * as Api from "../../api";
 import { ValidateData } from "./Validate";
 
 const FormHelperTexts = styled(FormHelperText)`
-  width: 100%;
-  padding-left: 16px;
-  font-weight: 700;
-  color: #d32f2f;
+  && {
+    width: 100%;
+    padding-left: 16px;
+    font-weight: 300;
+    color: #d32f2f;
+  }
 `;
 const Boxs = styled(Box)`
-  padding-bottom: 40px;
+  && {
+    padding-bottom: 40px;
+  }
 `;
 
 function RegisterCard({ setIsSigning }) {
@@ -38,7 +39,6 @@ function RegisterCard({ setIsSigning }) {
 
   const [checked, setChecked] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [birthDate, setBirthDate] = useState(new Date());
   const [body, setBody] = useState({
     email: "",
     password: "",
@@ -57,25 +57,27 @@ function RegisterCard({ setIsSigning }) {
     checked
   );
 
-  // date객체를 문자열로 변환
-  function dateToString(date) {
-    return (
-      date.getFullYear() +
-      "-" +
-      (date.getMonth() + 1).toString().padStart(2, "0") +
-      "-" +
-      date.getDate().toString().padStart(2, "0")
-    );
-  }
-
-  // body State변경
-  const handleChange = (event) => {
+  useEffect(() => {
     setErrorMessage((current) => {
       return {
         ...current,
         ...getErrorMessage,
       };
     });
+  }, [getErrorMessage]);
+  // // date객체를 문자열로 변환
+  // function dateToString(date) {
+  //   return (
+  //     date.getFullYear() +
+  //     "-" +
+  //     (date.getMonth() + 1).toString().padStart(2, "0") +
+  //     "-" +
+  //     date.getDate().toString().padStart(2, "0")
+  //   );
+  // }
+
+  // body State변경
+  const handleChange = (event) => {
     setBody((current) => {
       return {
         ...current,
@@ -85,30 +87,18 @@ function RegisterCard({ setIsSigning }) {
   };
 
   const handleAgree = (event) => {
-    setErrorMessage((current) => {
-      return {
-        ...current,
-        ...getErrorMessage,
-      };
-    });
     setChecked(event.target.checked);
   };
 
-  const handleDate = (event) => {
-    setBirthDate(event.target.checked);
-    setErrorMessage((current) => {
-      return {
-        ...current,
-        ...getErrorMessage,
-      };
-    });
-    setBody((current) => {
-      return {
-        ...current,
-        birth: dateToString(birthDate),
-      };
-    });
-  };
+  // const handleDate = (value) => {
+  //   setBirthDate(value);
+  //   setBody((current) => {
+  //     return {
+  //       ...current,
+  //       birth: dateToString(birthDate),
+  //     };
+  //   });
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -130,16 +120,11 @@ function RegisterCard({ setIsSigning }) {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
-          <Typography component="h1" variant="h5">
-            회원가입
-          </Typography>
           <Boxs
             component="form"
             noValidate
@@ -158,6 +143,7 @@ function RegisterCard({ setIsSigning }) {
                     name="email"
                     label="이메일 주소"
                     autoComplete="email"
+                    size="small"
                     value={body.email}
                     onChange={handleChange}
                     error={(errorMessage.emailError !== "") | false}
@@ -173,6 +159,7 @@ function RegisterCard({ setIsSigning }) {
                     name="password"
                     label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
                     autoComplete="off"
+                    size="small"
                     value={body.password}
                     onChange={handleChange}
                     error={(errorMessage.passwordError !== "") | false}
@@ -184,10 +171,11 @@ function RegisterCard({ setIsSigning }) {
                     required
                     fullWidth
                     type="password"
-                    id="rePassword"
-                    name="rePassword"
+                    id="confirmPassword"
+                    name="confirmPassword"
                     label="비밀번호 재입력"
                     autoComplete="off"
+                    size="small"
                     value={confirmPassword}
                     onChange={(event) => setConfirmPassword(event.target.value)}
                     error={(errorMessage.passwordNotSameError !== "") | false}
@@ -200,10 +188,26 @@ function RegisterCard({ setIsSigning }) {
                   <TextField
                     required
                     fullWidth
+                    id="userId"
+                    name="userId"
+                    label="아이디"
+                    autoComplete="userId"
+                    size="small"
+                    value={body.userId}
+                    onChange={handleChange}
+                    error={(errorMessage.userIdError !== "") | false}
+                  />
+                </Grid>
+                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
                     id="name"
                     name="name"
                     label="이름"
                     autoComplete="name"
+                    size="small"
                     value={body.name}
                     onChange={handleChange}
                     error={(errorMessage.nameError !== "") | false}
@@ -217,17 +221,18 @@ function RegisterCard({ setIsSigning }) {
                     name="gender"
                     value={body.gender}
                     onChange={handleChange}
-                    error={(errorMessage.genderError !== "") | false}
                   >
                     <FormControlLabel
                       value="0"
-                      control={<Radio />}
+                      control={<Radio size="small" />}
                       label="Female"
+                      sx={{ fontSize: 12 }}
                     />
                     <FormControlLabel
                       value="1"
-                      control={<Radio />}
+                      control={<Radio size="small" />}
                       label="Male"
+                      sx={{ fontSize: 12 }}
                     />
                   </RadioGroup>
                 </Grid>
@@ -236,24 +241,11 @@ function RegisterCard({ setIsSigning }) {
                   <TextField
                     required
                     fullWidth
-                    id="userId"
-                    name="userId"
-                    label="닉네임"
-                    autoComplete="userId"
-                    value={body.userId}
-                    onChange={handleChange}
-                    error={(errorMessage.userIdError !== "") | false}
-                  />
-                </Grid>
-                <FormHelperTexts>{}</FormHelperTexts>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
                     id="phone"
                     name="phone"
                     label="전화번호"
                     autoComplete="phone"
+                    size="small"
                     value={body.phone}
                     onChange={handleChange}
                     error={(errorMessage.phoneError !== "") | false}
@@ -261,7 +253,28 @@ function RegisterCard({ setIsSigning }) {
                 </Grid>
                 <FormHelperTexts>{errorMessage.phoneError}</FormHelperTexts>
                 <Grid item xs={12}>
-                  <DatePicker selected={birthDate} onChange={handleDate} />
+                  {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DesktopDatePicker
+                      label={"생년월일"}
+                      value={birthDate}
+                      onChange={handleDate}
+                      renderInput={(params) => (
+                        <TextField {...params} size="small" />
+                      )}
+                    />
+                  </LocalizationProvider> */}
+                  <TextField
+                    required
+                    fullWidth
+                    id="birth"
+                    name="birth"
+                    label="생년월일 (YYYY-MM-DD)"
+                    autoComplete="birth"
+                    size="small"
+                    value={body.birth}
+                    onChange={handleChange}
+                    error={(errorMessage.birthError !== "") | false}
+                  />
                 </Grid>
                 <FormHelperTexts>{errorMessage.birthError}</FormHelperTexts>
                 <Grid item xs={12}>

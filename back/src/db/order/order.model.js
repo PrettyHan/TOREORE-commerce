@@ -6,8 +6,8 @@ class Order {
         return createdNewOrder;
     }
 
-    static async findByProductId({ orderId }) {
-        const order = await OrderModel.findOne({ orderId });
+    static async findByOrderId({ orderId }) {
+        const order = await OrderModel.findOne({ _id : orderId });
         return order;
     }
 
@@ -15,23 +15,27 @@ class Order {
         const orders = await OrderModel.find({});
         return orders;
     }
+    static async findByIspayed({ispayed}) {
+        const orders = await OrderModel.find({ispayed});
+        return orders;
+    }
 
     static async update({ orderId, fieldToUpdate, newValue }) {
-        const filteredById = { orderId };
+        const filteredById = { _id : orderId };
         const updateData = { [fieldToUpdate]: newValue };
         const option = { returnOriginal: false };
 
         const updateProduct = await OrderModel.findOneAndUpdate(
             filteredById,
             updateData,
-            option
+            option,
         );
 
         return updateProduct;
     }
 
-    static async deleteByProductId({ orderId }) {
-        const deleteOrder = await OrderModel.deleteOne({ orderId });
+    static async deleteByOrderId({ orderId }) {
+        const deleteOrder = await OrderModel.deleteOne({ _id : orderId });
         return deleteOrder;
     }
 }
