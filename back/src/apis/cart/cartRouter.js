@@ -16,6 +16,25 @@ cartRouter.get("/", async (req, res, next) => {
     }
 });
 
+// 장바구니에 상품 등록(수량정보 body로 받기)
+cartRouter.post("/:productId", async (req, res, next) => {
+    try {
+        const userId = req.currentUserId;
+        const productId = req.params.productId;
+        const quantity = req.body.quantity;
+
+        const newCarts = await cartService.AddProductToCart({
+            userId,
+            productId,
+            quantity,
+        });
+
+        res.status(200).json(newCarts);
+    } catch (error) {
+        next(error);
+    }
+});
+
 cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
@@ -48,5 +67,15 @@ cartRouter.delete("/:productId", async (req, res, next) => {
 });
 
 // 장바구니 리스트 전체 비우는 api도 추가해야?
+cartRouter.delete("/", async (req, res, next) => {
+    try {
+        const userId = req.currentUserId;
+        const deletedCart = await cartService.deleteAllProducts({ userId });
+
+        res.status(200).json(deletedCart);
+    } catch (error) {
+        next(error);
+    }
+});
 
 export { cartRouter };
