@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, TableRow, Checkbox } from "@mui/material";
 import CartTableCell from "./CartTableCell";
 
 // import * as Api from "../../api";
 
 function CartItem({ cartItem, setCartItems, index }) {
+  // 삭제 핸들링 함수
   const handleRemove = async () => {
     try {
       if (window.confirm("상품을 삭제 하시겠습니까?")) {
@@ -22,6 +23,7 @@ function CartItem({ cartItem, setCartItems, index }) {
     }
   };
 
+  // 수량 추가 핸들링 함수
   const handlePlus = async () => {
     try {
       // const res = await Api.put(`carts/${cartItem.productId}`, {
@@ -45,6 +47,7 @@ function CartItem({ cartItem, setCartItems, index }) {
     }
   };
 
+  // 수량 감소 핸들링 함수
   const handleMinus = async () => {
     try {
       // const res = await Api.put(`carts/${cartItem.productId}`, {
@@ -69,6 +72,7 @@ function CartItem({ cartItem, setCartItems, index }) {
     }
   };
 
+  // 체크박스 핸들링 함수
   const handleCheck = (event) => {
     setCartItems((current) => {
       return current.map((item) => {
@@ -84,24 +88,6 @@ function CartItem({ cartItem, setCartItems, index }) {
   };
 
   return (
-    // <Box>
-    //   <img src={cartItem.image} alt={cartItem.name} />
-    //   <Grid>
-    //     {cartItem.name}
-    //     <Button onClick={removeHandler}>X</Button>
-    //   </Grid>
-    //   <Grid>
-    //     <Typography>판매가: {cartItem.price}원</Typography>
-    //     <Typography>
-    //       주문금액: {cartItem.price * cartItem.quantity}원
-    //     </Typography>
-    //   </Grid>
-    //   <Grid>
-    //     <Button onClick={plusHandler}>+</Button>
-    //     <Typography>{cartItem.quantity}</Typography>
-    //     <Button onClick={minusHandler}>-</Button>
-    //   </Grid>
-    // </Box>
     <TableRow key={cartItem.productId}>
       <CartTableCell>{index}</CartTableCell>
       <CartTableCell>
