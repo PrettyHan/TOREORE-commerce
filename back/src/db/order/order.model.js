@@ -10,7 +10,10 @@ class Order {
         const order = await OrderModel.findOne({ _id : orderId });
         return order;
     }
-
+    static async findByUserId({ userId }) {
+        const order = await OrderModel.find({ userId });
+        return order;
+    }
     static async findAll() {
         const orders = await OrderModel.find({});
         return orders;
