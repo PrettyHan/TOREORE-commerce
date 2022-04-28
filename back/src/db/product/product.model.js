@@ -11,9 +11,21 @@ class Product {
         return product;
     }
 
-    static async findByQuery(categoryQuery) {
-        const product = await ProductModel.find(categoryQuery);
-        return product;
+    static async findByQuery({cid, pid}) {
+        
+        if(cid && pid) {
+            const product = await ProductModel.find({categoty : cid, productId : pid});
+            return product
+        }
+        
+        if(cid){
+            const product = await ProductModel.find({categoty : cid});
+            return product
+        }
+        if(pid){
+            const product = await ProductModel.find({productId : pid});
+            return product
+        }
     }
 
     static async findAll() {
