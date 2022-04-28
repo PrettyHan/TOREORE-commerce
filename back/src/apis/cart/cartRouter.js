@@ -62,7 +62,7 @@ cartRouter.delete("/:productId", async (req, res, next) => {
         const userId = req.currentUserId;
         const productId = req.params.productId;
 
-        const carts = await cartService.deleteProductIdOfCart({ userId, productId });
+        const carts = await cartService.deleteProductOfCart({ userId, productId });
 
         res.status(200).json(carts);
     } catch (error) {
