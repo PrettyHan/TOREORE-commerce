@@ -1,44 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import LikedCard from "./LikedCard";
 
-const likedList = [
-    {
-        productId: "12345678",
-        image: "https://",
-        productName: "럭셔리 치마",
-        price: "14500",
-    },
-    {
-        productId: "25836914",
-        image: "https://",
-        productName: "촌스러운 양말",
-        price: "2500",
-    },
-    {
-        productId: "11111111",
-        image: "https://",
-        productName: "패턴화려한 넥타이",
-        price: "7500",
-    },
-];
+import * as Api from "../../../api";
+
+// const likedList = [
+//     {
+//         productId: "12345678",
+//         image: "https://",
+//         productName: "럭셔리 치마",
+//         price: "14500",
+//     },
+//     {
+//         productId: "25836914",
+//         image: "https://",
+//         productName: "촌스러운 양말",
+//         price: "2500",
+//     },
+//     {
+//         productId: "11111111",
+//         image: "https://",
+//         productName: "패턴화려한 넥타이",
+//         price: "7500",
+//     },
+// ];
+
+const columns = ["상품번호", "상품사진", "상품명", "가격"];
 
 function LikedHistory() {
+    const [likedList, setLikedList] = useState([]);
+    const [isLiked, setIsLiked] = useState(false); // 좋아요 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
+
+    const fetchLikedList = async () => {
+        try {
+            const res = await Api.get("liked");
+            if (res.date) {
+                setIsLiked(true);
+                setLikedList(res.data);
+            } else {
+                console.log("빈내역 입니다");
+                setIsLiked(false);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchLikedList();
+    }, []);
+
     return (
         <Container>
             <Title>좋아요</Title>
             <ListContainer>
                 <Columns>
-                    {Object.keys(likedList[0]).map((column) => (
+                    {columns.map((column) => (
                         <Items>{column}</Items>
                     ))}
                 </Columns>
-                {likedList.map((liked) => (
-                    <LikedCard
-                        key={likedList.indexOf(liked, 0)}
-                        liked={liked}
-                    />
-                ))}
+                {isLiked ? (
+                    likedList.map((liked) => (
+                        <LikedCard
+                            key={likedList.indexOf(liked, 0)}
+                            liked={liked}
+                        />
+                    ))
+                ) : (
+                    <NoLiked>"좋아요 내역이 없습니다."</NoLiked>
+                )}
             </ListContainer>
         </Container>
     );
@@ -86,6 +116,13 @@ const Items = styled.div`
     text-align: center;
     line-height: 25px;
     font-weight: bold;
+`;
+
+const NoLiked = styled.div`
+    margin: 20px 0 30px 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #5e5b52;
 `;
 
 export default LikedHistory;

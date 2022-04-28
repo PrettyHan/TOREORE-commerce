@@ -4,6 +4,7 @@ import OrderHistory from "./myPageComponents/OrderHistory";
 import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
+import UserEditForm from "./UserEditForm";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
@@ -15,6 +16,7 @@ function MyPage() {
     const user = userState.user;
 
     const constantsFirstState = {
+        userEditForm: false,
         orderHistory: false,
         likedHistory: false,
         coupon: false,
@@ -23,6 +25,7 @@ function MyPage() {
     const [isOpen, setIsOpen] = useState(constantsFirstState);
 
     const components = {
+        userEditForm: <UserEditForm />,
         orderHistory: <OrderHistory />,
         likedHistory: <LikedHistory />,
         coupon: <Coupon />,
@@ -50,7 +53,16 @@ function MyPage() {
                         </p>
                     </div>
                     <div>
-                        <Button disableElevation disableRipple>
+                        <Button
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    userEditForm: true,
+                                })
+                            }
+                            disableElevation
+                            disableRipple
+                        >
                             회원 정보 수정
                         </Button>
                     </div>
