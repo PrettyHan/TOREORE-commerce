@@ -64,7 +64,7 @@ function RegisterCard({ setIsSigning }) {
         ...getErrorMessage,
       };
     });
-  }, [getErrorMessage]);
+  }, [checked, confirmPassword, body]);
   // // date객체를 문자열로 변환
   // function dateToString(date) {
   //   return (
