@@ -10,7 +10,7 @@ import {
   TableRow,
   TableBody,
 } from "@mui/material/";
-import CartItem from "./CartItem";
+import CartItemCard from "./CartItemCard";
 import CartTableCell from "./CartTableCell";
 
 import * as Api from "../../api";
@@ -50,7 +50,7 @@ function Cart() {
   const [cartItems, setCartItems] = useState(fakeData);
   // 카트아이템카드 컴포넌트 맵핑
   const cartItemList = cartItems.map((cartItem, index) => (
-    <CartItem
+    <CartItemCard
       cartItem={cartItem}
       setCartItems={setCartItems}
       index={index + 1}
