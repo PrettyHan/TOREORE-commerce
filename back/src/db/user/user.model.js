@@ -82,6 +82,15 @@ class User {
         return user;
     }
 
+    static async deleteProductBySelected({ userId, productId }) {
+        await UserModel.findOneAndUpdate(
+            { userId },
+            {
+                $pull: { cart: { productId } },
+            },
+        );
+    }
+
     static async deleteById({ userId }) {
         const deletdUser = await UserModel.deleteOne({ userId });
         await OrderModel.findByIdAndDelete({ userId }); // userId로 검색된 주문정보 모두 삭제

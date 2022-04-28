@@ -1,10 +1,9 @@
 import { User, Product } from "../../db";
 
 class cartService {
-    // 유저의 카트 리스트 조회
     static async getCartList({ userId }) {
         const user = await User.findByUserId({ userId });
-        return user.cart; // array
+        return user.cart;
     }
 
     static async AddProductToCart({ userId, productId, quantity }) {
@@ -59,8 +58,6 @@ class cartService {
             return { errorMessage };
         }
 
-        // 트랜잭션을 적용할 수 있을지?
-        // 수량정보 수정한 새로운 배열 반환
         const newCartList = carts.map((productObject) => {
             if (productObject.productId === productId) {
                 return { ...productObject, quantity: quantity };
@@ -76,25 +73,23 @@ class cartService {
     }
 
     // 유저의 카트 리스트 삭제 -> id가 일치하는 product를 리스트에서 삭제
-    static async deleteProductOfCart({ userId, productId }) {
-        const user = await User.findByUserId({ userId });
-        const carts = user.cart; // cart list
-
-        // 일치하는 product를 제외한 새로운 배열 반환
-        const newCartList = carts.filter((productObject) => {
-            return productObject.productId !== productId;
+    static async deleteProductOfCart({ userId, productIdArr }) {
+        // const carts = user.cart;
+        
+        // const fieldToUpdate = "cart";
+        // const newValue = newCartList;
+        // const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
+        // console.log("카트리스트가 업데이트(삭제)된 유저 정보 >> ", updateCartList);
+        productIdArr.forEach(productId => {
+            await User.deleteProductBySelected({ userId, productId });
         });
-        console.log(newCartList);
+        const user = await User.findByUserId({ userId });
+        console.log("선택한 상품들을 모두 제거한 후의 장바구니 상태 >> ", user.cart);
 
-        const fieldToUpdate = "cart";
-        const newValue = newCartList;
-        const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
-        console.log("카트리스트가 업데이트(삭제)된 유저 정보 >> ", updateCartList);
-
-        return newCartList;
+        return user.cart;
     }
 
-    static async deleteAllProducts({ userId }) {
+    static async deleteAllProductsOfCart({ userId }) {
         const emptyCart = [];
         const fieldToUpdate = "cart";
         const newValue = emptyCart;
