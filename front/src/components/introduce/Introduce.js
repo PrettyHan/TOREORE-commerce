@@ -6,7 +6,7 @@ function Introduce() {
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             <div
                 style={{
-                    marginTop: "200px",
+                    marginTop: "100px",
                     display: "flex",
                     justifyContent: "center",
                     textAlign: "center",

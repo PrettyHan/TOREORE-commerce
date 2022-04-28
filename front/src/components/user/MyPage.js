@@ -90,7 +90,11 @@ function MyPage() {
 }
 
 const Container = styled.div`
+<<<<<<< HEAD
     margin-top: 200px;
+=======
+    margin-top: 100px;
+>>>>>>> 2926304c8f251b2f3020d3a49b1a3d12d538637b
     display: grid;
     row-gap: 20px;
     place-items: center center;
