@@ -88,6 +88,7 @@ class User {
             {
                 $pull: { cart: { productId } },
             },
+            { returnOriginal: false },
         );
     }
 

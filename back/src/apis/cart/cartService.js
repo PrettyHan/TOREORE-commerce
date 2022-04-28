@@ -34,7 +34,6 @@ class cartService {
             if (checkedCartItems.length === 0) {
                 var newCartList = [...carts];
                 newCartList.push(newProductInfo);
-                console.log(newCartList);
             } else {
                 const errorMessage = "장바구니에 동일한 상품이 이미 등록되어 있습니다.";
                 return { errorMessage };
@@ -67,24 +66,16 @@ class cartService {
         const fieldToUpdate = "cart";
         const newValue = newCartList;
         const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
-        console.log("카트리스트가 업데이트(수량변경)된 유저 정보 >> ", updateCartList);
+        console.log("장바구니가 업데이트(수량변경)된 유저 정보 >> ", updateCartList);
 
         return newCartList;
     }
 
-    // 유저의 카트 리스트 삭제 -> id가 일치하는 product를 리스트에서 삭제
     static async deleteProductOfCart({ userId, productIdArr }) {
-        // const carts = user.cart;
-        
-        // const fieldToUpdate = "cart";
-        // const newValue = newCartList;
-        // const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
-        // console.log("카트리스트가 업데이트(삭제)된 유저 정보 >> ", updateCartList);
-        productIdArr.forEach(productId => {
+        productIdArr.forEach(async (productId) => {
             await User.deleteProductBySelected({ userId, productId });
         });
         const user = await User.findByUserId({ userId });
-        console.log("선택한 상품들을 모두 제거한 후의 장바구니 상태 >> ", user.cart);
 
         return user.cart;
     }
