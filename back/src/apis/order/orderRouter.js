@@ -95,21 +95,6 @@ orderRouter.get("/:orderId", async function (req, res, next) {
     }
 });
 
-orderRouter.get("/?ispayed=boolean", async function (req, res, next) {
-    try {
-        const isPayed = req.query.ispayed;
-        const order = await orderService.getIspayedByQuery({isPayed});
-
-        if (order.errorMessage) {
-            throw new Error(order.errorMessage);
-        }
-
-        res.status(200).send(order);
-    } catch (error) {
-        next(error);
-    }
-});
-
 orderRouter.put("/orderId", async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
