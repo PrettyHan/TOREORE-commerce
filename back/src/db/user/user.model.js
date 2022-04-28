@@ -1,4 +1,5 @@
 import { UserModel } from "./user.schema";
+import { OrderModel } from "../order/order.schema";
 
 class User {
     static async create({ newUser }) {
@@ -83,6 +84,8 @@ class User {
 
     static async deleteById({ userId }) {
         const deletdUser = await UserModel.deleteOne({ userId });
+        await OrderModel.findByIdAndDelete({ userId }); // userId로 검색된 주문정보 모두 삭제
+
         return deletdUser;
     }
 }
