@@ -89,12 +89,12 @@ const UserSchema = new Schema(
         bookmark: {
             type: Array,
             required: false,
-            default: null,
+            default: [],
         },
         cart: {
             type: Array,
             required: false,
-            default: null,
+            default: [],
         },
     },
     {
