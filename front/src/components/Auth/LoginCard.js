@@ -51,7 +51,7 @@ function LoginCard({ setIsSigning }) {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState({
-    emailError: "",
+    userIdError: "",
     passwordError: "",
   });
 
@@ -63,9 +63,9 @@ function LoginCard({ setIsSigning }) {
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
     );
   };
-  const isEmailValid = validateId(userId);
+  const isUserIdValid = validateId(userId);
   const isPasswordValid = validatePassword(password);
-  const isFormValid = isEmailValid && isPasswordValid;
+  const isFormValid = isUserIdValid && isPasswordValid;
 
   // 로그인페이지 접속 시 쿠키에 정보가 있다면 저장된 정보로 이메일과 패스워드 설정
   // useEffect(() => {
@@ -84,41 +84,41 @@ function LoginCard({ setIsSigning }) {
   //   }
   // }, [cookies.rememberEmail, cookies.rememberPassword]);
 
-  // useEffect(() => {
-  //   if (!isEmailValid) {
-  //     setErrorMessage((current) => {
-  //       return {
-  //         ...current,
-  //         emailError: "올바른 형식의 이메일을 입력해주세요.",
-  //       };
-  //     });
-  //   } else {
-  //     setErrorMessage((current) => {
-  //       return {
-  //         ...current,
-  //         emailError: "",
-  //       };
-  //     });
-  //   }
-  // }, [isEmailValid]);
+  useEffect(() => {
+    if (!isUserIdValid) {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          userIdError: "아이디는 두글자 이상이여야 합니다.",
+        };
+      });
+    } else {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          userIdError: "",
+        };
+      });
+    }
+  }, [userId]);
 
-  // useEffect(() => {
-  //   if (!isPasswordValid) {
-  //     setErrorMessage((current) => {
-  //       return {
-  //         ...current,
-  //         passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
-  //       };
-  //     });
-  //   } else {
-  //     setErrorMessage((current) => {
-  //       return {
-  //         ...current,
-  //         passwordError: "",
-  //       };
-  //     });
-  //   }
-  // }, [isPasswordValid]);
+  useEffect(() => {
+    if (!isPasswordValid) {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          passwordError: "올바른 형식의 비밀번호를 입력해주세요.",
+        };
+      });
+    } else {
+      setErrorMessage((current) => {
+        return {
+          ...current,
+          passwordError: "",
+        };
+      });
+    }
+  }, [password]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -153,12 +153,8 @@ function LoginCard({ setIsSigning }) {
         payload: user,
       });
 
-      // location의 pathname이 "/"이면 새로고침 아니면 뒤로가기
-      if (location.pathname === "/") {
-        navigate(0);
-      } else {
-        navigate(-1);
-      }
+      // 새로고침
+      navigate(0);
     } catch (err) {
       console.log(err);
     }
@@ -197,27 +193,11 @@ function LoginCard({ setIsSigning }) {
                     value={userId}
                     onChange={(event) => {
                       setUserId(event.target.value);
-                      // if (isEmailValid) {
-                      //   setErrorMessage((current) => {
-                      //     return {
-                      //       ...current,
-                      //       emailError: "",
-                      //     };
-                      //   });
-                      // } else {
-                      //   setErrorMessage((current) => {
-                      //     return {
-                      //       ...current,
-                      //       emailError: "올바른 형식의 이메일을 입력해주세요.",
-                      //     };
-                      //   });
-                      // }
-                      return;
                     }}
-                    error={(errorMessage.emailError !== "") | false}
+                    error={(errorMessage.userIdError !== "") | false}
                   />
                 </Grid>
-                <FormHelperTexts>{errorMessage.emailError}</FormHelperTexts>
+                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
                 <Grid item xs={12}>
                   <TextField
                     required
@@ -231,23 +211,6 @@ function LoginCard({ setIsSigning }) {
                     value={password}
                     onChange={(event) => {
                       setPassword(event.target.value);
-                      // if (isPasswordValid) {
-                      //   setErrorMessage((current) => {
-                      //     return {
-                      //       ...current,
-                      //       passwordError: "",
-                      //     };
-                      //   });
-                      // } else {
-                      //   setErrorMessage((current) => {
-                      //     return {
-                      //       ...current,
-                      //       passwordError:
-                      //         "올바른 형식의 비밀번호를 입력해주세요.",
-                      //     };
-                      //   });
-                      // }
-                      return;
                     }}
                     error={(errorMessage.passwordError !== "") | false}
                   />

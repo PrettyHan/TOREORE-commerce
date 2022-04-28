@@ -24,17 +24,9 @@ const OrderSchema = new Schema(
             type: String,
             required: true,
         },
-        totalPrice: {
-            type: Number,
-            required: true,
-        },
-        orderName: {
-            type: String,
-            required: true,
-        },
         zipcode: {
             type: Object,
-            required: true,
+            required: false,
             default: null,
             properties: {
                 country: {

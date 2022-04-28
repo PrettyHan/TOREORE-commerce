@@ -7,16 +7,19 @@ class Order {
     }
 
     static async findByOrderId({ orderId }) {
-        const order = await OrderModel.findOne({ _id : orderId });
+        const order = await OrderModel.findOne({ orderId });
         return order;
     }
-
+    static async findByUserId({ userId }) {
+        const order = await OrderModel.find({ userId });
+        return order;
+    }
     static async findAll() {
         const orders = await OrderModel.find({});
         return orders;
     }
-    static async findByIspayed({ispayed}) {
-        const orders = await OrderModel.find({ispayed});
+    static async findByIspayed({isPayed, userId}) {
+        const orders = await OrderModel.find({isPayed, userId});
         return orders;
     }
 

@@ -1,4 +1,5 @@
 import { UserModel } from "./user.schema";
+import { OrderModel } from "../order/order.schema";
 
 class User {
     static async create({ newUser }) {
@@ -10,8 +11,9 @@ class User {
         const user = await UserModel.findOne({ userId });
         return user;
     }
+
     static async findCartsByUserId({ userId }) {
-        const user = await UserModel.findOne({ userId }, {cart : 1, _id : 0});
+        const user = await UserModel.findOne({ userId }, { cart: 1, _id: 0 });
         return user;
     }
 
@@ -38,9 +40,12 @@ class User {
         좋아요를 클릭 시 좋아요를 누른 유저의 bookmark에 해당 상품 저장
     */
     static async updateLikeProductPush({ userId, Value }) {
-        const updatedUser = await UserModel.findOneAndUpdate({ userId: userId.userId }, {
-        $push: { bookmark: Value }
-        });
+        const updatedUser = await UserModel.findOneAndUpdate(
+            { userId: userId.userId },
+            {
+                $push: { bookmark: Value },
+            },
+        );
         return updatedUser;
     }
 
@@ -48,9 +53,12 @@ class User {
         좋아요를 클릭 시 좋아요를 누른 유저의 bookmark에 해당 상품 제거
     */
     static async updateLikeProductDel({ userId, Value }) {
-        const updatedUser = await UserModel.findOneAndUpdate({userId: userId.userId}, {
-        $pull: { bookmark: {_id : Value._id} }
-        });
+        const updatedUser = await UserModel.findOneAndUpdate(
+            { userId: userId.userId },
+            {
+                $pull: { bookmark: { _id: Value._id } },
+            },
+        );
         // console.log(updatedUser);
         return updatedUser;
     }
@@ -70,16 +78,16 @@ class User {
     }
 
     static async findByLikeUserId({ currentUserId }) {
-        const user = await UserModel.findOne({ userId : currentUserId });
+        const user = await UserModel.findOne({ userId: currentUserId });
         return user;
     }
 
-
     static async deleteById({ userId }) {
         const deletdUser = await UserModel.deleteOne({ userId });
+        await OrderModel.findByIdAndDelete({ userId }); // userId로 검색된 주문정보 모두 삭제
+
         return deletdUser;
     }
-
 }
 
 export { User };
