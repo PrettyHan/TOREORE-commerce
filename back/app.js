@@ -1,7 +1,7 @@
 import "dotenv/config";
 import cors from "cors";
 import express from "express";
-import { indexRouter } from "./src/mvp/index";
+import { indexRouter } from "./src/apis/index";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware";
 
 const app = express();

@@ -1,5 +1,5 @@
+import { useNavigate } from "react-router-dom";
 import "../../style/category.css";
-import ProductList from "./ProductList";
 
 const Category = () => {
     // 임시 data
@@ -22,6 +22,8 @@ const Category = () => {
         "Accessories",
     ];
 
+    const navigate = useNavigate();
+
     return (
         <>
             <div
@@ -32,7 +34,12 @@ const Category = () => {
                     textAlign: "center",
                 }}
             ></div>
-            <div className="category-container">
+            <div
+                className="category-container"
+                onClick={() => {
+                    navigate("./products");
+                }}
+            >
                 {category1.map((item) => (
                     <div className="category">
                         <div className="category-btn">{item}</div>

@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import mongoose from "mongoose";
 import "dotenv/config";
-import { ProductModel } from "./product/product.schema.js";
+import { ProductModel } from "../src/db/product/product.schema.js";
 
 const DB_URL =
     process.env.MONGODB_URL ||

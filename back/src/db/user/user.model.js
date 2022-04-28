@@ -10,6 +10,10 @@ class User {
         const user = await UserModel.findOne({ userId });
         return user;
     }
+    static async findCartsByUserId({ userId }) {
+        const user = await UserModel.findOne({ userId }, {cart : 1, _id : 0});
+        return user;
+    }
 
     static async findAll() {
         const users = await UserModel.find({});
