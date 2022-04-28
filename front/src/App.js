@@ -8,6 +8,7 @@ import { loginReducer } from "./reducer";
 import Header from "./components/Layout/Header";
 import Main from "./components/Layout/Main";
 import Footer from "./components/Layout/Footer";
+import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
 import Login from "./components/Auth/Login";
@@ -40,7 +41,7 @@ function App() {
         try {
             // 이전에 발급받은 토큰이 있다면, 이를 가지고 유저 정보를 받아옴.
             const res = await Api.get("auth/user");
-            const currentUser = res.data.user;
+            const currentUser = res.data;
 
             // dispatch 함수를 통해 로그인 성공 상태로 만듦.
             dispatch({
@@ -85,26 +86,17 @@ function App() {
                             <Route path="/introduce" element={<Introduce />} />
                             <Route path="/myPage" element={<MyPage />} />
                             <Route path="/auth/:id" element={<Main />} />
-                            <Route path="*" element={<Main />} />
                             <Route path="/products" element={<ProductList />} />
                             <Route
                                 exact
                                 path="/products/:categoryId/:productId"
                                 element={<ProductDetail />}
                             />
+                            <Route path="*" element={<NotFound />} />
                         </Routes>
+                        <Footer />
                     </Router>
                 </React.Suspense>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Footer />
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );
