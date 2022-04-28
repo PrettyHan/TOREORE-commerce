@@ -39,6 +39,31 @@ class Product {
         const deleteProduct = await ProductModel.deleteOne({ productId });
         return deleteProduct;
     }
+
+    static async findByLikeProductId({ proudctlikeId }) {
+        const product = await ProductModel.findOne({ productId : proudctlikeId });
+        return product;
+    }
+
+    static async findByLikeDelProductId({ productDelId }) {
+        const product = await ProductModel.findOne({ productId : productDelId });
+        return product;
+    }
+
+    // 좋아요 수 갱신을 위한 함수
+    // static async likeProductUpdate({ productId, fieldToUpdate, newValue }) {
+    //     const product = productId.productId;
+    //     const filteredById = { product };
+    //     const updateData = { [fieldToUpdate]: newValue };
+    //     const option = { returnOriginal: false };
+
+    //     const updateProduct = await ProductModel.findOneAndUpdate(
+    //         filteredById,
+    //         updateData,
+    //         option,
+    //     );
+    //     return updateProduct;
+    // }
 }
 
 export { Product };
