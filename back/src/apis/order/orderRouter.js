@@ -1,19 +1,21 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
-import { orderSerivce } from "./orderSerivce";
+import { orderService } from "./orderService";
 import { userService } from "../user/userService";
+import mongoose from 'mongoose'
 
 const orderRouter = Router();
 orderRouter.use(loginRequired);
 
-orderRouter.post("/orders", async (req, res, next) => {
+orderRouter.post("/", async (req, res, next) => {
     try {
         if (is.emptyObject(req.body)) {
             throw new Error(
                 "headers의 Content-Type을 application/json으로 설정해주세요",
             );
         }
+        const orderId = mongoose.Types.ObjectId()
         const userId = req.currentUserId;
         const products = await userService.getUserCarts({
             userId,
@@ -22,7 +24,7 @@ orderRouter.post("/orders", async (req, res, next) => {
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const ArrayProducts = products; // 가공 할 것, or req.user로 접근가능한지 확인
+        const ArrayProducts = products; // 가공 할 것, Array 확인
         const totalPrice = 5000000; // total price 가공 필요
         const isPayed = false;
 
@@ -31,8 +33,8 @@ orderRouter.post("/orders", async (req, res, next) => {
         const orderData = {
             products,
             userId,
+            orderId,
             totalPrice,
-            isPayed,
             orderName,
             zipcode,
             message,
@@ -40,7 +42,7 @@ orderRouter.post("/orders", async (req, res, next) => {
             isPayed,
         };
 
-        const newOrder = await orderSerivce.createOrder(orderData);
+        const newOrder = await orderService.createOrder(orderData);
 
         if (newOrder.errorMessage) {
             throw new Error(newOrder.errorMessage);
@@ -54,12 +56,25 @@ orderRouter.post("/orders", async (req, res, next) => {
 
 orderRouter.get("/", async function (req, res, next) {
     try {
-        const orders = await orderSerivce.getOrders({});
+        const userId = req.currentUserId;
+        const isPayed = req.query.ispayed;
+        if (isPayed == "true" || isPayed == "false") {
+            const order = await orderService.getIspayedByQuery({isPayed, userId});
+
+            if (order.errorMessage) {
+                throw new Error(order.errorMessage);
+            }
+    
+            res.status(200).send(order);
+        }
+        else {
+            const orders = await orderService.getOrders({userId});
+        
         if (orders.errorMessage) {
             throw new Error(orders.errorMessage);
         }
-
         res.status(200).send(orders);
+    }
     } catch (error) {
         next(error);
     }
@@ -68,22 +83,7 @@ orderRouter.get("/", async function (req, res, next) {
 orderRouter.get("/:orderId", async function (req, res, next) {
     try {
         const orderId = req.params.orderId;
-        const order = await orderSerivce.getOrder({ orderId });
-
-        if (order.errorMessage) {
-            throw new Error(order.errorMessage);
-        }
-
-        res.status(200).send(order);
-    } catch (error) {
-        next(error);
-    }
-});
-
-orderRouter.get("/?ispayed=TrueOrFalse", async function (req, res, next) {
-    try {
-        const ispayed = req.query;
-        const order = await orderSerivce.getIspayedByQuery(ispayed);
+        const order = await orderService.getOrder({ orderId });
 
         if (order.errorMessage) {
             throw new Error(order.errorMessage);
@@ -114,7 +114,7 @@ orderRouter.put("/orderId", async (req, res, next) => {
             message,
             paymentMethod,
         };
-        const updatedOrder = await orderSerivce.updateOrder({
+        const updatedOrder = await orderService.updateOrder({
             orderId,
             toUpdate,
         });
@@ -133,7 +133,7 @@ orderRouter.delete("/orderId", async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
 
-        const deletedOrder = await orderSerivce.deleteOrder({ orderId });
+        const deletedOrder = await orderService.deleteOrder({ orderId });
 
         if (deletedOrder.errorMessage) {
             throw new Error(deletedOrder.errorMessage);

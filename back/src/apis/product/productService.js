@@ -20,8 +20,8 @@ class productService {
         return product;
     }
 
-    static async getProductByQuery(categoryQuery) {
-        const product = await Product.findByQuery(categoryQuery);
+    static async getProductByQuery({cid, pid}) {
+        const product = await Product.findByQuery({cid, pid});
         if (!product) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };
