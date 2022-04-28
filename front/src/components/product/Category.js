@@ -28,7 +28,7 @@ const Category = () => {
         <>
             <div
                 style={{
-                    marginTop: "100px",
+                    marginTop: "60px",
                     display: "flex",
                     justifyContent: "center",
                     textAlign: "center",
