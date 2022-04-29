@@ -20,12 +20,16 @@ orderRouter.post("/", async (req, res, next) => {
         const products = await userService.getUserCarts({
             userId,
         });
-
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const ArrayProducts = products; // 가공 할 것, Array 확인
-        const totalPrice = 5000000; // total price 가공 필요
+        const cartlist = products.cart
+        const cartPrices = cartlist.map((v) => {
+            return v.price
+        })
+        const totalPrice = cartPrices.reduce((a,b) =>{
+            return a += b
+        })
         const isPayed = false;
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
@@ -48,7 +52,7 @@ orderRouter.post("/", async (req, res, next) => {
             throw new Error(newOrder.errorMessage);
         }
 
-        res.status(201).json(newOrder);
+        res.status(201).json(products);
     } catch (error) {
         next(error);
     }
