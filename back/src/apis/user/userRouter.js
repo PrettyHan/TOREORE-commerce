@@ -4,6 +4,8 @@ import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
 
 const userRouter = Router();
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 userRouter.post("/signup", async (req, res, next) => {
     try {
@@ -36,6 +38,20 @@ userRouter.post("/signup", async (req, res, next) => {
         next(error);
     }
 });
+
+// google login
+userRouter.get(
+    "/google",
+    passport.authenticate("google", { scope: ["profile", "email"] }),
+);
+
+userRouter.get(
+    "/google/callback",
+    passport.authenticate("google", { failureRedirect: "/login" }),
+    (req, res) => {
+        res.redirect("/");
+    },
+);
 
 userRouter.post("/login", async (req, res, next) => {
     try {
