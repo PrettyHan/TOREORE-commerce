@@ -2,10 +2,9 @@ import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
+import passport from "passport";
 
 const userRouter = Router();
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 userRouter.post("/signup", async (req, res, next) => {
     try {

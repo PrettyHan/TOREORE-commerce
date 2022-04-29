@@ -3,16 +3,16 @@ import cors from "cors";
 import express from "express";
 import { indexRouter } from "./src/apis/index";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware";
+import passport from "passport";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
-const passport = require("passport");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 indexRouter(app);
 app.use(errorMiddleware);
