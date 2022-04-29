@@ -46,6 +46,7 @@ const ProductSchema = new Schema(
     },
 );
 
+ProductSchema.index({name: 'text'})
 const ProductModel = model("Product", ProductSchema);
 
 export { ProductModel };

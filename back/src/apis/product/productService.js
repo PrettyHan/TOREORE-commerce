@@ -20,8 +20,16 @@ class productService {
         return product;
     }
 
-    static async getProductByQuery({cid, pid}) {
-        const product = await Product.findByQuery({cid, pid});
+    static async getProductByQuery({cid, pid, keyword}) {
+        const product = await Product.findByQuery({cid, pid, keyword});
+        if (!product) {
+            const errorMessage = "해당 데이터가 없습니다.";
+            return { errorMessage };
+        }
+        return product;
+    }
+    static async getProductBySearch({keyword}) {
+        const product = await Product.findBySearch({keyword});
         if (!product) {
             const errorMessage = "해당 데이터가 없습니다.";
             return { errorMessage };
@@ -29,5 +37,4 @@ class productService {
         return product;
     }
 }
-
 export { productService };
