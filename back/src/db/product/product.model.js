@@ -11,7 +11,7 @@ class Product {
         return product;
     }
 
-    static async findByQuery({cid, pid}) {
+    static async findByQuery({cid, pid, keyword}) {
         
         if(cid && pid) {
             const product = await ProductModel.find({category : cid, productId : pid});
@@ -26,6 +26,10 @@ class Product {
             const product = await ProductModel.find({productId : pid});
             return product
         }
+    }
+    static async findBySearch({keyword}){
+        const product = await ProductModel.find({$text : {$search: keyword}})
+        return product
     }
 
     static async findAll() {
