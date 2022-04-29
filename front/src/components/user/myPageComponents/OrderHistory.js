@@ -99,6 +99,7 @@ const ListContainer = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-size: 17px;
 `;
 
 const Columns = styled.div`
@@ -123,7 +124,7 @@ const Items = styled.div`
 const NoOrder = styled.div`
     margin: 20px 0 30px 0;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     color: #5e5b52;
 `;
 

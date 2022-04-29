@@ -45,13 +45,13 @@ function MyPage() {
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             <Container>
                 <UserContainer>
-                    <div>
+                    <Intro>
                         <p> "{user.name}" 님 안녕하세요!</p>
                         <p>
                             {" "}
                             ID ▶ {user.userId} {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
                         </p>
-                    </div>
+                    </Intro>
                     <div>
                         <Button
                             onClick={() =>
@@ -117,7 +117,7 @@ const Container = styled.div`
 `;
 
 const UserContainer = styled(Box)`
-    width: 61%;
+    width: 62%;
     box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
     flex-grow: 1;
     display: flex;
@@ -127,6 +127,11 @@ const UserContainer = styled(Box)`
     padding: 0 20px 0 20px;
 `;
 
+const Intro = styled.div`
+    font-size: 20px;
+    font-weight: bold;
+`
+
 const ItemsContainer = styled(Box)`
     width: 63.5%;
     flex-wrap: wrap;
@@ -134,6 +139,8 @@ const ItemsContainer = styled(Box)`
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    font-size: 20px;
+    font-weight: bold;
 `;
 
 const Items = styled.div`

@@ -48,6 +48,7 @@ const Columns = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 `;
 export default Coupon;
