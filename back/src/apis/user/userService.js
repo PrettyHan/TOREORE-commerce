@@ -1,7 +1,7 @@
 import { User } from "../../db";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import is from "@sindresorhus/is";
+import { createAccessToken } from "../../util/createJWT";
 
 class userService {
     static async createUser(userData) {
@@ -51,10 +51,11 @@ class userService {
         }
 
         // 로그인 성공 -> JWT 웹 토큰 생성
-        const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
-        const accessToken = jwt.sign({ userId: user.userId }, secretKey, {
-            expiresIn: "6h",
-        });
+        // const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
+        // const accessToken = jwt.sign({ userId: user.userId }, secretKey, {
+        //     expiresIn: "6h",
+        // });
+        const accessToken = createAccessToken({ userId });
 
         const loginUser = {
             accessToken,
@@ -142,8 +143,7 @@ class userService {
         const user = await User.findCartsByUserId({ userId });
 
         if (is.emptyArray(user.cart)) {
-            const errorMessage =
-                "주문 정보가 없습니다. 다시 한 번 확인해 주세요.";
+            const errorMessage = "주문 정보가 없습니다. 다시 한 번 확인해 주세요.";
             return { errorMessage };
         }
 
