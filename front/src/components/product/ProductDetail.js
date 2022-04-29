@@ -1,23 +1,18 @@
 import Button from "@mui/material/Button";
 import React, { useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
 
 import "../../style/productDetail.css";
+import * as Api from "../../api";
 
 const ProductDetail = () => {
-    // 임시 data
-    const product = {
-        name: "어깨 꼬임 포인트 니트",
-        price: 50000,
-        desc: "광택감 있는 소재의 짧은 원피스. 깊게 파인 앞뒷면 V넥 디자인. 목 뒷면을 가로질러 끈을 묶는 스타일. 풍성하고 와이드한 7부 소매. 가는 신축성 소맷단. 가슴 아래와 허리 뒷면에 주름이 잡힌 솔기가 있음. 안감 생략.",
-        url: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
-    };
-
-    const {categoryId, productId} = useParams();
+    const navigate = useNavigate();
+    const { category, productId } = useParams();
 
     const [cnt, setCnt] = useState(1);
+    const [product, setProduct] = useState({});
 
-    const handleClick = (e) => {
+    const handleCntClick = (e) => {
         if (e.target.innerText === "+") {
             setCnt(cnt + 1);
         } else {
@@ -27,46 +22,80 @@ const ProductDetail = () => {
         }
     };
 
+    // 장바구니 버튼 클릭
+    const handleCartClick = async () => {
+        try {
+            await Api.post(`carts/${productId}`, { quantity: cnt });
+            if (window.confirm("장바구니로 이동하시겠습니까?")) {
+                navigate("/cart");
+            } else {
+                return;
+            }
+        } catch (err) {
+            alert(err.response.data);
+        }
+    };
+
+    // 바로구매 버튼 클릭
+    const handleOrderClick = () => {
+        Api.post(`orders/${productId}`, { quantity: cnt });
+    };
+
+    // 찜 버튼 클릭
+    const handleLikeClick = async (e) => {
+        alert("좋아요 클릭");
+        //const res = await Api.post("liked", { productId: productId });
+        //setLikeArr(getProductIdArr(res.data.updatedUser.bookmark));
+    };
+
+    const formatPrice = (price) => {
+        return `￦ ${parseInt(price).toLocaleString()}`;
+    };
+
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        /**
-         * id
-         * api ex) api.get('url ?id=${id}))
-         * const data = await
-         * setState(data);
-         */
-    }, [])
+        Api.get("products", { cid: category, pid: productId }, true).then(
+            (res) => {
+                console.log(res);
+                setProduct(res.data[0]);
+            }
+        );
+    }, []);
 
     return (
         <section className="item-detail-container">
             <div className="container-flexbox">
                 <div className="item product-name">{product.name}</div>
                 <div className="item product-img">
-                    <img src={product.url} alt="상품 대표 이미지" />
+                    <img src={product.image} alt="상품 대표 이미지" />
                 </div>
                 <div className="item product-content">
                     <div className="content-flexbox">
-                        <div className="product-desc">{product.desc}</div>
+                        <div className="product-desc">
+                            {product.description}
+                        </div>
                         <div className="product-price">
                             <table>
                                 <tr>
                                     <th>Price</th>
                                     <td>
-                                        <Button onClick={handleClick}>-</Button>
+                                        <Button onClick={handleCntClick}>
+                                            -
+                                        </Button>
                                         <input
                                             value={cnt}
                                             className="product-cnt"
                                         />
-                                        <Button onClick={handleClick}>+</Button>
+                                        <Button onClick={handleCntClick}>
+                                            +
+                                        </Button>
                                     </td>
-                                    <td>{product.price.toLocaleString()}</td>
+                                    <td>{formatPrice(product.price)}</td>
                                 </tr>
                                 <tr>
                                     <th>Total Price</th>
                                     <td></td>
-                                    <td>
-                                        {(product.price * cnt).toLocaleString()}
-                                    </td>
+                                    <td>{formatPrice(product.price * cnt)}</td>
                                 </tr>
                             </table>
                         </div>
@@ -77,6 +106,7 @@ const ProductDetail = () => {
                             size="large"
                             variant="outlined"
                             sx={{ ml: 1, mr: 1 }}
+                            onClick={handleCartClick}
                         >
                             👜 장바구니
                         </Button>
@@ -84,6 +114,7 @@ const ProductDetail = () => {
                             size="large"
                             variant="outlined"
                             sx={{ ml: 1, mr: 1 }}
+                            onClick={handleOrderClick}
                         >
                             💰 바로 구매
                         </Button>
@@ -91,6 +122,7 @@ const ProductDetail = () => {
                             size="large"
                             variant="outlined"
                             sx={{ ml: 1, mr: 1 }}
+                            onClick={handleLikeClick}
                         >
                             💗 찜
                         </Button>

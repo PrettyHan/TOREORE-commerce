@@ -1,6 +1,6 @@
 .item-container {
     width: 350px;
-    height: 620px;
+    height: fit-content;
     margin: 10px 15px;
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
     position: relative;
@@ -13,7 +13,8 @@
 
 .item {
     list-style: none;
-    margin: 10px 20px;
+    margin: 20px 20px;
+    padding: 0px;
 }
 
 .item-name {
@@ -27,8 +28,14 @@
     color: gray;
 }
 
-.item-btn-group {
-    padding: 0px 10px 15px 10px;
+.img {
+    position: relative;
+}
+
+.like-btn {
     position: absolute;
-    bottom: 0px;
+    z-index: 1;
+    bottom: 15px;
+    right: 15px;
+    font-size: 2rem;
 }

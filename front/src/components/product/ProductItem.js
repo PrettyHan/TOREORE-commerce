@@ -5,58 +5,58 @@ import { useEffect, useState } from "react";
 
 import "../../style/productItem.css";
 import * as Api from "../../api";
+import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
 
-const ProductItem = ({ category, productId, name, image, price }) => {
+const ProductItem = ({
+    category,
+    productId,
+    name,
+    image,
+    price,
+    userLikeArr,
+}) => {
     const navigate = useNavigate();
 
+    // 아이템 클릭 => 제품 상세 페이지로 이동
     const handleItemClick = React.useCallback(() => {
         navigate(`/products/${category}/${productId}`);
     }, [navigate, category, productId]);
 
+    // 가격 표시 형식
     const formatPrice = (price) => {
         return `￦ ${parseInt(price).toLocaleString()}`;
     };
 
-    // 임시 data
-    const userLikeArr = ["1", "2", "0694860002"];
-
+    // '좋아요' 누른 제품 배열
     const [likeArr, setLikeArr] = useState(userLikeArr);
-    const [isLike, setIsLike] = useState(likeArr.includes(productId));
+    // 해당 제품에 대한 '좋아요' 여부
+    const [isLike, setIsLike] = useState(userLikeArr.includes(productId));
 
-    const updateUserLike = async () => {
+    // 좋아요 클릭
+    const handleLikeClick = async (e) => {
+        e.stopPropagation();
+        console.log(`likeArr (before) : ${likeArr}`);
         const res = await Api.post("liked", { productId: productId });
-        setLikeArr(res.data.likeArr);
+        setLikeArr(getProductIdArr(res.data.updatedUser.bookmark));
+        setIsLike(likeArr.includes(productId));
+        console.log(`likeArr (after) : ${likeArr}`);
     };
 
-    useEffect(() => {
-        setIsLike(likeArr.includes(productId));
-    }, [likeArr]);
+    useEffect(() => {}, []);
 
     return (
-        <div className="item-container">
-            <div onClick={handleItemClick}>
-                <img src={image} alt={"상품 이미지"} className="item-img"></img>
-                <ul className="item">
-                    <li className="item-name">{name}</li>
-                    <li className="item-price">{formatPrice(price)}</li>
-                </ul>
+        <div className="item-container" onClick={handleItemClick}>
+            <div className="img">
+                <img src={image} alt={"상품 이미지"} className="item-img" />
+                <div className="like-btn" onClick={handleLikeClick}>
+                    {isLike ? "💗" : "🤍"}
+                </div>
             </div>
-            <div className="item-btn-group">
-                <Button size="small" variant="outlined" sx={{ ml: 1, mr: 1 }}>
-                    👜 장바구니
-                </Button>
-                <Button size="small" variant="outlined" sx={{ ml: 1, mr: 1 }}>
-                    💰 바로 구매
-                </Button>
-                <Button
-                    size="small"
-                    variant="outlined"
-                    sx={{ ml: 1, mr: 1 }}
-                    onClick={updateUserLike}
-                >
-                    {isLike ? "💗" : "🤍"} 찜
-                </Button>
-            </div>
+            <ul className="item">
+                <li className="item-name">{name}</li>
+                <li className="item-price">{formatPrice(price)}</li>
+                <li className="item-color"></li>
+            </ul>
         </div>
     );
 };
