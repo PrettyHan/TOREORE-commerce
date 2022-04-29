@@ -7,6 +7,11 @@ import "../../style/productItem.css";
 import * as Api from "../../api";
 import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
 
+// 가격 표시 형식
+export const formatPrice = (price) => {
+    return `￦ ${parseInt(price).toLocaleString()}`;
+};
+
 const ProductItem = ({
     category,
     productId,
@@ -21,11 +26,6 @@ const ProductItem = ({
     const handleItemClick = React.useCallback(() => {
         navigate(`/products/${category}/${productId}`);
     }, [navigate, category, productId]);
-
-    // 가격 표시 형식
-    const formatPrice = (price) => {
-        return `￦ ${parseInt(price).toLocaleString()}`;
-    };
 
     // '좋아요' 누른 제품 배열
     const [likeArr, setLikeArr] = useState(userLikeArr);
