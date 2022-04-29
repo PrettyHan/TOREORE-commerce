@@ -6,10 +6,13 @@ import { errorMiddleware } from "./src/middlewares/errorMiddleware";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
+const passport = require("passport");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 indexRouter(app);
 app.use(errorMiddleware);
