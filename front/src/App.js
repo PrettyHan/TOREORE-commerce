@@ -8,6 +8,7 @@ import { loginReducer } from "./reducer";
 import Header from "./components/Layout/Header";
 import Main from "./components/Layout/Main";
 import Footer from "./components/Layout/Footer";
+import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
 import Login from "./components/Auth/Login";
@@ -61,6 +62,7 @@ function App() {
     fetchCurrentUser();
   }, []);
 
+<<<<<<< HEAD
   if (!isFetchCompleted) {
     return "isLoading...";
   }
@@ -110,6 +112,35 @@ function App() {
       </UserStateContext.Provider>
     </DispatchContext.Provider>
   );
+=======
+    return (
+        <DispatchContext.Provider value={dispatch}>
+            <UserStateContext.Provider value={userState}>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Router>
+                        <Header handleOpen={handleOpen} />
+                        <Login open={open} handleClose={handleClose} />
+                        <Category />
+                        <Routes>
+                            <Route path="/" exact element={<Main />} />
+                            <Route path="/introduce" element={<Introduce />} />
+                            <Route path="/myPage" element={<MyPage />} />
+                            <Route path="/auth/:id" element={<Main />} />
+                            <Route path="/products" element={<ProductList />} />
+                            <Route
+                                exact
+                                path="/products/:categoryId/:productId"
+                                element={<ProductDetail />}
+                            />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                        <Footer />
+                    </Router>
+                </React.Suspense>
+            </UserStateContext.Provider>
+        </DispatchContext.Provider>
+    );
+>>>>>>> mypage-order-front
 }
 
 export default App;

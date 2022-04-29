@@ -63,11 +63,16 @@ orderRouter.get("/", async function (req, res, next) {
         const userId = req.currentUserId;
         const isPayed = req.query.ispayed;
         if (isPayed == "true" || isPayed == "false") {
+<<<<<<< HEAD
             const order = await orderService.getIspayedByQuery({isPayed, userId});
+=======
+            const order = await orderSerivce.getIspayedByQuery({ isPayed, userId });
+>>>>>>> mypage-order-front
 
             if (order.errorMessage) {
                 throw new Error(order.errorMessage);
             }
+<<<<<<< HEAD
     
             res.status(200).send(order);
         }
@@ -79,6 +84,18 @@ orderRouter.get("/", async function (req, res, next) {
         }
         res.status(200).send(orders);
     }
+=======
+
+            res.status(200).send(order);
+        } else {
+            const orders = await orderSerivce.getOrders({ userId });
+
+            if (orders.errorMessage) {
+                throw new Error(orders.errorMessage);
+            }
+            res.status(200).send(orders);
+        }
+>>>>>>> mypage-order-front
     } catch (error) {
         next(error);
     }
