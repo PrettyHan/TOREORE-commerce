@@ -64,7 +64,8 @@ class likeService {
         //   newValue : Value,
         // })
       }
-      return {updatedUser}
+      let realcurrentUser = await User.findByLikeUserId({ currentUserId });
+      return realcurrentUser
   }
     // 즐겨찾기 좋아요 상품 반환
     static async getlikeProducts({ currentUserId }) {
@@ -99,8 +100,9 @@ class likeService {
         userId : currentUser,
         Value : product,
       })
-      
-      return {updatedUser}
+
+      let realcurrentUser = await User.findByLikeUserId({ currentUserId });
+      return realcurrentUser
   }
 
 }
