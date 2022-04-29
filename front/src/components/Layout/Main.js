@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
 import { UserStateContext } from "../../App";
+import { Container } from "@mui/material";
 import Ad from "./Ad";
+import Recommend from "./Recommend";
 
 const Main = () => {
     const userState = useContext(UserStateContext);
-
     const isLogin = !!userState.user; // 로그인 여부 판단 
   
     return (
-        <>
-        {isLogin && <>
-            안녕하세요
-        </>}
+        <Container style={{ minHeight: "calc(100vh - 180px)" }}>
+        {isLogin && <Recommend />}
             <Ad />
-        </>
+        </Container>
     );
 };
 

@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Grid } from "@mui/material";
 import styled from "styled-components";
 
 function Ad() {
     return (
-        <Container style={{ minHeight: "calc(100vh - 180px)" }}>
+        <>
             <AdBox1
             >
                 <img src="https://cdn.pixabay.com/photo/2015/08/25/11/50/shop-906722_960_720.jpg" />
@@ -25,7 +24,7 @@ function Ad() {
                     BIG SALE COMING SOON
                 </AdP2>
             </AdBox2>
-        </Container>
+        </>
     );
 }
 
