@@ -1,8 +1,16 @@
 import passport from "passport";
-import { google } from "./passport/googleStrategy";
+import { googleStrategy } from "./passport/googleStrategy";
 
 const useStrategy = () => {
-    passport.use("google", google);
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
+    });
+
+    passport.deserializeUser((user, done) => {
+        done(null, user);
+    });
+
+    googleStrategy();
 };
 
 export { useStrategy };

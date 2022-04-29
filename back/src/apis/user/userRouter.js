@@ -46,9 +46,9 @@ userRouter.get(
 
 userRouter.get(
     "/google/callback",
-    passport.authenticate("google", { failureRedirect: "/login" }),
+    passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
-        res.redirect("/");
+        res.redirect("/"); // 로그인 성공 시 메인 페이지로 이동
     },
 );
 
