@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer
             style={{
-                backgroundColor: "#EEFC57",
+                backgroundColor: "#DDDFDF",
                 height: "160px",
                 marginTop: "auto",
             }}

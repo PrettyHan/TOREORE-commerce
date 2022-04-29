@@ -79,7 +79,7 @@ function OrderHistory() {
 const Container = styled.div`
     width: 63.5%;
     padding: 5px 0 0 0;
-    box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
     display: flex;

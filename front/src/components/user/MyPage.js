@@ -118,7 +118,7 @@ const Container = styled.div`
 
 const UserContainer = styled(Box)`
     width: 62%;
-    box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -130,7 +130,7 @@ const UserContainer = styled(Box)`
 const Intro = styled.div`
     font-size: 20px;
     font-weight: bold;
-`
+`;
 
 const ItemsContainer = styled(Box)`
     width: 63.5%;
@@ -144,13 +144,12 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
-    box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
     height: 80px;
     text-align: center;
     line-height: 80px;
     cursor: pointer;
 `;
-// ${(props) => (props.cursor === "pointer" ? "pointer" : "default")}
 
 export default MyPage;

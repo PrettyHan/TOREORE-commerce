@@ -40,7 +40,6 @@ function Cart() {
     const fetchCartItems = async () => {
         try {
             const res = await Api.get("carts");
-            console.log(res.data);
             setCartItems(res.data);
         } catch (err) {
             console.log(err);
