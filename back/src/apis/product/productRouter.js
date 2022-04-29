@@ -8,7 +8,7 @@ const productRouter = Router();
 
 productRouter.get("/", async function (req, res, next) {
     try {
-        const {cid, pid} = req.query
+        const {cid, pid} = req.query ?? null
         if (cid || pid) {
             const product = await productService.getProductByQuery({cid, pid});
 
@@ -26,6 +26,8 @@ productRouter.get("/", async function (req, res, next) {
         }
         res.status(200).send(products);
     }
+
+
     } catch (error) {
         next(error);
     }
