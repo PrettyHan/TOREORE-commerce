@@ -37,12 +37,18 @@ const ProductItem = ({
         e.stopPropagation();
         console.log(`likeArr (before) : ${likeArr}`);
         const res = await Api.post("liked", { productId: productId });
+        console.log("bookmark", res.data.updatedUser.bookmark);
         setLikeArr(getProductIdArr(res.data.updatedUser.bookmark));
-        setIsLike(likeArr.includes(productId));
         console.log(`likeArr (after) : ${likeArr}`);
     };
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        console.log(likeArr);
+        console.log(likeArr.includes(productId));
+        console.log(productId);
+        console.log(typeof productId);
+        setIsLike(likeArr.includes(productId));
+    }, [likeArr, productId]);
 
     return (
         <div className="item-container" onClick={handleItemClick}>
