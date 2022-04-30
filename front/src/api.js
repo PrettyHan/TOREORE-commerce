@@ -4,23 +4,24 @@ const backendPortNumber = "5001";
 const serverUrl =
     "http://" + window.location.hostname + ":" + backendPortNumber + "/";
 
-async function get(endpoint, params = "", hasQueryString) {
-    console.log(
-        `%cGET 요청 ${serverUrl + endpoint + "/" + params}`,
-        "color: #a25cd1;"
-    );
+async function get(endpoint, params = "", hasQueryString = false) {
+    const makeUrl = () => {
+        if (hasQueryString) {
+            let queryString = "";
+            for (const key in params) {
+                queryString += `${key}=${params[key]}&`;
+            }
+            if (queryString.charAt(queryString.length - 1) === "&") {
+                queryString = queryString.slice(0, -1);
+            }
+            return `${serverUrl}${endpoint}?${queryString}`;
+        }
+        return `${serverUrl}${endpoint}/${params}`;
+    };
 
-    // if (hasQueryst) {
-    // }
+    console.log(`%cGET 요청 ${makeUrl()}`, "color: #a25cd1;");
 
-    // const makeUrl = () => {
-    //   if (hasQueryString) {
-    //     return `${serverUrl}${endpoint}/${params}?abc=1&def=2`
-    //   }
-    //   return `${serverUrl}${endpoint}/${params}`
-    // }
-
-    return axios.get(`${serverUrl}${endpoint}/${params}`, {
+    return axios.get(`${makeUrl()}`, {
         // JWT 토큰을 헤더에 담아 백엔드 서버에 보냄.
         headers: {
             Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,

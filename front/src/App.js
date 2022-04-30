@@ -11,6 +11,7 @@ import Footer from "./components/Layout/Footer";
 import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
+import UserEdit from "./components/user/UserEdit";
 import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
@@ -86,18 +87,33 @@ function App() {
                             <Route path="/" exact element={<Main />} />
                             <Route path="/introduce" element={<Introduce />} />
                             <Route path="/myPage" element={<MyPage />} />
+                            <Route path="/useredit" element={<UserEdit />} />
                             <Route path="/auth/:id" element={<Main />} />
-                            <Route path="/products" element={<ProductList />} />
+                            <Route path="*" element={<NotFound />} />
                             <Route
                                 exact
-                                path="/products/:categoryId/:productId"
+                                path="/products/:category"
+                                element={<ProductList />}
+                            />
+                            <Route
+                                exact
+                                path="/products/:category/:productId"
                                 element={<ProductDetail />}
                             />
-                            <Route path="*" element={<NotFound />} />
+                            <Route path="/cart" element={<Cart />} />
                         </Routes>
-                        <Footer />
                     </Router>
                 </React.Suspense>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <Footer />
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );

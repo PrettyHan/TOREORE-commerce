@@ -23,6 +23,7 @@
 .product-img {
     min-height: 600px;
     width: 400px;
+    position: relative;
 }
 
 .product-img > img {
@@ -30,9 +31,18 @@
     height: 100%;
 }
 
+
+.like-btn {
+    position: absolute;
+    z-index: 1;
+    bottom: 20px;
+    right: 30px;
+    font-size: 2rem;
+}
+
 .product-content {
     min-height: 400px;
-    max-width: 700px;
+    max-width: 600px;
     flex-grow: 1;
     position: relative;
     font-size: 1.2rem;
@@ -61,7 +71,7 @@ table {
 }
 
 td {
-    width: 35%;
+    width: 40%;
 }
 
 tr > td:nth-child(3) {
