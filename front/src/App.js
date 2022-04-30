@@ -16,6 +16,7 @@ import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
+import Order from "./components/order/Order";
 
 const ProductDetail = React.lazy(() =>
     import("./components/product/ProductDetail")
@@ -34,10 +35,11 @@ function App() {
         user: null,
     });
 
-    // 아래의 fetchCurrentUser 함수가 실행된 다음에 컴포넌트가 구현되도록 함.
-    // 아래 코드를 보면 isFetchCompleted 가 true여야 컴포넌트가 구현됨.
-    const [isFetchCompleted, setIsFetchCompleted] = useState(false);
-    const [open, setOpen] = useState(false);
+  // 아래의 fetchCurrentUser 함수가 실행된 다음에 컴포넌트가 구현되도록 함.
+  // 아래 코드를 보면 isFetchCompleted 가 true여야 컴포넌트가 구현됨.
+  const [isFetchCompleted, setIsFetchCompleted] = useState(false);
+  // 로그인 다이얼로그를 여는지
+  const [open, setOpen] = useState(false);
 
     const fetchCurrentUser = async () => {
         try {
@@ -75,6 +77,7 @@ function App() {
         setOpen(false);
     };
 
+<<<<<<< HEAD
     return (
         <DispatchContext.Provider value={dispatch}>
             <UserStateContext.Provider value={userState}>
@@ -101,6 +104,7 @@ function App() {
                                 element={<ProductDetail />}
                             />
                             <Route path="/cart" element={<Cart />} />
+                            <Route path="/order/:orderId" element={<Order />} />
                         </Routes>
                     </Router>
                 </React.Suspense>
@@ -117,6 +121,7 @@ function App() {
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );
+     
 }
 
 export default App;
