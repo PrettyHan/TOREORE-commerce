@@ -57,6 +57,7 @@ function Order() {
     paymentMethod: "",
     isPayed: false,
   });
+  const [subTotal, setSubTotal] = useState(0);
 
   const { orderId } = useParams();
   const navigate = useNavigate();
@@ -85,6 +86,7 @@ function Order() {
         paymentMethod,
         isPayed,
       });
+      setSubTotal(totalPrice);
     } catch (err) {
       console.log(err);
     }
@@ -114,17 +116,36 @@ function Order() {
   return (
     <>
       <div div style={{ minHeight: "calc(100vh - 180px)" }}>
-        <Box>
-          <Box>
+        <Box sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", height: 240, p: 2 }}
+          >
             <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              height: 240,
+              p: 2,
+              mt: 5,
+            }}
+          >
             <OrderItemCard orderItems={orderItems}></OrderItemCard>
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              height: 240,
+              p: 2,
+              mt: 5,
+            }}
+          >
             <OrderPaymentCard
               orderPayment={orderPayment}
               setOrderPayment={setOrderPayment}
+              subTotal={subTotal}
             ></OrderPaymentCard>
           </Box>
           <Box>

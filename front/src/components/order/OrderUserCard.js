@@ -8,22 +8,25 @@ import {
   DialogContent,
   TextField,
   Button,
+  Box,
 } from "@mui/material";
 
 function OrderUserCard({ setOrderUser }) {
   const [open, setOpen] = useState(false);
+  const [address, setAddress] = useState("일반주소");
 
   const postCodeStyle = {
     display: "block",
     position: "absolute",
     top: "20%",
     width: "400px",
-    height: "400px",
+    height: "600px",
     padding: "7px",
     zIndex: 100,
   };
 
   const handleAddressComplete = (data) => {
+    setAddress(data.address);
     console.log(data.address);
   };
 
@@ -56,7 +59,7 @@ function OrderUserCard({ setOrderUser }) {
         open={open}
         onClose={() => setOpen(!open)}
         scroll={"body"}
-        PaperProps={{ sx: { width: "30%", height: "100%" } }}
+        PaperProps={{ sx: { width: "30%", height: "80%" } }}
       >
         <DialogContent>
           <DaumPostcode
@@ -64,14 +67,16 @@ function OrderUserCard({ setOrderUser }) {
             autoClose
             onComplete={handleAddressComplete}
           />
-          <Button
-            variant={"outlined"}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            닫기
-          </Button>
+          <Grid container justifyContent="right">
+            <Button
+              variant="contained"
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              닫기
+            </Button>
+          </Grid>
         </DialogContent>
       </Dialog>
       <Grid container spacing={3}>
@@ -79,6 +84,9 @@ function OrderUserCard({ setOrderUser }) {
           <Button size="large" onClick={() => setOpen(!open)}>
             주소찾기
           </Button>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography>{address}</Typography>
         </Grid>
         <Grid item xs={12}>
           <TextField

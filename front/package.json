@@ -17,6 +17,7 @@
     "react-cookie": "^4.1.1",
     "react-daum-postcode": "^3.0.1",
     "react-dom": "^18.0.0",
+    "react-paypal-express-checkout": "^1.0.5",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",

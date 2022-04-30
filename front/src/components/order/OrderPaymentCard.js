@@ -1,7 +1,13 @@
 import React from "react";
 
-function OrderPaymentCard() {
-  return <></>;
+import Paypal from "./payments/Paypal";
+
+function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
+  return (
+    <>
+      <Paypal subTotal={subTotal} />
+    </>
+  );
 }
 
 export default OrderPaymentCard;
