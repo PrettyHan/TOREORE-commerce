@@ -65,26 +65,14 @@ const UserSchema = new Schema(
             type: Object,
             required: false,
             default: null,
-            properties: {
-                country: {
-                    type: String,
-                },
-                do: {
-                    type: String,
-                },
-                si: {
-                    type: String,
-                },
-                gu: {
-                    type: String,
-                },
-                ro: {
-                    type: String,
-                },
-                rest: {
-                    type: String,
-                },
+            address1: {
+                type : String,
+                required : true,
             },
+            address2: {
+                type : String,
+                required : false,
+            }
         },
         bookmark: {
             type: Array,
@@ -96,6 +84,11 @@ const UserSchema = new Schema(
             required: false,
             default: [],
         },
+        loginType: {
+            type: String,
+            required: false,
+            default: ""
+        }
     },
     {
         timestamps: true,
