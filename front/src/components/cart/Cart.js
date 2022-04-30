@@ -121,15 +121,15 @@ function Cart() {
   // 주문하기 버튼 클릭 핸들링 함수
   const handleOrder = async () => {
     try {
-      // const orderProduts = checkedCartItems.map((item) => {
-      //   return {
-      //     productId: item.productId,
-      //     quantity: item.quantity,
-      //   };
-      // });
-      // const res = await Api.post("orders", orderProduts);
-      // const orderId = res.data.orderId;
-      // navigate(`/order/${orderId}`);
+      const orderProduts = checkedCartItems.map((item) => {
+        return {
+          productId: item.productId,
+          quantity: item.quantity,
+        };
+      });
+      const res = await Api.post("orders", orderProduts);
+      const orderId = res.data.orderId;
+      navigate(`/order/${orderId}`);
     } catch (err) {
       console.log(err);
     }
@@ -150,57 +150,59 @@ function Cart() {
   }, []);
 
   return (
-    <div>
-      <Box>
-        <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          장바구니
-        </Typography>
-      </Box>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <CartTableCell>전체 {cartItems.length}개</CartTableCell>
-            <CartTableCell>
-              <Checkbox
-                checked={isCheckedAll(cartItems)}
-                onChange={handleCheck}
-              ></Checkbox>
-            </CartTableCell>
-            <CartTableCell>이미지</CartTableCell>
-            <CartTableCell>상품명</CartTableCell>
-            <CartTableCell>판매가</CartTableCell>
-            <CartTableCell>주문금액</CartTableCell>
-            <CartTableCell>수량</CartTableCell>
-            <CartTableCell>주문관리</CartTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {!isCartEmpty ? (
-            cartItemList
-          ) : (
-            <Typography>장바구니에 상품을 담지 않았습니다.</Typography>
-          )}
-        </TableBody>
-      </Table>
-      <Box>
-        <Typography>총 결제 금액: {carculateTotal}원</Typography>
-      </Box>
-      <Box>
-        <Button
-          disabled={isCartEmpty || !isCheckedAll(cartItems)}
-          onClick={handleSelectRemove}
-        >
-          선택삭제
-        </Button>
-        <Button
-          disabled={isCartEmpty || !isCheckedAll(cartItems)}
-          onClick={handleOrder}
-        >
-          주문하기
-        </Button>
-        <Button onClick={() => navigate(-1)}>쇼핑 계속하기</Button>
-      </Box>
-    </div>
+    <>
+      <div style={{ minHeight: "calc(100vh - 180px)" }}>
+        <Box>
+          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            장바구니
+          </Typography>
+        </Box>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <CartTableCell>전체 {cartItems.length}개</CartTableCell>
+              <CartTableCell>
+                <Checkbox
+                  checked={isCheckedAll(cartItems)}
+                  onChange={handleCheck}
+                ></Checkbox>
+              </CartTableCell>
+              <CartTableCell>이미지</CartTableCell>
+              <CartTableCell>상품명</CartTableCell>
+              <CartTableCell>판매가</CartTableCell>
+              <CartTableCell>주문금액</CartTableCell>
+              <CartTableCell>수량</CartTableCell>
+              <CartTableCell>주문관리</CartTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {!isCartEmpty ? (
+              cartItemList
+            ) : (
+              <Typography>장바구니에 상품을 담지 않았습니다.</Typography>
+            )}
+          </TableBody>
+        </Table>
+        <Box>
+          <Typography>총 결제 금액: {carculateTotal}원</Typography>
+        </Box>
+        <Box>
+          <Button
+            disabled={isCartEmpty || !isCheckedAll(cartItems)}
+            onClick={handleSelectRemove}
+          >
+            선택삭제
+          </Button>
+          <Button
+            disabled={isCartEmpty || !isCheckedAll(cartItems)}
+            onClick={handleOrder}
+          >
+            주문하기
+          </Button>
+          <Button onClick={() => navigate(-1)}>쇼핑 계속하기</Button>
+        </Box>
+      </div>
+    </>
   );
 }
 

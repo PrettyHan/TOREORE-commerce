@@ -1,111 +1,106 @@
-import React from "react";
+import React, { useState } from "react";
+import DaumPostcode from "react-daum-postcode";
 
 import {
   Typography,
   Grid,
+  Dialog,
+  DialogContent,
   TextField,
-  FormControlLabel,
-  Checkbox,
+  Button,
 } from "@mui/material";
 
-function OrderUserCard() {
+function OrderUserCard({ setOrderUser }) {
+  const [open, setOpen] = useState(false);
+
+  const postCodeStyle = {
+    display: "block",
+    position: "absolute",
+    top: "20%",
+    width: "400px",
+    height: "400px",
+    padding: "7px",
+    zIndex: 100,
+  };
+
+  const handleAddressComplete = (data) => {
+    console.log(data.address);
+  };
+
+  const handleAddress2 = (event) => {
+    setOrderUser((current) => {
+      return {
+        ...current,
+        zipcode: {
+          ...current.zipcode,
+          address2: event.target.value,
+        },
+      };
+    });
+  };
+
+  const handleMessage = (event) => {
+    setOrderUser((current) => {
+      return {
+        ...current,
+        message: event.target.value,
+      };
+    });
+  };
   return (
     <>
-      <Typography variant="h6" gutterBottom>
-        Shipping address
+      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+        주소
       </Typography>
+      <Dialog
+        open={open}
+        onClose={() => setOpen(!open)}
+        scroll={"body"}
+        PaperProps={{ sx: { width: "30%", height: "100%" } }}
+      >
+        <DialogContent>
+          <DaumPostcode
+            style={postCodeStyle}
+            autoClose
+            onComplete={handleAddressComplete}
+          />
+          <Button
+            variant={"outlined"}
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            닫기
+          </Button>
+        </DialogContent>
+      </Dialog>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-            variant="standard"
-          />
-        </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            id="address1"
-            name="address1"
-            label="Address line 1"
-            fullWidth
-            autoComplete="shipping address-line1"
-            variant="standard"
-          />
+          <Button size="large" onClick={() => setOpen(!open)}>
+            주소찾기
+          </Button>
         </Grid>
         <Grid item xs={12}>
           <TextField
             id="address2"
             name="address2"
-            label="Address line 2"
+            label="상세주소"
             fullWidth
             autoComplete="shipping address-line2"
             variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="city"
-            name="city"
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="zip"
-            name="zip"
-            label="Zip / Postal code"
-            fullWidth
-            autoComplete="shipping postal-code"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="shipping country"
-            variant="standard"
+            onChange={handleAddress2}
           />
         </Grid>
         <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox color="secondary" name="saveAddress" value="yes" />
-            }
-            label="Use this address for payment details"
+          <TextField
+            required
+            id="message"
+            name="message"
+            label="메세지"
+            fullWidth
+            autoComplete="message"
+            variant="standard"
+            onChange={handleMessage}
           />
         </Grid>
       </Grid>

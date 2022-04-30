@@ -14,6 +14,7 @@ import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
+import Order from "./components/order/Order";
 
 const ProductDetail = React.lazy(() =>
   import("./components/product/ProductDetail")
@@ -94,6 +95,7 @@ function App() {
                 path="/products/:categoryId/:productId"
                 element={<ProductDetail />}
               />
+              <Route path="/order/:orderId" element={<Order />} />
             </Routes>
           </Router>
         </React.Suspense>
