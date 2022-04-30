@@ -14,8 +14,7 @@ import {
 } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styled from "styled-components";
-// import { useCookies } from "react-cookie";
-// import crypto from "crypto-js";
+import { useCookies } from "react-cookie";
 
 import { DispatchContext } from "../../App";
 import * as Api from "../../api";
@@ -43,10 +42,7 @@ function LoginCard({ setIsSigning }) {
   // 이메일 및 패스워드 저장 여부
   const [isRemember, setIsRemember] = useState(false);
   // 이메일 및 패스워드 저장을 위한 쿠키 설정
-  // const [cookies, setCookie, removeCookie] = useCookies([
-  //   "rememberEmail",
-  //   "rememberPassword",
-  // ]);
+  const [cookies, setCookie, removeCookie] = useCookies(["rememberuserId"]);
 
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -68,21 +64,12 @@ function LoginCard({ setIsSigning }) {
   const isFormValid = isUserIdValid && isPasswordValid;
 
   // 로그인페이지 접속 시 쿠키에 정보가 있다면 저장된 정보로 이메일과 패스워드 설정
-  // useEffect(() => {
-  //   if (
-  //     cookies.rememberEmail !== undefined &&
-  //     cookies.rememberPassword !== undefined
-  //   ) {
-  //     let bytes = crypto.AES.decrypt(
-  //       cookies.rememberPassword,
-  //       "cookiePassword"
-  //     );
-  //     let rememberPassword = bytes.toString(crypto.enc.Utf8);
-  //     setEmail(cookies.rememberEmail);
-  //     setPassword(rememberPassword);
-  //     setIsRemember(true);
-  //   }
-  // }, [cookies.rememberEmail, cookies.rememberPassword]);
+  useEffect(() => {
+    if (cookies.rememberUserId !== undefined) {
+      setUserId(cookies.rememberUserId);
+      setIsRemember(true);
+    }
+  }, [cookies.rememberUserId]);
 
   useEffect(() => {
     if (!isUserIdValid) {
@@ -123,17 +110,11 @@ function LoginCard({ setIsSigning }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // if (isRemember) {
-    //   setCookie("rememberEmail", email, { maxAge: 30000000 });
-    //   setCookie(
-    //     "rememberPassword",
-    //     crypto.AES.encrypt(password, "cookiePassword").toString(),
-    //     { maxAge: 30000000 }
-    //   );
-    // } else {
-    //   removeCookie("rememberEmail");
-    //   removeCookie("rememberPassword");
-    // }
+    if (isRemember) {
+      setCookie("rememberUserId", userId, { maxAge: 30000000 });
+    } else {
+      removeCookie("rememberUserId");
+    }
 
     try {
       // "auth/login" 엔드포인트로 post요청함.
@@ -238,7 +219,7 @@ function LoginCard({ setIsSigning }) {
                         color="primary"
                       />
                     }
-                    label="아이디 및 비밀번호 저장"
+                    label="아이디 저장"
                   />
                 </Grid>
               </Grid>
