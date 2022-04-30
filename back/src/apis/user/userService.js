@@ -20,11 +20,11 @@ class userService {
             const { userId, email, name, loginType } = userData;
             var newUser = {
                 userId,
-                password: "", // 해보고 안돼면 바꾸기
+                password: "temp-password",
                 name,
                 email,
                 gender: 2, // 성별을 선택하지 않은 사람: 2
-                phone: "",
+                phone: "010-0000-0000",
                 birth: Date.now(),
                 loginType,
             };
