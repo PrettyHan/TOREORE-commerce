@@ -1,4 +1,6 @@
 import { ProductModel } from "./product.schema";
+import { powerSet } from "../../middlewares/search"
+import is from "@sindresorhus/is";
 
 class Product {
     static async create({ newProduct }) {
@@ -29,6 +31,13 @@ class Product {
     }
     static async findBySearch({keyword}){
         const product = await ProductModel.find({$text : {$search: keyword}})
+        if(is.emptyArray(product)) {
+            const arr = powerSet(keyword)
+            arr.shift()
+            const newKeyword = arr.join(" ")
+            const product = await ProductModel.find({$text : {$search: newKeyword}})
+            return product
+        }
         return product
     }
 
@@ -81,5 +90,6 @@ class Product {
     //     return updateProduct;
     // }
 }
+
 
 export { Product };
