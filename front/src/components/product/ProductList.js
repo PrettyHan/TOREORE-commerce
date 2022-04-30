@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 
 import ProductItem from "./ProductItem";
 
-import "../../style/productList.css";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import * as Api from "../../api";
 
 import { UserStateContext } from "../../App";
@@ -41,15 +42,31 @@ const ProductList = () => {
     }, [category]);
 
     return (
-        <div className="productList-container">
-            {productList.map((item) => (
-                <ProductItem
-                    key={item.productId}
-                    {...item}
-                    userLikeArr={userLikeArr}
-                />
-            ))}
-        </div>
+        <>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <Grid
+                    maxWidth="lg"
+                    container
+                    spacing={{ xs: 2, md: 3 }}
+                    columns={{ xs: 4, sm: 8, md: 12 }}
+                >
+                    {productList.map((item, index) => (
+                        <Grid item xs={12} sm={4} md={4} key={index}>
+                            <ProductItem
+                                key={item.productId}
+                                {...item}
+                                userLikeArr={userLikeArr}
+                            />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+        </>
     );
 };
 

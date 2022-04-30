@@ -2,6 +2,8 @@ import Button from "@mui/material/Button";
 import React, { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "../../style/productDetail.css";
 import * as Api from "../../api";
 import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
@@ -81,7 +83,20 @@ const ProductDetail = () => {
             <div className="container-flexbox">
                 <div className="item product-name">{product.name}</div>
                 <div className="item product-img">
-                    <img src={product.image} alt="상품 대표 이미지" />
+                    <img
+                        src={product.image}
+                        alt={"상품 이미지"}
+                        className="item-img"
+                    />
+                    <div className="like-btn" onClick={handleLikeClick}>
+                        {isLike ? (
+                            <FavoriteIcon
+                                style={{ fontSize: 40, color: "red" }}
+                            />
+                        ) : (
+                            <FavoriteBorderIcon style={{ fontSize: 40 }} />
+                        )}
+                    </div>
                 </div>
                 <div className="item product-content">
                     <div className="content-flexbox">
@@ -131,14 +146,6 @@ const ProductDetail = () => {
                             onClick={handleOrderClick}
                         >
                             💰 바로 구매
-                        </Button>
-                        <Button
-                            size="large"
-                            variant="outlined"
-                            sx={{ ml: 1, mr: 1 }}
-                            onClick={handleLikeClick}
-                        >
-                            {isLike ? "💗" : "🤍"} 찜
                         </Button>
                     </div>
                 </div>

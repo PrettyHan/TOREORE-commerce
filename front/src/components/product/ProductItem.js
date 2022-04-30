@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "../../style/productItem.css";
 import * as Api from "../../api";
 
@@ -47,7 +49,7 @@ const ProductItem = ({
      * https://ko.reactjs.org/docs/hooks-reference.html
      */
     // useEffect(() => {
-        // setIsLike(likeArr.includes(productId));
+    // setIsLike(likeArr.includes(productId));
     // }, [likeArr, productId]);
 
     return (
@@ -55,7 +57,11 @@ const ProductItem = ({
             <div className="img">
                 <img src={image} alt={"상품 이미지"} className="item-img" />
                 <div className="like-btn" onClick={handleLikeClick}>
-                    {isLike ? "💗" : "🤍"}
+                    {isLike ? (
+                        <FavoriteIcon style={{ fontSize: 40, color: "red" }} />
+                    ) : (
+                        <FavoriteBorderIcon style={{ fontSize: 40 }} />
+                    )}
                 </div>
             </div>
             <ul className="item">

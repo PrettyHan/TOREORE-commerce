@@ -1,9 +1,10 @@
 .item-container {
     width: 350px;
     height: fit-content;
-    margin: 10px 15px;
+    margin: 0px auto;
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
     position: relative;
+    border: solid rgba(149, 157, 165, 0.3);
 }
 
 .item-img {
