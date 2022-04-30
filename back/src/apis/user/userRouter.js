@@ -2,6 +2,7 @@ import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
+import passport from "passport";
 
 const userRouter = Router();
 
@@ -36,6 +37,20 @@ userRouter.post("/signup", async (req, res, next) => {
         next(error);
     }
 });
+
+// google login
+userRouter.get(
+    "/google",
+    passport.authenticate("google", { scope: ["profile", "email"] }),
+);
+
+userRouter.get(
+    "/google/callback",
+    passport.authenticate("google", { failureRedirect: "/" }),
+    (req, res) => {
+        res.redirect("/"); // 로그인 성공 시 메인 페이지로 이동
+    },
+);
 
 userRouter.post("/login", async (req, res, next) => {
     try {
