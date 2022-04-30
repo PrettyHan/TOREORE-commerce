@@ -20,11 +20,11 @@ class userService {
             const { userId, email, name, loginType } = userData;
             var newUser = {
                 userId,
-                password: "", // 해보고 안돼면 바꾸기
+                password: "temp-password",
                 name,
                 email,
                 gender: 2, // 성별을 선택하지 않은 사람: 2
-                phone: "",
+                phone: "010-0000-0000",
                 birth: Date.now(),
                 loginType,
             };
@@ -118,12 +118,6 @@ class userService {
             user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
-        if (toUpdate.email) {
-            const fieldToUpdate = "email";
-            const newValue = toUpdate.email;
-            user = await User.update({ userId, fieldToUpdate, newValue });
-        }
-
         if (toUpdate.gender) {
             const fieldToUpdate = "gender";
             const newValue = toUpdate.gender;
@@ -140,6 +134,16 @@ class userService {
             const fieldToUpdate = "birth";
             const newValue = toUpdate.birth;
             user = await User.update({ userId, fieldToUpdate, newValue });
+        }
+
+        // 소셜로그인한 유저 중 추가정보를 입력하지 않았던 사람 -> 추가정보 입력여부 = true
+        if (!user.hasAddtionalInfo && user.loginType !== "BASIC") {
+            const fieldToUpdate = "hasAddtionalInfo";
+            const newValue = true;
+            user = await User.update({ userId, fieldToUpdate, newValue });
+            const ourAccessToken = createAccessToken({ userId: user.userId });
+
+            return { ourAccessToken };
         }
 
         return user;

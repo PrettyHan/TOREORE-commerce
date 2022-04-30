@@ -28,14 +28,16 @@ export const googleStrategy = () => {
                 if (isEmailDuplicate === false) {
                     const loginType = "GOOGLE";
                     const userData = { userId, email, name, loginType };
-                    const newUser = await userService.createUser(userData); // 소셜로그인 최초 로그인 유저
+                    const user = await userService.createUser(userData); // 소셜로그인 최초 로그인 유저
                     isMember = false;
+                    const requestData = { user, isMember };
 
-                    return cb(null, newUser, isMember); // profile 안넘겨줘도?
+                    return cb(null, requestData); // profile 안넘겨줘도?
                 } else {
                     const user = await userService.getUserInfo({ userId }); // 기존에 소셜로그인으로 로그인해서 회원등록한 유저
+                    const requestData = { user, isMember };
 
-                    return cb(null, user, isMember); // profile 안넘겨줘도?
+                    return cb(null, requestData); // profile 안넘겨줘도?
                 }
 
                 //    유저일련번호: userInfo.sub, 유저이름: userInfo.name, 유저이메일: profile.email
@@ -44,6 +46,7 @@ export const googleStrategy = () => {
                 // 3. 유저정보 생성 -> 아이디, 이메일, 이름 정보만 있는 상태에서 추가정보 입력 페이지로 이동
                 // 4. 추가정보 입력 후, 완료 시 -> 유저정보 업데이트 후, jwt 토큰 발급해 응답
                 // ** 소셜로그인 후, 추가정보 입력 페이지에서 브라우저를 닫을 경우는 다음에 다시 방문했을 때 어떻게 판단??
+                // ** --> 유저 스키마에 추가정보 적었는지 여부 필드 추가하는 걸로 판단!!
 
                 // User.findOrCreate({ googleId: profile.id }, function (err, user) {
                 //     return cb(err, user);
