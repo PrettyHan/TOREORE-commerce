@@ -156,7 +156,21 @@ function LoginCard({ setIsSigning }) {
       // 새로고침
       navigate(0);
     } catch (err) {
-      console.log(err);
+      alert("로그인에 실패하였습니다", err);
+    }
+  };
+
+  const handleGoogleSign = async (event) => {
+    event.preventDefault();
+
+    try {
+      const res = await Api.get("auth/google");
+
+      const user = res.data;
+
+      console.log(user);
+    } catch (err) {
+      console.log("err", err);
     }
   };
 
@@ -240,6 +254,9 @@ function LoginCard({ setIsSigning }) {
               </Button>
               <Button variant="text" onClick={() => setIsSigning(true)}>
                 회원가입
+              </Button>
+              <Button variant="text" onClick={handleGoogleSign}>
+                구글 로그인
               </Button>
             </FormControl>
           </Boxs>
