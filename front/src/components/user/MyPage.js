@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import OrderHistory from "./myPageComponents/OrderHistory";
 import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
-import UserEditForm from "./UserEditForm";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
@@ -12,11 +12,11 @@ import styled from "styled-components";
 import { UserStateContext } from "../../App";
 
 function MyPage() {
+    const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const user = userState.user;
 
     const constantsFirstState = {
-        userEditForm: false,
         orderHistory: false,
         likedHistory: false,
         coupon: false,
@@ -25,7 +25,6 @@ function MyPage() {
     const [isOpen, setIsOpen] = useState(constantsFirstState);
 
     const components = {
-        userEditForm: <UserEditForm />,
         orderHistory: <OrderHistory />,
         likedHistory: <LikedHistory />,
         coupon: <Coupon />,
@@ -54,12 +53,7 @@ function MyPage() {
                     </Intro>
                     <div>
                         <Button
-                            onClick={() =>
-                                setIsOpen({
-                                    ...constantsFirstState,
-                                    userEditForm: true,
-                                })
-                            }
+                            onClick={() => navigate("/useredit")}
                             disableElevation
                             disableRipple
                         >
