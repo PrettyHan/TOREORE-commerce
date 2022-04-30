@@ -48,8 +48,8 @@ userRouter.get(
     "/google/callback",
     passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
-        console.lof("callback 함수에서 받은 리퀘스트 >> ", req); // 여기에 엑세스토큰이 담겨있으면 그걸 프론트에 응답
-        res.status(302).redirect("/").json({}); // 로그인 성공 시 메인 페이지(프론트메인페이지)로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
+        console.log("callback 함수에서 받은 리퀘스트 >> ", req.user); // 여기에 엑세스토큰이 담겨있으면 그걸 프론트에 응답
+        res.status(302).redirect("/main"); // 로그인 성공 시 메인 페이지(프론트메인페이지)로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
     },
 );
 
