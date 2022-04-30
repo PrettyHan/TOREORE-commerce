@@ -136,11 +136,14 @@ class userService {
             user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
-        // 소셜로그인한 유저 중 추가정보를 입력하지 않았던 사람
+        // 소셜로그인한 유저 중 추가정보를 입력하지 않았던 사람 -> 추가정보 입력여부 = true
         if (!user.hasAddtionalInfo && user.loginType !== "BASIC") {
             const fieldToUpdate = "hasAddtionalInfo";
             const newValue = true;
             user = await User.update({ userId, fieldToUpdate, newValue });
+            const ourAccessToken = createAccessToken({ userId: user.userId });
+
+            return { ourAccessToken };
         }
 
         return user;

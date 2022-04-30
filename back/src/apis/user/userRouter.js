@@ -107,6 +107,11 @@ userRouter.put("/user", loginRequired, async (req, res, next) => {
             throw new Error(updatedUser.errorMessage);
         }
 
+        if (updatedUser.ourAccessToken) {
+            res.status(200).json({ accessToken: updatedUser.ourAccessToken });
+            return;
+        }
+
         res.status(200).json(updatedUser);
     } catch (error) {
         next(error);
