@@ -11,21 +11,25 @@ class Product {
         return product;
     }
 
-    static async findByQuery({cid, pid}) {
+    static async findByQuery({cid, pid, keyword}) {
         
         if(cid && pid) {
-            const product = await ProductModel.find({categoty : cid, productId : pid});
+            const product = await ProductModel.find({category : cid, productId : pid});
             return product
         }
         
-        if(cid){
-            const product = await ProductModel.find({categoty : cid});
+        if(cid && pid == null){
+            const product = await ProductModel.find({category : cid});
             return product
         }
-        if(pid){
+        if(pid && cid == null){
             const product = await ProductModel.find({productId : pid});
             return product
         }
+    }
+    static async findBySearch({keyword}){
+        const product = await ProductModel.find({$text : {$search: keyword}})
+        return product
     }
 
     static async findAll() {

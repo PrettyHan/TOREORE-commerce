@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import OrderHistory from "./myPageComponents/OrderHistory";
 import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
+import UserEditForm from "./UserEditForm";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
+import { UserStateContext } from "../../App";
+
 function MyPage() {
+    const userState = useContext(UserStateContext);
+    const user = userState.user;
+
     const constantsFirstState = {
+        userEditForm: false,
         orderHistory: false,
         likedHistory: false,
         coupon: false,
@@ -18,6 +25,7 @@ function MyPage() {
     const [isOpen, setIsOpen] = useState(constantsFirstState);
 
     const components = {
+        userEditForm: <UserEditForm />,
         orderHistory: <OrderHistory />,
         likedHistory: <LikedHistory />,
         coupon: <Coupon />,
@@ -37,12 +45,24 @@ function MyPage() {
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             <Container>
                 <UserContainer>
+                    <Intro>
+                        <p> "{user.name}" 님 안녕하세요!</p>
+                        <p>
+                            {" "}
+                            ID ▶ {user.userId} {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                        </p>
+                    </Intro>
                     <div>
-                        <p> 000님 안녕하세요!</p>
-                        <p> (user123, Green-Class)</p>
-                    </div>
-                    <div>
-                        <Button disableElevation disableRipple>
+                        <Button
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    userEditForm: true,
+                                })
+                            }
+                            disableElevation
+                            disableRipple
+                        >
                             회원 정보 수정
                         </Button>
                     </div>
@@ -97,14 +117,19 @@ const Container = styled.div`
 `;
 
 const UserContainer = styled(Box)`
-    width: 61%;
-    box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+    width: 62%;
+    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px 0 20px;
+`;
+
+const Intro = styled.div`
+    font-size: 20px;
+    font-weight: bold;
 `;
 
 const ItemsContainer = styled(Box)`
@@ -114,16 +139,17 @@ const ItemsContainer = styled(Box)`
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    font-size: 20px;
+    font-weight: bold;
 `;
 
 const Items = styled.div`
-    box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
     height: 80px;
     text-align: center;
     line-height: 80px;
     cursor: pointer;
 `;
-// ${(props) => (props.cursor === "pointer" ? "pointer" : "default")}
 
 export default MyPage;
