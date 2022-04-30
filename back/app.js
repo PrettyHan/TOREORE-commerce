@@ -12,6 +12,19 @@ const PORT = process.env.PORT || 3030;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+/*======== 카카오페이 테스트 용 set ========*/
+app.set("view engine", "ejs");
+app.set("views", './src/apis/payment/views');
+app.get("/payments/", (req, res) => {
+    res.render("ready")
+})
+app.get("/payments/success", (req, res) => {
+    res.render("success")
+})
+/*======== 카카오페이 테스트 용 set ========*/
+
 app.use(passport.initialize());
 useStrategy();
 
