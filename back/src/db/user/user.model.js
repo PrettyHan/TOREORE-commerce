@@ -17,6 +17,11 @@ class User {
         return user;
     }
 
+    static async findByEmail({ email }) {
+        const user = await UserModel.findOne({ email });
+        return user;
+    }
+
     static async findAll() {
         const users = await UserModel.find({});
         return users;
