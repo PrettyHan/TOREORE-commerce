@@ -36,26 +36,14 @@ const OrderSchema = new Schema(
             type: Object,
             required: true,
             default: null,
-            properties: {
-                country: {
-                    type: String,
-                },
-                do: {
-                    type: String,
-                },
-                si: {
-                    type: String,
-                },
-                gu: {
-                    type: String,
-                },
-                ro: {
-                    type: String,
-                },
-                rest: {
-                    type: String,
-                },
+            address1: {
+                type: String,
+                required: true
             },
+            address2: {
+                type: String,
+                required: false
+            }
         },
         message: {
             type: String,
@@ -71,6 +59,12 @@ const OrderSchema = new Schema(
             required: true,
             default: false,
         },
+        loginType: {
+            type: String,
+            required: false,
+            default : ""
+
+        }
     },
     {
         timestamps: true,
