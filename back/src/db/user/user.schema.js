@@ -66,13 +66,13 @@ const UserSchema = new Schema(
             required: false,
             default: null,
             address1: {
-                type : String,
-                required : true,
+                type: String,
+                required: true,
             },
             address2: {
-                type : String,
-                required : false,
-            }
+                type: String,
+                required: false,
+            },
         },
         bookmark: {
             type: Array,
@@ -87,8 +87,13 @@ const UserSchema = new Schema(
         loginType: {
             type: String,
             required: false,
-            default: ""
-        }
+            default: "",
+        },
+        hasAddtionalInfo: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
     },
     {
         timestamps: true,

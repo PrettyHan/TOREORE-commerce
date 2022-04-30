@@ -118,12 +118,6 @@ class userService {
             user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
-        if (toUpdate.email) {
-            const fieldToUpdate = "email";
-            const newValue = toUpdate.email;
-            user = await User.update({ userId, fieldToUpdate, newValue });
-        }
-
         if (toUpdate.gender) {
             const fieldToUpdate = "gender";
             const newValue = toUpdate.gender;
@@ -139,6 +133,13 @@ class userService {
         if (toUpdate.birth) {
             const fieldToUpdate = "birth";
             const newValue = toUpdate.birth;
+            user = await User.update({ userId, fieldToUpdate, newValue });
+        }
+
+        // 소셜로그인한 유저 중 추가정보를 입력하지 않았던 사람
+        if (!user.hasAddtionalInfo && user.loginType !== "BASIC") {
+            const fieldToUpdate = "hasAddtionalInfo";
+            const newValue = true;
             user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
