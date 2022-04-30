@@ -3,7 +3,7 @@ import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { orderService } from "./orderService";
 import { userService } from "../user/userService";
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 const orderRouter = Router();
 orderRouter.use(loginRequired);
@@ -15,7 +15,7 @@ orderRouter.post("/", async (req, res, next) => {
                 "headers의 Content-Type을 application/json으로 설정해주세요",
             );
         }
-        const orderId = mongoose.Types.ObjectId()
+        const orderId = mongoose.Types.ObjectId();
         const userId = req.currentUserId;
         const products = await userService.getUserCarts({
             userId,
@@ -23,13 +23,13 @@ orderRouter.post("/", async (req, res, next) => {
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const cartlist = products.cart
+        const cartlist = products.cart;
         const cartPrices = cartlist.map((v) => {
-            return v.price
-        })
-        const totalPrice = cartPrices.reduce((a,b) =>{
-            return a += b
-        })
+            return v.price;
+        });
+        const totalPrice = cartPrices.reduce((a, b) => {
+            return (a += b);
+        });
         const isPayed = false;
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
@@ -63,22 +63,21 @@ orderRouter.get("/", async function (req, res, next) {
         const userId = req.currentUserId;
         const isPayed = req.query.ispayed;
         if (isPayed == "true" || isPayed == "false") {
-            const order = await orderService.getIspayedByQuery({isPayed, userId});
+            const order = await orderService.getIspayedByQuery({ isPayed, userId });
 
             if (order.errorMessage) {
                 throw new Error(order.errorMessage);
             }
-    
+
             res.status(200).send(order);
+        } else {
+            const orders = await orderService.getOrders({ userId });
+
+            if (orders.errorMessage) {
+                throw new Error(orders.errorMessage);
+            }
+            res.status(200).send(orders);
         }
-        else {
-            const orders = await orderService.getOrders({userId});
-        
-        if (orders.errorMessage) {
-            throw new Error(orders.errorMessage);
-        }
-        res.status(200).send(orders);
-    }
     } catch (error) {
         next(error);
     }
