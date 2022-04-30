@@ -1,9 +1,10 @@
 .item-container {
     width: 350px;
-    height: 620px;
-    margin: 10px 15px;
+    height: fit-content;
+    margin: 0px auto;
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
     position: relative;
+    border: solid rgba(149, 157, 165, 0.3);
 }
 
 .item-img {
@@ -13,21 +14,29 @@
 
 .item {
     list-style: none;
-    padding: 0px 20px;
+    margin: 20px 20px;
+    padding: 0px;
 }
 
 .item-name {
     font-size: larger;
-    font: bold;
-    padding-bottom: 5px;
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
-.item-desc {
+.item-price {
+    font-size: larger;
     color: gray;
 }
 
-.item-btn-group {
-    padding: 0px 10px 15px 10px;
+.img {
+    position: relative;
+}
+
+.like-btn {
     position: absolute;
-    bottom: 0px;
+    z-index: 1;
+    bottom: 15px;
+    right: 15px;
+    font-size: 2rem;
 }

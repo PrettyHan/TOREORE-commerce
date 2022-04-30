@@ -87,17 +87,31 @@ function App() {
                             <Route path="/introduce" element={<Introduce />} />
                             <Route path="/myPage" element={<MyPage />} />
                             <Route path="/auth/:id" element={<Main />} />
-                            <Route path="/products" element={<ProductList />} />
+                            <Route path="*" element={<NotFound />} />
                             <Route
                                 exact
-                                path="/products/:categoryId/:productId"
+                                path="/products/:category"
+                                element={<ProductList />}
+                            />
+                            <Route
+                                exact
+                                path="/products/:category/:productId"
                                 element={<ProductDetail />}
                             />
-                            <Route path="*" element={<NotFound />} />
+                            <Route path="/cart" element={<Cart />} />
                         </Routes>
-                        <Footer />
                     </Router>
                 </React.Suspense>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <Footer />
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );
