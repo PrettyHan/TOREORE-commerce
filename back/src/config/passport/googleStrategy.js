@@ -17,8 +17,10 @@ export const googleStrategy = () => {
                 // User.findOrCreate({ googleId: profile.id }, function (err, user) {
                 //     return cb(err, user);
                 // });
-                // const accessToken = createAccessToken() // jwt 발급
-                return cb(null, profile);
+
+                // 유저정보 스키마에 등록 -> id 정보 받아서 토큰 발급
+                const ourAccessToken = createAccessToken(); // jwt 발급
+                return cb(null, profile, ourAccessToken);
             },
         ),
     );

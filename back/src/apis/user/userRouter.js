@@ -48,7 +48,7 @@ userRouter.get(
     "/google/callback",
     passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
-        res.redirect("/"); // 로그인 성공 시 메인 페이지로 이동
+        res.redirect("/"); // 로그인 성공 시 메인 페이지로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
     },
 );
 
