@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import "../../style/productItem.css";
 import * as Api from "../../api";
-import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
 
 // 가격 표시 형식
 export const formatPrice = (price) => {
@@ -28,20 +27,28 @@ const ProductItem = ({
     }, [navigate, category, productId]);
 
     // '좋아요' 누른 제품 배열
-    const [likeArr, setLikeArr] = useState(userLikeArr);
+    const [likeIds, setLikeIds] = useState(userLikeArr);
     // 해당 제품에 대한 '좋아요' 여부
-    const [isLike, setIsLike] = useState(userLikeArr.includes(productId));
+    // const [isLike, setIsLike] = useState(userLikeArr.includes(productId));
+
+    const isLike = React.useMemo(() => {
+        return likeIds.includes(productId);
+    }, [likeIds, productId]);
 
     // 좋아요 클릭
     const handleLikeClick = async (e) => {
         e.stopPropagation();
         const res = await Api.post("liked", { productId: productId });
-        setLikeArr(getProductIdArr(res.data.bookmark));
+        const ids = res.data.bookmark.map((item) => item.productId);
+        setLikeIds(ids);
     };
 
-    useEffect(() => {
-        setIsLike(likeArr.includes(productId));
-    }, [likeArr, productId]);
+    /**
+     * https://ko.reactjs.org/docs/hooks-reference.html
+     */
+    // useEffect(() => {
+        // setIsLike(likeArr.includes(productId));
+    // }, [likeArr, productId]);
 
     return (
         <div className="item-container" onClick={handleItemClick}>

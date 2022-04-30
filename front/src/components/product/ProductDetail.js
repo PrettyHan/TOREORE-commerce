@@ -18,6 +18,13 @@ const ProductDetail = () => {
     const [cnt, setCnt] = useState(1);
     const [product, setProduct] = useState({});
 
+    // '좋아요' 누른 제품 배열
+    const [likeIds, setLikeIds] = useState(userLikeArr);
+
+    const isLike = React.useMemo(() => {
+        return likeIds.includes(productId);
+    }, [likeIds, productId]);
+
     const handleCntClick = (e) => {
         if (e.target.innerText === "+") {
             setCnt(cnt + 1);
@@ -53,27 +60,21 @@ const ProductDetail = () => {
         navigate(`/orders/${productId}`);
     };
 
-    // '좋아요' 누른 제품 배열
-    const [likeArr, setLikeArr] = useState(userLikeArr);
-    // 해당 제품에 대한 '좋아요' 여부
-    const [isLike, setIsLike] = useState(userLikeArr.includes(productId));
-
     // 좋아요 버튼 클릭
-    const handleLikeClick = async (e) => {
+    const handleLikeClick = async () => {
         const res = await Api.post("liked", { productId: productId });
-        setLikeArr(getProductIdArr(res.data.bookmark));
+        const ids = res.data.bookmark.map((item) => item.productId);
+        setLikeIds(ids);
     };
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
         Api.get("products", { cid: category, pid: productId }, true).then(
             (res) => {
-                console.log(res);
                 setProduct(res.data[0]);
             }
         );
-        setIsLike(likeArr.includes(productId));
-    }, [category, likeArr, productId]);
+    }, []);
 
     return (
         <section className="item-detail-container">
