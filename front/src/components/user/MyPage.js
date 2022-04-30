@@ -15,6 +15,8 @@ function MyPage() {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const user = userState.user;
+    const isLogin = !!userState.user; // 로그인 여부 판단 
+
 
     const constantsFirstState = {
         orderHistory: false,
@@ -42,7 +44,7 @@ function MyPage() {
 
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
-            <Container>
+            {isLogin ? (<Container>
                 <UserContainer>
                     <Intro>
                         <p> "{user.name}" 님 안녕하세요!</p>
@@ -98,7 +100,8 @@ function MyPage() {
                     </Items>
                 </ItemsContainer>
                 {whatIsOpen()}
-            </Container>
+            </Container>)
+            : <Container><Items>현재 마이페이지는 로그인 해야 이용 가능합니다.</Items></Container>}
         </div>
     );
 }
