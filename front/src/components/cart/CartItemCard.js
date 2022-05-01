@@ -4,7 +4,7 @@ import CartTableCell from "./CartTableCell";
 
 // import * as Api from "../../api";
 
-function CartItem({ cartItem, setCartItems, index }) {
+function CartItemCard({ cartItem, setCartItems, index }) {
   // 삭제 핸들링 함수
   const handleRemove = async () => {
     try {
@@ -94,7 +94,11 @@ function CartItem({ cartItem, setCartItems, index }) {
         <Checkbox checked={cartItem.checked} onChange={handleCheck} />
       </CartTableCell>
       <CartTableCell>
-        <img src={cartItem.image} alt={cartItem.name} />
+        <img
+          src={cartItem.image}
+          alt={cartItem.name}
+          style={{ width: 100, height: 200 }}
+        />
       </CartTableCell>
       <CartTableCell>{cartItem.name}</CartTableCell>
       <CartTableCell>{cartItem.price}</CartTableCell>
@@ -113,4 +117,4 @@ function CartItem({ cartItem, setCartItems, index }) {
   );
 }
 
-export default CartItem;
+export default CartItemCard;

@@ -6,7 +6,7 @@ import { createAccessToken } from "../../util/createJWT";
 class userService {
     static async createUser(userData) {
         // 유저 아이디 중복 확인
-        const { userId, password, name, email, gender, phone, birth } = userData;
+        const userId = userData.userId;
         const user = await User.findByUserId({ userId });
         if (user) {
             const errorMessage =
@@ -14,20 +14,38 @@ class userService {
             return { errorMessage };
         }
 
-        // 비밀번호 해쉬화
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = {
-            userId,
-            password: hashedPassword,
-            name,
-            email,
-            gender,
-            phone,
-            birth,
-        };
+        const loginType = userData.loginType ?? null;
+        // 쇼핑몰 자체 회원가입 유저가 아닌 경우(소셜 로그인 유저인 경우)
+        if (loginType) {
+            const { userId, email, name, loginType } = userData;
+            var newUser = {
+                userId,
+                password: "temp-password",
+                name,
+                email,
+                gender: 2, // 성별을 선택하지 않은 사람: 2
+                phone: "010-0000-0000",
+                birth: Date.now(),
+                loginType,
+            };
+            // 쇼핑몰 자체 일반 회원가입 유저(loginType이 null인 경우)
+        } else {
+            const hashedPassword = await bcrypt.hash(userData.password, 10);
+            const { userId, name, email, gender, phone, birth } = userData;
+            var newUser = {
+                userId,
+                password: hashedPassword,
+                name,
+                email,
+                gender,
+                phone,
+                birth,
+                loginType: "BASIC",
+            };
+        }
 
         const createdNewUser = await User.create({ newUser });
-        createdNewUser.errorMessage = null; // 문제 없이 db 저장 완료되었으므로 에러가 없음.
+        createdNewUser.errorMessage = null;
 
         return createdNewUser;
     }
@@ -70,6 +88,16 @@ class userService {
         return users;
     }
 
+    static async checkEmailDuplicate({ email }) {
+        const user = await User.findByEmail({ email });
+
+        if (!user) {
+            return false;
+        }
+
+        return true;
+    }
+
     static async updateUser({ userId, toUpdate }) {
         let user = await User.findByUserId({ userId });
 
@@ -90,12 +118,6 @@ class userService {
             user = await User.update({ userId, fieldToUpdate, newValue });
         }
 
-        if (toUpdate.email) {
-            const fieldToUpdate = "email";
-            const newValue = toUpdate.email;
-            user = await User.update({ userId, fieldToUpdate, newValue });
-        }
-
         if (toUpdate.gender) {
             const fieldToUpdate = "gender";
             const newValue = toUpdate.gender;
@@ -112,6 +134,16 @@ class userService {
             const fieldToUpdate = "birth";
             const newValue = toUpdate.birth;
             user = await User.update({ userId, fieldToUpdate, newValue });
+        }
+
+        // 소셜로그인한 유저 중 추가정보를 입력하지 않았던 사람 -> 추가정보 입력여부 = true
+        if (!user.hasAddtionalInfo && user.loginType !== "BASIC") {
+            const fieldToUpdate = "hasAddtionalInfo";
+            const newValue = true;
+            user = await User.update({ userId, fieldToUpdate, newValue });
+            const ourAccessToken = createAccessToken({ userId: user.userId });
+
+            return { ourAccessToken };
         }
 
         return user;
@@ -139,6 +171,7 @@ class userService {
 
         return deletedUser;
     }
+
     static async getUserCarts({ userId }) {
         const user = await User.findCartsByUserId({ userId });
 

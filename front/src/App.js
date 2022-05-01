@@ -11,11 +11,13 @@ import Footer from "./components/Layout/Footer";
 import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
+import UserEdit from "./components/user/UserEdit";
 import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
 import Search from "./components/Layout/Search";
+import Order from "./components/order/Order";
 
 const ProductDetail = React.lazy(() =>
     import("./components/product/ProductDetail")
@@ -37,6 +39,7 @@ function App() {
     // 아래의 fetchCurrentUser 함수가 실행된 다음에 컴포넌트가 구현되도록 함.
     // 아래 코드를 보면 isFetchCompleted 가 true여야 컴포넌트가 구현됨.
     const [isFetchCompleted, setIsFetchCompleted] = useState(false);
+    // 로그인 다이얼로그를 여는지
     const [open, setOpen] = useState(false);
 
     const fetchCurrentUser = async () => {
@@ -88,6 +91,7 @@ function App() {
                             <Route path="/" exact element={<Main />} />
                             <Route path="/introduce" element={<Introduce />} />
                             <Route path="/myPage" element={<MyPage />} />
+                            <Route path="/useredit" element={<UserEdit />} />
                             <Route path="/auth/:id" element={<Main />} />
                             <Route path="*" element={<NotFound />} />
                             <Route
@@ -106,6 +110,7 @@ function App() {
                                 element={<ProductDetail />}
                             />
                             <Route path="/cart" element={<Cart />} />
+                            <Route path="/order/:orderId" element={<Order />} />
                         </Routes>
                     </Router>
                 </React.Suspense>
