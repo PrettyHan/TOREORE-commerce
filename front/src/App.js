@@ -112,18 +112,9 @@ function App() {
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/order/:orderId" element={<Order />} />
                         </Routes>
+                        <Footer />
                     </Router>
                 </React.Suspense>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Footer />
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );

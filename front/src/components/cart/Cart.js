@@ -220,7 +220,7 @@ function Cart() {
 }
 
 const Container = styled.div`
-    margin-top: 30px;
+    margin: 30px 0 100px 0;
     display: grid;
     row-gap: 20px;
     place-items: center center;
