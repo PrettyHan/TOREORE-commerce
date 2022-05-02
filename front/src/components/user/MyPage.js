@@ -44,13 +44,20 @@ function MyPage() {
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             <Container>
                 <UserContainer>
-                    <Intro>
-                        <p> "{user.name}" 님 안녕하세요!</p>
-                        <p>
-                            {" "}
-                            ID ▶ {user.userId} {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
-                        </p>
-                    </Intro>
+                    {user ? (
+                        <Intro>
+                            <p> "{user.name}" 님 안녕하세요!</p>
+                            <p>
+                                {" "}
+                                ID ▶ {user.userId}{" "}
+                                {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                            </p>
+                        </Intro>
+                    ) : (
+                        <Intro>
+                            <p> 고객님 안녕하세요!</p>
+                        </Intro>
+                    )}
                     <div>
                         <Button
                             onClick={() => navigate("/useredit")}
