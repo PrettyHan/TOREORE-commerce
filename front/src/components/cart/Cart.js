@@ -212,7 +212,11 @@ function Cart() {
                         </ItemsContainer>
                     </Container>
                 ) : (
-                    <Box>현재 마이페이지는 로그인 해야 이용 가능합니다.</Box>
+                    <Container>
+                        <Items onClick={() => navigate("/")}>
+                            로그인 유저만 사용가능합니다 ^^
+                        </Items>
+                    </Container>
                 )}
             </div>
         </>
