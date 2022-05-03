@@ -141,9 +141,9 @@ class userService {
             const fieldToUpdate = "hasAddtionalInfo";
             const newValue = true;
             user = await User.update({ userId, fieldToUpdate, newValue });
-            const ourAccessToken = createAccessToken({ userId: user.userId });
+            const accessToken = createAccessToken({ userId: user.userId });
 
-            return { ourAccessToken };
+            return { accessToken };
         }
 
         return user;
