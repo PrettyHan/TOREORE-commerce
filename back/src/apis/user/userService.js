@@ -68,11 +68,6 @@ class userService {
             return { errorMessage };
         }
 
-        // 로그인 성공 -> JWT 웹 토큰 생성
-        // const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
-        // const accessToken = jwt.sign({ userId: user.userId }, secretKey, {
-        //     expiresIn: "6h",
-        // });
         const accessToken = createAccessToken({ userId });
 
         const loginUser = {
@@ -88,7 +83,7 @@ class userService {
         return users;
     }
 
-    static async checkEmailDuplicate({ email }) {
+    static async checkEmailExist({ email }) {
         const user = await User.findByEmail({ email });
 
         if (!user) {
@@ -141,9 +136,6 @@ class userService {
             const fieldToUpdate = "hasAddtionalInfo";
             const newValue = true;
             user = await User.update({ userId, fieldToUpdate, newValue });
-            const accessToken = createAccessToken({ userId: user.userId });
-
-            return { accessToken };
         }
 
         return user;
