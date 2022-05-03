@@ -12,7 +12,13 @@ import Paypal from "./payments/Paypal";
 import Bankbook from "./payments/Bankbook";
 import Card from "./payments/Card";
 
-function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
+function OrderPaymentCard({
+  orderPayment,
+  setOrderPayment,
+  subTotal,
+  handlePayComplete,
+  orderId,
+}) {
   const [payment, setPayment] = useState(orderPayment);
 
   const handlePaymentCheck = (event) => {
@@ -27,7 +33,13 @@ function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
           paymentMethod: "paypal",
         };
       });
-      return <Paypal subTotal={subTotal} />;
+      return (
+        <Paypal
+          subTotal={subTotal}
+          handlePayComplete={handlePayComplete}
+          setOrderPayment={setOrderPayment}
+        />
+      );
     } else if (payment === "bankbook") {
       setOrderPayment((current) => {
         return {
@@ -35,7 +47,7 @@ function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
           paymentMethod: "bankbook",
         };
       });
-      return <Bankbook />;
+      return <Bankbook handlePayComplete={handlePayComplete} />;
     } else if (payment === "card") {
       setOrderPayment((current) => {
         return {
@@ -43,7 +55,14 @@ function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
           paymentMethod: "card",
         };
       });
-      return <Card />;
+      return (
+        <Card
+          subTotal={subTotal}
+          handlePayComplete={handlePayComplete}
+          orderId={orderId}
+          setOrderPayment={setOrderPayment}
+        />
+      );
     }
   };
 
@@ -81,3 +100,5 @@ function OrderPaymentCard({ orderPayment, setOrderPayment, subTotal }) {
     </div>
   );
 }
+
+export default OrderPaymentCard;

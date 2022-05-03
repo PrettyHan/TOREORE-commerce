@@ -1,7 +1,7 @@
 import React from "react";
 import PaypalExpressBtn from "react-paypal-express-checkout";
 
-function Paypal({ subTotal, setOrderPayment }) {
+function Paypal({ subTotal, handlePayComplete, setOrderPayment }) {
   // 스타일 커스텀
   const style = {
     size: "responsive",
@@ -19,11 +19,12 @@ function Paypal({ subTotal, setOrderPayment }) {
   const onSuccess = (payment) => {
     setOrderPayment((current) => {
       return {
-        paymentMethod: "paypal",
+        ...current,
         isPayed: true,
       };
     });
     console.log("결제 성공", payment);
+    handlePayComplete();
   };
 
   // 결제 취소

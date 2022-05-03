@@ -118,7 +118,8 @@ function Cart() {
   // 페이지 열릴 때 카트 아이템들을 받아오는 함수
   const fetchCartItems = async () => {
     try {
-      const fetchedItems = await Api.get("carts");
+      const res = await Api.get("carts");
+      const fetchedItems = res.data;
       setCartItems(handleCartData(fetchedItems));
     } catch (err) {
       console.log(err);

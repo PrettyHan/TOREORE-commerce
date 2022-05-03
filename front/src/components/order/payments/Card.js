@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
-function Card() {
+import { Button } from "@mui/material";
+
+function Card({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
   useEffect(() => {
     const jquery = document.createElement("script");
     jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
@@ -16,15 +18,15 @@ function Card() {
 
   const onClickPayment = () => {
     const { IMP } = window;
-    IMP.init("");
+    IMP.init("imp62990898");
     const data = {
       pg: "html5_inicis",
       pay_method: "card",
-      merchant_uid: "order_no_0001", // 상점에서 관리하는 주문 번호
-      name: "주문명:결제테스트",
-      amount: 14000,
-      buyer_email: "iamport@siot.do",
-      buyer_name: "구매자이름",
+      merchant_uid: `mid_${new Date().getTime()}`,
+      name: orderId,
+      amount: subTotal,
+      buyer_email: "elice@test.com",
+      buyer_name: "엘리스",
       buyer_tel: "010-1234-5678",
       buyer_addr: "서울특별시 강남구 삼성동",
       buyer_postcode: "123-456",
@@ -42,10 +44,22 @@ function Card() {
       paid_amount,
       status,
     } = response;
+
     if (success) {
-      alert("결제 성공");
+      setOrderPayment((current) => {
+        return {
+          ...current,
+          isPayed: true,
+        };
+      });
+      console.log("결제 성공");
+      handlePayComplete();
     } else {
-      alert(`결제 실패 : ${error_msg}`);
+      console.log(`결제 실패 : ${error_msg}`);
     }
   };
+
+  return <Button onClick={onClickPayment}>카드 결제하기</Button>;
 }
+
+export default Card;
