@@ -4,6 +4,7 @@ import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
 import passport from "passport";
 import cors from "cors";
+import { createAccessToken } from "../../util/createJWT";
 
 const userRouter = Router();
 
@@ -55,12 +56,17 @@ userRouter.get(
 
         // 기존에 회원이 아니었던 사람 -> 바로 추가정보 입력 페이지로 이동
         // 기존에 회원가입한 소셜로그인 유저이지만, 추가정보를 입력하지 않은 경우 -> 추가정보 입력 페이지로 이동
+        const accessToken = createAccessToken({ userId: user.userId });
+        console.log("현재 유저의 accessToken>> ", accessToken);
         if (isMember === false || (isMember && user.hasAddtionalInfo === false)) {
             // 추가정보 입력 페이지로 이동 --> 서버에서 이동시키는 건 아닌듯?
             // 프론트에 신호를 줘서 회원정보 수정 페이지로 이동하게 해야할듯?
-            res.status(302).redirect("/edit-info");
+            res.status(302).json(accessToken);
+            // .redirect("http://localhost:3000/useredit");
+        } else {
+            res.status(302).json(accessToken);
+            // .redirect("http://localhost:3000"); // 로그인 성공 시 메인 페이지(프론트메인페이지)로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
         }
-        res.status(302).redirect("/main"); // 로그인 성공 시 메인 페이지(프론트메인페이지)로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
     },
 );
 

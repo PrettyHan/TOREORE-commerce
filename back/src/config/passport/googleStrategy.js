@@ -28,16 +28,16 @@ export const googleStrategy = () => {
                 if (isEmailDuplicate === false) {
                     const loginType = "GOOGLE";
                     const userData = { userId, email, name, loginType };
-                    const user = await userService.createUser(userData); // 소셜로그인 최초 로그인 유저
+                    const user = await userService.createUser(userData);
                     isMember = false;
                     const requestData = { user, isMember };
 
-                    return cb(null, requestData); // profile 안넘겨줘도?
+                    return cb(null, requestData);
                 } else {
                     const user = await userService.getUserInfo({ userId }); // 기존에 소셜로그인으로 로그인해서 회원등록한 유저
                     const requestData = { user, isMember };
 
-                    return cb(null, requestData); // profile 안넘겨줘도?
+                    return cb(null, requestData);
                 }
 
                 //    유저일련번호: userInfo.sub, 유저이름: userInfo.name, 유저이메일: profile.email
