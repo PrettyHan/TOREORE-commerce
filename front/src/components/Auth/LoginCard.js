@@ -19,8 +19,6 @@ import { useCookies } from "react-cookie";
 import { DispatchContext } from "../../App";
 import * as Api from "../../api";
 
-import axios from "axios";
-
 const FormHelperTexts = styled(FormHelperText)`
     && {
         width: 100%;
