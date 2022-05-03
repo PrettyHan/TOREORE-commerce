@@ -1,10 +1,8 @@
 import "dotenv/config";
 import cors from "cors";
 import express from "express";
-import passport from "passport";
 import { indexRouter } from "./src/apis/index";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware";
-import { useStrategy } from "./src/config/confirmStrategy";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -23,9 +21,6 @@ app.get("/payments/success", (req, res) => {
     res.render("success");
 });
 /*======== 카카오페이 테스트 용 set ========*/
-
-app.use(passport.initialize());
-useStrategy();
 
 indexRouter(app);
 app.use(errorMiddleware);
