@@ -147,7 +147,7 @@ function LoginCard({ setIsSigning }) {
                 "http://localhost:5001/auth/google",
                 "_self"
             );
-            console.log(res);
+            console.log(res.json());
         } catch (err) {
             console.log("err", err);
         }
