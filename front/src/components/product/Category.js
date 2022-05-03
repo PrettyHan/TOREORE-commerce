@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import "../../style/category.css";
+
+import styled from "styled-components";
 
 const Category = () => {
     const category = ["T-shirt", "Sweater", "Trousers", "Skirt", "Sneakers"];
@@ -21,25 +22,37 @@ const Category = () => {
                     textAlign: "center",
                 }}
             ></div>
-            <div className="category-container">
+            <Wrapper>
                 {category.map((item) => (
-                    <div className="category">
-                        <div
-                            className="category-btn"
-                            onClick={handleCategoryClick}
-                        >
-                            {item}
-                        </div>
-                        {/* <div className="sub-category">
-                            {category2.map((item) => (
-                                <div className="sub-category-btn">{item}</div>
-                            ))}
-                        </div> */}
-                    </div>
+                    <CategoryBtn
+                        className="category-btn"
+                        onClick={handleCategoryClick}
+                    >
+                        {item}
+                    </CategoryBtn>
                 ))}
-            </div>
+            </Wrapper>
         </>
     );
 };
 
 export default Category;
+
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+`;
+
+const CategoryBtn = styled.div`
+    border: 2px solid black;
+    width: 180px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: larger;
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+`;

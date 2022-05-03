@@ -16,6 +16,7 @@ import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
+import Search from "./components/Layout/Search";
 import Order from "./components/order/Order";
 
 const ProductDetail = React.lazy(() =>
@@ -85,6 +86,7 @@ function App() {
                         <Header handleOpen={handleOpen} />
                         <Login open={open} handleClose={handleClose} />
                         <Category />
+                        <Search />
                         <Routes>
                             <Route path="/" exact element={<Main />} />
                             <Route path="/introduce" element={<Introduce />} />
@@ -99,24 +101,20 @@ function App() {
                             />
                             <Route
                                 exact
+                                path="/products/search/:keyword"
+                                element={<ProductList />}
+                            />
+                            <Route
+                                exact
                                 path="/products/:category/:productId"
                                 element={<ProductDetail />}
                             />
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/order/:orderId" element={<Order />} />
                         </Routes>
+                        <Footer />
                     </Router>
                 </React.Suspense>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Footer />
             </UserStateContext.Provider>
         </DispatchContext.Provider>
     );
