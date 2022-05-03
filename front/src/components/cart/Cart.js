@@ -82,11 +82,11 @@ function Cart() {
   // 선택 삭제 버튼 클릭 핸들링 함수
   const handleSelectRemove = async () => {
     try {
-      const deleteProducts = checkedCartItems.map((item) => {
+      const productIdArr = checkedCartItems.map((item) => {
         return item.productId;
       });
       await Api.delete("carts/select", {
-        productIdArr: deleteProducts,
+        productIdArr,
       });
 
       setCartItems((current) => {
@@ -119,7 +119,8 @@ function Cart() {
   const fetchCartItems = async () => {
     try {
       const res = await Api.get("carts");
-      setCartItems(handleCartData(res.data));
+      const fetchedCartItems = res.data;
+      setCartItems(handleCartData(fetchedCartItems));
     } catch (err) {
       console.log(err);
     }
