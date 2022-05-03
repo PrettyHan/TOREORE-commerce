@@ -12,7 +12,7 @@ import sessionFileStore from "session-file-store";
 const app = express();
 const PORT = process.env.PORT || 3030;
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(
@@ -34,20 +34,12 @@ app.get("/payments/success", (req, res) => {
 });
 /*======== 카카오페이 테스트 용 set ========*/
 
-const fileStore = sessionFileStore(session);
 // express session 연결
 app.use(
     session({
         secret: "secret-key",
-        resave: false, // 세션을 언제나 저장할지 여부, false 권장
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 60 * 60 * 1000, // 1 hour
-            // maxAge: 60 * 1000, // test 60초 -> 60초가 지난 뒤 새로고침하면 로그인이 자동으로 풀림
-            httpOnly: true,
-            secure: false,
-        },
-        store: new fileStore(),
+        resave: true, // 세션을 언제나 저장할지 여부, false 권장
+        saveUninitialized: true,
     }),
 );
 
