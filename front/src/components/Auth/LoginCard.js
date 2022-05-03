@@ -143,16 +143,9 @@ function LoginCard({ setIsSigning }) {
         }
     };
 
-    const handleGoogleSign = async (event) => {
-        event.preventDefault();
-
+    const handleGoogleSign = async () => {
         try {
-            // const res = await Api.get("auth/google");
-            const res = await axios.get("http://localhost:5001/auth/google");
-
-            const user = res.data;
-
-            console.log(user);
+            window.open("http://localhost:5001/auth/google", "_self");
         } catch (err) {
             console.log("err", err);
         }
