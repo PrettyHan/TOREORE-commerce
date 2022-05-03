@@ -3,7 +3,6 @@ import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
 import passport from "passport";
-import cors from "cors";
 
 const userRouter = Router();
 
@@ -42,7 +41,6 @@ userRouter.post("/signup", async (req, res, next) => {
 // google login
 userRouter.get(
     "/google",
-    cors(),
     passport.authenticate("google", { scope: ["profile", "email"] }),
 );
 

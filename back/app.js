@@ -5,6 +5,9 @@ import passport from "passport";
 import { indexRouter } from "./src/apis/index";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware";
 import { useStrategy } from "./src/config/confirmStrategy";
+import { createProxyMiddleware } from "http-proxy-middleware";
+import session from "express-session";
+import sessionFileStore from "session-file-store";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -12,6 +15,13 @@ const PORT = process.env.PORT || 3030;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(
+//     "/auth/google",
+//     createProxyMiddleware({
+//         target: "https://accounts.google.com/o/oauth2/v2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5001%2Fauth%2Fgoogle%2Fcallback&scope=profile%20email&client_id=430470352132-0f8bv97e0b17rmsef09boohfdcenagbq.apps.googleusercontent.com",
+//         changeOrigin: true,
+//     }),
+// );
 
 /*======== 카카오페이 테스트 용 set ========*/
 app.set("view engine", "ejs");
@@ -24,7 +34,25 @@ app.get("/payments/success", (req, res) => {
 });
 /*======== 카카오페이 테스트 용 set ========*/
 
+const fileStore = sessionFileStore(session);
+// express session 연결
+app.use(
+    session({
+        secret: "secret-key",
+        resave: false, // 세션을 언제나 저장할지 여부, false 권장
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 60 * 60 * 1000, // 1 hour
+            // maxAge: 60 * 1000, // test 60초 -> 60초가 지난 뒤 새로고침하면 로그인이 자동으로 풀림
+            httpOnly: true,
+            secure: false,
+        },
+        store: new fileStore(),
+    }),
+);
+
 app.use(passport.initialize());
+app.use(passport.session());
 useStrategy();
 
 indexRouter(app);
