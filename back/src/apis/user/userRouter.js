@@ -5,6 +5,7 @@ import { userService } from "./userService";
 import passport from "passport";
 import cors from "cors";
 import { createAccessToken } from "../../util/createJWT";
+import axios from "axios";
 
 const userRouter = Router();
 
@@ -66,6 +67,19 @@ userRouter.get(
         }
     },
 );
+
+userRouter.post("/google", async (req, res, next) => {
+    try {
+        const { googleAccessToken } = req.body;
+        const { data } = await axios.get(
+            `https://www.googleapis.com/oauth2/v4/userinfo?access_token=${googleAccessToken}`,
+        );
+
+        console.log(data);
+    } catch (error) {
+        next(error);
+    }
+});
 
 userRouter.post("/login", async (req, res, next) => {
     try {
