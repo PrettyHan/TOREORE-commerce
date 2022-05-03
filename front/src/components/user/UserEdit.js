@@ -23,6 +23,7 @@ const bcrypt = require("bcryptjs");
 function UserEdit() {
     const navigate = useNavigate(); // 취소시, myPage로 다시 돌아감
     const userState = useContext(UserStateContext);
+    const userType = userState.user.loginType;
     const dispatch = useContext(DispatchContext); // 로그인한 유저 정보를 다시 보내주기 위해
     const [changePassword, setChangePassword] = useState(false); // 유저가 비밀번호를 수정 할 수도 있고 or 없고 분기 처리 state
     const [confirmPassword, setConfirmPassword] = useState(""); // 비밀번호 확인란
@@ -120,6 +121,7 @@ function UserEdit() {
     useEffect(() => {
         Api.get("auth/user").then((res) => {
             const result = res.data;
+            console.log(result);
             setForm((cur) => {
                 const newForm = {
                     ...cur,
@@ -166,25 +168,31 @@ function UserEdit() {
                         <FormHelperTexts>
                             {errorMessage.emailError}
                         </FormHelperTexts>
-                        <Items>
-                            <Input
-                                fullWidth
-                                type="password"
-                                id="password"
-                                name="password"
-                                label="새 비밀번호 (숫자+영문자+특수문자 8자리 이상)"
-                                autoComplete="off"
-                                size="small"
-                                onChange={changedPassword}
-                                error={
-                                    (errorMessage.passwordError !== "") | false
-                                }
-                            />
-                        </Items>
-                        <FormHelperTexts>
-                            {errorMessage.passwordError}
-                        </FormHelperTexts>
-                        {changePassword && (
+                        {!userType && (
+                            <>
+                                <Items>
+                                    <Input
+                                        fullWidth
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        label="새 비밀번호 (숫자+영문자+특수문자 8자리 이상)"
+                                        autoComplete="off"
+                                        size="small"
+                                        onChange={changedPassword}
+                                        error={
+                                            (errorMessage.passwordError !==
+                                                "") |
+                                            false
+                                        }
+                                    />
+                                </Items>
+                                <FormHelperTexts>
+                                    {errorMessage.passwordError}
+                                </FormHelperTexts>
+                            </>
+                        )}
+                        {!userType && changePassword && (
                             <>
                                 <Items>
                                     <Input
@@ -214,18 +222,20 @@ function UserEdit() {
                                 </FormHelperTexts>
                             </>
                         )}
-                        <Items>
-                            <Input
-                                disabled
-                                fullWidth
-                                id="userId"
-                                name="userId"
-                                label="아이디"
-                                autoComplete="userId"
-                                size="small"
-                                value={form.userId || ""}
-                            />
-                        </Items>
+                        {!userType && (
+                            <Items>
+                                <Input
+                                    disabled
+                                    fullWidth
+                                    id="userId"
+                                    name="userId"
+                                    label="아이디"
+                                    autoComplete="userId"
+                                    size="small"
+                                    value={form.userId || ""}
+                                />
+                            </Items>
+                        )}
                         <Items>
                             <Input
                                 required
