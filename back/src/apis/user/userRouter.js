@@ -51,6 +51,7 @@ userRouter.get(
     "/google/callback",
     passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
     (req, res) => {
+        const { user, isMember } = req.user;
         const accessToken = createAccessToken({ userId: user.userId });
         res.status(200).json({ accessToken, userInfo: req.user });
     },
