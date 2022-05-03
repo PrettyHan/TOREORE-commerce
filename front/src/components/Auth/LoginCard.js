@@ -141,6 +141,7 @@ function LoginCard({ setIsSigning }) {
         }
     };
 
+<<<<<<< HEAD
     // const handleGoogleSign = async (event) => {
     //     try {
     //         const res = await Api.get("auth/google/callback");
@@ -149,6 +150,19 @@ function LoginCard({ setIsSigning }) {
     //         console.log("err", err);
     //     }
     // };
+=======
+    const handleGoogleSign = async (event) => {
+        try {
+            const res = window.open(
+                "http://localhost:5001/auth/google",
+                "_self"
+            );
+            console.log(res.json());
+        } catch (err) {
+            console.log("err", err);
+        }
+    };
+>>>>>>> 3427b1b5e3cc6bd15e898d487cb9dbe261ebae4e
 
     return (
         <ThemeProvider theme={theme}>
