@@ -73,6 +73,11 @@ const UserSchema = new Schema(
                 type: String,
                 required: false,
             },
+            address2: {
+                type: String,
+                required: false
+            }
+
         },
         bookmark: {
             type: Array,
