@@ -28,18 +28,27 @@ const ProductList = () => {
 
     const userLikeArr = getProductIdArr(user?.bookmark || []);
 
-    const { category } = useParams();
+    const { category, keyword } = useParams();
 
     const [productList, dispatch] = useReducer(reducer, []);
 
     const getData = async () => {
-        const res = await Api.get("products", { cid: category }, true);
-        dispatch({ type: "INIT", data: res.data });
+        if (category) {
+            const res = await Api.get("products", { cid: category }, true);
+            dispatch({ type: "INIT", data: res.data });
+        } else if (keyword) {
+            const res = await Api.get(
+                "products/search",
+                { keyword: keyword },
+                true
+            );
+            dispatch({ type: "INIT", data: res.data });
+        }
     };
 
     useEffect(() => {
         getData();
-    }, [category]);
+    }, [category, keyword]);
 
     return (
         <>

@@ -16,6 +16,7 @@ import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
+import Search from "./components/Layout/Search";
 import Order from "./components/order/Order";
 
 const ProductDetail = React.lazy(() =>

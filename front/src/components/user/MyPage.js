@@ -5,18 +5,17 @@ import OrderHistory from "./myPageComponents/OrderHistory";
 import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
+import { UserStateContext } from "../../App";
+import Login from "../Auth/Login";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
-
-import { UserStateContext } from "../../App";
 
 function MyPage() {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const user = userState.user;
-    const isLogin = !!userState.user; // 로그인 여부 판단 
-
+    const [openLogin, setOpenLogin] = useState(false);
 
     const constantsFirstState = {
         orderHistory: false,
@@ -44,70 +43,90 @@ function MyPage() {
 
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
-            {isLogin ? (<Container>
-                <UserContainer>
-                    <Intro>
-                        <p> "{user.name}" 님 안녕하세요!</p>
-                        <p>
-                            {" "}
-                            ID ▶ {user.userId} {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
-                        </p>
-                    </Intro>
-                    <div>
-                        <Button
-                            onClick={() => navigate("/useredit")}
-                            disableElevation
-                            disableRipple
+            {user ? (
+                <Container>
+                    <UserContainer>
+                        {user ? (
+                            <Intro>
+                                <p> "{user.name}" 님 안녕하세요!</p>
+                                <p>
+                                    {" "}
+                                    ID ▶ {user.userId}{" "}
+                                    {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                                </p>
+                            </Intro>
+                        ) : (
+                            <Intro>
+                                <p> 고객님 안녕하세요!</p>
+                            </Intro>
+                        )}
+                        <div>
+                            <Button
+                                onClick={() => navigate("/useredit")}
+                                disableElevation
+                                disableRipple
+                            >
+                                회원 정보 수정
+                            </Button>
+                        </div>
+                    </UserContainer>
+                    <ItemsContainer>
+                        <Items
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    orderHistory: true,
+                                })
+                            }
                         >
-                            회원 정보 수정
-                        </Button>
-                    </div>
-                </UserContainer>
-                <ItemsContainer>
-                    <Items
-                        onClick={() =>
-                            setIsOpen({
-                                ...constantsFirstState,
-                                orderHistory: true,
-                            })
-                        }
-                    >
-                        주문 내역
+                            주문 내역
+                        </Items>
+                        <Items
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    likedHistory: true,
+                                })
+                            }
+                        >
+                            좋아요
+                        </Items>
+                        <Items
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    coupon: true,
+                                })
+                            }
+                        >
+                            쿠폰
+                        </Items>
+                        <Items
+                            onClick={() =>
+                                setIsOpen({
+                                    ...constantsFirstState,
+                                    points: true,
+                                })
+                            }
+                        >
+                            적립금
+                        </Items>
+                    </ItemsContainer>
+                    {whatIsOpen()}
+                </Container>
+            ) : (
+                <Container>
+                    <Items onClick={() => navigate("/")}>
+                        로그인 유저만 사용가능합니다 ^^
                     </Items>
-                    <Items
-                        onClick={() =>
-                            setIsOpen({
-                                ...constantsFirstState,
-                                likedHistory: true,
-                            })
-                        }
-                    >
-                        좋아요
-                    </Items>
-                    <Items
-                        onClick={() =>
-                            setIsOpen({ ...constantsFirstState, coupon: true })
-                        }
-                    >
-                        쿠폰
-                    </Items>
-                    <Items
-                        onClick={() =>
-                            setIsOpen({ ...constantsFirstState, points: true })
-                        }
-                    >
-                        적립금
-                    </Items>
-                </ItemsContainer>
-                {whatIsOpen()}
-            </Container>)
-            : <Container><Items>현재 마이페이지는 로그인 해야 이용 가능합니다.</Items></Container>}
+                </Container>
+            )}
         </div>
     );
 }
 
 const Container = styled.div`
-    margin-top: 100px;
+    margin-top: 20px;
     display: grid;
     row-gap: 20px;
     place-items: center center;

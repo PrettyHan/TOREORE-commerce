@@ -139,7 +139,7 @@ function Cart() {
               <Typography
                 component="h2"
                 variant="h6"
-                color="primary"
+                color="inherit"
                 gutterBottom
               >
                 장바구니
@@ -199,7 +199,11 @@ function Cart() {
             </ItemsContainer>
           </Container>
         ) : (
-          <Box>현재 마이페이지는 로그인 해야 이용 가능합니다.</Box>
+          <Container>
+            <Items onClick={() => navigate("/")}>
+              로그인 유저만 사용가능합니다 ^^
+            </Items>
+          </Container>
         )}
       </div>
     </>
@@ -207,7 +211,7 @@ function Cart() {
 }
 
 const Container = styled.div`
-  margin-top: 100px;
+  margin: 30px 0 100px 0;
   display: grid;
   row-gap: 20px;
   place-items: center center;
@@ -215,7 +219,7 @@ const Container = styled.div`
 
 const CartContainer = styled(Box)`
   width: 61%;
-  box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -234,7 +238,7 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
-  box-shadow: #5e5b52 0px 0px 0px 1px, #eefc57 5px 5px 0px 0px;
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
   width: 24%;
   height: 80px;
   text-align: center;

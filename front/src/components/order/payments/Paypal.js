@@ -16,15 +16,15 @@ function Paypal({ subTotal, setOrderPayment }) {
   let total = parseInt(subTotal / 1200);
 
   // 결제 성공
-  // const onSuccess = (payment) => {
-  //   setOrderPayment((current) => {
-  //     return {
-  //       paymentMethod: "paypal",
-  //       isPayed: true,
-  //     };
-  //   });
-  //   console.log("결제 성공", payment);
-  // };
+  const onSuccess = (payment) => {
+    setOrderPayment((current) => {
+      return {
+        paymentMethod: "paypal",
+        isPayed: true,
+      };
+    });
+    console.log("결제 성공", payment);
+  };
 
   // 결제 취소
   const onCancel = (data) => {
