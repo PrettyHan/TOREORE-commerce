@@ -24,12 +24,8 @@ orderRouter.post("/", async (req, res, next) => {
             throw new Error(products.errorMessage);
         }
         const cartlist = products.cart;
-        const cartPrices = cartlist.map((v) => {
-            return v.price;
-        });
-        const totalPrice = cartPrices.reduce((a, b) => {
-            return (a += b);
-        });
+        const cartPrices = cartlist.map((v) => (v.price));
+        const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것

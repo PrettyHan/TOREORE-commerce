@@ -14,20 +14,13 @@ class Product {
     }
 
     static async findByQuery({cid, pid, keyword}) {
+        const query = {};
+        if(cid) query.category = cid;
+        if(pid) query.productId = pid;
         
-        if(cid && pid) {
-            const product = await ProductModel.find({category : cid, productId : pid});
-            return product
-        }
+        const product = await ProductModel.find(query);
+        return product
         
-        if(cid && pid == null){
-            const product = await ProductModel.find({category : cid});
-            return product
-        }
-        if(pid && cid == null){
-            const product = await ProductModel.find({productId : pid});
-            return product
-        }
     }
     static async findBySearch({keyword}){
         const product = await ProductModel.find({$text : {$search: keyword}})

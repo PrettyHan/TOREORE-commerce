@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 class orderService {
     static async createOrder(orderData) {
         const {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} = orderData
-
         const newOrder = {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} 
         // db에 저장
         const createdNewOrder = await Order.create( {newOrder} );
@@ -13,10 +12,6 @@ class orderService {
         return createdNewOrder;
       }
 
-      
-    
-    
-    
     static async getOrders({userId}) {
         const orders = await Order.findByUserId({userId});
         if (!orders) {
@@ -91,12 +86,10 @@ class orderService {
     }
     static async deleteOrder({ orderId }) {
         const deletedOrder = await Order.deleteByOrderId({ orderId });
-
         if (!deletedOrder) {
             const errorMessage = "일치하는 주문 정보가 없습니다.";
             return { errorMessage };
         }
-
         return deletedOrder;
     }
 }
