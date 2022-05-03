@@ -51,6 +51,12 @@ const OrderSchema = new Schema(
             required: true,
             default: false,
         },
+        loginType: {
+            type: String,
+            required: false,
+            default : ""
+
+        }
     },
     {
         timestamps: true,

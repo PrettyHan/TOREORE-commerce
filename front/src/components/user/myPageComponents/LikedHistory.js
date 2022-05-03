@@ -34,7 +34,8 @@ function LikedHistory() {
     const fetchLikedList = async () => {
         try {
             const res = await Api.get("liked");
-            if (res.date) {
+            console.log(res.data);
+            if (!res.date) {
                 setIsLiked(true);
                 setLikedList(res.data);
             } else {

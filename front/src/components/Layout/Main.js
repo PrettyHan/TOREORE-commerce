@@ -11,7 +11,6 @@ const Main = () => {
 
     return (
         <Container style={{ minHeight: "calc(100vh - 180px)" }}>
-            <Search />
             {isLogin && <Recommend />}
             <Ad />
         </Container>

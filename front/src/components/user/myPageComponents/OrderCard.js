@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Tooltip from "@mui/material/Tooltip";
 
 function OrderCard({ order }) {
     const navigate = useNavigate();
@@ -8,9 +9,9 @@ function OrderCard({ order }) {
 
     const productName = React.useMemo(() => {
         if (cartList.length === 1) {
-            return cartList;
+            return cartList[0].name;
         } else {
-            return `${cartList[0]} 외 ${cartList.length - 1}건`;
+            return `${cartList[0].name} 외 ${cartList.length - 1}건`;
         }
     }, [cartList]);
 
@@ -19,7 +20,7 @@ function OrderCard({ order }) {
 
     // 미결제 건 클릭 시, order로 navigate 하여 결제 유도
     function sendOrder() {
-        if (orderStatus) {
+        if (!orderStatus) {
             navigate(`/order/${order._id}`);
         } else {
             console.log("디테일보여주자");
@@ -32,7 +33,13 @@ function OrderCard({ order }) {
             <Items>{productName}</Items>
             <Items>{order.totalPrice}원</Items>
             <OrderStatus color={orderStatus} onClick={sendOrder}>
-                {orderStatus ? "주문완료" : "진행 중"}
+                {orderStatus ? (
+                    "주문완료"
+                ) : (
+                    <Tooltip title="클릭 시, 주문 페이지로 갑니다." arrow>
+                        <span>진행 중</span>
+                    </Tooltip>
+                )}
             </OrderStatus>
         </Container>
     );
@@ -51,17 +58,19 @@ const Container = styled.div`
 
 const Items = styled.div`
     width: 20%;
-    height: 80px;
+    height: 160px;
     text-align: center;
-    line-height: 80px;
+    line-height: 160px;
+    font-size: 16px;
 `;
 
 const OrderStatus = styled.div`
     width: 20%;
-    height: 80px;
+    height: 160px;
     text-align: center;
-    line-height: 80px;
+    line-height: 160px;
     color: ${(props) => (props.color === "done" ? "gray" : "red")};
     cursor: pointer;
+    font-size: 16px;
 `;
 export default OrderCard;
