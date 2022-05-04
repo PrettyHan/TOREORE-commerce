@@ -51,7 +51,7 @@ const UserSchema = new Schema(
             match: /^\d{2,3}-\d{3,4}-\d{4}$/,
         },
         birth: {
-            type: Date,
+            type: String,
             required: true,
             maxlength: 10,
             trim: true,
@@ -75,9 +75,8 @@ const UserSchema = new Schema(
             },
             address2: {
                 type: String,
-                required: false
-            }
-
+                required: false,
+            },
         },
         bookmark: {
             type: Array,
