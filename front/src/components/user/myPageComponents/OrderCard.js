@@ -21,7 +21,8 @@ function OrderCard({ order }) {
     // 미결제 건 클릭 시, order로 navigate 하여 결제 유도
     function sendOrder() {
         if (!orderStatus) {
-            navigate(`/order/${order._id}`);
+            navigate(`/order/${order.orderId}`);
+            console.log(order.orderId);
         } else {
             console.log("디테일보여주자");
         }
