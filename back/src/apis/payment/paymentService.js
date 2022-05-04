@@ -1,11 +1,14 @@
 import axios from 'axios'
+import { orderService } from '../order/orderService';
 
 const ready = async (req, res, next) => {
     // set variables
-    const item_name = '초코파이';
-    const quantity = 1;
-    const total_amount = 2200;
-    const vat_amount = 200;
+    const orderId = req.params.orderId
+    const {products,totalPrice} = await orderService.getOrder({ orderId });
+    const item_name = products.cart.name;
+    const quantity = products.cart.quantity;
+    const total_amount = totalPrice;
+    const vat_amount = totalPrice/10 ;
     const tax_free_amount = 0;
 
     const approval_url = 'http://localhost:5001/payments/success'; // 'http://example.com/success';
