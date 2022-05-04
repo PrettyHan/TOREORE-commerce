@@ -2,6 +2,8 @@ import React from "react";
 import GoogleLogin from "react-google-login";
 import * as Api from "../../api";
 
+import styled from "styled-components";
+
 const clientId =
     "430470352132-0f8bv97e0b17rmsef09boohfdcenagbq.apps.googleusercontent.com";
 
@@ -42,13 +44,55 @@ export default function GoogleButton() {
     };
 
     return (
-        <div>
+        <Container>
             <GoogleLogin
                 clientId={clientId}
                 responseType={"id_token"}
                 onSuccess={onSuccess}
                 onFailure={onFailure}
+                render={(renderProps) => (
+                    <Button onClick={renderProps.onClick}>
+                        <Wrapper>
+                            <Logo src="/googleLogo.png" alt="googleLogo"></Logo>
+                            <Text>구글로 로그인하기</Text>
+                        </Wrapper>
+                    </Button>
+                )}
             />
-        </div>
+        </Container>
     );
 }
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    border: 1px solid #5e5b52;
+    border-radius: 5px;
+    margin-top: 10px;
+`;
+
+const Button = styled.div`
+    color: red;
+    cursor: pointer;
+    align-items: space-between;
+    width: 410px;
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+`;
+
+const Logo = styled.img`
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+`;
+
+const Text = styled.span`
+    color: #5e5b52;
+    text-align: center;
+    font-size: 14px;
+`;
