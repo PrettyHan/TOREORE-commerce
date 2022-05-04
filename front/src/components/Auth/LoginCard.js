@@ -34,7 +34,7 @@ const Boxs = styled(Box)`
     }
 `;
 
-function LoginCard({ setIsSigning }) {
+function LoginCard({ setIsSigning, handleClose }) {
     const theme = createTheme();
     const navigate = useNavigate();
     const location = useLocation();
@@ -239,7 +239,7 @@ function LoginCard({ setIsSigning }) {
                             >
                                 회원가입
                             </Button>
-                            <Google variant="text" />
+                            <Google variant="text" handleClose={handleClose} />
                         </FormControl>
                     </Boxs>
                 </Box>

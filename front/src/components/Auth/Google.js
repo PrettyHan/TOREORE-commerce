@@ -34,9 +34,12 @@ export default function Google({ handleClose }) {
             payload: user,
         });
         const addInfo = user.user.hasAddtionalInfo;
+        console.log(addInfo);
         if (addInfo) {
+            handleClose();
             navigate("/");
         } else {
+            handleClose();
             navigate("/useredit");
         }
     };
