@@ -7,17 +7,15 @@ const clientId =
 
 export default function GoogleButton() {
     const onSuccess = async (response) => {
-        console.log(response);
-
         const {
             googleId,
             profileObj: { email, name },
         } = response;
-        const res = await Api.post("auth/google", {
+        const sendToken = await Api.post("auth/google", {
             accessToken: response.accessToken,
         });
 
-        console.log(res);
+        console.log(sendToken.data);
         // const res = await Api.post("auth/login", {
         //     userId,
         //     password,
@@ -34,9 +32,9 @@ export default function GoogleButton() {
         //     payload: user,
         // });
 
-        // // 새로고침
-        // navigate(0);
-        console.log(response);
+        // // // 새로고침
+        // // navigate(0);
+        // console.log(response);
     };
 
     const onFailure = (error) => {
