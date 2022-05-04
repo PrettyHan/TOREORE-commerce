@@ -46,7 +46,7 @@ function MyPage() {
             {user ? (
                 <Container>
                     <UserContainer>
-                        {!user.loginType ? (
+                        {user.loginType === "" ? (
                             <Intro>
                                 <p> "{user.name}" 님 안녕하세요!</p>
                                 <p>
@@ -58,7 +58,11 @@ function MyPage() {
                         ) : (
                             <Intro>
                                 <p> 고객님 안녕하세요!</p>
-                                <p> 추가 정보를 입력해주세요.</p>
+                                {user?.hasAddtionalInfo ? (
+                                    <></>
+                                ) : (
+                                    <p> 추가 정보를 입력해주세요.</p>
+                                )}
                             </Intro>
                         )}
                         <div>

@@ -8,11 +8,16 @@ import Search from "./Search";
 const Main = () => {
     const userState = useContext(UserStateContext);
     const isLogin = !!userState.user; // 로그인 여부 판단
-    console.log(userState.user);
+    const loginType = userState.user?.loginType;
+    const addInfo = userState.user?.hasAddtionalInfo;
 
     return (
         <Container style={{ minHeight: "calc(100vh - 180px)" }}>
-            {isLogin && <Recommend />}
+            {isLogin && loginType === "" ? (
+                <Recommend />
+            ) : (
+                addInfo && <Recommend />
+            )}
             <Ad />
         </Container>
     );

@@ -22,7 +22,6 @@ export default function Google({ handleClose }) {
 
         // 서버로 부터 구글에서 받아온 user 정보를 가져옴.
         const user = res.data;
-        console.log(user);
 
         // JWT 토큰은 유저 정보의 token임.
         const jwtToken = user.accessToken;
@@ -31,10 +30,11 @@ export default function Google({ handleClose }) {
         // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
         dispatch({
             type: "LOGIN_SUCCESS",
-            payload: user,
+            payload: user.user,
         });
+
         const addInfo = user.user.hasAddtionalInfo;
-        console.log(addInfo);
+
         if (addInfo) {
             handleClose();
             navigate("/");
