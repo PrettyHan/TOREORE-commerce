@@ -4,27 +4,6 @@ import LikedCard from "./LikedCard";
 
 import * as Api from "../../../api";
 
-// const likedList = [
-//     {
-//         productId: "12345678",
-//         image: "https://",
-//         productName: "럭셔리 치마",
-//         price: "14500",
-//     },
-//     {
-//         productId: "25836914",
-//         image: "https://",
-//         productName: "촌스러운 양말",
-//         price: "2500",
-//     },
-//     {
-//         productId: "11111111",
-//         image: "https://",
-//         productName: "패턴화려한 넥타이",
-//         price: "7500",
-//     },
-// ];
-
 const columns = ["상품번호", "상품사진", "상품명", "가격"];
 
 function LikedHistory() {

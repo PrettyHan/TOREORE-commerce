@@ -11,7 +11,7 @@ import Footer from "./components/Layout/Footer";
 import NotFound from "./components/Layout/NotFound";
 import Introduce from "./components/introduce/Introduce";
 import MyPage from "./components/user/MyPage";
-import UserEdit from "./components/user/UserEdit";
+import UserEdit from "./components/user/userEdit/UserEdit";
 import Login from "./components/Auth/Login";
 import ProductList from "./components/product/ProductList";
 import Category from "./components/product/Category";
