@@ -4,6 +4,7 @@ import { loginRequired } from "../../middlewares/loginRequired";
 import { orderService } from "./orderService";
 import { userService } from "../user/userService";
 import mongoose from "mongoose";
+import { productService } from "../product/productService";
 
 const orderRouter = Router();
 orderRouter.use(loginRequired);
@@ -40,6 +41,48 @@ orderRouter.post("/", async (req, res, next) => {
             message,
             paymentMethod,
             isPayed,
+        };
+
+        const newOrder = await orderService.createOrder(orderData);
+
+        if (newOrder.errorMessage) {
+            throw new Error(newOrder.errorMessage);
+        }
+
+        res.status(201).json(newOrder);
+    } catch (error) {
+        next(error);
+    }
+});
+// 바로주문 용 router
+orderRouter.post("/:productId", async (req, res, next) => {
+    try {
+        if (is.emptyObject(req.body)) {
+            throw new Error(
+                "headers의 Content-Type을 application/json으로 설정해주세요",
+            );
+        }
+        const {productId} = req.params
+        const orderId = mongoose.Types.ObjectId();
+        const userId = req.currentUserId;
+        const products = await productService.getProduct({ productId });
+        if (products.errorMessage) {
+            throw new Error(products.errorMessage);
+        }
+        const { orderName, zipcode, message, paymentMethod, quantity } = req.body; // 입력받을 것
+        const totalPrice = products.price * quantity
+        const isPayed = false;
+        const orderData = {
+            products,
+            userId,
+            orderId,
+            totalPrice,
+            orderName,
+            zipcode,
+            message,
+            paymentMethod,
+            isPayed,
+            quantity
         };
 
         const newOrder = await orderService.createOrder(orderData);
