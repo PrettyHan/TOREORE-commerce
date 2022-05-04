@@ -24,12 +24,8 @@ orderRouter.post("/", async (req, res, next) => {
             throw new Error(products.errorMessage);
         }
         const cartlist = products.cart;
-        const cartPrices = cartlist.map((v) => {
-            return v.price;
-        });
-        const totalPrice = cartPrices.reduce((a, b) => {
-            return (a += b);
-        });
+        const cartPrices = cartlist.map((v) => (v.price));
+        const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
@@ -52,7 +48,7 @@ orderRouter.post("/", async (req, res, next) => {
             throw new Error(newOrder.errorMessage);
         }
 
-        res.status(201).json(products);
+        res.status(201).json(newOrder);
     } catch (error) {
         next(error);
     }
@@ -108,6 +104,7 @@ orderRouter.put("/orderId", async (req, res, next) => {
         const zipcode = req.body.zipcode ?? null;
         const message = req.body.message ?? null;
         const paymentMethod = req.body.paymentMethod ?? null;
+        const isPayed = req.body.isPayed ?? null
 
         const toUpdate = {
             products,
@@ -116,6 +113,7 @@ orderRouter.put("/orderId", async (req, res, next) => {
             zipcode,
             message,
             paymentMethod,
+            isPayed
         };
         const updatedOrder = await orderService.updateOrder({
             orderId,

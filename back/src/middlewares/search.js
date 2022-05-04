@@ -9,7 +9,7 @@ const powerSet = function (str) {
         }
         for (let i = 0; i < str.length; i++) {
             if (!check[str[i]]) {
-                subset += str[i]; //2. 합치고
+                subset += str[i];
                 check[str[i]] = true;
                 let sortSubset = subset.split("").sort().join("");
                 

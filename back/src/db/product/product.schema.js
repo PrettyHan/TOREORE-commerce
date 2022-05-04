@@ -46,7 +46,7 @@ const ProductSchema = new Schema(
     },
 );
 
-ProductSchema.index({name: 'text'})
+ProductSchema.index({name: '1'})
 const ProductModel = model("Product", ProductSchema);
 
 export { ProductModel };
