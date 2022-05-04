@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -10,14 +10,9 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import styled from "styled-components";
 import * as Api from "../../api";
-import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
 import { formatPrice } from "./ProductItem";
-import { UserStateContext } from "../../App";
 
 const ProductDetail = () => {
-    const { user } = useContext(UserStateContext);
-    const userLikeArr = getProductIdArr(user?.bookmark || []);
-
     const navigate = useNavigate();
     const { category, productId } = useParams();
 
@@ -25,7 +20,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({});
 
     // '좋아요' 누른 제품 배열
-    const [likeIds, setLikeIds] = useState(userLikeArr);
+    const [likeIds, setLikeIds] = useState([]);
 
     const isLike = React.useMemo(() => {
         return likeIds.includes(productId);
@@ -75,11 +70,22 @@ const ProductDetail = () => {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        Api.get("products", { cid: category, pid: productId }, true).then(
-            (res) => {
-                setProduct(res.data[0]);
-            }
-        );
+        async function getProductDetail() {
+            const res = await Api.get(
+                "products",
+                { cid: category, pid: productId },
+                true
+            );
+            setProduct(res.data[0]);
+        }
+        getProductDetail();
+
+        async function getLikeArr() {
+            const res = await Api.get("liked");
+            const userLikeArr = res.data.map((item) => item.productId);
+            setLikeIds(userLikeArr);
+        }
+        getLikeArr();
     }, []);
 
     return (
