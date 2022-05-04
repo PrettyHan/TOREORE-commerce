@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Validate } from "../useEditValidate/Validate";
-import { ValidatePassword } from "../useEditValidate/ValidatePassword";
+import { Validate } from "./useEditValidate/Validate";
+import { ValidatePassword } from "./useEditValidate/ValidatePassword";
 import { DispatchContext } from "../../../App";
 import { UserStateContext } from "../../../App";
 

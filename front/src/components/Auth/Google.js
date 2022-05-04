@@ -10,7 +10,7 @@ import styled from "styled-components";
 const clientId =
     "430470352132-0f8bv97e0b17rmsef09boohfdcenagbq.apps.googleusercontent.com";
 
-export default function Google() {
+export default function Google({ handleClose }) {
     const navigate = useNavigate();
     const dispatch = useContext(DispatchContext);
 
@@ -33,7 +33,6 @@ export default function Google() {
             type: "LOGIN_SUCCESS",
             payload: user,
         });
-
         const addInfo = user.user.hasAddtionalInfo;
         if (addInfo) {
             navigate("/");
