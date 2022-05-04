@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import GoogleLogin from "react-google-login";
+import { DispatchContext } from "../../App";
+
 import * as Api from "../../api";
 
 import styled from "styled-components";
@@ -7,36 +10,36 @@ import styled from "styled-components";
 const clientId =
     "430470352132-0f8bv97e0b17rmsef09boohfdcenagbq.apps.googleusercontent.com";
 
-export default function GoogleButton() {
+export default function Google() {
+    const navigate = useNavigate();
+    const dispatch = useContext(DispatchContext);
+
     const onSuccess = async (response) => {
-        const {
-            googleId,
-            profileObj: { email, name },
-        } = response;
-        const sendToken = await Api.post("auth/google", {
+        // 구글로 부터 받아온 accessToken을 같이 보냄.
+        const res = await Api.post("auth/google", {
             accessToken: response.accessToken,
         });
 
-        console.log(sendToken.data);
-        // const res = await Api.post("auth/login", {
-        //     userId,
-        //     password,
-        // });
-        // // 유저 정보는 response의 data임.
-        // const user = res.data;
-        // // JWT 토큰은 유저 정보의 token임.
-        // const jwtToken = user.accessToken;
-        // // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
-        // sessionStorage.setItem("userToken", jwtToken);
-        // // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
-        // dispatch({
-        //     type: "LOGIN_SUCCESS",
-        //     payload: user,
-        // });
+        // 서버로 부터 구글에서 받아온 user 정보를 가져옴.
+        const user = res.data;
+        console.log(user);
 
-        // // // 새로고침
-        // // navigate(0);
-        // console.log(response);
+        // JWT 토큰은 유저 정보의 token임.
+        const jwtToken = user.accessToken;
+        // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
+        sessionStorage.setItem("userToken", jwtToken);
+        // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
+        dispatch({
+            type: "LOGIN_SUCCESS",
+            payload: user,
+        });
+
+        const addInfo = user.user.hasAddtionalInfo;
+        if (addInfo) {
+            navigate("/");
+        } else {
+            navigate("/useredit");
+        }
     };
 
     const onFailure = (error) => {
@@ -68,7 +71,7 @@ const Container = styled.div`
     justify-content: center;
     border: 1px solid #5e5b52;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 16px;
 `;
 
 const Button = styled.div`

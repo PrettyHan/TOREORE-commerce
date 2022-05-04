@@ -15,9 +15,10 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styled from "styled-components";
 import { useCookies } from "react-cookie";
-import GoogleButton from "./GoogleButton";
 import { DispatchContext } from "../../App";
 import * as Api from "../../api";
+
+import Google from "./Google";
 
 const FormHelperTexts = styled(FormHelperText)`
     && {
@@ -141,18 +142,6 @@ function LoginCard({ setIsSigning }) {
         }
     };
 
-    const handleGoogleSign = async (event) => {
-        try {
-            const res = window.open(
-                "http://localhost:5001/auth/google",
-                "_self"
-            );
-            console.log(res.json());
-        } catch (err) {
-            console.log("err", err);
-        }
-    };
-
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -250,9 +239,7 @@ function LoginCard({ setIsSigning }) {
                             >
                                 회원가입
                             </Button>
-                            <GoogleButton variant="text">
-                                구글 로그인
-                            </GoogleButton>
+                            <Google variant="text" />
                         </FormControl>
                     </Boxs>
                 </Box>
