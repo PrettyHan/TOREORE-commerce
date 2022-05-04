@@ -43,11 +43,11 @@ userRouter.post("/signup", async (req, res, next) => {
 userRouter.post("/google", async (req, res, next) => {
     try {
         const { accessToken } = req.body;
-        const { userData } = await axios.get(
+        const userData = await axios.get(
             `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${accessToken}`,
         );
 
-        const userDataWithToken = await googleLoginProcess(userData);
+        const userDataWithToken = await googleLoginProcess(userData.data);
         res.status(200).json(userDataWithToken);
     } catch (error) {
         next(error);
