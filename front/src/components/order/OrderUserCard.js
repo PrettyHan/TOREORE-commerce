@@ -52,9 +52,6 @@ function OrderUserCard({ setOrderUser }) {
   };
   return (
     <>
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        주소
-      </Typography>
       <Dialog
         open={open}
         onClose={() => setOpen(!open)}

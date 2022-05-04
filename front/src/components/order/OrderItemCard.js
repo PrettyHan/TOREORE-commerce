@@ -17,12 +17,7 @@ function OrderItemCard({ orderItems }) {
     <OrderItem item={item} index={index + 1} />
   ));
   return (
-    <div style={{ minHeight: "calc(100vh - 180px)" }}>
-      <Box>
-        <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          상품 목록
-        </Typography>
-      </Box>
+    <>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -36,7 +31,7 @@ function OrderItemCard({ orderItems }) {
         </TableHead>
         <TableBody>{orderItemList}</TableBody>
       </Table>
-    </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Box } from "@mui/material/";
+import { Box, Typography } from "@mui/material/";
+import styled from "styled-components";
 
 import OrderItemCard from "./OrderItemCard";
 import OrderPaymentCard from "./OrderPaymentCard";
@@ -42,14 +43,15 @@ function Order() {
         zipcode,
         message,
       });
-      setOrderItems(products);
+      setOrderItems(products[0].cart);
       setOrderPayment({
         paymentMethod,
         isPayed,
       });
       setSubTotal(totalPrice);
     } catch (err) {
-      console.log(err);
+      alert("주문페이지 생성에 실패하였습니다.", err);
+      navigate(-1);
     }
   };
 
@@ -75,32 +77,36 @@ function Order() {
   return (
     <>
       <div div style={{ minHeight: "calc(100vh - 180px)" }}>
-        <Box sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
-          <Box
-            sx={{ display: "flex", flexDirection: "column", height: 240, p: 2 }}
-          >
+        <Container>
+          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            주소
+          </Typography>
+          <OrderContainer>
             <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              height: 240,
-              p: 2,
-              mt: 5,
-            }}
+          </OrderContainer>
+
+          <Typography
+            align="center"
+            component="h2"
+            variant="h6"
+            color="primary"
+            gutterBottom
           >
+            상품 목록
+          </Typography>
+          <OrderContainer>
             <OrderItemCard orderItems={orderItems}></OrderItemCard>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              height: 240,
-              p: 2,
-              mt: 5,
-            }}
+          </OrderContainer>
+          <Typography
+            align="center"
+            component="h2"
+            variant="h6"
+            color="primary"
+            gutterBottom
           >
+            결제
+          </Typography>
+          <OrderContainer>
             <OrderPaymentCard
               orderPayment={orderPayment}
               setOrderPayment={setOrderPayment}
@@ -108,11 +114,47 @@ function Order() {
               handlePayComplete={handlePayComplete}
               orderId={orderId}
             ></OrderPaymentCard>
-          </Box>
-        </Box>
+          </OrderContainer>
+        </Container>
       </div>
     </>
   );
 }
 
 export default Order;
+
+const Container = styled.div`
+  margin: 30px 0 100px 0;
+  display: grid;
+  row-gap: 20px;
+  place-items: center center;
+`;
+
+const OrderContainer = styled(Box)`
+  width: 61%;
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+`;
+
+const ItemsContainer = styled(Box)`
+  width: 63.5%;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+`;
+
+const Items = styled.div`
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+  width: 24%;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  cursor: pointer;
+`;

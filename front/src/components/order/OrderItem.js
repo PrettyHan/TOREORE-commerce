@@ -7,7 +7,7 @@ function OrderItem({ item, index }) {
     <TableRow key={item.productId}>
       <OrderTableCell>{index}</OrderTableCell>
       <OrderTableCell>
-        <img src={item.image} alt={item.name} />
+        <img src={item.image} alt={item.name} style={{ width: 100 }} />
       </OrderTableCell>
       <OrderTableCell>{item.name}</OrderTableCell>
       <OrderTableCell>{item.price}</OrderTableCell>

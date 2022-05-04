@@ -94,11 +94,7 @@ function CartItemCard({ cartItem, setCartItems, index }) {
         <Checkbox checked={cartItem.checked} onChange={handleCheck} />
       </CartTableCell>
       <CartTableCell>
-        <img
-          src={cartItem.image}
-          alt={cartItem.name}
-          style={{ width: 100, height: 200 }}
-        />
+        <img src={cartItem.image} alt={cartItem.name} style={{ width: 100 }} />
       </CartTableCell>
       <CartTableCell>{cartItem.name}</CartTableCell>
       <CartTableCell>{cartItem.price}</CartTableCell>
