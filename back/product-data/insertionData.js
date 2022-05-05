@@ -2,7 +2,6 @@ import * as fs from "fs";
 import mongoose from "mongoose";
 import "dotenv/config";
 import { ProductModel } from "../src/db/product/product.schema.js";
-import { getBestPreferAge } from "../src/util/calculateProductData.js";
 
 const DB_URL =
     process.env.MONGODB_URL ||
@@ -38,8 +37,8 @@ db.on("connected", async () => {
                             product.article_id +
                             ".jpg",
                         likeCount: 0,
-                        gender: getBestPreferAge(product.age_id),
-                        bestPreferAge: product.index_group_name,
+                        bestPreferAge: product.age_id,
+                        gender: product.index_group_name,
                     };
 
                     await ProductModel.create([data], { session });
