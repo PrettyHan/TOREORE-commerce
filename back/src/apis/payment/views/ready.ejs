@@ -9,7 +9,7 @@
         <script type="text/javascript">
             function ready() {
                 axios
-                    .post('http://localhost:5001/payments/ready')
+                    .post('http://localhost:5001/payments/ready/62736f451bad280acfc4d209')
                     .then(data => {
                         console.log(data.data.tid, data.data.next_redirect_pc_url);
                         window.localStorage.setItem('tid', data.data.tid);

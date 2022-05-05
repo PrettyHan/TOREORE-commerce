@@ -56,6 +56,11 @@ const OrderSchema = new Schema(
             required: false,
             default : ""
 
+        },
+        names: {
+            type: String,
+            required: false,
+            default: ""
         }
     },
     {
