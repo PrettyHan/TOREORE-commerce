@@ -46,7 +46,7 @@ function MyPage() {
             {user ? (
                 <Container>
                     <UserContainer>
-                        {user.loginType === "" ? (
+                        {user.loginType === "BASIC" ? (
                             <Intro>
                                 <p> "{user.name}" 님 안녕하세요!</p>
                                 <p>
@@ -71,7 +71,7 @@ function MyPage() {
                                 disableElevation
                                 disableRipple
                             >
-                                {!user.loginType
+                                {user.loginType === "BASIC"
                                     ? "회원 정보 수정"
                                     : "추가 정보 입력"}
                             </Button>

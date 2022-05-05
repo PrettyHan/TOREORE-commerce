@@ -5,6 +5,7 @@ import ProductItem from "./ProductItem";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import styled from "styled-components";
 import * as Api from "../../api";
 
 import { UserStateContext } from "../../App";
@@ -28,7 +29,7 @@ const ProductList = () => {
 
     const userLikeArr = getProductIdArr(user?.bookmark || []);
 
-    const { category, keyword } = useParams();
+    const { category, keyword = "" } = useParams();
 
     const [productList, dispatch] = useReducer(reducer, []);
 
@@ -58,25 +59,43 @@ const ProductList = () => {
                     justifyContent: "center",
                 }}
             >
-                <Grid
-                    maxWidth="lg"
-                    container
-                    spacing={{ xs: 2, md: 3 }}
-                    columns={{ xs: 4, sm: 8, md: 12 }}
-                >
-                    {productList.map((item, index) => (
-                        <Grid item xs={12} sm={4} md={4} key={index}>
-                            <ProductItem
-                                key={item.productId}
-                                {...item}
-                                userLikeArr={userLikeArr}
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
+                {productList.length === 0 ? (
+                    <Info>
+                        검색 "<Keyword>{keyword}</Keyword>"과(와) 일치하는
+                        결과가 없습니다.
+                    </Info>
+                ) : (
+                    <Grid
+                        maxWidth="lg"
+                        container
+                        spacing={{ xs: 2, md: 3 }}
+                        columns={{ xs: 4, sm: 8, md: 12 }}
+                    >
+                        {productList.map((item, index) => (
+                            <Grid item xs={12} sm={4} md={4} key={index}>
+                                <ProductItem
+                                    key={item.productId}
+                                    {...item}
+                                    userLikeArr={userLikeArr}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                )}
             </Box>
         </>
     );
 };
 
 export default ProductList;
+
+const Info = styled.div`
+    width: 60%;
+    height: 300px;
+    padding: 100px;
+    text-align: center;
+`;
+
+const Keyword = styled.span`
+    font-weight: bold;
+`;

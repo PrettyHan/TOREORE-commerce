@@ -18,7 +18,7 @@ function UserEdit() {
 
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
-            {userType ? <SocialMember /> : <GeneralMember />}
+            {userType === "BASIC" ? <GeneralMember /> : <SocialMember />}
         </div>
     );
 }
