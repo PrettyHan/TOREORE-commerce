@@ -6,7 +6,6 @@ import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
 import { UserStateContext } from "../../App";
-import Login from "../Auth/Login";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
@@ -15,7 +14,6 @@ function MyPage() {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const user = userState.user;
-    const [openLogin, setOpenLogin] = useState(false);
 
     const constantsFirstState = {
         orderHistory: false,
@@ -46,14 +44,17 @@ function MyPage() {
             {user ? (
                 <Container>
                     <UserContainer>
-                        {user.loginType === "BASIC" ? (
+                        {user.loginType === "BASIC" ||
+                        user.hasAddtionalInfo === true ? (
                             <Intro>
                                 <p> "{user.name}" 님 안녕하세요!</p>
-                                <p>
-                                    {" "}
-                                    ID ▶ {user.userId}{" "}
-                                    {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
-                                </p>
+                                {user.loginType === "BASIC" && (
+                                    <p>
+                                        {" "}
+                                        ID ▶ {user.userId}{" "}
+                                        {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                                    </p>
+                                )}
                             </Intro>
                         ) : (
                             <Intro>
@@ -71,7 +72,8 @@ function MyPage() {
                                 disableElevation
                                 disableRipple
                             >
-                                {user.loginType === "BASIC"
+                                {user.loginType === "BASIC" ||
+                                user.hasAddtionalInfo === true
                                     ? "회원 정보 수정"
                                     : "추가 정보 입력"}
                             </Button>

@@ -49,7 +49,7 @@ function GeneralMember() {
                 });
 
                 const addUserInfo = res.data;
-
+                console.log(addUserInfo);
                 dispatch({
                     type: "LOGIN_SUCCESS",
                     payload: addUserInfo,
@@ -73,22 +73,21 @@ function GeneralMember() {
                 ...getErrorMessage,
             };
         });
-    }, [form]);
+    }, [form, getErrorMessage]);
 
     //로그인한 user의 현재 정보들을 불러와서 form에 셋팅
     useEffect(() => {
         Api.get("auth/user").then((res) => {
             const result = res.data;
-            console.log(result);
             setForm((cur) => {
                 const newForm = {
                     ...cur,
                     email: result.email,
                     name: result.name,
-                    gender: String(result.gender),
-                    phone: result.phone,
-                    birth: result.birth.slice(0, 10),
                     hasAddtionalInfo: result.hasAddionalInfo,
+                    gender: result.gender === undefined ? "" : result.gender,
+                    birth: result.birth === undefined ? "" : result.birth,
+                    phone: result.phone === undefined ? "" : result.phone,
                 };
                 return newForm;
             });

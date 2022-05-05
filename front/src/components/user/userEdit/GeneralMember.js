@@ -23,7 +23,7 @@ const bcrypt = require("bcryptjs");
 function GeneralMember() {
     const navigate = useNavigate(); // 취소시, myPage로 다시 돌아감
     const userState = useContext(UserStateContext);
-    const userType = userState.user.loginType;
+    const user = userState.user;
     const dispatch = useContext(DispatchContext); // 로그인한 유저 정보를 다시 보내주기 위해
     const [changePassword, setChangePassword] = useState(false); // 유저가 비밀번호를 수정 할 수도 있고 or 없고 분기 처리 state
     const [confirmPassword, setConfirmPassword] = useState(""); // 비밀번호 확인란
@@ -122,7 +122,7 @@ function GeneralMember() {
                 ...getErrorPassword,
             };
         });
-    }, [form, confirmPassword]);
+    }, [form, getErrorMessage, getErrorPassword]);
 
     //로그인한 user의 현재 정보들을 불러와서 form에 셋팅
     useEffect(() => {
@@ -156,10 +156,15 @@ function GeneralMember() {
                                 required
                                 autoFocus
                                 fullWidth
+                                disabled={user.hasAddtionalInfo}
                                 type="email"
                                 id="email"
                                 name="email"
-                                label="이메일 주소"
+                                label={
+                                    user.hasAddtionalInfo
+                                        ? "구글 주소"
+                                        : "이메일 주소"
+                                }
                                 autoComplete="email"
                                 size="small"
                                 value={form.email || ""}
