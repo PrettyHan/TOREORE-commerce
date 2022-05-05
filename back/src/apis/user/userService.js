@@ -23,9 +23,6 @@ class userService {
                 password: "temp-password",
                 name,
                 email,
-                gender: 2, // 성별을 선택하지 않은 사람: 2
-                phone: "010-0000-0000",
-                birth: Date.now(),
                 loginType,
             };
             // 쇼핑몰 자체 일반 회원가입 유저(loginType이 null인 경우)
