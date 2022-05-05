@@ -2,16 +2,17 @@ import React from "react";
 import { Button, TableRow, Checkbox } from "@mui/material";
 import CartTableCell from "./CartTableCell";
 
-// import * as Api from "../../api";
+import * as Api from "../../api";
 
 function CartItemCard({ cartItem, setCartItems, index }) {
   // 삭제 핸들링 함수
   const handleRemove = async () => {
     try {
+      const body = {
+        productIdArr: [cartItem.productId],
+      };
       if (window.confirm("상품을 삭제 하시겠습니까?")) {
-        // await Api.delete(`carts/select`, {
-        //   productIdArr: [cartItem.productId]
-        // })
+        await Api.delete(`carts/select`, "", body);
         setCartItems((current) => {
           return current.filter(
             (item) => item.productId !== cartItem.productId
@@ -26,16 +27,15 @@ function CartItemCard({ cartItem, setCartItems, index }) {
   // 수량 추가 핸들링 함수
   const handlePlus = async () => {
     try {
-      // const res = await Api.put(`carts/${cartItem.productId}`, {
-      //   quantity: cartItem.quantity + 1
-      // });
-      // const newQuantity = res.data
+      await Api.put(`carts/${cartItem.productId}`, {
+        quantity: cartItem.quantity + 1,
+      });
       setCartItems((current) => {
         return current.map((item) => {
           if (item.productId === cartItem.productId) {
             return {
               ...item,
-              quantity: /*newQuantity*/ cartItem.quantity + 1,
+              quantity: cartItem.quantity + 1,
             };
           }
           return item;
@@ -50,17 +50,16 @@ function CartItemCard({ cartItem, setCartItems, index }) {
   // 수량 감소 핸들링 함수
   const handleMinus = async () => {
     try {
-      // const res = await Api.put(`carts/${cartItem.productId}`, {
-      //   quantity: cartItem.quantity + 1
-      // });
-      // const newQuantity = res.data
+      await Api.put(`carts/${cartItem.productId}`, {
+        quantity: cartItem.quantity - 1,
+      });
 
       setCartItems((current) => {
         return current.map((item) => {
           if (item.productId === cartItem.productId) {
             return {
               ...item,
-              quantity: /*newQuantity*/ cartItem.quantity - 1,
+              quantity: cartItem.quantity - 1,
             };
           }
           return item;

@@ -108,6 +108,7 @@ function RegisterCard({ setIsSigning }) {
         // "auth/signup" 엔드포인트로 post요청함.
         await Api.post("auth/signup", body);
         setIsSigning(false);
+        alert("회원가입 완료");
       }
     } catch (err) {
       alert("회원가입에 실패하였습니다.\n", err);
@@ -136,20 +137,18 @@ function RegisterCard({ setIsSigning }) {
                 <Grid item xs={12}>
                   <TextField
                     required
-                    autoFocus
                     fullWidth
-                    type="email"
-                    id="email"
-                    name="email"
-                    label="이메일 주소"
-                    autoComplete="email"
+                    id="userId"
+                    name="userId"
+                    label="아이디"
+                    autoComplete="userId"
                     size="small"
-                    value={body.email}
+                    value={body.userId}
                     onChange={handleChange}
-                    error={(errorMessage.emailError !== "") | false}
+                    error={(errorMessage.userIdError !== "") | false}
                   />
                 </Grid>
-                <FormHelperTexts>{errorMessage.emailError}</FormHelperTexts>
+                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
                 <Grid item xs={12}>
                   <TextField
                     required
@@ -187,18 +186,20 @@ function RegisterCard({ setIsSigning }) {
                 <Grid item xs={12}>
                   <TextField
                     required
+                    autoFocus
                     fullWidth
-                    id="userId"
-                    name="userId"
-                    label="아이디"
-                    autoComplete="userId"
+                    type="email"
+                    id="email"
+                    name="email"
+                    label="이메일 주소"
+                    autoComplete="email"
                     size="small"
-                    value={body.userId}
+                    value={body.email}
                     onChange={handleChange}
-                    error={(errorMessage.userIdError !== "") | false}
+                    error={(errorMessage.emailError !== "") | false}
                   />
                 </Grid>
-                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
+                <FormHelperTexts>{errorMessage.emailError}</FormHelperTexts>
                 <Grid item xs={12}>
                   <TextField
                     required

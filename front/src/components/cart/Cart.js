@@ -9,6 +9,7 @@ import {
   TableHead,
   TableRow,
   TableBody,
+  Grid,
 } from "@mui/material/";
 import styled from "styled-components";
 
@@ -79,13 +80,26 @@ function Cart() {
     });
   };
 
+  // 전체 삭제 버튼 클릭 핸들링 함수
+  const handleAllRemove = async (event) => {
+    try {
+      await Api.delete("carts");
+      setCartItems(() => {
+        return [];
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // 선택 삭제 버튼 클릭 핸들링 함수
   const handleSelectRemove = async () => {
     try {
       const productIdArr = checkedCartItems.map((item) => {
         return item.productId;
       });
-      await Api.delete("carts/select", {
+      console.log(productIdArr);
+      await Api.delete("carts/select", "", {
         productIdArr,
       });
 
@@ -120,6 +134,7 @@ function Cart() {
     try {
       const res = await Api.get("carts");
       const fetchedItems = res.data;
+      console.log(fetchedItems);
       setCartItems(handleCartData(fetchedItems));
     } catch (err) {
       console.log(err);
@@ -136,14 +151,21 @@ function Cart() {
         {isLogin ? (
           <Container>
             <Box>
-              <Typography
-                component="h2"
-                variant="h6"
-                color="inherit"
-                gutterBottom
-              >
-                장바구니
-              </Typography>
+              <Grid container justify="flex-end">
+                <Button disabled={isCartEmpty} onClick={handleAllRemove}>
+                  전체삭제
+                </Button>
+                <Grid item>
+                  <Typography
+                    component="h2"
+                    variant="h6"
+                    color="inherit"
+                    gutterBottom
+                  >
+                    장바구니
+                  </Typography>
+                </Grid>
+              </Grid>
             </Box>
             <CartContainer>
               <Table size="small">
@@ -179,7 +201,7 @@ function Cart() {
             <ItemsContainer>
               <Items>
                 <Button
-                  disabled={isCartEmpty || !isCheckedAll(cartItems)}
+                  disabled={isCartEmpty || carculateTotal === 0}
                   onClick={handleSelectRemove}
                 >
                   선택삭제
@@ -187,7 +209,7 @@ function Cart() {
               </Items>
               <Items>
                 <Button
-                  disabled={isCartEmpty || !isCheckedAll(cartItems)}
+                  disabled={isCartEmpty || carculateTotal === 0}
                   onClick={handleOrder}
                 >
                   주문하기
