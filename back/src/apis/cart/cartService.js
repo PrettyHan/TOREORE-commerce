@@ -72,6 +72,33 @@ class cartService {
 
         return newCartList;
     }
+    static async updateCartSelect({ userId }) {
+        const user = await User.findByUserId({ userId });
+        const carts = user.cart; // cart list
+
+        if (carts.length === 0) {
+            const errorMessage = "장바구니가 비었습니다.";
+            return { errorMessage };
+        }
+        const every = carts.every((v) => v.checked)
+
+        const newCartList = carts.map((productObject) => {
+            if (every) {
+                return { ...productObject, checked : false };
+            }
+            if (!every) {
+                return { ...productObject, checked : true };
+            }
+            return productObject;
+        });
+
+        const fieldToUpdate = "cart";
+        const newValue = newCartList;
+        const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
+        console.log("장바구니가 업데이트(수량변경)된 유저 정보 >> ", updateCartList);
+
+        return newCartList;
+    }
 
     static async deleteProductOfCart({ userId, productIdArr }) {
         productIdArr.forEach(async (productId) => {
