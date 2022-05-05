@@ -1,162 +1,1202 @@
 [
     {
-        "article_id": "0844112002",
-        "prod_name": "SAVILLE 가죽 팬츠",
+        "article_id": "0825107001",
+        "prod_name": "Tapered Midprice(1)",
         "product_type_name": "Trousers",
-        "colour_group_name": "Other Pink",
-        "detail_desc": "스튜디오 컬렉션. 약간 신축성이 있는 가죽 소재의 팬츠. 상의에 딱 맞는 레귤러 웨이스트와 한 쪽의 청키한 지퍼. 가장자리가 날렵한 밑단이 있는 나팔바지. 안감 없음.",
-        "price": 398100
+        "colour_group_name": "Light Blue",
+        "detail_desc": "5-pocket jeans in washed, stretch cotton denim with a regular waist, zip fly and button, low crotch and tapered legs. The cotton content of the jeans is partly recycled.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 60300
     },
     {
-        "article_id": "0828854002",
-        "prod_name": "CIARA 벨벳 점프수트",
-        "product_type_name": "Trousers",
-        "colour_group_name": "Black",
-        "detail_desc": "실크 혼방 소재의 벨벳 소재의 소매 없는 점프슈트. 깊은 브이넥과 뒷부분의 오프닝에 뒷부분에는 똑딱 단추가 숨겨져 있음. 스트레이트 및 와이드한 스타일의 밑단. 상단에 안감 있음.",
-        "price": 303100
-    },
-    {
-        "article_id": "0701347001",
-        "prod_name": "Chickadee 점프수트",
+        "article_id": "0714032001",
+        "prod_name": "Oz skinny fit trs",
         "product_type_name": "Trousers",
         "colour_group_name": "Dark Blue",
-        "detail_desc": "광택이 나는 통기성 실크 소재의 민소매 점프슈트. 목 뒤에 단추가 있고, 얇은 어깨끈이 있고, 허리에는 주름이 있음. 와이드 스타일. 상단에 안감 있음.",
-        "price": 262400
+        "detail_desc": "Suit trousers in a stretch weave with a concealed hook-and-eye fastener and zip fly. Side pockets, welt back pockets and legs with creases. Skinny fit \u2013 a fit with slightly shorter legs that is close-fitting at the thighs, knees and ankles to create a completely fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 50600
     },
     {
-        "article_id": "0780031003",
-        "prod_name": "가죽 레깅스",
+        "article_id": "0843465007",
+        "prod_name": "Jack Skinny Trousers PID",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Suit trousers in a stretch weave with a concealed hook-and-eye fastener and zip fly. Diagonal side pockets, jetted back pockets, and an adjustable tab with buttons at the sides. Skinny Fit \u2013 a fit with slightly shorter legs that is close-fitting at the thighs, knees and ankles to create a completely fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 48800
+    },
+    {
+        "article_id": "0721390003",
+        "prod_name": "Jonas Slim 5-pkt Trs",
         "product_type_name": "Trousers",
         "colour_group_name": "Dark Grey",
-        "detail_desc": "얇은 면 안감에 부드럽고 부드러운 가죽 소재의 레깅스. 높은 허리에는 숨겨진 탄력이 있고, 한쪽에는 지퍼가 달려 있으며, 다리에는 장식용 박음질이 되어 있음.",
-        "price": 253200
+        "detail_desc": "5-pocket trousers in washed stretch twill with a regular waist and zip fly. Slim fit which is relaxed over the thighs and tapers from the knees down for a relaxed, well-tailored look.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 31100
     },
     {
-        "article_id": "0828854001",
-        "prod_name": "CIARA 밸벳 점프수트",
+        "article_id": "0769007002",
+        "prod_name": "Stature cargo pant",
         "product_type_name": "Trousers",
-        "colour_group_name": "Red",
-        "detail_desc": "실크 혼방 소재의 벨벳 소재의 소매 없는 점프슈트. 깊은 브이넥과 프레스 스터드가 숨겨져 있음. 심과 허리에 탈부착 가능한 타이 벨트, 옆주머니, 스트레이트 앤 와이드 팬츠. 안감 있음.",
-        "price": 242400
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Joggers in cotton twill with an elasticated drawstring waist, side pockets, and flap back and leg pockets with concealed press-studs. Tapered legs with seams at the knees and ribbed hems.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 51800
     },
     {
-        "article_id": "0776741002",
-        "prod_name": "LISA 조거",
+        "article_id": "0685815004",
+        "prod_name": "Jerry Jogger",
         "product_type_name": "Trousers",
-        "colour_group_name": "Greyish Beige",
-        "detail_desc": "부드럽고 질 좋은 니트 캐시미어 재질의 조거.",
-        "price": 201400
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Joggers in sweatshirt fabric with an elasticated drawstring waist, side pockets, a back pocket and ribbed hems. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 31500
     },
     {
-        "article_id": "0803397002",
-        "prod_name": "ALBERTO CASH 팬츠",
+        "article_id": "0664647026",
+        "prod_name": "Bruce Skinny Denim Trs",
         "product_type_name": "Trousers",
-        "colour_group_name": "Dark Red",
-        "detail_desc": "부드럽고 질 좋은 니트 캐시미어 팬츠. 고무줄로 된 허리띠와 뒷주머니, 그리고 앞부분과 끝부분에 장식용 박음질이 있음. 스트레이트 및 와이드 스타일.",
-        "price": 201400
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in washed stretch denim with a regular waist, zip fly and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 61000
     },
     {
-        "article_id": "0738770002",
-        "prod_name": "AMALFI 팬츠",
+        "article_id": "0751994006",
+        "prod_name": "Slim 5pkt Midprice",
         "product_type_name": "Trousers",
-        "colour_group_name": "Black",
-        "detail_desc": "라이오셀 재질의 팬츠. 스트레이트 및 와이드 스타일. 신축성 있음.",
-        "price": 201400
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, zip fly and slim legs.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 48800
     },
     {
-        "article_id": "0811792001",
-        "prod_name": "MOE 실크 블렌드 팬츠",
+        "article_id": "0761501009",
+        "prod_name": "Blake linen Slim cropped Trs",
         "product_type_name": "Trousers",
-        "colour_group_name": "Greyish Beige",
-        "detail_desc": "신축성 있는 레이온 섬유 재질의 팬츠. 앞면과 뒷면의 대각선 사이드에 주머니 위치. 스트레이트 및 와이드 스타일.",
-        "price": 201400
+        "colour_group_name": "Beige",
+        "detail_desc": "Ankle-length suit trousers in airy linen with a hook-and-eye fastening and zip fly. Side pockets, welt back pockets and tapered legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 61000
     },
     {
-        "article_id": "0797596001",
-        "prod_name": "SOULMATE 팬츠",
-        "product_type_name": "Trousers",
-        "colour_group_name": "Black",
-        "detail_desc": "STUDIO COLLECTION. 울 혼방으로 짠 맞춤 팬츠. 하이웨스트 스타일의 허리 밴딩이 있는 팬츠.",
-        "price": 201400
-    },
-    {
-        "article_id": "0844107001",
-        "prod_name": "SHERMAN 팬츠",
-        "product_type_name": "Trousers",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "스튜디오 컬렉션. 무게감 있는 스트레치 레이온 섬유와 린넨 트윌 팬츠. 플랩과 버튼이 있는 사이드 포켓과 백 포켓. 짧은 밑위와 와이드한 컷팅 스타일.",
-        "price": 201400
-    },
-    {
-        "article_id": "0811443001",
-        "prod_name": "DORA 실크 믹스 팬츠",
+        "article_id": "0817962001",
+        "prod_name": "Luna Slim Linen Blend",
         "product_type_name": "Trousers",
         "colour_group_name": "Black",
-        "detail_desc": "와일드 스타일의 실크 소재 팬츠. 페이크 뒷주머니 그리고 주름이 있는 와이드 팬츠. 안감 없음.",
-        "price": 201400
+        "detail_desc": "Ankle-length suit trousers in a linen and cotton weave with a zip fly and concealed hook-and-eye fastening. Side pockets, welt back pockets and legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 61000
     },
     {
-        "article_id": "0774117001",
-        "prod_name": "EVIAN 실크 팬츠",
+        "article_id": "0753737017",
+        "prod_name": "Twenty HW tapered",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Pink",
+        "detail_desc": "Trousers in woven fabric. High waist with pleats and a detachable tie belt, a concealed hook-and-eye fastener and a zip fly. Side pockets and tapered legs with creases.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0804732003",
+        "prod_name": "Durham joggers(1)",
         "product_type_name": "Trousers",
         "colour_group_name": "Black",
-        "detail_desc": "사이드에 주머니가 달린 자주색 팬츠. 신축성 있음. 스트레이트 및 와이드 스타일의 팬츠.",
-        "price": 201400
+        "detail_desc": "Joggers in a soft, fine knit with a high, elasticated drawstring waist and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
     },
     {
-        "article_id": "0828852002",
-        "prod_name": "CIRCUS 밸벳 팬츠",
+        "article_id": "0763284001",
+        "prod_name": "Vov trousers",
         "product_type_name": "Trousers",
         "colour_group_name": "Black",
-        "detail_desc": "실크 블랜드 재질의 살짝 구겨진 벨벳의 와이드 팬츠. 신축성 있는 스트레이트 앤 와이드 팬츠.",
-        "price": 201400
+        "detail_desc": "Wide trousers in a soft weave with a high waist, detachable tie belt, concealed zip fly with a hook-and-eye fastening and side pockets.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 60500
     },
     {
-        "article_id": "0774105001",
-        "prod_name": "프리미엄 ALEX 와이드 팬츠",
+        "article_id": "0772176003",
+        "prod_name": "RYOKO JOGGER",
         "product_type_name": "Trousers",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "부드러운 광택이 있는 와이드 스타일의 팬츠. 신축성 있는 스트레이트 팬츠.",
-        "price": 201400
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Joggers in sweatshirt fabric with contrasting colour stripes down the sides, a regular, elasticated drawstring waist, side pockets and tapered legs with ribbed hems. Soft brushed inside.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 38400
     },
     {
-        "article_id": "0773471007",
-        "prod_name": "NOELLE 실크 팬츠",
+        "article_id": "0753737016",
+        "prod_name": "Twenty HW tapered",
         "product_type_name": "Trousers",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "신축성 있고 부드러운 실크 재질의 스트레이트 앤 와이드 팬츠.",
-        "price": 201400
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Trousers in woven fabric. High waist with pleats and a detachable tie belt, a concealed hook-and-eye fastener and a zip fly. Side pockets and tapered legs with creases.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0810169001",
+        "prod_name": "Superskinny (D)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "Jeans in washed, stretch denim with fake front pockets, real back pockets and super-skinny legs. Wide jersey panel at the waist for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 61000
+    },
+    {
+        "article_id": "0791223002",
+        "prod_name": "Bianca HW wide trousers",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Super-wide culottes in a cupro weave with a high waist, concealed hook-and-eye fastening and zip fly. Inset panels down the legs for added width.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 81300
+    },
+    {
+        "article_id": "0652924004",
+        "prod_name": "&DENIM Jeggings HW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "High-waisted jeggings in stretch denim with a zip fly and button, fake front pockets and real back pockets.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50500
+    },
+    {
+        "article_id": "0573716012",
+        "prod_name": "Kanta slacks RW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Ankle-length cigarette trousers in a stretch weave with a regular waist, concealed zip in one side, fake back pockets and tapered legs with slits at the hems.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 25900
+    },
+    {
+        "article_id": "0752512003",
+        "prod_name": "Waleo HW wide full",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Trousers in soft, gently draping viscose twill with a high, elasticated waist and detachable tie belt. Side pockets and straight, wide legs.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0611020015",
+        "prod_name": "Slim Straight 5pkt (1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, button fly and slim, straight legs.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 56900
+    },
+    {
+        "article_id": "0720810017",
+        "prod_name": "Cobra Constructed(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "5-pocket jeans in washed stretch denim with a regular waist, button fly and skinny legs with quilted sections on the knees.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 71200
+    },
+    {
+        "article_id": "0825927003",
+        "prod_name": "Skinny Trash Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "5-pocket jeans in stretch denim with hard-worn details. Regular waist, zip fly and button, and skinny legs. Some of the cotton content of the jeans is recycled.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 61000
+    },
+    {
+        "article_id": "0814631005",
+        "prod_name": "FreeFit Slim(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "5-pocket denim jeans with a regular waist, zip fly and button and slim legs. Made using Lycra\u00ae Freefit\u00ae technology for soft, super-generous stretch, maximum mobility and optimal comfort.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 99200
+    },
+    {
+        "article_id": "0769007003",
+        "prod_name": "Stature cargo pant",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Joggers in cotton twill with an elasticated drawstring waist, side pockets, and flap back and leg pockets with concealed press-studs. Tapered legs with seams at the knees and ribbed hems.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 51800
+    },
+    {
+        "article_id": "0427159023",
+        "prod_name": "Skinny 5pkt Premiumprice 1",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in washed stretch denim with hard-worn details, a regular waist, button fly and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 32500
+    },
+    {
+        "article_id": "0843642003",
+        "prod_name": "Fargo slim fit chino MC",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Chinos in stretch cotton twill with a zip fly, diagonal side pockets and welt back pockets with a button. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0667387001",
+        "prod_name": "COTTON selvedge straight denim",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket slim-fit jeans in washed denim with stretch. Regular waist, zip fly and straight-cut legs that taper gently to the hem. The jeans are made from selvedge denim, a high-quality denim woven on traditional shuttle looms with a distinctive red/white selvedge that stops the fabric from unravelling.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 48900
+    },
+    {
+        "article_id": "0533421001",
+        "prod_name": "Angus Pants",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Super skinny jeans in washed stretch denim with with zipped side pockets, back pockets and seams at the back and knees.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 27400
+    },
+    {
+        "article_id": "0665666015",
+        "prod_name": "COBALT slim straight selvedge",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket slim-fit jeans in washed denim with stretch. Regular waist, zip fly and gently tapered legs. The jeans are made from selvedge denim, a high-quality denim woven on traditional shuttle looms with a distinctive red/white selvedge that stops the fabric from unravelling.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 97600
+    },
+    {
+        "article_id": "0836538003",
+        "prod_name": "Straight cropped (D)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Ankle-length jeans in washed, stretch denim with fake front pockets, real back pockets and straight legs. Wide waist panel for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0775414001",
+        "prod_name": "Mellow treggings (W)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Biker treggings in stretch twill made from a cotton blend with a fake fly, fake front pockets, real back pockets and decorative seams at the knees. Wide jersey waist panel for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 54900
+    },
+    {
+        "article_id": "0690936014",
+        "prod_name": "Iris Linen Jogger R.W",
+        "product_type_name": "Trousers",
+        "colour_group_name": "White",
+        "detail_desc": "Linen joggers with a regular, elasticated, drawstring waist, side pockets, a fake back pocket and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 51800
     },
     {
         "article_id": "0773471006",
-        "prod_name": "NOELLE 실크 팬츠 2",
+        "prod_name": "PQ NOELLE SILK TRS",
         "product_type_name": "Trousers",
         "colour_group_name": "Black",
-        "detail_desc": "신축성 있고 부드러운 실크 재질의 스트레이트 앤 와이드 팬츠.",
+        "detail_desc": "Trousers in soft silk with a high, elasticated waist, pockets in the side seams and straight, wide legs.",
+        "index_group_name": 0,
+        "age_id": 1,
         "price": 201400
     },
     {
-        "article_id": "0811388001",
-        "prod_name": "ROCO 팬츠",
+        "article_id": "0815537003",
+        "prod_name": "CNY Marilyn trs",
         "product_type_name": "Trousers",
-        "colour_group_name": "Black",
-        "detail_desc": "울 소재로 된 발목 길이 정도의 팬츠. 사이드 포켓이 있고, 와이드 및 테이퍼드 스타일의 팬츠.",
-        "price": 199800
+        "colour_group_name": "Beige",
+        "detail_desc": "Ankle-length trousers in woven fabric with a high waist, pleats at the front and a zip fly and button. Side pockets, a fake welt back pocket and tapered legs with creases both front and back.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 33900
     },
     {
-        "article_id": "0862393001",
-        "prod_name": "pausa 팬츠",
+        "article_id": "0633109001",
+        "prod_name": "Pistaschio playsuit",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Sleeveless playsuit in a viscose weave with an opening and press-stud at the back of the neck, elasticated seam at the waist, side pockets and short legs. Unlined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 25600
+    },
+    {
+        "article_id": "0812027002",
+        "prod_name": "Kermit paperbag trouser",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Red",
+        "detail_desc": "Trousers in a sturdy weave with a high paper bag waist, pleats at the top and a detachable tie belt with metal D-rings. Zip fly with a concealed hook-and-eye fastener, diagonal side pockets, fake welt back pockets and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 20300
+    },
+    {
+        "article_id": "0816494003",
+        "prod_name": "PQ ANNA SWEAT TIGHTS",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Dressy leggings in lightweight sweatshirt fabric made from wool with a high, elasticated waist and legs with sewn-in creases, and slits at the hems.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 142400
+    },
+    {
+        "article_id": "0723104004",
+        "prod_name": "Culotte H.W",
+        "product_type_name": "Trousers",
+        "colour_group_name": "White",
+        "detail_desc": "Calf-length jeans in washed stretch cotton denim with a high waist, small front pockets, back pockets and straight, wide legs with raw-edge, frayed hems.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 61000
+    },
+    {
+        "article_id": "0625545003",
+        "prod_name": "Mrs C Trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Trousers in woven fabric with a sheen. Concealed zip and hook-and-eye fastener at the side, side pockets and straight-cut legs that taper to the hem with creases.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 52900
+    },
+    {
+        "article_id": "0814620001",
+        "prod_name": "FreeFit Skinny(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket denim jeans with a regular waist, zip fly and skinny legs. Made using Lycra\u00ae Freefit\u00ae technology for soft, super-generous stretch, maximum mobility and optimal comfort.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 101700
+    },
+    {
+        "article_id": "0814631001",
+        "prod_name": "FreeFit Slim(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket denim jeans with a regular waist, zip fly and button and slim legs. Made using Lycra\u00ae Freefit\u00ae technology for soft, super-generous stretch, maximum mobility and optimal comfort.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 81300
+    },
+    {
+        "article_id": "0611020024",
+        "prod_name": "Slim Straight Premiumprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, button fly and slim, straight legs.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 65100
+    },
+    {
+        "article_id": "0761501007",
+        "prod_name": "Blake Slim Trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Ankle-length suit trousers in airy linen with a hook-and-eye fastening and zip fly. Side pockets, welt back pockets and tapered legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 58100
+    },
+    {
+        "article_id": "0441386004",
+        "prod_name": "Jonte Slim Jogger 24.99:-",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Grey",
+        "detail_desc": "Joggers in sweatshirt fabric with an elasticated drawstring waist, zipped side pockets, a low crotch and tapered legs with seams at the knees and ribbed hems.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 32500
+    },
+    {
+        "article_id": "0897655001",
+        "prod_name": "Croydon coolmax jogger new",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Joggers in woven fabric with elastication and a concealed drawstring at the waist, a fake fly, zipped side pockets and jetted back pockets. Legs with creases and sewn-in turn-ups at the hems. The joggers incorporate COOLMAX\u00ae functional fabric, a unique, soft, comfortable and fast-drying polyester fibre that efficiently wicks moisture while regulating temperature. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 61000
+    },
+    {
+        "article_id": "0817962003",
+        "prod_name": "Luna Slim Linen Blend",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Ankle-length suit trousers in a linen and cotton weave with a zip fly and concealed hook-and-eye fastening. Side pockets, welt back pockets and legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 51800
+    },
+    {
+        "article_id": "0779341002",
+        "prod_name": "Pop eye chino",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Chinos in a cotton weave with a regular, elasticated drawstring waist, fake fly, side pockets, welt back pockets and tapered legs.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 29400
+    },
+    {
+        "article_id": "0710876002",
+        "prod_name": "Kennedy skinny stretch chinos",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Chinos in stretch cotton twill with a zip fly and button, diagonal side pockets and welt back pockets with a button. Skinny Fit \u2013 a fit with slightly shorter legs that is close-fitting at the thighs, knees and ankles to create a completely fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 43200
+    },
+    {
+        "article_id": "0720504001",
+        "prod_name": "Skinny 5pkt Lowprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0790368001",
+        "prod_name": "Pantha PU leggings",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Leggings in stretch fabric. High waist with concealed elastication and legs with sewn-in creases at the front and raw-edge hems.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 36600
+    },
+    {
+        "article_id": "0767248001",
+        "prod_name": "Westi trouser",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Tailored, ankle-length trousers in stretch fabric with a zip fly and concealed hook-and-eye fastener. Side pockets, fake back pockets and gently flared legs.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 39000
+    },
+    {
+        "article_id": "0805323002",
+        "prod_name": "Bow PU trouser",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Greyish Beige",
+        "detail_desc": "High-waisted, ankle-length trousers in imitation leather with a wide belt, hook-and-eye fasteners, zip fly, side pockets and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 36300
+    },
+    {
+        "article_id": "0562245089",
+        "prod_name": "Luna skinny RW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "5-pocket jeans in washed, superstretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0249136015",
+        "prod_name": "Skinny Ankel Denim",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Ankle-length jeans in washed stretch denim with fake front pockets, real back pockets and tapered legs. Wide jersey ribbing at the waist for best fit.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 81300
+    },
+    {
+        "article_id": "0775402001",
+        "prod_name": "Frida viscose trouser (W)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trousers in a lightweight viscose weave with an elasticated drawstring waist, side pockets, fake welt back pockets and tapered legs. Wide panel at the waist for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0752516005",
+        "prod_name": "Dakar HW tapered",
         "product_type_name": "Trousers",
         "colour_group_name": "Dark Beige",
-        "detail_desc": "린넨과 라이오셀 섬유 재질의 하이웨스트 팬츠. 양 사이드와 뒷쪽에 주머니 위치.",
-        "price": 183000
+        "detail_desc": "Ankle-length trousers in an airy linen and viscose weave. High waist with elastication at the back, pleats at the top and a tie belt. Zip fly and buttons, side pockets and straight-cut legs that taper to the hem with creases.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 41900
     },
     {
-        "article_id": "0685174001",
-        "prod_name": "Art 울 팬츠",
+        "article_id": "0300024048",
+        "prod_name": "Superskinny",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jeans in washed stretch denim with fake front pockets, real back pockets and skinny legs. Wide ribbing at the waist for optimum comfort.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 48800
+    },
+    {
+        "article_id": "0739296005",
+        "prod_name": "Sandra NW straight trousers",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Turquoise",
+        "detail_desc": "Ankle-length trousers in a linen and cotton weave with a high waist, zip fly and button, and side pockets. Wide, straight legs with creases and sewn-in turn-ups at the hems.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0719220001",
+        "prod_name": "W JOE HW TRS",
         "product_type_name": "Trousers",
         "colour_group_name": "Black",
-        "detail_desc": "울 재질의 하이웨스트 팬츠. 뒷주머니는 웰트이며, 앞과 뒤가 봉제되어 있고, 옆구리는 새틴 줄무늬가 있음.",
-        "price": 183000
+        "detail_desc": "Trousers in a patterned weave made from a viscose blend with a detachable tie belt. Side pockets, open back pockets and tapered legs with elastication and a tie at the hems.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 42700
+    },
+    {
+        "article_id": "0780434001",
+        "prod_name": "Ceasar slim tuxedo trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Tuxedo trousers in woven fabric with a concealed hook-and-eye fastening and zip fly. Pockets in the side seams, jetted back pockets and legs with satin side stripes. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 32500
+    },
+    {
+        "article_id": "0720504007",
+        "prod_name": "Skinny 5pkt Lowprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in washed stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0835542003",
+        "prod_name": "Heron cropped skinny",
+        "product_type_name": "Trousers",
+        "colour_group_name": "White",
+        "detail_desc": "Suit trousers in an airy linen and cotton weave with elastication at the back of the waist and a zip fly and button. Diagonal side pockets, welt back pockets with a button, and legs with sewn-in turn-ups at the hems. Skinny Fit \u2013 a fit with slightly shorter legs that is close-fitting at the thighs, knees and ankles to create a completely fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 39000
+    },
+    {
+        "article_id": "0793368002",
+        "prod_name": "Slim Straight Selvedge",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "5-pocket, slim-fit jeans in washed denim with a regular waist, zip fly and gently tapered legs. The jeans are made from selvedge denim \u2013 a high-quality denim woven on traditional shuttle looms with a distinctive red/white selvedge that stops the fabric from unravelling. The cotton content of the jeans is partly recycled.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 122000
+    },
+    {
+        "article_id": "0761501009",
+        "prod_name": "Blake linen Slim cropped Trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Ankle-length suit trousers in airy linen with a hook-and-eye fastening and zip fly. Side pockets, welt back pockets and tapered legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 61000
+    },
+    {
+        "article_id": "0751994007",
+        "prod_name": "Slim 5pkt Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, zip fly and slim legs.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 48800
+    },
+    {
+        "article_id": "0667258003",
+        "prod_name": "SOIL slim denim (1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, zip fly and slim legs.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 97600
+    },
+    {
+        "article_id": "0611020026",
+        "prod_name": "Slim Straight Premiumprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, button fly and slim, straight legs.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 81300
+    },
+    {
+        "article_id": "0714026013",
+        "prod_name": "Manson slim fit trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Suit trousers in woven fabric with a concealed hook-and-eye fastening and zip fly. Side pockets, jetted back pockets and legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 51800
+    },
+    {
+        "article_id": "0664647004",
+        "prod_name": "Bruce Skinny Denim Trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed stretch denim with a regular waist, zip fly and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 45300
+    },
+    {
+        "article_id": "0783346013",
+        "prod_name": "Primo slacks",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Ankle-length cigarette trousers in a stretch weave with a regular waist that is elasticated at the back. Fake welt back pockets and slim legs with creases.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 17300
+    },
+    {
+        "article_id": "0686631002",
+        "prod_name": "Maggie RW tapered",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Greyish Beige",
+        "detail_desc": null,
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 20100
+    },
+    {
+        "article_id": "0834992002",
+        "prod_name": "Boyfriend denim trouser (D)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket jeans in washed, stretch cotton denim with hard-worn details in a looser fit with tapered legs. Wide jersey panel at the waist for best fit over the tummy. The cotton content of the jeans is partly recycled.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 58600
+    },
+    {
+        "article_id": "0562245089",
+        "prod_name": "Luna skinny RW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "5-pocket jeans in washed, superstretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0300024058",
+        "prod_name": "Superskinny",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Jeans in washed stretch denim with fake front pockets, real back pockets and skinny legs. Wide ribbing at the waist for optimum comfort.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 57700
+    },
+    {
+        "article_id": "0757552008",
+        "prod_name": "ED Pluto RW slacks",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Ankle-length cigarette trousers in a stretch cotton blend with a zip fly, concealed hook-and-eye fasteners and a regular waist with concealed elastication. Side pockets, fake welt back pockets and tapered legs with creases.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0816521004",
+        "prod_name": "Tiblisi",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Ankle-length trousers in an airy viscose weave. High paper bag waist with elastication at the back and a detachable tie belt. Pleats at the top, diagonal side pockets and gently tapered legs with creases.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 30500
+    },
+    {
+        "article_id": "0708490006",
+        "prod_name": "Bianca pants",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Wide pull-on trousers in soft viscose jersey with straight legs and a gentle flare to the hem. Wide smocking at the waist for a comfortable fit.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 36600
+    },
+    {
+        "article_id": "0718727001",
+        "prod_name": "Maple wide cropped",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Ankle-length trousers in a jacquard weave with a sheen. High, elasticated waist with pleats and a detachable tie belt, concealed hook-and-eye fasteners and a zip fly. Welt pockets in the side seams and straight, wide legs.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 28500
+    },
+    {
+        "article_id": "0690935006",
+        "prod_name": "Snow Chino R.W",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Ankle-length chinos in stretch cotton with a regular waist, zip fly and button, side pockets, fake welt back pockets and straight-cut legs that taper gently to the hems with creases.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 14200
+    },
+    {
+        "article_id": "0753512001",
+        "prod_name": "Skinny Midprice No Fade Black",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in stretch organic cotton denim that has been dyed multiple times for a better post-wash colour. Regular waist, zip fly and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 47200
+    },
+    {
+        "article_id": "0753489002",
+        "prod_name": "DatGuy",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Trousers in a sturdy, slightly stretchy cotton weave with an elasticated drawstring waist, side pockets, and flap back pockets with a press-stud. Fake fly, a slightly lower crotch and tapered legs with elasticated hems.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 36600
+    },
+    {
+        "article_id": "0766595001",
+        "prod_name": "Hampsted drawstring trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Ankle-length suit trousers in a woven viscose blend with an elasticated waist, zip fly and button, side pockets, welt back pockets and legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0730863005",
+        "prod_name": "Skinny 5pkt Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 48800
+    },
+    {
+        "article_id": "0730863027",
+        "prod_name": "Skinny 5pkt Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0811993001",
+        "prod_name": "Regular Fit Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in stretch denim with a regular waist, zip fly and button and straight legs with good room for movement over the thighs and knees.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0804955002",
+        "prod_name": "Aksel Skinny Legpocket",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Trousers in extra-stretchy cotton twill with a regular waist and zip fly with a button. Side pockets, welt back pockets, flap leg pockets with concealed press-studs, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 20300
+    },
+    {
+        "article_id": "0730863038",
+        "prod_name": "Skinny 5pkt Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket jeans in stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 48800
+    },
+    {
+        "article_id": "0611020022",
+        "prod_name": "Slim Straight 5pkt (1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket jeans in washed denim with a regular waist, button fly and slim, straight legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 65100
+    },
+    {
+        "article_id": "0730863018",
+        "prod_name": "Skinny 5pkt Midprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in stretch denim with a regular waist, zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0888380001",
+        "prod_name": "MC Tia slacks",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Ankle-length cigarette trousers in woven fabric with a high waist and fly with a concealed zip and hook-and-eye fastening. Diagonal side pockets, fake back pockets, pleats at the top, and tapered legs with creases.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 51000
+    },
+    {
+        "article_id": "0830360001",
+        "prod_name": "H2 Carnation solid",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trousers in a soft weave made from viscose and recycled polyester. Covered elastication and a drawstring at the waist, side pockets and straight, wide legs with sewn-in creases.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 41500
+    },
+    {
+        "article_id": "0749615009",
+        "prod_name": "Lia Slacks tie belt",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Ankle-length cigarette trousers in woven fabric. High waist with pleats at the front and a detachable tie belt, zip fly with hook-and-eye fasteners, side pockets, fake welt back pockets and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 51800
+    },
+    {
+        "article_id": "0609997001",
+        "prod_name": "Skalman trousers",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Trousers in a textured, striped weave with pleats at the top, a concealed zip in the side, side pockets, welt back pockets and straight, wide legs.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 65700
+    },
+    {
+        "article_id": "0751471021",
+        "prod_name": "Pluto RW slacks (1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Ankle-length cigarette trousers in a stretch weave with a zip fly, concealed hook-and-eye fastening, and regular waist with concealed elastication. Side pockets, fake back pockets and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 33900
+    },
+    {
+        "article_id": "0825700003",
+        "prod_name": "Fairfax HW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trousers in imitation leather with a high waist, zip fly and press-stud, front pockets and slim legs with creases.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0811715001",
+        "prod_name": "Dina sweatpants",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Joggers in lightweight sweatshirt fabric with side pockets and tapered legs with foldover ribbing at the hems. Wide ribbing at the waist for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 36600
+    },
+    {
+        "article_id": "0797892001",
+        "prod_name": "ED Primo slacks",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Cigarette trousers in stretch twill with a regular waist that is elasticated at the back. Fake fly, diagonal side pockets, fake welt back pockets and ankle-length legs with creases.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 34600
+    },
+    {
+        "article_id": "0619304001",
+        "prod_name": "Xibit embroidery",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "5-pocket ankle-length jeans in sturdy washed denim with worn details, embroidery, a regular waist and straight legs.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 52500
+    },
+    {
+        "article_id": "0562252028",
+        "prod_name": "Space 5 pkt tregging",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Skinny-fit treggings in superstretch twill with an elasticated waist, fake front pockets and real back pockets.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 25900
+    },
+    {
+        "article_id": "0867583001",
+        "prod_name": "Christo skinny jogger new 2",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Suit trousers in woven fabric with covered elastication at the waist, a concealed hook-and-eye fastener and zip fly. Side pockets, jetted back pockets with a button, and legs with contrasting colour stripes down the sides and creases. Skinny Fit \u2013 a fit with slightly shorter legs that is close-fitting at the thighs, knees and ankles to create a completely fitted silhouette. The polyester content of the trousers is recycled.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0825109003",
+        "prod_name": "New Tapered Premiumprice(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket jeans in washed, stretch denim with a regular waist, zip fly and button, and tapered legs. The jeans are made partly from recycled cotton.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 78400
+    },
+    {
+        "article_id": "0764110004",
+        "prod_name": "Chester slim trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Red",
+        "detail_desc": "Suit trousers in a slub-weave cotton blend with an extended waistband, concealed hook-and-eye fastening and zip fly. Side pockets, jetted back pockets and legs with creases. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 81300
+    },
+    {
+        "article_id": "0871624006",
+        "prod_name": "Ricky Tapered Linen",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Trousers in a cool linen and cotton weave. Regular, elasticated waist with a concealed drawstring, a zip fly and button, side pockets, welt back pockets with a button, and gently tapered legs.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0804955001",
+        "prod_name": "Aksel Skinny Legpocket",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trousers in extra-stretchy cotton twill with a regular waist and zip fly with a button. Side pockets, welt back pockets, flap leg pockets with concealed press-studs, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0775579002",
+        "prod_name": "GREY Jersey Harem Shorts",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Shorts in sweatshirt fabric with shaping seams. Elasticated drawstring waist, low crotch, side pockets, back pockets and ribbed hems.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 32500
+    },
+    {
+        "article_id": "0843634002",
+        "prod_name": "Wave Linen Relaxed fit PID",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Trousers in woven fabric with covered elastication and a drawstring at the waist, a zip fly and a hook-and-eye fastening, side pockets and a welt back pocket. Relaxed Fit \u2013 a fit with good room for movement creating a comfortable, relaxed silhouette.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 48800
+    },
+    {
+        "article_id": "0815456003",
+        "prod_name": "Madison Slim Stretch Chino",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Chinos in extra-stretchy cotton twill with a zip fly, side pockets, a coin pocket and welt back pockets with a button. Slim Fit \u2013 a fit that is close-fitting at the thighs, knees and ankles to create a fitted silhouette.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 34600
+    },
+    {
+        "article_id": "0690449022",
+        "prod_name": "Skinny 5pkt Premiumprice",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket jeans in washed, stretch denim with hard-worn details. Regular waist, a zip fly and button, and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 73200
+    },
+    {
+        "article_id": "0798972009",
+        "prod_name": "Bruce skinny 5 pkt fancy",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "5-pocket trousers in stretch cotton twill with a regular waist, zip fly and skinny legs.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0855081004",
+        "prod_name": "Tia slacks",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Ankle-length cigarette trousers in woven fabric with a high waist and fly with a concealed zip and hook-and-eye fastening. Diagonal side pockets, fake welt back pockets, pleats at the top, and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 51800
+    },
+    {
+        "article_id": "0739533002",
+        "prod_name": "&Denim Embrace HW Trash",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "5-pocket, ankle-length jeans in washed, stretch denim with hard-worn details, a high waist, zip fly and button and skinny legs with raw-edge hems. Embrace \u2013 denim with a smart stretch function that moulds to the body for a comfortable, flattering silhouette.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 81300
+    },
+    {
+        "article_id": "0704126004",
+        "prod_name": "Stella RW skinny cropped",
+        "product_type_name": "Trousers",
+        "colour_group_name": "White",
+        "detail_desc": "5-pocket, ankle-length trousers in soft, stretch twill with worn details, a regular waist, zip fly and button, and slim legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0723104007",
+        "prod_name": "Culotte H.W",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Blue",
+        "detail_desc": "Calf-length jeans in washed stretch cotton denim with a high waist, small front pockets, back pockets and straight, wide legs with raw-edge, frayed hems.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 20100
+    },
+    {
+        "article_id": "0690936003",
+        "prod_name": "Iris Linen Jogger R.W TVP",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Linen joggers with a regular, elasticated, drawstring waist, side pockets, a fake back pocket and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0532275005",
+        "prod_name": "Madison highwaist 5 pkt",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "5-pocket, high-waisted trousers in washed stretch twill with a zip fly and button, and slim legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 18300
+    },
+    {
+        "article_id": "0804732005",
+        "prod_name": "Durham joggers(1)",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Light Orange",
+        "detail_desc": "Joggers in a soft, fine knit with a high, elasticated drawstring waist and tapered legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 43200
+    },
+    {
+        "article_id": "0890683001",
+        "prod_name": "Barracuda wide trouser",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Black",
+        "detail_desc": "Long trousers in a softly draping weave. High waist with elastication at the back and pleats at the front, and wide, gently flared legs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 54900
+    },
+    {
+        "article_id": "0815537001",
+        "prod_name": "CNY Marilyn trs",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Red",
+        "detail_desc": "Ankle-length trousers in woven fabric with a high waist, pleats at the front and a zip fly and button. Side pockets, a fake welt back pocket and tapered legs with creases both front and back.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0750423005",
+        "prod_name": "DeLuca pull on TVP RW",
+        "product_type_name": "Trousers",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Trousers in soft twill with a regular, elasticated drawstring waist, side pockets, fake welt back pockets and tapered legs with slits at the hems.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 34600
     }
 ]
