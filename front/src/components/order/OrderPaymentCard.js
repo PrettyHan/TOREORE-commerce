@@ -38,11 +38,11 @@ function OrderPaymentCard({
   //       };
   //     });
   //     return (
-  //       <Paypal
-  //         subTotal={subTotal}
-  //         handlePayComplete={handlePayComplete}
-  //         setOrderPayment={setOrderPayment}
-  //       />
+  // <Paypal
+  //   subTotal={subTotal}
+  //   handlePayComplete={handlePayComplete}
+  //   setOrderPayment={setOrderPayment}
+  // />
   //     );
   //   } else if (orderPayment.paymentMethod === "bankbook") {
   //     setOrderPayment((current) => {
@@ -60,12 +60,12 @@ function OrderPaymentCard({
   //       };
   //     });
   //     return (
-  //       <Card
-  //         subTotal={subTotal}
-  //         handlePayComplete={handlePayComplete}
-  //         orderId={orderId}
-  //         setOrderPayment={setOrderPayment}
-  //       />
+  <Card
+    subTotal={subTotal}
+    handlePayComplete={handlePayComplete}
+    orderId={orderId}
+    setOrderPayment={setOrderPayment}
+  />;
   //     );
   //   }
   // };
@@ -97,27 +97,27 @@ function OrderPaymentCard({
           </FormControl>
         </Box>
         <Box>
-          {orderPayment.paymentMethod === "없음" && (
-            <Typography>결제 수단을 선택해 주세요.</Typography>
-          )}
-          {orderPayment.paymentMethod === "paypal" && (
-            <Paypal
-              subTotal={subTotal}
-              handlePayComplete={handlePayComplete}
-              setOrderPayment={setOrderPayment}
-            />
-          )}
-          {/* {orderPayment.paymentMethod === "bankbook" && (
-            <Bankbook handlePayComplete={handlePayComplete} />
-          )} */}
-          {orderPayment.paymentMethod === "card" && (
-            <Card
-              subTotal={subTotal}
-              handlePayComplete={handlePayComplete}
-              orderId={orderId}
-              setOrderPayment={setOrderPayment}
-            />
-          )}
+          {
+            {
+              none: <Typography>결제 수단을 선택해 주세요.</Typography>,
+              paypal: (
+                <Paypal
+                  subTotal={subTotal}
+                  handlePayComplete={handlePayComplete}
+                  setOrderPayment={setOrderPayment}
+                />
+              ),
+              card: (
+                <Card
+                  subTotal={subTotal}
+                  handlePayComplete={handlePayComplete}
+                  orderId={orderId}
+                  setOrderPayment={setOrderPayment}
+                />
+              ),
+              bankbook: <Bankbook handlePayComplete={handlePayComplete} />,
+            }[orderPayment.paymentMethod]
+          }
         </Box>
       </Box>
     </div>

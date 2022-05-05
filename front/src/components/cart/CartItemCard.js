@@ -29,6 +29,7 @@ function CartItemCard({ cartItem, setCartItems, index }) {
     try {
       await Api.put(`carts/${cartItem.productId}`, {
         quantity: cartItem.quantity + 1,
+        checked: cartItem.checked,
       });
       setCartItems((current) => {
         return current.map((item) => {
@@ -52,6 +53,7 @@ function CartItemCard({ cartItem, setCartItems, index }) {
     try {
       await Api.put(`carts/${cartItem.productId}`, {
         quantity: cartItem.quantity - 1,
+        checked: cartItem.checked,
       });
 
       setCartItems((current) => {
@@ -72,18 +74,28 @@ function CartItemCard({ cartItem, setCartItems, index }) {
   };
 
   // 체크박스 핸들링 함수
-  const handleCheck = (event) => {
-    setCartItems((current) => {
-      return current.map((item) => {
-        if (item.productId === cartItem.productId) {
-          return {
-            ...item,
-            checked: event.target.checked,
-          };
-        }
-        return item;
+  const handleCheck = async (event) => {
+    try {
+      const itemChecked = cartItem.checked;
+
+      await Api.put(`carts/${cartItem.productId}`, {
+        quantity: cartItem.quantity,
+        checked: !itemChecked,
       });
-    });
+      setCartItems((current) => {
+        return current.map((item) => {
+          if (item.productId === cartItem.productId) {
+            return {
+              ...item,
+              checked: event.target.checked,
+            };
+          }
+          return item;
+        });
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

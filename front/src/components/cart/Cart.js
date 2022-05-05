@@ -58,16 +58,6 @@ function Cart() {
     }
   };
 
-  // 처음에 받아올 카트 아이템들 체크 추가해 주는 함수
-  const handleCartData = (cartItems) => {
-    return cartItems.map((item) => {
-      return {
-        ...item,
-        checked: true,
-      };
-    });
-  };
-
   // 전체 선택 체크박스 핸들링 함수
   const handleCheck = (event) => {
     setCartItems((current) => {
@@ -78,18 +68,6 @@ function Cart() {
         };
       });
     });
-  };
-
-  // 전체 삭제 버튼 클릭 핸들링 함수
-  const handleAllRemove = async (event) => {
-    try {
-      await Api.delete("carts");
-      setCartItems(() => {
-        return [];
-      });
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   // 선택 삭제 버튼 클릭 핸들링 함수
@@ -118,7 +96,7 @@ function Cart() {
         orderName: "test",
         zipcode: {},
         message: "",
-        paymentMethod: "없음",
+        paymentMethod: "none",
       };
 
       const res = await Api.post("orders", body);
@@ -135,7 +113,7 @@ function Cart() {
       const res = await Api.get("carts");
       const fetchedItems = res.data;
       console.log(fetchedItems);
-      setCartItems(handleCartData(fetchedItems));
+      setCartItems(fetchedItems);
     } catch (err) {
       console.log(err);
     }
@@ -151,10 +129,7 @@ function Cart() {
         {isLogin ? (
           <Container>
             <Box>
-              <Grid container justify="flex-end">
-                <Button disabled={isCartEmpty} onClick={handleAllRemove}>
-                  전체삭제
-                </Button>
+              <Grid container>
                 <Grid item>
                   <Typography
                     component="h2"
