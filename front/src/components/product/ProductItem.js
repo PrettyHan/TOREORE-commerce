@@ -65,7 +65,7 @@ const ProductItem = ({
 export default ProductItem;
 
 const Wrapper = styled.div`
-    width: 350px;
+    min-width: 200px;
     height: fit-content;
     margin: 0px auto;
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
