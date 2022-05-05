@@ -43,11 +43,13 @@ cartRouter.put("/:productId", async (req, res, next) => {
         const userId = req.currentUserId;
         const productId = req.params.productId;
         const quantity = req.body.quantity;
+        const checked = req.body.checked;
 
         const newCarts = await cartService.updateCartList({
             userId,
             productId,
             quantity,
+            checked
         });
 
         res.status(200).json(newCarts);

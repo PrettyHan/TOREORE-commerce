@@ -3,10 +3,10 @@ import { orderService } from '../order/orderService';
 
 const ready = async (req, res, next) => {
     // set variables
-    const orderId = req.params.orderId
+    const orderId = req.orderId
     const {products,totalPrice} = await orderService.getOrder({ orderId });
-    const item_name = products.cart.name;
-    const quantity = products.cart.quantity;
+    const item_name = "test"
+    const quantity = "3"
     const total_amount = totalPrice;
     const vat_amount = totalPrice/10 ;
     const tax_free_amount = 0;
@@ -38,7 +38,7 @@ const ready = async (req, res, next) => {
         }
     });
 
-    res.json(reqToKakao.data);
+    res.json(orderId);
 };
 
 const approve = async (req, res, next) => {

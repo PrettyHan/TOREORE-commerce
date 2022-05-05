@@ -88,6 +88,7 @@ const UserSchema = new Schema(
             type: Array,
             required: false,
             default: [],
+
         },
         loginType: {
             type: String,
