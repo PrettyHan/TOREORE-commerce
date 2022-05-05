@@ -39,6 +39,19 @@ cartRouter.post("/:productId", async (req, res, next) => {
 });
 
 // checked 
+cartRouter.put("/select", async (req, res, next) => {
+    try {
+        const userId = req.currentUserId;
+
+        const newCarts = await cartService.updateCartSelect({
+            userId,
+        });
+
+        res.status(200).json(newCarts);
+    } catch (error) {
+        next(error);
+    }
+});
 cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
@@ -58,6 +71,7 @@ cartRouter.put("/:productId", async (req, res, next) => {
         next(error);
     }
 });
+
 
 cartRouter.delete("/select", async (req, res, next) => {
     try {
