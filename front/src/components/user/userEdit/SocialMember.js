@@ -177,6 +177,7 @@ function GeneralMember() {
                                 label="전화번호 (000-0000-0000)"
                                 autoComplete="phone"
                                 size="small"
+                                value={form.phone || ""}
                                 onChange={(e) =>
                                     setForm({ ...form, phone: e.target.value })
                                 }
@@ -195,6 +196,7 @@ function GeneralMember() {
                                 label="생년월일 (YYYY-MM-DD)"
                                 autoComplete="birth"
                                 size="small"
+                                value={form.birth || ""}
                                 onChange={(e) =>
                                     setForm({ ...form, birth: e.target.value })
                                 }

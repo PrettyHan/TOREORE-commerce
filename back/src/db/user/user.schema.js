@@ -52,7 +52,7 @@ const UserSchema = new Schema(
         },
         birth: {
             type: String,
-            required: fasle,
+            required: false,
             maxlength: 10,
             trim: true,
         },
