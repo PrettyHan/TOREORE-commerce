@@ -3,12 +3,12 @@ import { orderService } from '../order/orderService';
 
 const ready = async (req, res, next) => {
     // set variables
-    const orderId = req.orderId
+    const orderId = req.params.orderId
     const {products,totalPrice} = await orderService.getOrder({ orderId });
-    const item_name = "test"
+    const item_name = "카카오페이"
     const quantity = "3"
-    const total_amount = totalPrice;
-    const vat_amount = totalPrice/10 ;
+    const total_amount = totalPrice
+    const vat_amount = 0 ;
     const tax_free_amount = 0;
 
     const approval_url = 'http://localhost:5001/payments/success'; // 'http://example.com/success';
@@ -38,7 +38,7 @@ const ready = async (req, res, next) => {
         }
     });
 
-    res.json(orderId);
+    res.json(reqToKakao.data);
 };
 
 const approve = async (req, res, next) => {

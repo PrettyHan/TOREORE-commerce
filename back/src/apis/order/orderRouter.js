@@ -30,6 +30,7 @@ orderRouter.post("/", async (req, res, next) => {
         const cartPrices = cartlist.map((v) => (v.price));
         const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
+        const names = cartlist.map((v) => (v.name))
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
 
@@ -43,6 +44,7 @@ orderRouter.post("/", async (req, res, next) => {
             message,
             paymentMethod,
             isPayed,
+            names
         };
 
         const newOrder = await orderService.createOrder(orderData);
