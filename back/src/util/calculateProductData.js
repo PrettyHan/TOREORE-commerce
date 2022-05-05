@@ -1,8 +1,8 @@
-export function getBestPreferAge(age_index) {
-    if (age_index === 0) return 10;
-    else if (age_index === 1) return 20;
-    else if (age_index === 2) return 30;
-    else if (age_index === 3) return 40;
-    else if (age_index === 4) return 50;
-    else return 60;
+export function getAgeIndex(userAge) {
+    if (10 <= userAge && userAge < 20) return 0;
+    else if (20 <= userAge && userAge < 30) return 1;
+    else if (30 <= userAge && userAge < 40) return 2;
+    else if (40 <= userAge && userAge < 50) return 3;
+    else if (50 <= userAge && userAge < 60) return 4;
+    else if (60 <= userAge) return 5;
 }

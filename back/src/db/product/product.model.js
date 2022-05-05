@@ -1,5 +1,5 @@
 import { ProductModel } from "./product.schema";
-import { powerSet } from "../../middlewares/search"
+import { powerSet } from "../../middlewares/search";
 import is from "@sindresorhus/is";
 
 class Product {
@@ -13,25 +13,24 @@ class Product {
         return product;
     }
 
-    static async findByQuery({cid, pid, keyword}) {
+    static async findByQuery({ cid, pid, keyword }) {
         const query = {};
-        if(cid) query.category = cid;
-        if(pid) query.productId = pid;
-        
+        if (cid) query.category = cid;
+        if (pid) query.productId = pid;
+
         const product = await ProductModel.find(query);
-        return product
-        
+        return product;
     }
-    static async findBySearch({keyword}){
-        const product = await ProductModel.find({$text : {$search: keyword}})
-        if(is.emptyArray(product)) {
-            const arr = powerSet(keyword)
-            arr.shift()
-            const newKeyword = arr.join(" ")
-            const product = await ProductModel.find({$text : {$search: newKeyword}})
-            return product
+    static async findBySearch({ keyword }) {
+        const product = await ProductModel.find({ $text: { $search: keyword } });
+        if (is.emptyArray(product)) {
+            const arr = powerSet(keyword);
+            arr.shift();
+            const newKeyword = arr.join(" ");
+            const product = await ProductModel.find({ $text: { $search: newKeyword } });
+            return product;
         }
-        return product
+        return product;
     }
 
     static async findAll() {
@@ -59,30 +58,22 @@ class Product {
     }
 
     static async findByLikeProductId({ proudctlikeId }) {
-        const product = await ProductModel.findOne({ productId : proudctlikeId });
+        const product = await ProductModel.findOne({ productId: proudctlikeId });
         return product;
     }
 
     static async findByLikeDelProductId({ productDelId }) {
-        const product = await ProductModel.findOne({ productId : productDelId });
+        const product = await ProductModel.findOne({ productId: productDelId });
         return product;
     }
 
-    // 좋아요 수 갱신을 위한 함수
-    // static async likeProductUpdate({ productId, fieldToUpdate, newValue }) {
-    //     const product = productId.productId;
-    //     const filteredById = { product };
-    //     const updateData = { [fieldToUpdate]: newValue };
-    //     const option = { returnOriginal: false };
+    static async findProductsByAgeGender({ userAgeIndex, gender }) {
+        const products = await ProductModel.find({
+            $and: [{ bestPreferAge: userAgeIndex }, { gender }],
+        }).limit(15);
 
-    //     const updateProduct = await ProductModel.findOneAndUpdate(
-    //         filteredById,
-    //         updateData,
-    //         option,
-    //     );
-    //     return updateProduct;
-    // }
+        return products;
+    }
 }
-
 
 export { Product };
