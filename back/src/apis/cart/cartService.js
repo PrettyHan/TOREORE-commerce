@@ -20,6 +20,7 @@ class cartService {
             description: productInfo.description,
             image: productInfo.image,
             quantity: quantity,
+            checked : true,
         };
 
         if (carts.length === 0) {
@@ -48,7 +49,7 @@ class cartService {
     }
 
     // 유저의 카트 리스트 수정 -> 수량 정보 업데이트
-    static async updateCartList({ userId, productId, quantity }) {
+    static async updateCartList({ userId, productId, quantity, checked }) {
         const user = await User.findByUserId({ userId });
         const carts = user.cart; // cart list
 
@@ -59,7 +60,7 @@ class cartService {
 
         const newCartList = carts.map((productObject) => {
             if (productObject.productId === productId) {
-                return { ...productObject, quantity: quantity };
+                return { ...productObject, quantity: quantity, checked : checked };
             }
             return productObject;
         });

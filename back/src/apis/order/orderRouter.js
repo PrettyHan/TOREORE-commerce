@@ -9,6 +9,7 @@ import { productService } from "../product/productService";
 const orderRouter = Router();
 orderRouter.use(loginRequired);
 
+// 전체 주문용
 orderRouter.post("/", async (req, res, next) => {
     try {
         if (is.emptyObject(req.body)) {
@@ -24,7 +25,8 @@ orderRouter.post("/", async (req, res, next) => {
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const cartlist = products.cart;
+        const temp_cartlist = products.cart;
+        const cartlist = temp_cartlist.filter((v) => v.checked == true)
         const cartPrices = cartlist.map((v) => (v.price));
         const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
@@ -54,6 +56,7 @@ orderRouter.post("/", async (req, res, next) => {
         next(error);
     }
 });
+
 // 바로주문 용 router
 orderRouter.post("/:productId", async (req, res, next) => {
     try {

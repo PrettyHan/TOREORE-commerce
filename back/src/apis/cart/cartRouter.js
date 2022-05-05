@@ -38,16 +38,19 @@ cartRouter.post("/:productId", async (req, res, next) => {
     }
 });
 
+// checked 
 cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
         const productId = req.params.productId;
         const quantity = req.body.quantity;
+        const checked = req.body.checked;
 
         const newCarts = await cartService.updateCartList({
             userId,
             productId,
             quantity,
+            checked
         });
 
         res.status(200).json(newCarts);
