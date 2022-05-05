@@ -13,7 +13,6 @@ function OrderHistory() {
     const fetchOrderList = async () => {
         try {
             const res = await Api.get("orders");
-            console.log(res.data);
             if (res.data) {
                 setIsOrder(true);
                 setOrderList(res.data);

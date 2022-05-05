@@ -10,7 +10,7 @@ export function SocialValidate(data) {
     };
 
     const isNameValid = validateName(data.name);
-    const isGenderValid = data.gender !== null;
+    const isGenderValid = data.gender !== undefined;
     const isPhoneValid = validatePhone(data.phone);
     const isBirthValid = validateBirth(data.birth);
 
