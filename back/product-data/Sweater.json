@@ -1,162 +1,1202 @@
 [
     {
-        "article_id": "0776776001",
-        "prod_name": "캐시미어 블렌드 스웨터",
+        "article_id": "0685813001",
+        "prod_name": "PETAR SWEATSHIRT",
         "product_type_name": "Sweater",
-        "colour_group_name": "Off White",
-        "detail_desc": "부드러운 캐시미어 혼방 소재의 와이드한 긴소매 골지 니트 스웨터. 2겹으로 마감된 터틀넥 디자인. 세미 드롭 숄더.",
-        "price": 262400
+        "colour_group_name": "Black",
+        "detail_desc": "Top in soft sweatshirt fabric. Slightly looser fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 20300
     },
     {
-        "article_id": "0786844003",
-        "prod_name": "프리미엄 캐시미어 스웨터",
+        "article_id": "0699755030",
+        "prod_name": "Yate",
         "product_type_name": "Sweater",
-        "colour_group_name": "Yellowish Brown",
-        "detail_desc": "부드러운 캐시미어 소재의 라운드넥 니트 스웨터. 래글런 스타일의 긴소매. 골지 옷단.",
-        "price": 201800
+        "colour_group_name": "Black",
+        "detail_desc": "Top in printed sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Long sleeves, a kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 36600
     },
     {
-        "article_id": "0776737002",
-        "prod_name": "울 블렌드 케이블 니트 스웨터",
+        "article_id": "0841062008",
+        "prod_name": "Rincon L/S",
         "product_type_name": "Sweater",
         "colour_group_name": "Yellow",
-        "detail_desc": "알파카와 울이 혼방된 부드러운 케이블 니트 스웨터. 와이드한 긴소매. 상단은 와이드하며 하단은 피트되는 스타일. 와이드한 골지 아랫단. 폭이 좁은 골지 소맷단.",
-        "price": 201400
+        "detail_desc": "Long-sleeved top in sturdy jersey with a print motif on the front, round neckline, ribbing at the cuffs and short slits in the sides.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 36600
     },
     {
-        "article_id": "0844086001",
-        "prod_name": "크롭드 크로셰 스웨터",
+        "article_id": "0841062002",
+        "prod_name": "Rincon L/S",
         "product_type_name": "Sweater",
-        "colour_group_name": "Other Pink",
-        "detail_desc": "스튜디오 컬렉션으로 코튼이 혼방된 청키한 크로셰 소재의 V넥 스웨터. 느슨한 짜임의 박시한 크롭트 스타일. 드롭 숄더. 하단이 좁게 처리된 와이드한 긴소매. 무게감 있으며 평평하게 보관해야 모양을 유지할 수 있음.",
-        "price": 183000
+        "colour_group_name": "White",
+        "detail_desc": "Long-sleeved top in sturdy jersey with a print motif on the front, round neckline, ribbing at the cuffs and short slits in the sides.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 29300
     },
     {
-        "article_id": "0789395001",
-        "prod_name": "캐시미어 블렌드 스웨터",
+        "article_id": "0819758002",
+        "prod_name": "ROXO REGULAR CREW",
         "product_type_name": "Sweater",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "스튜디오 컬렉션으로 울과 캐시미어가 혼방된 니트 소재의 짧은 스웨터. 스탠드 칼라. 어깨 부분이 텍스처 니트로 마감됨. 눈에 띄게 처리된 앞면, 뒷면, 아랫단의 스티치 디테일.",
-        "price": 162700
+        "colour_group_name": "Black",
+        "detail_desc": "Long-sleeved top in sturdy, printed jersey with a round neckline and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 20300
     },
     {
-        "article_id": "0832819002",
-        "prod_name": "리브드 울 스웨터",
+        "article_id": "0699755051",
+        "prod_name": "Yate",
         "product_type_name": "Sweater",
-        "colour_group_name": "Orange",
-        "detail_desc": "캐시미어를 함유한 울 소재의 V넥 골지 니트 스웨터. 좀 더 길게 처리된 래글런 스타일의 긴소매. 옆면에 긴 트임이 있음. 신축성 골지 소맷단과 아랫단. 뒷면이 좀 더 긴 디자인.Rib-knit jumper in wool containing some cashmere. V-neck, extra-long, wide raglan sleeves, high slits in the sides and elasticated ribbing at the cuffs and hem. Longer at the back.",
-        "price": 162700
+        "colour_group_name": "Black",
+        "detail_desc": "Top in printed sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Long sleeves, a kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 50800
     },
     {
-        "article_id": "0804190003",
-        "prod_name": "청키 니트 울 스웨터",
+        "article_id": "0642910008",
+        "prod_name": "Henrik c-neck",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Top in sweatshirt fabric in a relaxed fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0685813005",
+        "prod_name": "PETAR SWEATSHIRT",
         "product_type_name": "Sweater",
         "colour_group_name": "Dark Green",
-        "detail_desc": "부드럽고 폭신한 알파카 혼방 청키 니트 소재의 긴소매 스웨터. 골지 퍼널넥. 상단 지퍼. 드롭 숄더. 턴업 스타일로 고정된 소맷단.",
-        "price": 142400
+        "detail_desc": "Top in soft sweatshirt fabric. Slightly looser fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 20300
     },
     {
-        "article_id": "0828780001",
-        "prod_name": "실크 블렌드 스웨트셔츠",
+        "article_id": "0742258017",
+        "prod_name": "TRUXTON HOOD",
         "product_type_name": "Sweater",
-        "colour_group_name": "Green",
-        "detail_desc": "광택감 있는 코튼, 실크 혼방 소재의 긴소매 스웨트셔츠. 오버사이즈 스타일. 드롭 숄더. 골지 네크라인과 소맷단.",
-        "price": 142400
+        "colour_group_name": "Blue",
+        "detail_desc": "Top in sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Dropped shoulders, long sleeves, pockets in the side seams and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 40700
     },
     {
-        "article_id": "0771759006",
-        "prod_name": "캐시미어 스웨터",
-        "product_type_name": "Sweater",
-        "colour_group_name": "Light Grey",
-        "detail_desc": "부드러운 캐시미어 소재의 니트 스웨터. 래글런 스타일의 반소매. 골지 옷단.",
-        "price": 142400
-    },
-    {
-        "article_id": "0832889001",
-        "prod_name": "쇼트 슬리브 캐시미어 스웨터",
-        "product_type_name": "Sweater",
-        "colour_group_name": "White",
-        "detail_desc": "부드러운 캐시미어 파인니트 소재의 반소매 V넥 스웨터. 칼라와 소맷단, 아랫단이 골지로 마감됨.",
-        "price": 142400
-    },
-    {
-        "article_id": "0734448001",
-        "prod_name": "오버사이즈 가디건",
+        "article_id": "0551044047",
+        "prod_name": "Printed Sweatshirt 19.99",
         "product_type_name": "Sweater",
         "colour_group_name": "Black",
-        "detail_desc": "울 니트 소재의 긴소매 V넥 오버사이즈 가디건. 대조적으로 배색된 솔기 디테일. 어깨 라인이 낮게 처리된 드롭 숄더. 버튼 여밈. 소매와 골지 옷단이 와이드하게 마감됨.",
-        "price": 140900
+        "detail_desc": "Top in sweatshirt fabric with a motif in a relaxed fit with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 18600
     },
     {
-        "article_id": "0771759007",
-        "prod_name": "캐시미어 스웨터",
-        "product_type_name": "Sweater",
-        "colour_group_name": "Light Pink",
-        "detail_desc": "부드러운 캐시미어 소재의 니트 스웨터. 래글런 스타일의 반소매. 골지 옷단.",
-        "price": 134200
-    },
-    {
-        "article_id": "0786844001",
-        "prod_name": "프리미엄 캐시미어 스웨터",
-        "product_type_name": "Sweater",
-        "colour_group_name": "Dark Grey",
-        "detail_desc": "부드러운 캐시미어 소재의 라운드넥 니트 스웨터. 래글런 스타일의 긴소매. 골지 옷단.",
-        "price": 134200
-    },
-    {
-        "article_id": "0689998001",
-        "prod_name": "칼라 디테일 하프집 니트 스웨터",
+        "article_id": "0814116001",
+        "prod_name": "Hjulsta",
         "product_type_name": "Sweater",
         "colour_group_name": "Black",
-        "detail_desc": "메리노 울과 캐시미어가 혼방된 니트 소재의 긴소매 스웨터. 골지 스탠드 칼라. 상단 지퍼. 팔꿈치 패치 디테일. 골지 소맷단과 아랫단.",
-        "price": 132200
+        "detail_desc": "Jumper in a soft, fine-knit viscose blend with long raglan sleeves, ribbing around the neckline, cuffs and hem, and slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 26400
     },
     {
-        "article_id": "0789399002",
-        "prod_name": "와이드 울 스웨터",
+        "article_id": "0777070009",
+        "prod_name": "Cinderella",
         "product_type_name": "Sweater",
         "colour_group_name": "Dark Blue",
-        "detail_desc": "스튜디오 컬렉션으로 울 니트 소재의 와이드한 터틀넥 스웨터. 드롭 숄더. 스트레이트 라인의 매우 긴소매. 앞면 솔기가 사선으로 처리되어 테이퍼드 실루엣을 만든 디자인. 언발란스 헴라인.",
-        "price": 130100
+        "detail_desc": "Jumper in a soft, boxy knit with a ribbed turtle neck, dropped shoulders, long sleeves and ribbing at the cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 34600
     },
     {
-        "article_id": "0832819001",
-        "prod_name": "리브드 울 스웨터",
+        "article_id": "0829845004",
+        "prod_name": "Palermo piquet henley",
         "product_type_name": "Sweater",
-        "colour_group_name": "Red",
-        "detail_desc": "캐시미어를 함유한 울 소재의 V넥 골지 니트 스웨터. 좀 더 길게 처리된 래글런 스타일의 긴소매. 옆면에 긴 트임이 있음. 신축성 골지 소맷단과 아랫단. 뒷면이 좀 더 긴 디자인.",
-        "price": 130100
+        "colour_group_name": "Black",
+        "detail_desc": "Fitted jumper in a soft, rib-knit cotton blend with a collar, V-neck and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
     },
     {
-        "article_id": "0828780002",
-        "prod_name": "실크 블렌드 스웨트셔츠",
-        "product_type_name": "Sweater",
-        "colour_group_name": "Light Grey",
-        "detail_desc": "광택감 있는 코튼, 실크 혼방 소재의 긴소매 스웨트셔츠. 오버사이즈 스타일. 드롭 숄더. 골지 네크라인과 소맷단.",
-        "price": 128100
-    },
-    {
-        "article_id": "0789398001",
-        "prod_name": "파인니트 캐시미어 블렌드 스웨터",
-        "product_type_name": "Sweater",
-        "colour_group_name": "Off White",
-        "detail_desc": "스튜디오 컬렉션으로 캐시미어를 함유한 부드러운 울 혼방 소재의 파인니트 스웨터. 대조적인 배색 오버로크 솔기와 세로 방향의 앞뒷면 솔기 장식. 골지 스탠드 칼라. 골지 소맷단과 아랫단. 깊게 파인 옆면 하단 트임.",
-        "price": 126100
-    },
-    {
-        "article_id": "0771759010",
-        "prod_name": "캐시미어 스웨터",
+        "article_id": "0762600009",
+        "prod_name": "COZY DORRI TOP",
         "product_type_name": "Sweater",
         "colour_group_name": "White",
-        "detail_desc": "부드러운 캐시미어 소재의 니트 스웨터. 래글런 스타일의 반소매. 골지 옷단.",
-        "price": 125900
+        "detail_desc": "T-shirt in soft jersey with a lightly brushed finish. Straight, relaxed fit with dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 36600
     },
     {
-        "article_id": "0802598003",
-        "prod_name": "캐시미어 리브니트 스웨터",
+        "article_id": "0816832006",
+        "prod_name": "carly v-neck(1)",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Orange",
+        "detail_desc": "Jumper in a soft, fine, airy knit with a V-neck and long raglan sleeves. Ribbing around the neckline, cuffs and hem, and short slits in the sides. Slightly longer at the back.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 30000
+    },
+    {
+        "article_id": "0777148006",
+        "prod_name": "Thomas PREMIUM",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Pink",
+        "detail_desc": "Slightly boxy jumper knitted in a soft, fluffy wool blend with dropped shoulders, long, wide sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0826492002",
+        "prod_name": "Dame",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Boxy-style jumper in a soft, fine knit containing some wool with low dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0764073002",
+        "prod_name": "East",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Short-sleeved top in ribbed jersey made from a viscose blend with a collar and button placket.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0826620001",
+        "prod_name": "Tiki",
+        "product_type_name": "Sweater",
+        "colour_group_name": "White",
+        "detail_desc": "Wide, V-neck jumper in a soft rib knit with a fluffy finish. Low dropped shoulders, long sleeves and ribbing around the neckline and cuffs.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 34600
+    },
+    {
+        "article_id": "0826492007",
+        "prod_name": "Dame",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Boxy-style jumper in a soft, fine knit containing some wool with low dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0378447003",
+        "prod_name": "V-Neck Milan TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper in fine-knit merino wool with a V-neck and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0567424043",
+        "prod_name": "ZORROW",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Top in sturdy jersey with a wrapover funnel collar with a drawstring. Kangaroo pocket, long sleeves and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 48800
+    },
+    {
+        "article_id": "0632803011",
+        "prod_name": "Ripley r-neck",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Jumper in fine-knit slub cotton with long raglan sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 13400
+    },
+    {
+        "article_id": "0378447056",
+        "prod_name": "V-Neck Milan TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Jumper in fine-knit merino wool with a V-neck and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0801708002",
+        "prod_name": "R-neck Camden R",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in textured-knit premium cotton with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 71200
+    },
+    {
+        "article_id": "0727808001",
+        "prod_name": "R-Neck Pisa TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper in soft, fine-knit merino wool with a round neck, long sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0557247013",
+        "prod_name": "Petar Sweater",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Oversized top in sturdy sweatshirt fabric with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 10100
+    },
+    {
+        "article_id": "0708740015",
+        "prod_name": "MINERAL CREW",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Long-sleeved top in textured-knit jersey made from a cotton blend with ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0564358033",
+        "prod_name": "PAUL R-NECK SLIM",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Jumper in a soft, fine cotton knit with a round neck, long sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0727808014",
+        "prod_name": "R-Neck Pisa TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper in soft, fine-knit merino wool with a round neck, long sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0846442006",
+        "prod_name": "ED Bama Conscious",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Wide jumper in a soft, fine knit containing some wool with dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 39600
+    },
+    {
+        "article_id": "0838817001",
+        "prod_name": "Pablo jumper",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Jumper in a soft, fine-knit wool blend with a small stand-up collar and long, wide puff sleeves. Tapered waist and a flared peplum.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 71200
+    },
+    {
+        "article_id": "0865030002",
+        "prod_name": "ED Lee rib top",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Fitted top in ribbed cotton jersey with a round neckline, long sleeves, and gathers in the sides for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 26400
+    },
+    {
+        "article_id": "0662948009",
+        "prod_name": "Osman (1)",
         "product_type_name": "Sweater",
         "colour_group_name": "Dark Beige",
-        "detail_desc": "부드러운 캐시미어 소재의 피트되는 골지 파인니트 스웨터. 네크라인이 골지로 마감됨. 7부 소매.",
-        "price": 122000
+        "detail_desc": "Shorter polo-neck jumper in a rib knit containing some wool with dropped shoulders, long sleeves and roll-edges around the neck, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 36600
+    },
+    {
+        "article_id": "0809757002",
+        "prod_name": "Jeanne jumper",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Orange",
+        "detail_desc": "Boxy-style jumper in a soft cable knit containing some wool with low dropped shoulders and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 56900
+    },
+    {
+        "article_id": "0777070003",
+        "prod_name": "Cinderella",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Greyish Beige",
+        "detail_desc": "Jumper in a soft, boxy knit with a ribbed turtle neck, dropped shoulders, long sleeves and ribbing at the cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 34600
+    },
+    {
+        "article_id": "0841375002",
+        "prod_name": "Mercedez sweater",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Jumper in a fine knit with a slight sheen. Hole-patterned sections, long sleeves with wide cuffs and decorative buttons, and ribbing around the neckline and hem.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 50800
+    },
+    {
+        "article_id": "0828536001",
+        "prod_name": "Ben zip hoodie",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Fine-knit jacket in a soft viscose blend with a drawstring hood, zip and front pockets. Gently dropped shoulders and ribbing at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0777070004",
+        "prod_name": "Cinderella",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Jumper in a soft, boxy knit with a ribbed turtle neck, dropped shoulders, long sleeves and ribbing at the cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 34600
+    },
+    {
+        "article_id": "0786245002",
+        "prod_name": "Sabrina",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Long-sleeved top in sweatshirt fabric made from a cotton blend with ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 30500
+    },
+    {
+        "article_id": "0821648003",
+        "prod_name": "SRIRACHA CREW",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Quilted top in sturdy sweatshirt fabric with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 37700
+    },
+    {
+        "article_id": "0801708002",
+        "prod_name": "R-neck Camden R",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in textured-knit premium cotton with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 71200
+    },
+    {
+        "article_id": "0678624012",
+        "prod_name": "OXO HOOD",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Long-sleeved top in soft, printed sweatshirt fabric with a wrapover, drawstring hood and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0461327018",
+        "prod_name": "Rollerneck Charlie TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "Polo-neck jumper in fine-knit premium cotton with ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 35000
+    },
+    {
+        "article_id": "0810904001",
+        "prod_name": "PHANTOM DOGTOOTH SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in a soft jacquard knit with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 10100
+    },
+    {
+        "article_id": "0852643003",
+        "prod_name": "PEZ SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Long-sleeved top in lightweight sweatshirt fabric with flatlock seams, side panels, and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0810507001",
+        "prod_name": "BYRON",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper in a soft, textured-knit cotton blend with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 48800
+    },
+    {
+        "article_id": "0727808001",
+        "prod_name": "R-Neck Pisa TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper in soft, fine-knit merino wool with a round neck, long sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 81300
+    },
+    {
+        "article_id": "0821648004",
+        "prod_name": "SRIRACHA CREW",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "Quilted top in sturdy sweatshirt fabric with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 16300
+    },
+    {
+        "article_id": "0461327007",
+        "prod_name": "Rollerneck Charlie TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Polo-neck jumper in fine-knit premium cotton with ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 61000
+    },
+    {
+        "article_id": "0811913003",
+        "prod_name": "Kamchatka",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Jumper in a soft, fine knit with a drawstring hood, low dropped shoulders, long sleeves and ribbing around the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 28500
+    },
+    {
+        "article_id": "0659330001",
+        "prod_name": "LF Dahlia Jersey Top",
+        "product_type_name": "Sweater",
+        "colour_group_name": "White",
+        "detail_desc": "Fitted top in soft, airy jersey made from a stretch cotton blend with long sleeves and raw edges at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 55600
+    },
+    {
+        "article_id": "0859416013",
+        "prod_name": "Sirap tee",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Short-sleeved top in soft jersey made from a cotton and modal blend.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 20300
+    },
+    {
+        "article_id": "0794538003",
+        "prod_name": "Petra",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Wide jumper in a soft knit containing some wool with a V-neck and long dolman sleeves. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0825244002",
+        "prod_name": "DONATELLO PILE ZIPPED JACKET",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Straight-cut jacket in pile with a large, rounded collar and zip with a round tab. Patch front pockets, dropped shoulders, long sleeves and cuffs with press-studs. Lined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 71200
+    },
+    {
+        "article_id": "0763282006",
+        "prod_name": "Freddy",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "Boxy-style jumper in a soft jacquard knit containing some wool with a round neck and long sleeves. Ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 36600
+    },
+    {
+        "article_id": "0551194005",
+        "prod_name": "Sonette Bow",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in a soft, fine knit containing some wool with an opening and woven ties at the back of the neck, gathers in the sides for a good fit over the tummy and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0766193001",
+        "prod_name": "Cay lace sweater",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Long-sleeved jumper in a soft, fine knit containing some wool. Lace-trimmed V-neck, detachable ties below the bust and roll edges at the cuffs and hem. Gathers in the sides for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 48800
+    },
+    {
+        "article_id": "0851992002",
+        "prod_name": "Talia",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Boxy-style jumper in a rib-knit cotton blend with a turtle neck, low dropped shoulders with pleated shoulder seams and long balloon sleeves. Wide ribbing at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0825688004",
+        "prod_name": "Dinara(1)",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Turtleneck jumper in a soft rib knit containing some wool with low dropped shoulders, long, balloon sleeves and wide ribbing at the cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 42700
+    },
+    {
+        "article_id": "0685813005",
+        "prod_name": "PETAR SWEATSHIRT",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Top in soft sweatshirt fabric. Slightly looser fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 20300
+    },
+    {
+        "article_id": "0669562002",
+        "prod_name": "MALDON MOCKNECK",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Fine-knit jumper in a modal and cotton blend with a ribbed turtle neck and long sleeves.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 25400
+    },
+    {
+        "article_id": "0587026040",
+        "prod_name": "WALES",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Jumper in a soft, textured-knit cotton blend with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 16300
+    },
+    {
+        "article_id": "0801708002",
+        "prod_name": "R-neck Camden R",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in textured-knit premium cotton with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0715862010",
+        "prod_name": "BARRY BURN OUT HENLEY",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Henley shirt in slub jersey with a button placket and long sleeves with a tab and button.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 26400
+    },
+    {
+        "article_id": "0801708001",
+        "prod_name": "R-neck Camden R",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Jumper in textured-knit premium cotton with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0685813024",
+        "prod_name": "PETAR SWEATSHIRT",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Pink",
+        "detail_desc": "Top in soft sweatshirt fabric. Slightly looser fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 20300
+    },
+    {
+        "article_id": "0726115004",
+        "prod_name": "PATTY MUSCLE HENLEY",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Top in cotton jersey with long sleeves and a button placket. Muscle fit \u2013 a fit designed to showcase the body\u2019s natural physique with narrow shoulders and tapered sleeves to create a flattering silhouette.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 30500
+    },
+    {
+        "article_id": "0806029001",
+        "prod_name": "Micke printed block",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Top in sweatshirt fabric with a print motif on the front, gently dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 16300
+    },
+    {
+        "article_id": "0642910009",
+        "prod_name": "Henrik c-neck",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Yellow",
+        "detail_desc": "Top in sweatshirt fabric in a relaxed fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0777148009",
+        "prod_name": "Thomas PREMIUM",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Slightly boxy jumper knitted in a soft, fluffy wool blend with dropped shoulders, long, wide sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 42700
+    },
+    {
+        "article_id": "0821152004",
+        "prod_name": "Danderyd polo",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Jumper in a soft, fine-knit viscose blend with a ribbed polo neck, long raglan sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 30500
+    },
+    {
+        "article_id": "0771759004",
+        "prod_name": "Cocos sh/slv rib cashmere",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Jumper knitted in soft cashmere. Short raglan sleeves with ribbed trims and ribbing around the neckline and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 113900
+    },
+    {
+        "article_id": "0831153002",
+        "prod_name": "LOGG Alessandria",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Green",
+        "detail_desc": "Jumper in a soft knit containing some wool with dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 28500
+    },
+    {
+        "article_id": "0812351002",
+        "prod_name": "Aria Cardigan",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Yellow",
+        "detail_desc": "Cardigan in a soft, fine knit with a brushed finish. V-neck, large buttons down the front and long raglan sleeves.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 28500
+    },
+    {
+        "article_id": "0873594001",
+        "prod_name": "OPAL SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Boxy-style top in lightweight sweatshirt fabric with dropped shoulders, and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 50800
+    },
+    {
+        "article_id": "0818029001",
+        "prod_name": "Lotus",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Long-sleeved top in soft sweatshirt fabric with a text motif on the front, dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0801309001",
+        "prod_name": "Ossian",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Shorter polo-neck jumper in a rib knit containing some wool with dropped shoulders, long sleeves and roll-edges around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 42700
+    },
+    {
+        "article_id": "0764073004",
+        "prod_name": "East",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Short-sleeved top in ribbed jersey made from a viscose blend with a collar and button placket.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 50800
+    },
+    {
+        "article_id": "0788455009",
+        "prod_name": "Bling bling",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Jumper knitted in a soft wool blend with decorations. Low dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 19600
+    },
+    {
+        "article_id": "0800396004",
+        "prod_name": "IRISH CAFE RACER JACKET",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Cardigan in quilted jersey with a zip down the front, small stand-up collar with a press-stud, welt front pockets and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 48800
+    },
+    {
+        "article_id": "0852643004",
+        "prod_name": "PEZ SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Long-sleeved top in lightweight sweatshirt fabric with flatlock seams, side panels, and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 30500
+    },
+    {
+        "article_id": "0701135025",
+        "prod_name": "Pip",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Orange",
+        "detail_desc": "Long-sleeved top in sweatshirt fabric with a motif, and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 40700
+    },
+    {
+        "article_id": "0495685007",
+        "prod_name": "Rollerneck Blenheim TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Red",
+        "detail_desc": "Fine-knit polo-neck jumper in soft merino wool with long sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 17900
+    },
+    {
+        "article_id": "0699755032",
+        "prod_name": "Yate",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Top in printed sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Long sleeves, a kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0378447055",
+        "prod_name": "V-Neck Milan TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Jumper in fine-knit merino wool with a V-neck and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 81300
+    },
+    {
+        "article_id": "0831395001",
+        "prod_name": "CONAN STRUCTURE SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Jumper in soft, textured-knit cotton with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0699755054",
+        "prod_name": "Yate",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Top in printed sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Long sleeves, a kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0461327006",
+        "prod_name": "Rollerneck Charlie TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Polo-neck jumper in fine-knit premium cotton with ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0810506001",
+        "prod_name": "PASTRY",
+        "product_type_name": "Sweater",
+        "colour_group_name": "White",
+        "detail_desc": "Jumper in soft, textured-knit cotton with a round neck, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0794538003",
+        "prod_name": "Petra",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Wide jumper in a soft knit containing some wool with a V-neck and long dolman sleeves. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0826505003",
+        "prod_name": "Kista",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Orange",
+        "detail_desc": "Jumper in a soft, fine knit containing some wool with a V-neck front and back and 3/4-length sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 40700
+    },
+    {
+        "article_id": "0593184010",
+        "prod_name": "Cocos (1)",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Short-sleeved jumper in soft, fine-knit cashmere with ribbing around the neckline, sleeves and hem.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 32500
+    },
+    {
+        "article_id": "0795975004",
+        "prod_name": "Gladiator henley",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Fitted jumper in a soft rib knit with a V-neck, buttons at the top and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 40300
+    },
+    {
+        "article_id": "0790651001",
+        "prod_name": "Milano",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Fitted, turtleneck top in ribbed jersey with long raglan sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 26400
+    },
+    {
+        "article_id": "0828536002",
+        "prod_name": "Ben zip hoodie",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Orange",
+        "detail_desc": "Fine-knit jacket in a soft viscose blend with a drawstring hood, zip and front pockets. Gently dropped shoulders and ribbing at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 38300
+    },
+    {
+        "article_id": "0738417001",
+        "prod_name": "PE PRINGLE KNIT",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Fitted jumper in soft, rib-knit merino wool with a small stand-up collar and extra-long sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 81300
+    },
+    {
+        "article_id": "0762600004",
+        "prod_name": "COZY DORRI TOP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "T-shirt in soft jersey with a lightly brushed finish. Straight, relaxed fit with dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 36000
+    },
+    {
+        "article_id": "0551566016",
+        "prod_name": "ED Lady di",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Jumper in a soft knit with a slightly wider neckline, long, wide dolman sleeves and a rounded hem with slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 49500
+    },
+    {
+        "article_id": "0892841002",
+        "prod_name": "Romeo knitted top",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Crocheted top in a soft cotton blend with a stand-up collar and double-layered flounces down the front that continue over the shoulders and down the back. Cut-out section at the back with buttons at the bottom and back of the neck. Seam at the hem with a peplum.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 81300
+    },
+    {
+        "article_id": "0800396004",
+        "prod_name": "IRISH CAFE RACER JACKET",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Cardigan in quilted jersey with a zip down the front, small stand-up collar with a press-stud, welt front pockets and ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 48800
+    },
+    {
+        "article_id": "0852643003",
+        "prod_name": "PEZ SWEATER",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Long-sleeved top in lightweight sweatshirt fabric with flatlock seams, side panels, and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0685813032",
+        "prod_name": "PETAR SWEATSHIRT",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Top in soft sweatshirt fabric. Slightly looser fit with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0809022001",
+        "prod_name": "R-neck James stripe",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in fine-knit premium cotton with a round neckline, long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 56900
+    },
+    {
+        "article_id": "0708740015",
+        "prod_name": "MINERAL CREW",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Beige",
+        "detail_desc": "Long-sleeved top in textured-knit jersey made from a cotton blend with ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0757298001",
+        "prod_name": "R-neck Honeycomb",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Long-sleeved pima cotton jumper in a textured knit with ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 71200
+    },
+    {
+        "article_id": "0378447004",
+        "prod_name": "V-Neck Milan TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in fine-knit merino wool with a V-neck and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 81300
+    },
+    {
+        "article_id": "0699755059",
+        "prod_name": "Yate",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Top in printed sweatshirt fabric with a jersey-lined, drawstring hood with a wrapover front. Long sleeves, a kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0801708001",
+        "prod_name": "R-neck Camden R",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Jumper in textured-knit premium cotton with long sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 71200
+    },
+    {
+        "article_id": "0461327006",
+        "prod_name": "Rollerneck Charlie TVP",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Polo-neck jumper in fine-knit premium cotton with ribbing at the cuffs and hem.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0826498004",
+        "prod_name": "Fletcher",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Pink",
+        "detail_desc": "Jumper in a soft, fine knit containing some wool with long puff sleeves and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0786304001",
+        "prod_name": "Johan update sebi",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Top in lightweight sweatshirt fabric in a relaxed fit with long raglan sleeves and ribbing around the neckline, cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 30200
+    },
+    {
+        "article_id": "0788633001",
+        "prod_name": "Reindeer",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Off White",
+        "detail_desc": "Jumper in a soft jacquard knit containing some wool with a ribbed turtle neck, long raglan sleeves and ribbing at the cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 42700
+    },
+    {
+        "article_id": "0884497001",
+        "prod_name": "Racer",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Sleeveless top in a rib knit with wide, rib-knit shoulder straps that join at the back.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 24400
+    },
+    {
+        "article_id": "0803597001",
+        "prod_name": "ED Spirit",
+        "product_type_name": "Sweater",
+        "colour_group_name": "White",
+        "detail_desc": "Off-the-shoulder jumper in a soft, fluffy knit with a wide foldover top edge, long raglan sleeves and ribbing at the cuffs and hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 34600
+    },
+    {
+        "article_id": "0837448004",
+        "prod_name": "Anja jumper",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Black",
+        "detail_desc": "Oversized jumper in a soft, rib-knit wool blend with a V-neck front and back, low dropped shoulders, long, wide sleeves with closer-fitting cuffs, and slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 85400
+    },
+    {
+        "article_id": "0818029003",
+        "prod_name": "Lotus",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Grey",
+        "detail_desc": "Long-sleeved top in soft sweatshirt fabric with a text motif on the front, dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 28500
+    },
+    {
+        "article_id": "0822238001",
+        "prod_name": "Kottla",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Fitted top in heavily draping ribbed jersey made from a viscose blend with short sleeves. Ribbed trims around the neckline, sleeves and hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0825994002",
+        "prod_name": "Seth sweater",
+        "product_type_name": "Sweater",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jumper in a soft, fine knit with an extended section at the hem in a cotton weave. Dropped shoulders, long sleeves and ribbing around the neckline and cuffs.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 51200
+    },
+    {
+        "article_id": "0850015003",
+        "prod_name": "Martha",
+        "product_type_name": "Sweater",
+        "colour_group_name": "White",
+        "detail_desc": "Jumper in a soft, chunky knit containing some wool with low dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem. The polyester content of the jumper is recycled.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 50800
     }
 ]
