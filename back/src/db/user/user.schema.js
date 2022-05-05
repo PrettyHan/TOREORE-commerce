@@ -41,18 +41,18 @@ const UserSchema = new Schema(
         },
         gender: {
             type: Number,
-            required: true,
+            required: false,
         },
         phone: {
             type: String,
-            required: true,
+            required: false,
             maxlength: 13,
             trim: true,
             match: /^\d{2,3}-\d{3,4}-\d{4}$/,
         },
         birth: {
             type: String,
-            required: true,
+            required: fasle,
             maxlength: 10,
             trim: true,
         },
