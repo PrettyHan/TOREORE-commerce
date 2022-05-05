@@ -61,6 +61,7 @@ class cartService {
             if (productObject.productId === productId) {
                 return { ...productObject, quantity: quantity };
             }
+            return productObject;
         });
 
         const fieldToUpdate = "cart";

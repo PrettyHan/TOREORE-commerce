@@ -59,6 +59,7 @@ cartRouter.put("/:productId", async (req, res, next) => {
 cartRouter.delete("/select", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
+
         const productIdArr = req.body.productIdArr;
 
         const carts = await cartService.deleteProductOfCart({ userId, productIdArr });
