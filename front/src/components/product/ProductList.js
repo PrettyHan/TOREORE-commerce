@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useContext } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import ProductItem from "./ProductItem";
@@ -7,8 +7,6 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import * as Api from "../../api";
-
-import { UserStateContext } from "../../App";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -25,9 +23,8 @@ export const getProductIdArr = (arr) => {
 };
 
 const ProductList = () => {
-    const { user } = useContext(UserStateContext);
-
-    const userLikeArr = getProductIdArr(user?.bookmark || []);
+    // '좋아요' 누른 제품 배열
+    const [likeIds, setLikeIds] = useState([]);
 
     const { category, keyword = "" } = useParams();
 
@@ -49,6 +46,12 @@ const ProductList = () => {
 
     useEffect(() => {
         getData();
+        async function getLikeArr() {
+            const res = await Api.get("liked");
+            const userLikeArr = res.data.map((item) => item.productId);
+            setLikeIds(userLikeArr);
+        }
+        getLikeArr();
     }, [category, keyword]);
 
     return (
@@ -78,7 +81,7 @@ const ProductList = () => {
                                 <ProductItem
                                     key={item.productId}
                                     {...item}
-                                    userLikeArr={userLikeArr}
+                                    userLikeArr={likeIds}
                                 />
                             </Grid>
                         ))}

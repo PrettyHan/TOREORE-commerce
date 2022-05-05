@@ -151,7 +151,7 @@ export default ProductDetail;
 
 const Wrapper = styled.div`
     max-width: 80%;
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
