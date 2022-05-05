@@ -58,6 +58,7 @@ const Container = styled.div`
 `;
 
 const Items = styled.div`
+    margin-left: 8px;
     width: 20%;
     height: 160px;
     text-align: center;

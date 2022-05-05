@@ -23,8 +23,9 @@ const Category = () => {
                 }}
             ></div>
             <Wrapper>
-                {category.map((item) => (
+                {category.map((item, idx) => (
                     <CategoryBtn
+                        key={`category-${idx}`}
                         className="category-btn"
                         onClick={handleCategoryClick}
                     >

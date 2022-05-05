@@ -13,7 +13,8 @@ function OrderHistory() {
     const fetchOrderList = async () => {
         try {
             const res = await Api.get("orders");
-            if (!res.date) {
+            console.log(res.data);
+            if (res.data) {
                 setIsOrder(true);
                 setOrderList(res.data);
             } else {
@@ -84,7 +85,7 @@ const Columns = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `;
 
 const Items = styled.div`

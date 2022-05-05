@@ -13,8 +13,8 @@ function LikedHistory() {
     const fetchLikedList = async () => {
         try {
             const res = await Api.get("liked");
-            console.log(res.data);
-            if (!res.date) {
+
+            if (res.data) {
                 setIsLiked(true);
                 setLikedList(res.data);
             } else {
@@ -40,11 +40,8 @@ function LikedHistory() {
                     ))}
                 </Columns>
                 {isLiked ? (
-                    likedList.map((liked) => (
-                        <LikedCard
-                            key={likedList.indexOf(liked, 0)}
-                            liked={liked}
-                        />
+                    likedList.map((liked, idx) => (
+                        <LikedCard key={`liked-${idx}`} liked={liked} />
                     ))
                 ) : (
                     <NoLiked>"좋아요 내역이 없습니다."</NoLiked>

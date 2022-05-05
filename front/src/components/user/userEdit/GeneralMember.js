@@ -73,13 +73,20 @@ function GeneralMember() {
                         password: hashedPassword,
                     });
                     const editUser = res.data;
-
                     dispatch({
                         type: "LOGIN_SUCCESS",
                         payload: editUser,
                     });
 
-                    alert("변경이 완료되었습니다.");
+                    // 메인 화면으로 돌아감.
+                    navigate("/");
+
+                    // sessionStorage에 저장했던 JWT 토큰 삭제
+                    sessionStorage.removeItem("userToken");
+                    // dispatch 함수를 이용해 로그아웃함.
+                    dispatch({ type: "LOGOUT" });
+
+                    alert("변경이 완료되었습니다. 다시 로그인 해주세요!");
                 } catch (err) {
                     alert("변경에 실패하였습니다", err);
                 }
@@ -97,11 +104,11 @@ function GeneralMember() {
                 });
 
                 alert("변경이 완료되었습니다.");
+                navigate("/myPage");
             } catch (err) {
                 alert("변경에 실패하였습니다", err);
             }
         } else {
-            console.log(errorMessage);
             alert("변경에 실패했습니다. 형식을 다시 확인해주세요");
         }
     };

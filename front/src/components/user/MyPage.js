@@ -133,7 +133,7 @@ function MyPage() {
 }
 
 const Container = styled.div`
-    margin-top: 20px;
+    margin: 30px 0 100px 0;
     display: grid;
     row-gap: 20px;
     place-items: center center;
