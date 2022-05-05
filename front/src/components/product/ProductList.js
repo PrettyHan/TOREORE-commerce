@@ -53,12 +53,7 @@ const ProductList = () => {
 
     return (
         <>
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                }}
-            >
+            <ProductListBox>
                 {productList.length === 0 ? (
                     <Info>
                         검색 "<Keyword>{keyword}</Keyword>"과(와) 일치하는
@@ -66,13 +61,20 @@ const ProductList = () => {
                     </Info>
                 ) : (
                     <Grid
-                        maxWidth="lg"
                         container
-                        spacing={{ xs: 2, md: 3 }}
-                        columns={{ xs: 4, sm: 8, md: 12 }}
+                        spacing={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                        columns={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
                     >
                         {productList.map((item, index) => (
-                            <Grid item xs={12} sm={4} md={4} key={index}>
+                            <Grid
+                                item
+                                xs={12}
+                                sm={6}
+                                md={6}
+                                lg={4}
+                                xl={3}
+                                key={index}
+                            >
                                 <ProductItem
                                     key={item.productId}
                                     {...item}
@@ -82,7 +84,7 @@ const ProductList = () => {
                         ))}
                     </Grid>
                 )}
-            </Box>
+            </ProductListBox>
         </>
     );
 };
@@ -98,4 +100,11 @@ const Info = styled.div`
 
 const Keyword = styled.span`
     font-weight: bold;
+`;
+
+const ProductListBox = styled(Box)`
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
 `;
