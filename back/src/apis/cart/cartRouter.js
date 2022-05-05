@@ -38,6 +38,7 @@ cartRouter.post("/:productId", async (req, res, next) => {
     }
 });
 
+// checked 
 cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;

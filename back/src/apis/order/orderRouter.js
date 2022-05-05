@@ -100,48 +100,6 @@ orderRouter.post("/:productId", async (req, res, next) => {
     }
 });
 
-orderRouter.post("/select", async (req, res, next) => {
-    try {
-        if (is.emptyObject(req.body)) {
-            throw new Error(
-                "headers의 Content-Type을 application/json으로 설정해주세요",
-            );
-        }
-        const {productId} = req.body
-        const orderId = mongoose.Types.ObjectId();
-        const userId = req.currentUserId;
-        const products = await productService.getProduct({ productId });
-        if (products.errorMessage) {
-            throw new Error(products.errorMessage);
-        }
-        const { orderName, zipcode, message, paymentMethod, quantity } = req.body; // 입력받을 것
-        const totalPrice = products.price * quantity
-        const isPayed = false;
-        const orderData = {
-            products,
-            userId,
-            orderId,
-            totalPrice,
-            orderName,
-            zipcode,
-            message,
-            paymentMethod,
-            isPayed,
-            quantity
-        };
-
-        const newOrder = await orderService.createOrder(orderData);
-
-        if (newOrder.errorMessage) {
-            throw new Error(newOrder.errorMessage);
-        }
-
-        res.status(201).json(newOrder);
-    } catch (error) {
-        next(error);
-    }
-});
-
 orderRouter.get("/", async function (req, res, next) {
     try {
         const userId = req.currentUserId;
