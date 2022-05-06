@@ -89,41 +89,44 @@ function Recommend() {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: auto;
+    height: 500px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0 20px 0 20px;
     margin: 0 0 80px 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 15px 15px 0px 0px;
+    opacity: 0.8;
+    border: 1px solid #ebebeb;
+    margin-bottom: 100px;
 `;
 
 const RecommendP = styled.span`
     text-align: left;
-    font-size: 55px;
-    font-style: italic;
-    color: #d0c4df;
-    text-shadow: -1px 0 #5e5b52, 0 1px #5e5b52, 1px 0 #5e5b52, 0 -1px #5e5b52;
+    font-size: 50px;
+    color: #3d1b54;
+    padding: 30px 0 0 30px;
+    font-weight: 700;
 `;
 
 const Items = styled.div`
     width: auto;
     border-radius: 19%;
-    height: 300px;
+    height: 230px;
     background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center center;
-    border: 1px solid #5e5b52;
     cursor: pointer;
 `;
 
 const ShowingP = styled.span`
+    padding: 0 10px 10px 10px;
     margin: 0 0 10px 10px;
     text-align: right;
-    font-size: 38px;
-    color: #d0c4df;
-    text-shadow: -1px 0 #5e5b52, 0 1px #5e5b52, 1px 0 #5e5b52, 0 -1px #5e5b52;
+    font-size: 28px;
+    font-weight: bold;
+    color: #3d1b54;
+    font-family: "Nanum Gothic", sans-serif;
 `;
 
 export default Recommend;

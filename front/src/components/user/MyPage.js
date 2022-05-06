@@ -143,7 +143,7 @@ const Container = styled.div`
 
 const UserContainer = styled(Box)`
     width: 62%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -169,7 +169,7 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
     height: 80px;
     text-align: center;

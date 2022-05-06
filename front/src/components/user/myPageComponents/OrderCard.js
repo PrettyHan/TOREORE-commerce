@@ -71,7 +71,7 @@ const OrderStatus = styled.div`
     height: 160px;
     text-align: center;
     line-height: 160px;
-    color: ${(props) => (props.color === "done" ? "gray" : "red")};
+    color: ${(props) => (props.color === "done" ? "gray" : "#f77737")};
     cursor: pointer;
     font-size: 16px;
 `;
