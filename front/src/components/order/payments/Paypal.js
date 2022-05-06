@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PaypalExpressBtn from "react-paypal-express-checkout";
 import { Box } from "@mui/material";
 
-function Paypal({ orderUser, subTotal, handlePayComplete, setOrderPayment }) {
+function Paypal({ orderUser, subTotal, setOrderPayment, orderPayment }) {
+  const navigate = useNavigate();
   // 스타일 커스텀
   const style = {
     size: "responsive",
@@ -19,13 +21,14 @@ function Paypal({ orderUser, subTotal, handlePayComplete, setOrderPayment }) {
   // 결제 성공
   const onSuccess = (payment) => {
     setOrderPayment((current) => {
-      return {
+      const newCurrent = {
         ...current,
         isPayed: true,
       };
+      return newCurrent;
     });
-    handlePayComplete();
     console.log("결제 성공", payment);
+    navigate("complete", { state: { orderUser, orderPayment } });
   };
 
   // 결제 취소
