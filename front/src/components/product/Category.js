@@ -57,12 +57,15 @@ const CategoryBox = styled(Box)`
 `;
 
 const Item = styled.div`
-    border: solid black;
+    border: solid #5e5b52;
+    color: #5e5b52;
     padding: 10px;
     text-align: center;
-    font-size: larger;
+    font-size: 1.3rem;
+    font-weight: bold;
     :hover {
-        background-color: black;
+        background-color: #5e5b52;
         color: white;
+        cursor: pointer;
     },
 `;

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   FormControl,
-  FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -11,9 +10,11 @@ import {
 
 import Paypal from "./payments/Paypal";
 import Bankbook from "./payments/Bankbook";
-import Card from "./payments/Card";
+import CreditCard from "./payments/CreditCard";
+import KakaoPay from "./payments/KakaoPay";
 
 function OrderPaymentCard({
+  orderUser,
   orderPayment,
   setOrderPayment,
   subTotal,
@@ -60,67 +61,95 @@ function OrderPaymentCard({
   //       };
   //     });
   //     return (
-  <Card
-    subTotal={subTotal}
-    handlePayComplete={handlePayComplete}
-    orderId={orderId}
-    setOrderPayment={setOrderPayment}
-  />;
+  // <Card
+  //   subTotal={subTotal}
+  //   handlePayComplete={handlePayComplete}
+  //   orderId={orderId}
+  //   setOrderPayment={setOrderPayment}
+  // />;
   //     );
   //   }
   // };
 
   return (
-    <div style={{ minHeight: "calc(100vh - 180px)" }}>
+    <Box>
       <Box>
-        <Box>
-          <FormControl>
-            <RadioGroup
-              row
-              aria-labelledby="payment-row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-              value={orderPayment.paymentMethod}
-              onChange={handlePaymentCheck}
-            >
-              <FormControlLabel
-                value="paypal"
-                control={<Radio />}
-                label="paypal"
-              />
-              <FormControlLabel
-                value="bankbook"
-                control={<Radio />}
-                label="bankbook"
-              />
-              <FormControlLabel value="card" control={<Radio />} label="card" />
-            </RadioGroup>
-          </FormControl>
-        </Box>
-        <Box>
+        <FormControl>
+          <RadioGroup
+            row
+            aria-labelledby="payment-row-radio-buttons-group-label"
+            name="row-radio-buttons-group"
+            value={orderPayment.paymentMethod}
+            onChange={handlePaymentCheck}
+          >
+            <FormControlLabel
+              value="paypal"
+              control={<Radio />}
+              label="페이팔"
+            />
+            <FormControlLabel
+              value="bankbook"
+              control={<Radio />}
+              label="무통장 입금"
+            />
+            <FormControlLabel
+              value="card"
+              control={<Radio />}
+              label="신용/체크카드"
+            />
+            <FormControlLabel
+              value="kakaoPay"
+              control={<Radio />}
+              label="카카오페이"
+            />
+          </RadioGroup>
+        </FormControl>
+        {orderUser.zipcode !== null ? (
           {
-            {
-              none: <Typography>결제 수단을 선택해 주세요.</Typography>,
-              paypal: (
-                <Paypal
-                  subTotal={subTotal}
-                  handlePayComplete={handlePayComplete}
-                  setOrderPayment={setOrderPayment}
-                />
-              ),
-              card: (
-                <Card
-                  subTotal={subTotal}
-                  handlePayComplete={handlePayComplete}
-                  orderId={orderId}
-                  setOrderPayment={setOrderPayment}
-                />
-              ),
-              bankbook: <Bankbook handlePayComplete={handlePayComplete} />,
-            }[orderPayment.paymentMethod]
-          }
-        </Box>
+            none: (
+              <Box style={{ alignItems: "center", justifyContent: "center" }}>
+                <Typography>결제 수단을 선택해 주세요.</Typography>
+              </Box>
+            ),
+            paypal: (
+              <Paypal
+                orderUser={orderUser}
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
+            card: (
+              <CreditCard
+                orderUser={orderUser}
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                orderId={orderId}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
+            bankbook: (
+              <Bankbook
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
+            kakaoPay: (
+              <KakaoPay
+                orderUser={orderUser}
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                orderId={orderId}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
+          }[orderPayment.paymentMethod]
+        ) : (
+          <Typography>주소를 입력해 주세요.</Typography>
+        )}
       </Box>
-    </div>
+    </Box>
   );
 }
 

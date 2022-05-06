@@ -1,7 +1,8 @@
 import React from "react";
 import PaypalExpressBtn from "react-paypal-express-checkout";
+import { Box } from "@mui/material";
 
-function Paypal({ subTotal, handlePayComplete, setOrderPayment }) {
+function Paypal({ orderUser, subTotal, handlePayComplete, setOrderPayment }) {
   // 스타일 커스텀
   const style = {
     size: "responsive",
@@ -23,8 +24,8 @@ function Paypal({ subTotal, handlePayComplete, setOrderPayment }) {
         isPayed: true,
       };
     });
-    console.log("결제 성공", payment);
     handlePayComplete();
+    console.log("결제 성공", payment);
   };
 
   // 결제 취소
@@ -45,16 +46,18 @@ function Paypal({ subTotal, handlePayComplete, setOrderPayment }) {
   };
 
   return (
-    <PaypalExpressBtn
-      style={style}
-      env={env}
-      client={client}
-      total={total}
-      currency={currency}
-      onSuccess={onSuccess}
-      onError={onError}
-      onCancel={onCancel}
-    />
+    <Box>
+      <PaypalExpressBtn
+        style={style}
+        env={env}
+        client={client}
+        total={total}
+        currency={currency}
+        onSuccess={onSuccess}
+        onError={onError}
+        onCancel={onCancel}
+      />
+    </Box>
   );
 }
 

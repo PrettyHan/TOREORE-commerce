@@ -24,7 +24,7 @@ class Order {
     }
 
     static async update({ orderId, fieldToUpdate, newValue }) {
-        const filteredById = { _id : orderId };
+        const filteredById = { orderId };
         const updateData = { [fieldToUpdate]: newValue };
         const option = { returnOriginal: false };
 
