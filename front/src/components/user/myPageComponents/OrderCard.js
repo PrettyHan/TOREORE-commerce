@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
+import Grid from "@mui/material/Grid";
 
 function OrderCard({ order }) {
     const navigate = useNavigate();
@@ -29,11 +30,25 @@ function OrderCard({ order }) {
     }
 
     return (
-        <Container>
-            <Items>{order._id}</Items>
-            <Items>{productName}</Items>
-            <Items>{order.totalPrice}원</Items>
-            <OrderStatus color={orderStatus} onClick={sendOrder}>
+        <Container container spacing={{ lg: 1, md: 2, sm: 1, xs: 1 }}>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {order._id}
+            </Items>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {productName}
+            </Items>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {order.totalPrice}원
+            </Items>
+            <OrderStatus
+                item
+                lg={3}
+                md={6}
+                sm={12}
+                xs={12}
+                color={orderStatus}
+                onClick={sendOrder}
+            >
                 {orderStatus ? (
                     "주문완료"
                 ) : (
@@ -46,7 +61,7 @@ function OrderCard({ order }) {
     );
 }
 
-const Container = styled.div`
+const Container = styled(Grid)`
     width: 95%;
     margin-bottom: 20px;
     border: 1px solid #5e5b52;
@@ -57,22 +72,21 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-const Items = styled.div`
-    margin-left: 8px;
+const Items = styled(Grid)`
     width: 20%;
-    height: 160px;
+    height: 50px;
     text-align: center;
-    line-height: 160px;
     font-size: 16px;
+    line-height: 25px;
 `;
 
-const OrderStatus = styled.div`
+const OrderStatus = styled(Grid)`
     width: 20%;
-    height: 160px;
-    text-align: center;
-    line-height: 160px;
+    height: 50px;
     color: ${(props) => (props.color === "done" ? "gray" : "red")};
     cursor: pointer;
+    text-align: center;
     font-size: 16px;
+    line-height: 25px;
 `;
 export default OrderCard;
