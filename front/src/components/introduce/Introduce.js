@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 
+import DataAnalysis from "./dataAnalysis";
+
 function Introduce() {
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
@@ -51,21 +53,8 @@ function Introduce() {
                     </Grid>
                 </Grid>
             </Box>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <hr />
+            <DataAnalysis />
         </div>
     );
 }
