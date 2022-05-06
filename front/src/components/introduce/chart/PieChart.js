@@ -10,14 +10,7 @@ const PieChart = ({ jsonData, title }) => {
         datasets: [
             {
                 data: [],
-                backgroundColor: [
-                    "rgb(255, 99, 132)",
-                    "rgb(255, 205, 86)",
-                    "rgb(54, 162, 235)",
-                    "rgb(75, 192, 192)",
-                    "rgb(201, 203, 207)",
-                    "rgb(153, 102, 255)",
-                ],
+                backgroundColor: [],
             },
         ],
         labels: [],
@@ -30,9 +23,26 @@ const PieChart = ({ jsonData, title }) => {
             result[x] = (result[x] || 0) + 1;
         });
 
-        // console.log(result);
         data.labels = Object.keys(result);
         data.datasets[0].data = Object.values(result);
+
+        if (title === "10대 남성 TOP10 제품 유형") {
+            data.datasets[0].backgroundColor = [
+                "rgb(255, 99, 132)",
+                "rgb(255, 205, 86)",
+                "rgb(54, 162, 235)",
+                "rgb(75, 192, 192)",
+            ];
+        } else {
+            data.datasets[0].backgroundColor = [
+                "rgb(142, 120, 255)",
+                "rgb(147, 255, 56)",
+                "rgb(255, 99, 132)",
+                "rgb(75, 192, 192)",
+                "rgb(201, 203, 207)",
+                "rgb(153, 102, 255)",
+            ];
+        }
     };
 
     setData(jsonData);
@@ -73,8 +83,7 @@ const PieChart = ({ jsonData, title }) => {
 export default PieChart;
 
 const PieContainer = styled.div`
-    border: solid red;
     display: inline-block;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
 `;

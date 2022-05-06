@@ -82,7 +82,21 @@ function Introduce() {
     return (
         <OuterDiv ref={outerDivRef}>
             <InnerDiv>
-                <h1>시각화 자료 1</h1>
+                <Content>
+                    <Title>
+                        연령에 따른
+                        <br /> 제품 유형의 차이
+                    </Title>
+                    동일 성별(남성), 다른 연령대(10대와 50대)의 판매량 TOP 10
+                    제품의 제품 유형을 파이 차트로 표현하였습니다. 연령대별로
+                    제품 유형의 비율이 매우 상이한 것을 발견할 수 있습니다.
+                    <br />
+                    <b>
+                        또래오래에서는 또래(동일 연령대)들의 구매 데이터를
+                        바탕으로 의류를 추천하여 고객의 쇼핑 만족도를 높입니다.
+                    </b>
+                </Content>
+                <DataAnalysis />
             </InnerDiv>
             <Divider />
             <InnerDiv>
@@ -93,7 +107,6 @@ function Introduce() {
                 <h1>시각화 자료 3</h1>
             </InnerDiv>
         </OuterDiv>
-        // {/* <DataAnalysis /> */}
     );
 }
 
@@ -112,11 +125,26 @@ const InnerDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: pink;
+    background-color: #e1eeff;
 `;
 
 const Divider = styled.div`
     width: 100%;
     height: 5px;
     background-color: gray;
+`;
+
+const Content = styled.div`
+    margin: 40px;
+    width: 30%;
+    min-width: 400px;
+    height: 350px;
+    font-size: 1.3rem;
+    line-height: 1.7;
+`;
+
+const Title = styled.div`
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 `;
