@@ -5,6 +5,7 @@ import { orderService } from "./orderService";
 import { userService } from "../user/userService";
 import mongoose from "mongoose";
 import { productService } from "../product/productService";
+import { cartService } from "../cart/cartService";
 
 const orderRouter = Router();
 orderRouter.use(loginRequired);
@@ -48,12 +49,13 @@ orderRouter.post("/", async (req, res, next) => {
         };
 
         const newOrder = await orderService.createOrder(orderData);
-
+        const productIdArr = products.cart.map((v) => v.productId)
+        const deleteCart = await cartService.deleteProductOfCart({ userId, productIdArr })
         if (newOrder.errorMessage) {
             throw new Error(newOrder.errorMessage);
         }
 
-        res.status(201).json(newOrder);
+        res.status(201).json(newOrder, deleteCart);
     } catch (error) {
         next(error);
     }
