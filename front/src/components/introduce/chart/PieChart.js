@@ -33,7 +33,7 @@ const PieChart = ({ jsonData, title }) => {
                 "rgb(54, 162, 235)",
                 "rgb(75, 192, 192)",
             ];
-        } else {
+        } else if (title === "50대 남성 TOP10 제품 유형") {
             data.datasets[0].backgroundColor = [
                 "rgb(142, 120, 255)",
                 "rgb(147, 255, 56)",
@@ -41,6 +41,13 @@ const PieChart = ({ jsonData, title }) => {
                 "rgb(75, 192, 192)",
                 "rgb(201, 203, 207)",
                 "rgb(153, 102, 255)",
+            ];
+        } else {
+            data.datasets[0].backgroundColor = [
+                "rgb(201, 203, 207)",
+                "rgb(225, 156, 116)",
+                "rgb(255, 99, 132)",
+                "rgb(166, 192, 255)",
             ];
         }
     };

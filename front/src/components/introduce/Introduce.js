@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import styled from "styled-components";
 
-import DataAnalysis from "./dataAnalysis";
+import { DataAnalysisOne, DataAnalysisTwo } from "./dataAnalysis";
 
 function Introduce() {
     const outerDivRef = useRef();
@@ -82,6 +82,10 @@ function Introduce() {
     return (
         <OuterDiv ref={outerDivRef}>
             <InnerDiv>
+                <DataAnalysisOne />
+            </InnerDiv>
+            <Divider />
+            <InnerDiv>
                 <Content>
                     <Title>
                         연령에 따른
@@ -92,15 +96,11 @@ function Introduce() {
                     제품 유형의 비율이 매우 상이한 것을 발견할 수 있습니다.
                     <br />
                     <b>
-                        또래오래에서는 또래(동일 연령대)들의 구매 데이터를
+                        또래오래에서는 또래(동일 연령대)의 구매 데이터를
                         바탕으로 의류를 추천하여 고객의 쇼핑 만족도를 높입니다.
                     </b>
                 </Content>
-                <DataAnalysis />
-            </InnerDiv>
-            <Divider />
-            <InnerDiv>
-                <h1>시각화 자료 2</h1>
+                <DataAnalysisTwo />
             </InnerDiv>
             <Divider />
             <InnerDiv>
@@ -139,7 +139,7 @@ const Content = styled.div`
     width: 30%;
     min-width: 400px;
     height: 350px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.7;
 `;
 
