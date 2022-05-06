@@ -91,6 +91,6 @@ export default PieChart;
 
 const PieContainer = styled.div`
     display: inline-block;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
 `;

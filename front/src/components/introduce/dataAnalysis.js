@@ -8,7 +8,6 @@ const DataAnalysisOne = () => {
     return (
         <>
             <PieChart jsonData={total} title={"전체 TOP10 제품 유형"} />
-            <PieChart jsonData={age10man} title={"10대 남성 TOP10 제품 유형"} />
             <PieChart jsonData={age50man} title={"50대 남성 TOP10 제품 유형"} />
         </>
     );
