@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
-function Card({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
+function CreditCard({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
   useEffect(() => {
     const jquery = document.createElement("script");
     jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
@@ -12,7 +12,7 @@ function Card({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
     document.head.appendChild(iamport);
     return () => {
       document.head.removeChild(jquery);
-      document.removeChild(iamport);
+      document.head.removeChild(iamport);
     };
   }, []);
 
@@ -59,7 +59,11 @@ function Card({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
     }
   };
 
-  return <Button onClick={onClickPayment}>카드 결제하기</Button>;
+  return (
+    <Box>
+      <Button onClick={onClickPayment}>주문하기</Button>
+    </Box>
+  );
 }
 
-export default Card;
+export default CreditCard;

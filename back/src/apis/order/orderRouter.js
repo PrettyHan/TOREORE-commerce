@@ -26,16 +26,16 @@ orderRouter.post("/", async (req, res, next) => {
             throw new Error(products.errorMessage);
         }
         const temp_cartlist = products.cart;
-        const cartlist = temp_cartlist.filter((v) => v.checked == true)
-        const cartPrices = cartlist.map((v) => (v.price));
+        const cartlist = temp_cartlist.filter((v) => v.checked == true);
+        const cartPrices = cartlist.map((v) => v.price);
         const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
-        const names = cartlist.map((v) => (v.name))
+        const names = cartlist.map((v) => v.name);
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
 
         const orderData = {
-            products,
+            products: { cart: cartlist },
             userId,
             orderId,
             totalPrice,
@@ -44,7 +44,7 @@ orderRouter.post("/", async (req, res, next) => {
             message,
             paymentMethod,
             isPayed,
-            names
+            names,
         };
 
         const newOrder = await orderService.createOrder(orderData);
@@ -67,7 +67,7 @@ orderRouter.post("/:productId", async (req, res, next) => {
                 "headers의 Content-Type을 application/json으로 설정해주세요",
             );
         }
-        const {productId} = req.params
+        const { productId } = req.params;
         const orderId = mongoose.Types.ObjectId();
         const userId = req.currentUserId;
         const products = await productService.getProduct({ productId });
@@ -75,7 +75,7 @@ orderRouter.post("/:productId", async (req, res, next) => {
             throw new Error(products.errorMessage);
         }
         const { orderName, zipcode, message, paymentMethod, quantity } = req.body; // 입력받을 것
-        const totalPrice = products.price * quantity
+        const totalPrice = products.price * quantity;
         const isPayed = false;
         const orderData = {
             products,
@@ -87,7 +87,7 @@ orderRouter.post("/:productId", async (req, res, next) => {
             message,
             paymentMethod,
             isPayed,
-            quantity
+            quantity,
         };
 
         const newOrder = await orderService.createOrder(orderData);
@@ -152,7 +152,7 @@ orderRouter.put("/orderId", async (req, res, next) => {
         const zipcode = req.body.zipcode ?? null;
         const message = req.body.message ?? null;
         const paymentMethod = req.body.paymentMethod ?? null;
-        const isPayed = req.body.isPayed ?? null
+        const isPayed = req.body.isPayed ?? null;
 
         const toUpdate = {
             products,
@@ -161,7 +161,7 @@ orderRouter.put("/orderId", async (req, res, next) => {
             zipcode,
             message,
             paymentMethod,
-            isPayed
+            isPayed,
         };
         const updatedOrder = await orderService.updateOrder({
             orderId,

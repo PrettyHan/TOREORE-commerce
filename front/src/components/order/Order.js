@@ -135,7 +135,7 @@ const OrderContainer = styled(Box)`
   box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px 20px 20px;
