@@ -64,5 +64,6 @@ const Item = styled.div`
     :hover {
         background-color: black;
         color: white;
+        cursor: pointer;
     },
 `;
