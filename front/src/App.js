@@ -120,36 +120,51 @@ function App() {
                     <Router>
                         <Header handleOpen={handleOpen} />
                         <Login open={open} handleClose={handleClose} />
-                        <Category />
-                        <Search />
+
                         <Routes>
-                            <Route path="/" exact element={<Main />} />
+                            <Route element={<Category />}>
+                                <Route element={<Search />}>
+                                    <Route path="/" exact element={<Main />} />
+                                    <Route
+                                        path="/myPage"
+                                        element={<MyPage />}
+                                    />
+                                    <Route
+                                        path="/useredit"
+                                        element={<UserEdit />}
+                                    />
+                                    <Route
+                                        path="/auth/:id"
+                                        element={<Main />}
+                                    />
+                                    <Route path="*" element={<NotFound />} />
+                                    <Route
+                                        exact
+                                        path="/products/:category"
+                                        element={<ProductList />}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/products/search/:keyword"
+                                        element={<ProductList />}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/products/:category/:productId"
+                                        element={<ProductDetail />}
+                                    />
+                                    <Route path="/cart" element={<Cart />} />
+                                    <Route
+                                        path="/order/:orderId"
+                                        element={<Order />}
+                                    />
+                                    <Route
+                                        path="/order/:orderId/complete"
+                                        element={<OrderComplete />}
+                                    />
+                                </Route>
+                            </Route>
                             <Route path="/introduce" element={<Introduce />} />
-                            <Route path="/myPage" element={<MyPage />} />
-                            <Route path="/useredit" element={<UserEdit />} />
-                            <Route path="/auth/:id" element={<Main />} />
-                            <Route path="*" element={<NotFound />} />
-                            <Route
-                                exact
-                                path="/products/:category"
-                                element={<ProductList />}
-                            />
-                            <Route
-                                exact
-                                path="/products/search/:keyword"
-                                element={<ProductList />}
-                            />
-                            <Route
-                                exact
-                                path="/products/:category/:productId"
-                                element={<ProductDetail />}
-                            />
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/order/:orderId" element={<Order />} />
-                            <Route
-                                path="/order/:orderId/complete"
-                                element={<OrderComplete />}
-                            />
                         </Routes>
                         {topBtnShow && (
                             <TopBtn onClick={scrollToTop}>

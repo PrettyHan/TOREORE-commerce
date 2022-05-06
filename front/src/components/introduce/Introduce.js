@@ -1,62 +1,122 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
+import styled from "styled-components";
 
 import DataAnalysis from "./dataAnalysis";
 
 function Introduce() {
+    const outerDivRef = useRef();
+
+    const DIVIDER_HEIGHT = 5;
+
+    useEffect(() => {
+        const wheelHandle = (e) => {
+            e.preventDefault();
+            const { deltaY } = e;
+            const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
+            const pageHeight = window.innerHeight * 0.8; // 화면 세로길이, 100vh와 같습니다.
+
+            if (deltaY > 0) {
+                // 스크롤 내릴 때
+                if (scrollTop >= 0 && scrollTop < pageHeight) {
+                    //현재 1페이지
+                    outerDivRef.current.scrollTo({
+                        top: pageHeight + DIVIDER_HEIGHT,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                } else if (
+                    scrollTop >= pageHeight &&
+                    scrollTop < pageHeight * 2
+                ) {
+                    //현재 2페이지
+                    outerDivRef.current.scrollTo({
+                        top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                } else {
+                    // 현재 3페이지
+                    outerDivRef.current.scrollTo({
+                        top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+            } else {
+                // 스크롤 올릴 때
+                if (scrollTop >= 0 && scrollTop < pageHeight) {
+                    //현재 1페이지
+                    outerDivRef.current.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                } else if (
+                    scrollTop >= pageHeight &&
+                    scrollTop < pageHeight * 2
+                ) {
+                    //현재 2페이지
+                    outerDivRef.current.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                } else {
+                    // 현재 3페이지
+                    outerDivRef.current.scrollTo({
+                        top: pageHeight + DIVIDER_HEIGHT,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+            }
+        };
+        const outerDivRefCurrent = outerDivRef.current;
+        outerDivRefCurrent.addEventListener("wheel", wheelHandle);
+        return () => {
+            outerDivRefCurrent.removeEventListener("wheel", wheelHandle);
+        };
+    }, []);
+
     return (
-        <div style={{ minHeight: "calc(100vh - 180px)" }}>
-            <div
-                style={{
-                    marginTop: "100px",
-                    display: "flex",
-                    justifyContent: "center",
-                    textAlign: "center",
-                }}
-            ></div>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
-                    <Grid
-                        item
-                        xs={8}
-                        style={{
-                            height: "auto",
-                            border: "1px solid #5E5B52",
-                            textAlign: "center",
-                            borderRadius: "60%",
-                        }}
-                    >
-                        <p>TOREOLRE는 그냥 쇼핑몰이 아닙니다!</p>
-                        <p>
-                            더 이상의 무분별한 추천! 견딜 수 없었습니다. <br />
-                            <br /> 내가 정말 필요하는 제품들, 또래들 사이 인기
-                            있는 상품이 먼저 나와 추천해준다면?
-                        </p>
-                    </Grid>
-                    <Grid item xs={4} style={{ height: "auto" }}>
-                        <img src="https://cdn.pixabay.com/photo/2018/08/18/13/27/browser-3614768__340.png" />
-                    </Grid>
-                    <Grid item xs={4} style={{ height: "auto" }}>
-                        <img src="https://cdn.pixabay.com/photo/2018/08/18/13/27/browser-3614768__340.png" />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={8}
-                        style={{
-                            height: "auto",
-                            border: "1px solid #5E5B52",
-                            textAlign: "center",
-                            borderRadius: "60%",
-                        }}
-                    >
-                        <p>안녕하십니까</p>
-                    </Grid>
-                </Grid>
-            </Box>
-            <hr />
-            <DataAnalysis />
-        </div>
+        <OuterDiv ref={outerDivRef}>
+            <InnerDiv>
+                <h1>시각화 자료 1</h1>
+            </InnerDiv>
+            <Divider />
+            <InnerDiv>
+                <h1>시각화 자료 2</h1>
+            </InnerDiv>
+            <Divider />
+            <InnerDiv>
+                <h1>시각화 자료 3</h1>
+            </InnerDiv>
+        </OuterDiv>
+        // {/* <DataAnalysis /> */}
     );
 }
 
 export default Introduce;
+
+const OuterDiv = styled.div`
+    height: 80vh;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
+
+const InnerDiv = styled.div`
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+`;
+
+const Divider = styled.div`
+    width: 100%;
+    height: 5px;
+    background-color: gray;
+`;

@@ -6,8 +6,6 @@ import { Chart, ArcElement, Tooltip, Title, Legend } from "chart.js";
 Chart.register(ArcElement, Tooltip, Title, Legend);
 
 const PieChart = ({ jsonData, title }) => {
-    console.log(jsonData, title);
-
     let data = {
         datasets: [
             {
@@ -32,6 +30,7 @@ const PieChart = ({ jsonData, title }) => {
             result[x] = (result[x] || 0) + 1;
         });
 
+        // console.log(result);
         data.labels = Object.keys(result);
         data.datasets[0].data = Object.values(result);
     };
