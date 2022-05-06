@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserStateContext } from "../../App";
 import styled from "styled-components";
+import Grid from "@mui/material/Grid";
 import * as Api from "../../api";
 
 function Recommend() {
@@ -58,15 +59,17 @@ function Recommend() {
             <RecommendP> My TORE Love It!</RecommendP>
             {isLogin && (
                 <>
-                    <Container>
+                    <Grid container spacing={{ lg: 1, md: 5, sm: 3, xs: 2 }}>
                         {recommendList.map((item, idx) => (
-                            <Items
-                                key={`item-${idx}`}
-                                imgUrl={item.image}
-                                onClick={() => sendProduct(item)}
-                            />
+                            <Grid item xs={5.5} sm={3.8} md={2.3} lg={2.4}>
+                                <Items
+                                    key={`item-${idx}`}
+                                    imgUrl={item.image}
+                                    onClick={() => sendProduct(item)}
+                                />
+                            </Grid>
                         ))}
-                    </Container>
+                    </Grid>
                     <ShowingP>
                         {getAge()} '{userState.user.name}' 고객님 또래가
                         좋아합니다
@@ -79,7 +82,7 @@ function Recommend() {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 500px;
+    height: auto;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -97,18 +100,8 @@ const RecommendP = styled.span`
     text-shadow: -1px 0 #5e5b52, 0 1px #5e5b52, 1px 0 #5e5b52, 0 -1px #5e5b52;
 `;
 
-const Container = styled.div`
-    width: 100%;
-    height: 350px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-`;
-
 const Items = styled.div`
-    width: 19%;
+    width: auto;
     border-radius: 19%;
     height: 300px;
     background-image: url(${(props) => props.imgUrl});
