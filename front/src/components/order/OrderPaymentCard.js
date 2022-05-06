@@ -7,6 +7,7 @@ import {
   Radio,
   Typography,
 } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Paypal from "./payments/Paypal";
 import Bankbook from "./payments/Bankbook";
@@ -21,6 +22,7 @@ function OrderPaymentCard({
   // handlePayComplete,
   orderId,
 }) {
+  const isPc = useMediaQuery("(min-width:480px)");
   const handlePaymentCheck = (event) => {
     setOrderPayment((current) => {
       return {

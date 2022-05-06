@@ -17,8 +17,7 @@ function OrderComplete() {
         message: orderUser.message,
         ...orderPayment,
       };
-      const res = await Api.put(`orders/${orderId}`, body);
-      console.log(res);
+      await Api.put(`orders/${orderId}`, body);
     } catch (err) {
       alert(`결제에 성공하지 못했습니다 \n ${err}`);
     }
@@ -84,11 +83,12 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 300px;
+  height: 300px;
   background-image: url("/Complete.png");
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100%;
 `;
 
 const Button = styled.button`
