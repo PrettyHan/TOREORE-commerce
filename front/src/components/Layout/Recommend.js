@@ -61,7 +61,14 @@ function Recommend() {
                 <>
                     <Grid container spacing={{ lg: 1, md: 5, sm: 3, xs: 2 }}>
                         {recommendList.map((item, idx) => (
-                            <Grid item xs={5.5} sm={3.8} md={2.3} lg={2.4}>
+                            <Grid
+                                key={`item-${idx}`}
+                                item
+                                xs={5.5}
+                                sm={3.8}
+                                md={2.3}
+                                lg={2.4}
+                            >
                                 <Items
                                     key={`item-${idx}`}
                                     imgUrl={item.image}

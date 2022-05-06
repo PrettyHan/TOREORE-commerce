@@ -21,15 +21,6 @@ function Header({ handleOpen }) {
     // 전역상태 user가 null이 아닌 경우 로그인 성공 상태!
     const isLogin = !!userState.user;
 
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const updateScroll = () => {
-        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", updateScroll);
-    });
-
     // 로그아웃 함수
     const logout = () => {
         // sessionStorage에 저장했던 JWT 토큰 삭제

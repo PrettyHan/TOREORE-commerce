@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 
 import { Button, Box } from "@mui/material";
 
-function CreditCard({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
+function CreditCard({
+  orderUser,
+  subTotal,
+  handlePayComplete,
+  orderId,
+  setOrderPayment,
+}) {
   useEffect(() => {
     const jquery = document.createElement("script");
     jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
@@ -52,8 +58,8 @@ function CreditCard({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
           isPayed: true,
         };
       });
-      console.log("결제 성공");
       handlePayComplete();
+      console.log("결제 성공");
     } else {
       console.log(`결제 실패 : ${error_msg}`);
     }
@@ -61,7 +67,7 @@ function CreditCard({ subTotal, handlePayComplete, orderId, setOrderPayment }) {
 
   return (
     <Box>
-      <Button onClick={onClickPayment}>주문하기</Button>
+      <Button onClick={onClickPayment}>{subTotal}원 주문하기</Button>
     </Box>
   );
 }

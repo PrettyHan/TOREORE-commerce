@@ -39,7 +39,7 @@ function GeneralMember() {
     // 먼저, 비밀번호를 변경했는지를 확인 후, 그에 따라 validate 를 물어본다
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(isFormValid);
+
         if (isFormValid) {
             try {
                 // 정보를 다 적고 확인 버튼을 누름 = 추가 정보를 받았음 true 처리
@@ -56,6 +56,7 @@ function GeneralMember() {
                 });
 
                 alert("추가되었습니다!");
+                navigate("/");
             } catch (err) {
                 alert("실패하였습니다", err);
             }

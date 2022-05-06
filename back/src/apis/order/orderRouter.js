@@ -142,7 +142,7 @@ orderRouter.get("/:orderId", async function (req, res, next) {
     }
 });
 
-orderRouter.put("/orderId", async (req, res, next) => {
+orderRouter.put("/:orderId", async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
 

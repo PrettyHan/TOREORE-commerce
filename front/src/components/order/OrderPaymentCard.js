@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   FormControl,
-  FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -12,8 +11,10 @@ import {
 import Paypal from "./payments/Paypal";
 import Bankbook from "./payments/Bankbook";
 import CreditCard from "./payments/CreditCard";
+import KakaoPay from "./payments/KakaoPay";
 
 function OrderPaymentCard({
+  orderUser,
   orderPayment,
   setOrderPayment,
   subTotal,
@@ -96,9 +97,14 @@ function OrderPaymentCard({
               control={<Radio />}
               label="신용/체크카드"
             />
+            <FormControlLabel
+              value="kakaoPay"
+              control={<Radio />}
+              label="카카오페이"
+            />
           </RadioGroup>
         </FormControl>
-        {
+        {orderUser.zipcode !== null ? (
           {
             none: (
               <Box style={{ alignItems: "center", justifyContent: "center" }}>
@@ -107,6 +113,7 @@ function OrderPaymentCard({
             ),
             paypal: (
               <Paypal
+                orderUser={orderUser}
                 subTotal={subTotal}
                 handlePayComplete={handlePayComplete}
                 setOrderPayment={setOrderPayment}
@@ -114,15 +121,33 @@ function OrderPaymentCard({
             ),
             card: (
               <CreditCard
+                orderUser={orderUser}
                 subTotal={subTotal}
                 handlePayComplete={handlePayComplete}
                 orderId={orderId}
                 setOrderPayment={setOrderPayment}
               />
             ),
-            bankbook: <Bankbook handlePayComplete={handlePayComplete} />,
+            bankbook: (
+              <Bankbook
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
+            kakaoPay: (
+              <KakaoPay
+                orderUser={orderUser}
+                subTotal={subTotal}
+                handlePayComplete={handlePayComplete}
+                orderId={orderId}
+                setOrderPayment={setOrderPayment}
+              />
+            ),
           }[orderPayment.paymentMethod]
-        }
+        ) : (
+          <Typography>주소를 입력해 주세요.</Typography>
+        )}
       </Box>
     </Box>
   );
