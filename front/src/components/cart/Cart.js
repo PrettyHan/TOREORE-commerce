@@ -59,12 +59,15 @@ function Cart() {
   };
 
   // 전체 선택 체크박스 핸들링 함수
-  const handleCheck = (event) => {
+  const handleCheck = async () => {
+    await Api.put("carts/select");
+
+    const checkedAll = isCheckedAll(cartItems);
     setCartItems((current) => {
       return current.map((item) => {
         return {
           ...item,
-          checked: event.target.checked,
+          checked: !checkedAll,
         };
       });
     });
@@ -142,34 +145,37 @@ function Cart() {
                 </Grid>
               </Grid>
             </Box>
-            <CartContainer>
-              <Table size="small">
-                <TableHead>
-                  <TableRow>
-                    <CartTableCell>전체 {cartItems.length}개</CartTableCell>
-                    <CartTableCell>
-                      <Checkbox
-                        checked={isCheckedAll(cartItems)}
-                        onChange={handleCheck}
-                      ></Checkbox>
-                    </CartTableCell>
-                    <CartTableCell>이미지</CartTableCell>
-                    <CartTableCell>상품명</CartTableCell>
-                    <CartTableCell>판매가</CartTableCell>
-                    <CartTableCell>주문금액</CartTableCell>
-                    <CartTableCell>수량</CartTableCell>
-                    <CartTableCell>주문관리</CartTableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {!isCartEmpty ? (
-                    cartItemList
-                  ) : (
-                    <Typography>장바구니에 상품을 담지 않았습니다.</Typography>
-                  )}
-                </TableBody>
-              </Table>
-            </CartContainer>
+            {!isCartEmpty ? (
+              <CartContainer>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow>
+                      <CartTableCell>전체 {cartItems.length}개</CartTableCell>
+                      <CartTableCell>
+                        <Checkbox
+                          disabled={isCartEmpty}
+                          checked={isCheckedAll(cartItems)}
+                          onChange={handleCheck}
+                        ></Checkbox>
+                      </CartTableCell>
+                      <CartTableCell>이미지</CartTableCell>
+                      <CartTableCell>상품명</CartTableCell>
+                      <CartTableCell>판매가</CartTableCell>
+                      <CartTableCell>주문금액</CartTableCell>
+                      <CartTableCell>수량</CartTableCell>
+                      <CartTableCell>주문관리</CartTableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>{cartItemList}</TableBody>
+                </Table>
+              </CartContainer>
+            ) : (
+              <Container>
+                <Image></Image>
+                <Typography>장바구니에 상품을 담아주세요.</Typography>
+              </Container>
+            )}
+
             <Box>
               <Typography>총 결제 금액: {carculateTotal}원</Typography>
             </Box>
@@ -222,7 +228,7 @@ const CartContainer = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 20px 20px;
 `;
 
 const ItemsContainer = styled(Box)`
@@ -241,6 +247,14 @@ const Items = styled.div`
   text-align: center;
   line-height: 80px;
   cursor: pointer;
+`;
+
+const Image = styled.div`
+  width: 200px;
+  height: 200px;
+  background-image: url("/CartEmpty.png");
+  background-repeat: no-repeat;
+  background-position: center center;
 `;
 
 export default Cart;

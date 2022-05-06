@@ -74,7 +74,7 @@ function CartItemCard({ cartItem, setCartItems, index }) {
   };
 
   // 체크박스 핸들링 함수
-  const handleCheck = async (event) => {
+  const handleCheck = async () => {
     try {
       const itemChecked = cartItem.checked;
 
@@ -87,7 +87,7 @@ function CartItemCard({ cartItem, setCartItems, index }) {
           if (item.productId === cartItem.productId) {
             return {
               ...item,
-              checked: event.target.checked,
+              checked: !itemChecked,
             };
           }
           return item;

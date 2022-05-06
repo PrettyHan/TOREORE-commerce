@@ -138,7 +138,7 @@ const OrderContainer = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 20px 20px;
 `;
 
 const ItemsContainer = styled(Box)`

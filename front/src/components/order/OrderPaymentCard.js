@@ -85,21 +85,27 @@ function OrderPaymentCard({
               <FormControlLabel
                 value="paypal"
                 control={<Radio />}
-                label="paypal"
+                label="페이팔"
               />
               <FormControlLabel
                 value="bankbook"
                 control={<Radio />}
-                label="bankbook"
+                label="무통장 입금"
               />
-              <FormControlLabel value="card" control={<Radio />} label="card" />
+              <FormControlLabel
+                value="card"
+                control={<Radio />}
+                label="신용/체크카드"
+              />
             </RadioGroup>
           </FormControl>
-        </Box>
-        <Box>
           {
             {
-              none: <Typography>결제 수단을 선택해 주세요.</Typography>,
+              none: (
+                <Box style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Typography>결제 수단을 선택해 주세요.</Typography>
+                </Box>
+              ),
               paypal: (
                 <Paypal
                   subTotal={subTotal}

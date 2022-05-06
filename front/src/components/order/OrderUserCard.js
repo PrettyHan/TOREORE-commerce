@@ -13,7 +13,7 @@ import {
 
 function OrderUserCard({ setOrderUser }) {
   const [open, setOpen] = useState(false);
-  const [address, setAddress] = useState("일반주소");
+  const [address, setAddress] = useState("주소");
 
   const postCodeStyle = {
     display: "block",
@@ -27,7 +27,19 @@ function OrderUserCard({ setOrderUser }) {
 
   const handleAddressComplete = (data) => {
     setAddress(data.address);
-    console.log(data.address);
+    setOpen(!open);
+  };
+
+  const handleAddress1 = (event) => {
+    setOrderUser((current) => {
+      return {
+        ...current,
+        zipcode: {
+          ...current.zipcode,
+          address1: event.target.value,
+        },
+      };
+    });
   };
 
   const handleAddress2 = (event) => {
@@ -78,22 +90,32 @@ function OrderUserCard({ setOrderUser }) {
       </Dialog>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Button size="large" onClick={() => setOpen(!open)}>
-            주소찾기
-          </Button>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography>{address}</Typography>
+          <Box>
+            <TextField
+              id="address1"
+              name="address1"
+              label={!address ? "주소" : ""}
+              autoComplete="shipping address-line1"
+              variant="outlined"
+              value={address}
+              fullWidth
+              onChange={handleAddress1}
+              autoFocus={true}
+            />
+            <Button size="large" onClick={() => setOpen(!open)}>
+              주소찾기
+            </Button>
+          </Box>
         </Grid>
         <Grid item xs={12}>
           <TextField
             id="address2"
             name="address2"
             label="상세주소"
-            fullWidth
             autoComplete="shipping address-line2"
-            variant="standard"
+            variant="outlined"
             onChange={handleAddress2}
+            fullWidth
           />
         </Grid>
         <Grid item xs={12}>
@@ -102,10 +124,10 @@ function OrderUserCard({ setOrderUser }) {
             id="message"
             name="message"
             label="메세지"
-            fullWidth
             autoComplete="message"
-            variant="standard"
+            variant="outlined"
             onChange={handleMessage}
+            fullWidth
           />
         </Grid>
       </Grid>
