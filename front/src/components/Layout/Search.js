@@ -99,7 +99,7 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 40px 0px;
+    margin: 70px 0px;
     position: relative;
 `;
 
