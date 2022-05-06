@@ -42,87 +42,76 @@ function Header({ handleOpen }) {
 
     return (
         <Container sx={{ flexGrow: 1, boxShadow: 0, mb: 3 }}>
-            {scrollPosition < 110 ? (
-                <HeaderVar
-                    position="static"
-                    sx={{
-                        boxShadow: 0,
-                        bgcolor: "transparent",
-                        color: "#000",
-                    }}
-                >
-                    <Toolbar>
-                        <Grid
-                            container
-                            spacing={{ lg: 6, md: 2, sm: 1, xs: 1 }}
-                        >
-                            <Wrapper item lg={2} md={1} sm={12} xs={12}>
-                                <Tab
-                                    icon={<HelpOutlineOutlinedIcon />}
-                                    onClick={() => navigate("/introduce")}
-                                    style={{
-                                        paddingRight: 0,
-                                        minWidth: "50px",
-                                    }}
-                                    disableElevation
-                                    disableRipple
-                                />
-                                <Details>About TOREOLRE</Details>
-                            </Wrapper>
-                            <Grid item lg={8} md={9} sm={12} xs={12}>
-                                <SubTitle>또래와 함께 하는 쇼핑 ,</SubTitle>
-                                <MainTitle onClick={() => navigate("/")}>
-                                    TOREOLRE
-                                </MainTitle>
-                            </Grid>
-                            <Wrapper item lg={2} md={1} sm={8.7} xs={9.5}>
-                                <Box sx={{ flexGrow: 1 }} />
-                                <Box
-                                    sx={{ display: { xs: "flex", md: "flex" } }}
-                                >
-                                    <Tooltip
-                                        title={isLogin ? "Logout" : "Login"}
-                                        arrow
-                                    >
-                                        <NavIcon
-                                            icon={
-                                                isLogin ? (
-                                                    <LogoutIcon />
-                                                ) : (
-                                                    <LoginIcon />
-                                                )
-                                            }
-                                            onClick={
-                                                isLogin ? logout : handleOpen
-                                            }
-                                            disableElevation
-                                            disableRipple
-                                        />
-                                    </Tooltip>
-                                    <Tooltip title="Cart" arrow>
-                                        <NavIcon
-                                            icon={<ShoppingCartOutlinedIcon />}
-                                            onClick={() => navigate("/cart")}
-                                            disableElevation
-                                            disableRipple
-                                        />
-                                    </Tooltip>
-                                    <Tooltip title="MyPage" arrow>
-                                        <NavIcon
-                                            icon={<PersonOutlinedIcon />}
-                                            onClick={() => navigate("/myPage")}
-                                            disableElevation
-                                            disableRipple
-                                        />
-                                    </Tooltip>
-                                </Box>
-                            </Wrapper>
+            <HeaderVar
+                position="static"
+                sx={{
+                    boxShadow: 0,
+                    bgcolor: "transparent",
+                    color: "#000",
+                }}
+            >
+                <Toolbar>
+                    <Grid container spacing={{ lg: 6, md: 2, sm: 1, xs: 1 }}>
+                        <Wrapper item lg={2} md={1} sm={12} xs={12}>
+                            <Tab
+                                icon={<HelpOutlineOutlinedIcon />}
+                                onClick={() => navigate("/introduce")}
+                                style={{
+                                    paddingRight: 0,
+                                    minWidth: "50px",
+                                }}
+                                disableElevation
+                                disableRipple
+                            />
+                            <Details>About TOREOLRE</Details>
+                        </Wrapper>
+                        <Grid item lg={8} md={9} sm={12} xs={12}>
+                            <SubTitle>또래와 함께 하는 쇼핑 ,</SubTitle>
+                            <MainTitle onClick={() => navigate("/")}>
+                                TOREOLRE
+                            </MainTitle>
                         </Grid>
-                    </Toolbar>
-                </HeaderVar>
-            ) : (
-                <></>
-            )}
+                        <Wrapper item lg={2} md={1} sm={8.7} xs={9.5}>
+                            <Box sx={{ flexGrow: 1 }} />
+                            <Box sx={{ display: { xs: "flex", md: "flex" } }}>
+                                <Tooltip
+                                    title={isLogin ? "Logout" : "Login"}
+                                    arrow
+                                >
+                                    <NavIcon
+                                        icon={
+                                            isLogin ? (
+                                                <LogoutIcon />
+                                            ) : (
+                                                <LoginIcon />
+                                            )
+                                        }
+                                        onClick={isLogin ? logout : handleOpen}
+                                        disableElevation
+                                        disableRipple
+                                    />
+                                </Tooltip>
+                                <Tooltip title="Cart" arrow>
+                                    <NavIcon
+                                        icon={<ShoppingCartOutlinedIcon />}
+                                        onClick={() => navigate("/cart")}
+                                        disableElevation
+                                        disableRipple
+                                    />
+                                </Tooltip>
+                                <Tooltip title="MyPage" arrow>
+                                    <NavIcon
+                                        icon={<PersonOutlinedIcon />}
+                                        onClick={() => navigate("/myPage")}
+                                        disableElevation
+                                        disableRipple
+                                    />
+                                </Tooltip>
+                            </Box>
+                        </Wrapper>
+                    </Grid>
+                </Toolbar>
+            </HeaderVar>
         </Container>
     );
 }
