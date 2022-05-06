@@ -372,7 +372,7 @@ const Grid = styled.div`
 `;
 
 const Container = styled.div`
-    width: 40%;
+    width: 70%;
     padding: 5px 0 0 0;
     box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
