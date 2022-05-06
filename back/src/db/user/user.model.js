@@ -13,7 +13,7 @@ class User {
     }
 
     static async findCartsByUserId({ userId }) {
-        const user = await UserModel.findOne({ userId }, { cart: 1, _id: 0 });
+        const user = await UserModel.findOne({ userId, cart : {$elemMatch:{checked : true}} }, { cart: 1, _id: 0 });
         return user;
     }
 

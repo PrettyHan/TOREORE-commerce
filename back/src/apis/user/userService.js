@@ -168,6 +168,10 @@ class userService {
             const errorMessage = "주문 정보가 없습니다. 다시 한 번 확인해 주세요.";
             return { errorMessage };
         }
+        if(is.emptyObject(user)){
+            const errorMessage = "주문 정보가 없습니다. 다시 한 번 확인해 주세요.";
+            return { errorMessage };
+        }
 
         return user;
     }
