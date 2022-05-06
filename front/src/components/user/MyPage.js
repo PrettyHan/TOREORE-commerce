@@ -7,7 +7,7 @@ import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
 import { UserStateContext } from "../../App";
 
-import { Box, Button } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import styled from "styled-components";
 
 function MyPage() {
@@ -42,8 +42,8 @@ function MyPage() {
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             {user ? (
-                <Container>
-                    <UserContainer>
+                <Container container spacing={{ lg: 1, md: 1, sm: 1, xs: 1 }}>
+                    <UserContainer item lg={8} md={8} sm={8} xs={8}>
                         {user.loginType === "BASIC" ||
                         user.hasAddtionalInfo === true ? (
                             <Intro>
@@ -134,14 +134,16 @@ function MyPage() {
     );
 }
 
-const Container = styled.div`
+const Container = styled(Grid)`
     margin: 30px 0 100px 0;
-    display: grid;
     row-gap: 20px;
-    place-items: center center;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
-const UserContainer = styled(Box)`
+const UserContainer = styled(Grid)`
     width: 62%;
     box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
@@ -158,23 +160,22 @@ const Intro = styled.div`
 `;
 
 const ItemsContainer = styled(Box)`
-    width: 63.5%;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: space-between;
+    width: 80%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     font-weight: bold;
 `;
 
 const Items = styled.div`
     box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-    width: 24%;
+    width: 20%;
     height: 80px;
     text-align: center;
     line-height: 80px;
     cursor: pointer;
+    margin: 0 5px 0 5px;
 `;
 
 export default MyPage;
