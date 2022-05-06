@@ -27,6 +27,15 @@ function OrderUserCard({ setOrderUser }) {
 
   const handleAddressComplete = (data) => {
     setAddress(data.address);
+    setOrderUser((current) => {
+      return {
+        ...current,
+        zipcode: {
+          ...current.zipcode,
+          address1: data.address,
+        },
+      };
+    });
     setOpen(!open);
   };
 

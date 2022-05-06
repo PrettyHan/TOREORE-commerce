@@ -49,6 +49,7 @@ function Order() {
         isPayed,
       });
       setSubTotal(totalPrice);
+      console.log(res.data);
     } catch (err) {
       alert("주문페이지 생성에 실패하였습니다.", err);
       navigate(-1);
@@ -58,13 +59,15 @@ function Order() {
   const handlePayComplete = async () => {
     try {
       const body = {
-        ...orderUser,
-        totalPrice: subTotal,
         products: orderItems,
+        totalPrice: subTotal,
+        orderName: `${orderId}`,
+        zipcode: orderUser.zipcode,
+        message: orderUser.message,
         ...orderPayment,
       };
       await Api.put(`orders/${orderId}`, body);
-      return navigate("/order/complete");
+      return navigate(`orders/${orderId}/complete`);
     } catch (err) {
       alert(`결제에 성공하지 못했습니다 \n ${err}`);
     }
@@ -108,6 +111,7 @@ function Order() {
           </Typography>
           <OrderContainer>
             <OrderPaymentCard
+              orderUser={orderUser}
               orderPayment={orderPayment}
               setOrderPayment={setOrderPayment}
               subTotal={subTotal}
