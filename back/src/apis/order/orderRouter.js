@@ -31,7 +31,6 @@ orderRouter.post("/", async (req, res, next) => {
         const cartPrices = cartlist.map((v) => v.price);
         const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
-        const names = cartlist.map((v) => v.name);
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
 
@@ -45,17 +44,16 @@ orderRouter.post("/", async (req, res, next) => {
             message,
             paymentMethod,
             isPayed,
-            names,
         };
 
         const newOrder = await orderService.createOrder(orderData);
-        const productIdArr = products.cart.map((v) => v.productId)
+        const productIdArr = cartlist.map((v) => v.productId)
         const deleteCart = await cartService.deleteProductOfCart({ userId, productIdArr })
         if (newOrder.errorMessage) {
             throw new Error(newOrder.errorMessage);
         }
 
-        res.status(201).json(newOrder, deleteCart);
+        res.status(201).json(newOrder);
     } catch (error) {
         next(error);
     }
@@ -148,18 +146,12 @@ orderRouter.put("/orderId", async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
 
-        const products = req.body.products ?? null;
-        const totalPrice = req.body.totalPrice ?? null;
-        const orderName = req.body.orderName ?? null;
-        const zipcode = req.body.zipcode ?? null;
-        const message = req.body.message ?? null;
-        const paymentMethod = req.body.paymentMethod ?? null;
-        const isPayed = req.body.isPayed ?? null;
+        const zipcode = req.body.zipcode ?? "";
+        const message = req.body.message ?? "";
+        const paymentMethod = req.body.paymentMethod ?? "";
+        const isPayed = req.body.isPayed ?? false
 
         const toUpdate = {
-            products,
-            totalPrice,
-            orderName,
             zipcode,
             message,
             paymentMethod,
