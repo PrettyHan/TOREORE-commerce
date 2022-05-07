@@ -14,14 +14,14 @@ function Order() {
   const isPc = useMediaQuery("(min-width:480px)");
   const [orderUser, setOrderUser] = useState({
     userId: "",
-    zipcode: {},
-    message: "",
+    zipcode: {
+      address1: "주소",
+      address2: "상세주소",
+    },
+    message: "메세지",
   });
   const [orderItems, setOrderItems] = useState([]);
-  const [orderPayment, setOrderPayment] = useState({
-    paymentMethod: "",
-    isPayed: false,
-  });
+  const [orderPayment, setOrderPayment] = useState({});
   const [subTotal, setSubTotal] = useState(0);
 
   const { orderId } = useParams();
@@ -30,7 +30,6 @@ function Order() {
   const fetchOrderData = async () => {
     try {
       const res = await Api.get(`orders/${orderId}`);
-
       const {
         userId,
         products,
@@ -40,6 +39,7 @@ function Order() {
         paymentMethod,
         isPayed,
       } = res.data;
+
       setOrderUser({
         userId,
         zipcode,
@@ -75,7 +75,10 @@ function Order() {
               주소
             </Typography>
             <OrderContainer>
-              <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
+              <OrderUserCard
+                setOrderUser={setOrderUser}
+                orderUser={orderUser}
+              ></OrderUserCard>
             </OrderContainer>
 
             <Typography
@@ -100,14 +103,18 @@ function Order() {
               결제
             </Typography>
             <OrderContainer>
-              <OrderPaymentCard
-                orderUser={orderUser}
-                orderPayment={orderPayment}
-                setOrderPayment={setOrderPayment}
-                subTotal={subTotal}
-                // handlePayComplete={handlePayComplete}
-                orderId={orderId}
-              ></OrderPaymentCard>
+              {orderPayment.isPayed === false ? (
+                <OrderPaymentCard
+                  orderUser={orderUser}
+                  orderPayment={orderPayment}
+                  setOrderPayment={setOrderPayment}
+                  subTotal={subTotal}
+                  // handlePayComplete={handlePayComplete}
+                  orderId={orderId}
+                ></OrderPaymentCard>
+              ) : (
+                <Typography>이미 결제된 주문입니다.</Typography>
+              )}
             </OrderContainer>
           </Container>
         </div>

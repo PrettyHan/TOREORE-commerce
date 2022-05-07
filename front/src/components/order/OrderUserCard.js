@@ -13,9 +13,8 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
-function OrderUserCard({ setOrderUser }) {
+function OrderUserCard({ setOrderUser, orderUser }) {
   const [open, setOpen] = useState(false);
-  const [address, setAddress] = useState("주소");
 
   const isPc = useMediaQuery("(min-width:480px)");
   const theme = useTheme();
@@ -42,7 +41,6 @@ function OrderUserCard({ setOrderUser }) {
   };
 
   const handleAddressComplete = (data) => {
-    setAddress(data.address);
     setOrderUser((current) => {
       return {
         ...current,
@@ -121,10 +119,10 @@ function OrderUserCard({ setOrderUser }) {
                 <TextField
                   id="address1"
                   name="address1"
-                  label={!address ? "주소" : ""}
+                  label={!orderUser.zipcode.address1 ? "주소" : ""}
                   autoComplete="shipping address-line1"
                   variant="outlined"
-                  value={address}
+                  value={orderUser.zipcode.address1}
                   fullWidth
                   onChange={handleAddress1}
                   autoFocus={true}
@@ -138,7 +136,8 @@ function OrderUserCard({ setOrderUser }) {
               <TextField
                 id="address2"
                 name="address2"
-                label="상세주소"
+                label={!orderUser.zipcode.address2 ? "상세주소" : ""}
+                value={orderUser.zipcode.address2}
                 autoComplete="shipping address-line2"
                 variant="outlined"
                 onChange={handleAddress2}
@@ -150,7 +149,8 @@ function OrderUserCard({ setOrderUser }) {
                 required
                 id="message"
                 name="message"
-                label="메세지"
+                label={!orderUser.message ? "메세지" : ""}
+                value={orderUser.message}
                 autoComplete="message"
                 variant="outlined"
                 onChange={handleMessage}
@@ -192,10 +192,10 @@ function OrderUserCard({ setOrderUser }) {
                 <TextField
                   id="address1"
                   name="address1"
-                  label={!address ? "주소" : ""}
+                  label=""
                   autoComplete="shipping address-line1"
                   variant="outlined"
-                  value={address}
+                  value={orderUser.zipcode.address1}
                   fullWidth
                   onChange={handleAddress1}
                   autoFocus={true}
@@ -209,7 +209,8 @@ function OrderUserCard({ setOrderUser }) {
               <TextField
                 id="address2"
                 name="address2"
-                label="상세주소"
+                label={!orderUser.zipcode.address2 ? "상세주소" : ""}
+                value={orderUser.zipcode.address2}
                 autoComplete="shipping address-line2"
                 variant="outlined"
                 onChange={handleAddress2}
@@ -221,7 +222,8 @@ function OrderUserCard({ setOrderUser }) {
                 required
                 id="message"
                 name="message"
-                label="메세지"
+                label={!orderUser.message ? "메세지" : ""}
+                value={orderUser.message}
                 autoComplete="message"
                 variant="outlined"
                 onChange={handleMessage}

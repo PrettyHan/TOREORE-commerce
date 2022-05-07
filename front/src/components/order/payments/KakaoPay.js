@@ -23,6 +23,7 @@ function CreditCard({
       zipcode: orderUser.zipcode,
       message: orderUser.message,
       ...orderPayment,
+      isPayed: true,
     };
     try {
       await Api.put(`orders/${orderId}`, body);
