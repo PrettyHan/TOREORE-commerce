@@ -95,9 +95,11 @@ const ProductDetail = () => {
                 <Img src={product.image} alt={"상품 이미지"} />
                 <Like onClick={handleLikeClick}>
                     {isLike ? (
-                        <FavoriteIcon style={{ fontSize: 40, color: "red" }} />
+                        <FavoriteIcon style={{ fontSize: 50, color: "red" }} />
                     ) : (
-                        <FavoriteBorderIcon style={{ fontSize: 40 }} />
+                        <FavoriteBorderIcon
+                            style={{ fontSize: 50, color: "ivory" }}
+                        />
                     )}
                 </Like>
             </ImgWrapper>
@@ -150,8 +152,8 @@ const ProductDetail = () => {
 export default ProductDetail;
 
 const Wrapper = styled.div`
-    max-width: 80%;
-    margin: 30px auto;
+    max-width: 70%;
+    margin: 30px auto 100px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -181,14 +183,13 @@ const Like = styled.div`
     position: absolute;
     z-index: 1;
     bottom: 20px;
-    right: 30px;
-    font-size: 2rem;
+    right: 25px;
 `;
 
 const Content = styled.div`
     min-height: 400px;
-    max-width: 600px;
-    flex-grow: 1;
+    width: calc(100% - 450px);
+    min-width: 550px;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
@@ -202,7 +203,10 @@ const Desc = styled.div`
 `;
 
 const PriceTable = styled(Table)`
-    width: 100%;
+    && {
+        width: 70%;
+        min-width: 550px;
+    }
     border: solid 2px black;
 `;
 

@@ -50,7 +50,9 @@ const ProductItem = ({
                     {isLike ? (
                         <FavoriteIcon style={{ fontSize: 40, color: "red" }} />
                     ) : (
-                        <FavoriteBorderIcon style={{ fontSize: 40 }} />
+                        <FavoriteBorderIcon
+                            style={{ fontSize: 40, color: "ivory" }}
+                        />
                     )}
                 </Like>
             </ImgWrapper>

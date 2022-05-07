@@ -39,6 +39,7 @@ const AdBox1 = styled(Grid)`
     justify-content: center;
     align-items: center;
     margin: 50px 0 80px 0;
+    padding: 0 70px 0 70px;
 `;
 
 const Items2 = styled(Grid)`
@@ -60,6 +61,7 @@ const AdBox2 = styled(Grid)`
     justify-content: center;
     align-items: center;
     margin: 50px 0 150px 0;
+    padding: 0 70px 0 70px;
 `;
 
 const AdP1 = styled(Grid)`

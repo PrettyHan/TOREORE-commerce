@@ -59,7 +59,7 @@ function Recommend() {
             <RecommendP> My TORE Love It!</RecommendP>
             {isLogin && (
                 <>
-                    <Grid container spacing={{ lg: 1, md: 5, sm: 3, xs: 2 }}>
+                    <Grid container spacing={{ lg: 2, md: 5, sm: 3, xs: 2 }}>
                         {recommendList.map((item, idx) => (
                             <Grid
                                 key={`item-${idx}`}
@@ -95,35 +95,36 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 0 20px 0 20px;
-    margin: 0 0 80px 0;
+    margin: 0 60px 80px 60px;
     opacity: 0.8;
     border: 1px solid #ebebeb;
-    margin-bottom: 100px;
 `;
 
 const RecommendP = styled.span`
     text-align: left;
     font-size: 50px;
     color: #3d1b54;
-    padding: 30px 0 0 30px;
+    padding: 30px 0 20px 30px;
     font-weight: 700;
+    margin: 10px 0 30px 0;
 `;
 
 const Items = styled.div`
     width: auto;
     border-radius: 19%;
-    height: 230px;
+    height: 220px;
     background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center center;
     cursor: pointer;
+    margin: 10px 0 10px 0;
 `;
 
 const ShowingP = styled.span`
-    padding: 0 10px 10px 10px;
-    margin: 0 0 10px 10px;
+    padding: 0 10px 0 10px;
+    margin: 40px 0 30px 10px;
     text-align: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: #3d1b54;
     font-family: "Nanum Gothic", sans-serif;

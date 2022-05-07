@@ -32,6 +32,7 @@ function OrderHistory() {
     return (
         <Container>
             <Title>주문 내역</Title>
+            <Info>(결제 진행중 클릭 시 주문 페이지로 이동합니다. )</Info>
             <ListContainer>
                 <Columns>
                     {columns.map((column, idx) => (
@@ -63,6 +64,13 @@ const Container = styled.div`
 const Title = styled.div`
     font-align: left;
     font-size: 20px;
+    margin: 0 0 3px 23px;
+`;
+
+const Info = styled.div`
+    font-align: left;
+    font-size: 15px;
+    color: gray;
     margin: 0 0 23px 23px;
 `;
 
