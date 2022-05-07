@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
-import Grid from "@mui/material/Grid";
 
 function OrderCard({ order }) {
     const navigate = useNavigate();
@@ -30,25 +29,11 @@ function OrderCard({ order }) {
     }
 
     return (
-        <Container container spacing={{ lg: 1, md: 2, sm: 1, xs: 1 }}>
-            <Items item lg={3} md={6} sm={12} xs={12}>
-                {order._id}
-            </Items>
-            <Items item lg={3} md={6} sm={12} xs={12}>
-                {productName}
-            </Items>
-            <Items item lg={3} md={6} sm={12} xs={12}>
-                {order.totalPrice}원
-            </Items>
-            <OrderStatus
-                item
-                lg={3}
-                md={6}
-                sm={12}
-                xs={12}
-                color={orderStatus}
-                onClick={sendOrder}
-            >
+        <Container>
+            <Items>{order._id}</Items>
+            <Items>{productName}</Items>
+            <Items>{order.totalPrice}원</Items>
+            <OrderStatus color={orderStatus} onClick={sendOrder}>
                 {orderStatus ? (
                     "주문완료"
                 ) : (
@@ -61,7 +46,7 @@ function OrderCard({ order }) {
     );
 }
 
-const Container = styled(Grid)`
+const Container = styled.div`
     width: 95%;
     margin-bottom: 20px;
     border: 1px solid #5e5b52;
@@ -72,28 +57,22 @@ const Container = styled(Grid)`
     justify-content: space-between;
 `;
 
-const Items = styled(Grid)`
+const Items = styled.div`
+    margin-left: 8px;
     width: 20%;
-    height: 50px;
+    height: 160px;
     text-align: center;
+    line-height: 160px;
     font-size: 16px;
-    line-height: 25px;
 `;
 
-const OrderStatus = styled(Grid)`
+const OrderStatus = styled.div`
     width: 20%;
-<<<<<<< HEAD
-    height: 50px;
-    color: ${(props) => (props.color === "done" ? "gray" : "red")};
-=======
     height: 160px;
     text-align: center;
     line-height: 160px;
     color: ${(props) => (props.color === "done" ? "gray" : "#f77737")};
->>>>>>> data-analysis-front
     cursor: pointer;
-    text-align: center;
     font-size: 16px;
-    line-height: 25px;
 `;
 export default OrderCard;

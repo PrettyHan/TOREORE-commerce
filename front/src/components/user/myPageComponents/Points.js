@@ -1,47 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-// const orderList = {
-//   [];
-// };
-
 function Points() {
     return (
         <Container>
-            <Wrapper>
-                <Title>적립금 내역</Title>
-                <ListContainer>
-                    <Columns>
-                        Welcome! 가입 적립금 2,000원 [ 2만원 이상 적용 ]
-                    </Columns>
-                </ListContainer>
-            </Wrapper>
+            <Title>적립금 내역</Title>
+            <ListContainer>
+                <Columns>
+                    Welcome! 가입 적립금 2,000원 [ 2만원 이상 적용 ]
+                </Columns>
+            </ListContainer>
         </Container>
     );
 }
 
 const Container = styled.div`
+    width: 63.5%;
     padding: 5px 0 0 0;
-<<<<<<< HEAD
-    row-gap: 20px;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Wrapper = styled.div`
-    width: 90%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-=======
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
->>>>>>> data-analysis-front
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 20px 0 20px;
 `;
 
 const Title = styled.div`

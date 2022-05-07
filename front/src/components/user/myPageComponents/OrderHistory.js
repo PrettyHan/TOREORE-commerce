@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import OrderCard from "./OrderCard";
-import Grid from "@mui/material/Grid";
 
 import * as Api from "../../../api";
 
@@ -32,59 +31,33 @@ function OrderHistory() {
 
     return (
         <Container>
-            <Wrapper>
-                <Title>주문 내역</Title>
-                <ListContainer>
-                    <Columns container spacing={{ lg: 1, md: 2, sm: 1, xs: 1 }}>
-                        {columns.map((column, idx) => (
-                            <Items
-                                item
-                                lg={3}
-                                md={6}
-                                sm={12}
-                                xs={12}
-                                key={`item-${idx}`}
-                            >
-                                {column}
-                            </Items>
-                        ))}
-                    </Columns>
-                    {isOrder ? (
-                        orderList.map((order, idx) => (
-                            <OrderCard key={`order-${idx}`} order={order} />
-                        ))
-                    ) : (
-                        <NoOrder>"주문 내역이 없습니다."</NoOrder>
-                    )}
-                </ListContainer>
-            </Wrapper>
+            <Title>주문 내역</Title>
+            <ListContainer>
+                <Columns>
+                    {columns.map((column, idx) => (
+                        <Items key={`item-${idx}`}>{column}</Items>
+                    ))}
+                </Columns>
+                {isOrder ? (
+                    orderList.map((order, idx) => (
+                        <OrderCard key={`order-${idx}`} order={order} />
+                    ))
+                ) : (
+                    <NoOrder>"주문 내역이 없습니다."</NoOrder>
+                )}
+            </ListContainer>
         </Container>
     );
 }
 
 const Container = styled.div`
+    width: 63.5%;
     padding: 5px 0 0 0;
-<<<<<<< HEAD
-    row-gap: 20px;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
-`;
-
-const Wrapper = styled.div`
-    width: 90%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-=======
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
->>>>>>> data-analysis-front
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 20px 0 20px;
 `;
 
 const Title = styled.div`
@@ -103,19 +76,22 @@ const ListContainer = styled.div`
     font-size: 17px;
 `;
 
-const Columns = styled(Grid)`
+const Columns = styled.div`
     width: 95%;
     margin-bottom: 10px;
     border: 1px solid #5e5b52;
     flex-wrap: wrap;
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
-const Items = styled(Grid)`
+const Items = styled.div`
     width: 20%;
-    height: 40px;
+    height: 25px;
     text-align: center;
-    line-height: 17px;
+    line-height: 25px;
     font-weight: bold;
 `;
 

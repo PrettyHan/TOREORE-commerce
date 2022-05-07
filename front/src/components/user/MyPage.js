@@ -7,7 +7,7 @@ import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
 import { UserStateContext } from "../../App";
 
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
 function MyPage() {
@@ -42,8 +42,8 @@ function MyPage() {
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             {user ? (
-                <Container container spacing={{ lg: 1, md: 1, sm: 1, xs: 1 }}>
-                    <UserContainer item lg={8} md={8} sm={8} xs={8}>
+                <Container>
+                    <UserContainer>
                         {user.loginType === "BASIC" ||
                         user.hasAddtionalInfo === true ? (
                             <Intro>
@@ -134,16 +134,14 @@ function MyPage() {
     );
 }
 
-const Container = styled(Grid)`
+const Container = styled.div`
     margin: 30px 0 100px 0;
+    display: grid;
     row-gap: 20px;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center center;
 `;
 
-const UserContainer = styled(Grid)`
+const UserContainer = styled(Box)`
     width: 62%;
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
@@ -160,27 +158,23 @@ const Intro = styled.div`
 `;
 
 const ItemsContainer = styled(Box)`
-    width: 80%;
+    width: 63.5%;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
     font-size: 20px;
     font-weight: bold;
 `;
 
 const Items = styled.div`
-<<<<<<< HEAD
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-    width: 20%;
-=======
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
->>>>>>> data-analysis-front
     height: 80px;
     text-align: center;
     line-height: 80px;
     cursor: pointer;
-    margin: 0 5px 0 5px;
 `;
 
 export default MyPage;

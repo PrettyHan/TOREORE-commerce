@@ -5,34 +5,24 @@ import styled from "styled-components";
 function Coupon() {
     return (
         <Container>
-            <Wrapper>
-                <Title>쿠폰 내역</Title>
-                <ListContainer>
-                    <Columns>
-                        신규 회원! 첫 주문 배송비 무료 쿠폰 [ 2만원 이상 적용 ]
-                    </Columns>
-                </ListContainer>
-            </Wrapper>
+            <Title>쿠폰 내역</Title>
+            <ListContainer>
+                <Columns>
+                    신규 회원! 첫 주문 배송비 무료 쿠폰 [ 2만원 이상 적용 ]
+                </Columns>
+            </ListContainer>
         </Container>
     );
 }
 
 const Container = styled.div`
+    width: 63.5%;
     padding: 5px 0 0 0;
-    row-gap: 20px;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Wrapper = styled.div`
-    width: 90%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    flex-wrap: wrap;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 20px 0 20px;
 `;
 
 const Title = styled.div`
