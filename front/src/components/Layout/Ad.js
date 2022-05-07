@@ -22,7 +22,7 @@ function Ad() {
 
 const Items = styled(Grid)`
     width: 80%;
-    height: 100%;
+    height: 80%;
     background-image: url(https://images.unsplash.com/photo-1627225793904-a2f900a6e4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
     background-position: center center;
     background-size: contain;
@@ -38,12 +38,11 @@ const AdBox1 = styled(Grid)`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0 20px 0 20px;
     margin: 50px 0 80px 0;
 `;
 
 const Items2 = styled(Grid)`
-    width: auto;
+    width: 80%;
     height: 600px;
     background-image: url(https://images.unsplash.com/photo-1644424234553-2cd68a04bc96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM5MHxTNE1LTEFzQkI3NHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
     background-position: center center;
@@ -60,7 +59,6 @@ const AdBox2 = styled(Grid)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px 0 20px;
     margin: 50px 0 150px 0;
 `;
 
@@ -71,11 +69,12 @@ const AdP1 = styled(Grid)`
     text-align: center;
 `;
 
-const AdP2 = styled.span`
-    font-size: 55px;
+const AdP2 = styled.div`
+    font-size: 45px;
     font-weight: bold;
     color: #f77737;
     font-style: italic;
+    white-space: nowrap;
 `;
 
 export default Ad;

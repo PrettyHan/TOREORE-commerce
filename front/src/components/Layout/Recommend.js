@@ -89,7 +89,7 @@ function Recommend() {
 
 const Wrapper = styled.div`
     width: 80%;
-    height: 500px;
+    height: auto;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -127,6 +127,7 @@ const ShowingP = styled.span`
     font-weight: bold;
     color: #3d1b54;
     font-family: "Nanum Gothic", sans-serif;
+    white-space: nowrap;
 `;
 
 export default Recommend;
