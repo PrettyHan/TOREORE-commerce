@@ -94,16 +94,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-<<<<<<< HEAD
-    padding: 0 20px 20px 20px;
-    margin: 0 10px 80px 10px;
+    padding: 0 20px 0 20px;
+    margin: 0 60px 80px 60px;
     opacity: 0.8;
     border: 1px solid #ebebeb;
-=======
-    padding: 0 20px 0 20px;
-    opacity: 0.8;
-    margin-bottom: 50px;
->>>>>>> de4ceb1d954c422c3baa42ed1849c3a9681f6e9f
 `;
 
 const RecommendP = styled.span`
