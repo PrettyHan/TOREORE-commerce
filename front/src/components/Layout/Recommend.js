@@ -94,11 +94,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px 0 20px;
-    margin: 0 0 80px 0;
+    padding: 0 20px 20px 20px;
+    margin: 0 10px 80px 10px;
     opacity: 0.8;
     border: 1px solid #ebebeb;
-    margin-bottom: 100px;
 `;
 
 const RecommendP = styled.span`
@@ -107,23 +106,25 @@ const RecommendP = styled.span`
     color: #3d1b54;
     padding: 30px 0 0 30px;
     font-weight: 700;
+    margin: 10px 0 30px 0;
 `;
 
 const Items = styled.div`
     width: auto;
     border-radius: 19%;
-    height: 230px;
+    height: 220px;
     background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center center;
     cursor: pointer;
+    margin: 10px 0 10px 0;
 `;
 
 const ShowingP = styled.span`
-    padding: 0 10px 10px 10px;
-    margin: 0 0 10px 10px;
+    padding: 0 10px 0 10px;
+    margin: 40px 0 30px 10px;
     text-align: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: #3d1b54;
     font-family: "Nanum Gothic", sans-serif;
