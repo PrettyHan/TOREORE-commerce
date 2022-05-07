@@ -7,7 +7,7 @@ import styled from "styled-components";
 function OrderItem({ item, index }) {
   const isPc = useMediaQuery("(min-width:480px)");
   return (
-    <div>
+    <>
       {isPc ? (
         <TableRow key={item.productId}>
           <OrderTableCell>{index}</OrderTableCell>
@@ -30,7 +30,7 @@ function OrderItem({ item, index }) {
           <p>{item.price}</p>
         </MobileItems>
       )}
-    </div>
+    </>
   );
 }
 const MobileItems = styled.div`
