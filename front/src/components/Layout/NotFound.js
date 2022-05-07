@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const NotFound = () => {
     const navigate = useNavigate();
+
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             <div
