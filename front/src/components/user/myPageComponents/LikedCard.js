@@ -39,7 +39,7 @@ const Container = styled.div`
 
 const Items = styled.div`
     width: 20%;
-    height: 160px;
+    height: 10px;
     text-align: center;
     line-height: 160px;
 `;

@@ -41,18 +41,18 @@ const UserSchema = new Schema(
         },
         gender: {
             type: Number,
-            required: true,
+            required: false,
         },
         phone: {
             type: String,
-            required: true,
+            required: false,
             maxlength: 13,
             trim: true,
             match: /^\d{2,3}-\d{3,4}-\d{4}$/,
         },
         birth: {
-            type: Date,
-            required: true,
+            type: String,
+            required: false,
             maxlength: 10,
             trim: true,
         },
@@ -75,9 +75,8 @@ const UserSchema = new Schema(
             },
             address2: {
                 type: String,
-                required: false
-            }
-
+                required: false,
+            },
         },
         bookmark: {
             type: Array,
@@ -88,6 +87,7 @@ const UserSchema = new Schema(
             type: Array,
             required: false,
             default: [],
+
         },
         loginType: {
             type: String,

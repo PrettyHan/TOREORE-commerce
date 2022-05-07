@@ -4,31 +4,6 @@ import OrderCard from "./OrderCard";
 
 import * as Api from "../../../api";
 
-// test용 데이터
-// const orderLists = [
-//     {
-//         orderNo: 1,
-//         orderId: 56890014564,
-//         orderProduct: ["jaket", "pinkpants", "redsocks"],
-//         orderPrice: "15,000",
-//         orderStatus: "done",
-//     },
-//     {
-//         orderNo: 2,
-//         orderId: 56890014544,
-//         orderProduct: ["blouse", "trouser", "muffler"],
-//         orderPrice: "37,000",
-//         orderStatus: "doing",
-//     },
-//     {
-//         orderNo: 3,
-//         orderId: 56890014532,
-//         orderProduct: ["skirt", "sunglass"],
-//         orderPrice: "165,000",
-//         orderStatus: "doing",
-//     },
-// ];
-// 기본 주문 내역 최상단 컬럼 목록
 const columns = ["주문번호", "주문상품", "합계", "결제여부"];
 
 function OrderHistory() {
@@ -38,7 +13,7 @@ function OrderHistory() {
     const fetchOrderList = async () => {
         try {
             const res = await Api.get("orders");
-            if (!res.date) {
+            if (res.data) {
                 setIsOrder(true);
                 setOrderList(res.data);
             } else {
@@ -57,6 +32,7 @@ function OrderHistory() {
     return (
         <Container>
             <Title>주문 내역</Title>
+            <Info>(결제 진행중 클릭 시 주문 페이지로 이동합니다. )</Info>
             <ListContainer>
                 <Columns>
                     {columns.map((column, idx) => (
@@ -78,7 +54,7 @@ function OrderHistory() {
 const Container = styled.div`
     width: 63.5%;
     padding: 5px 0 0 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
     display: flex;
@@ -88,6 +64,13 @@ const Container = styled.div`
 const Title = styled.div`
     font-align: left;
     font-size: 20px;
+    margin: 0 0 3px 23px;
+`;
+
+const Info = styled.div`
+    font-align: left;
+    font-size: 15px;
+    color: gray;
     margin: 0 0 23px 23px;
 `;
 
@@ -109,7 +92,7 @@ const Columns = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `;
 
 const Items = styled.div`

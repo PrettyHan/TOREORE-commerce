@@ -5,7 +5,8 @@ import { ProductModel } from "../src/db/product/product.schema.js";
 
 const DB_URL =
     process.env.MONGODB_URL ||
-    "MongoDB 서버 주소가 설정되지 않았습니다.\n./db/index.ts 파일을 확인해 주세요.";
+    "mongodb+srv://codingsoon:123412@cluster0.nfefn.mongodb.net/coding-soon-DB?retryWrites=true&w=majority" ||
+    "MongoDB 서버 주소가 설정되지 않았습니다.";
 
 mongoose.connect(DB_URL);
 const db = mongoose.connection;
@@ -36,6 +37,8 @@ db.on("connected", async () => {
                             product.article_id +
                             ".jpg",
                         likeCount: 0,
+                        bestPreferAge: product.age_id,
+                        gender: product.index_group_name,
                     };
 
                     await ProductModel.create([data], { session });

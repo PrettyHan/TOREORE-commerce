@@ -12,6 +12,8 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 // const LoginModal = styled(Modal)`
 // && {position:'absolute';
@@ -25,6 +27,8 @@ import CloseIcon from "@mui/icons-material/Close";
 function Login({ open, handleClose }) {
   const navigate = useNavigate();
   const userState = useContext(UserStateContext);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const [isSigning, setIsSigning] = useState(false);
 
@@ -38,6 +42,7 @@ function Login({ open, handleClose }) {
 
   return (
     <Dialog
+      fullScreen={fullScreen}
       open={open}
       onClose={handleClose}
       scroll={"body"}
@@ -61,7 +66,7 @@ function Login({ open, handleClose }) {
       <DialogContent>
         <Box>
           {!isSigning ? (
-            <LoginCard setIsSigning={setIsSigning} />
+            <LoginCard setIsSigning={setIsSigning} handleClose={handleClose} />
           ) : (
             <RegisterCard setIsSigning={setIsSigning} />
           )}

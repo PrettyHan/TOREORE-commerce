@@ -40,13 +40,21 @@ const ProductSchema = new Schema(
             required: false,
             default: 0,
         },
+        gender: {
+            type: Number,
+            required: true,
+        },
+        bestPreferAge: {
+            type: Number,
+            required: true,
+        },
     },
     {
         timestamps: true,
     },
 );
 
-ProductSchema.index({name: 'text'})
+ProductSchema.index({ name: "text" });
 const ProductModel = model("Product", ProductSchema);
 
 export { ProductModel };

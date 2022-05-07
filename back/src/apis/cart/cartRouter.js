@@ -38,16 +38,32 @@ cartRouter.post("/:productId", async (req, res, next) => {
     }
 });
 
+// checked 
+cartRouter.put("/select", async (req, res, next) => {
+    try {
+        const userId = req.currentUserId;
+
+        const newCarts = await cartService.updateCartSelect({
+            userId,
+        });
+
+        res.status(200).json(newCarts);
+    } catch (error) {
+        next(error);
+    }
+});
 cartRouter.put("/:productId", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
         const productId = req.params.productId;
         const quantity = req.body.quantity;
+        const checked = req.body.checked;
 
         const newCarts = await cartService.updateCartList({
             userId,
             productId,
             quantity,
+            checked
         });
 
         res.status(200).json(newCarts);
@@ -56,9 +72,11 @@ cartRouter.put("/:productId", async (req, res, next) => {
     }
 });
 
+
 cartRouter.delete("/select", async (req, res, next) => {
     try {
         const userId = req.currentUserId;
+
         const productIdArr = req.body.productIdArr;
 
         const carts = await cartService.deleteProductOfCart({ userId, productIdArr });

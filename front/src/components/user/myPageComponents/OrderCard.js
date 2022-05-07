@@ -21,7 +21,8 @@ function OrderCard({ order }) {
     // 미결제 건 클릭 시, order로 navigate 하여 결제 유도
     function sendOrder() {
         if (!orderStatus) {
-            navigate(`/order/${order._id}`);
+            navigate(`/order/${order.orderId}`);
+            console.log(order.orderId);
         } else {
             console.log("디테일보여주자");
         }
@@ -57,6 +58,7 @@ const Container = styled.div`
 `;
 
 const Items = styled.div`
+    margin-left: 8px;
     width: 20%;
     height: 160px;
     text-align: center;
@@ -69,7 +71,7 @@ const OrderStatus = styled.div`
     height: 160px;
     text-align: center;
     line-height: 160px;
-    color: ${(props) => (props.color === "done" ? "gray" : "red")};
+    color: ${(props) => (props.color === "done" ? "gray" : "#f77737")};
     cursor: pointer;
     font-size: 16px;
 `;

@@ -23,9 +23,6 @@ class userService {
                 password: "temp-password",
                 name,
                 email,
-                gender: 2, // 성별을 선택하지 않은 사람: 2
-                phone: "010-0000-0000",
-                birth: Date.now(),
                 loginType,
             };
             // 쇼핑몰 자체 일반 회원가입 유저(loginType이 null인 경우)
@@ -68,11 +65,6 @@ class userService {
             return { errorMessage };
         }
 
-        // 로그인 성공 -> JWT 웹 토큰 생성
-        // const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
-        // const accessToken = jwt.sign({ userId: user.userId }, secretKey, {
-        //     expiresIn: "6h",
-        // });
         const accessToken = createAccessToken({ userId });
 
         const loginUser = {
@@ -88,7 +80,7 @@ class userService {
         return users;
     }
 
-    static async checkEmailDuplicate({ email }) {
+    static async checkEmailExist({ email }) {
         const user = await User.findByEmail({ email });
 
         if (!user) {
@@ -141,9 +133,6 @@ class userService {
             const fieldToUpdate = "hasAddtionalInfo";
             const newValue = true;
             user = await User.update({ userId, fieldToUpdate, newValue });
-            const ourAccessToken = createAccessToken({ userId: user.userId });
-
-            return { ourAccessToken };
         }
 
         return user;

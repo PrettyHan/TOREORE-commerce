@@ -1,162 +1,1142 @@
 [
     {
-        "article_id": "0782054001",
-        "prod_name": "잉그리드 여성 신발",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Black",
-        "detail_desc": "가죽 디테일이 있는 따뜻한 안감 스웨이드 하이탑, 앞면 끈, 뒷면 루프. 부드러운 인조 모피 안감 및 안창, 견고한 홈의 밑창이 있습니다.",
-        "price": 162700
-    },
-    {
-        "article_id": "0759107001",
-        "prod_name": " 청키 코트 스니커즈",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Black",
-        "detail_desc": "청키한 밑창이 있는 가죽 스니커즈, 앞면의 끈, 뒷면 가장자리와 텅의 스웨이드 디테일. 가죽 안감 및 안창이 있고, 고무 밑창은 약 3.5cm입니다.",
-        "price": 146400
-    },
-    {
-        "article_id": "0915851001",
-        "prod_name": "라이언 청키 스니커즈",
+        "article_id": "0643145003",
+        "prod_name": "Liam runner",
         "product_type_name": "Sneakers",
         "colour_group_name": "White",
-        "detail_desc": "패딩 처리된 상단 가장자리와 텅 및 앞 끈이 있는 청키 밑창 스니커즈 입니다. ",
+        "detail_desc": "Trainers in mesh with rubber details, a padded top edge, lacing at the front and a loop front and back. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 71200
+    },
+    {
+        "article_id": "0843982001",
+        "prod_name": "Stellan Canvas Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Canvas trainers with a padded edge, tongue, lacing at the front and ventilating holes with metal eyelets at one side. Fabric linings and insoles and patterned rubber soles.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0622220015",
+        "prod_name": "Gus sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Cotton canvas shoes with lacing at the front, rubber toe caps, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0601728013",
+        "prod_name": "Tyko",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Trainers in cotton canvas with a padded edge, lacing at the front and a loop at the back. Mesh linings, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0854184006",
+        "prod_name": "Zoe Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Trainers in canvas with lacing at the front and a loop at the back. Fabric linings and insoles and patterned soles. Platform 3 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0803625008",
+        "prod_name": "Griswold",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Pink",
+        "detail_desc": "Trainers in mesh and imitation leather with a padded edge, lacing at the front and a loop at the back. Jersey linings, mesh insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 71200
+    },
+    {
+        "article_id": "0622958003",
+        "prod_name": "New Vega sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Platform trainers with lacing at the front, cotton canvas linings and insoles and rubber soles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0826154002",
+        "prod_name": "Enzo Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Platform trainers in cotton canvas with lacing at the front and a grosgrain loop at the back. Cotton canvas linings and insoles and rubber soles. Platform approx. 4.5 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0727880005",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0854184001",
+        "prod_name": "Zoe Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in canvas with lacing at the front and a loop at the back. Fabric linings and insoles and patterned soles. Platform 3 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0727880001",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0622958020",
+        "prod_name": "New Vega sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Platform trainers with lacing at the front, cotton canvas linings and insoles and rubber soles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 50800
+    },
+    {
+        "article_id": "0771157009",
+        "prod_name": "Kinen sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Mesh trainers with imitation leather details, a lightly padded edge and tongue, lacing at the front and a loop at the back. Mesh linings and insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 61000
+    },
+    {
+        "article_id": "0736489002",
+        "prod_name": "Zenit highlift sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Platform trainers with lacing at the front, cotton canvas linings and insoles and rubber soles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 30500
+    },
+    {
+        "article_id": "0782808001",
+        "prod_name": "Mondo Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with lacing at the front and a padded edge and tongue. Mesh linings and canvas insoles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 70200
+    },
+    {
+        "article_id": "0494088025",
+        "prod_name": "Skule sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Yellow",
+        "detail_desc": "Trainers in imitation leather with lacing at the front, mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 50800
+    },
+    {
+        "article_id": "0845088001",
+        "prod_name": "Bamba Runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in mesh with imitation leather and imitation suede details, a lightly padded edge and lacing at the front. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 81300
+    },
+    {
+        "article_id": "0601728013",
+        "prod_name": "Tyko",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Trainers in cotton canvas with a padded edge, lacing at the front and a loop at the back. Mesh linings, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0488697006",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 14200
+    },
+    {
+        "article_id": "0803156003",
+        "prod_name": "Tommen",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Hi tops with a lightly padded edge and tongue, and lacing at the front. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 63300
+    },
+    {
+        "article_id": "0522678003",
+        "prod_name": "Art leather sneaker PQ",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with lacing at the front, leather linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 101000
+    },
+    {
+        "article_id": "0622220014",
+        "prod_name": "Gus sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas shoes with lacing at the front, rubber toe caps, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0892329001",
+        "prod_name": "Jenjen Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with a padded top edge, lacing and a tongue with a fabric appliqu\u00e9 at the front. Canvas linings and insoles and patterned rubber soles.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0892300001",
+        "prod_name": "Suedie Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trainers in soft imitation suede with a padded top edge and tongue, and lacing at the front. Fabric linings and insoles and textured rubber soles. The polyester content of the trainers is partly recycled.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 45700
+    },
+    {
+        "article_id": "0860982003",
+        "prod_name": "Pitch sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Platform trainers with a padded edge and lacing at the front. Mesh linings and insoles and patterned soles. Platform 4.5 cm.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 55800
+    },
+    {
+        "article_id": "0569355001",
+        "prod_name": "Alma Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Slip-on trainers with fabric linings and insoles and rubber soles.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 27800
+    },
+    {
+        "article_id": "0806718001",
+        "prod_name": "Alek Chunky Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Trainers in mesh with details in imitation leather, a padded edge and tongue, lacing at the front and a decorative lacing detail around the heel. Grosgrain loops front and back. Jersey linings, mesh insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 73200
+    },
+    {
+        "article_id": "0826154004",
+        "prod_name": "Enzo Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Platform trainers in cotton canvas with lacing at the front and a grosgrain loop at the back. Cotton canvas linings and insoles and rubber soles. Platform approx. 4.5 cm.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 50800
+    },
+    {
+        "article_id": "0806731006",
+        "prod_name": "Citra Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Platform trainers with imitation suede and imitation leather details. Padded edge and tongue, and lacing at the front. Fabric linings and insoles and chunky soles. Height of soles 6.5 cm.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 71200
+    },
+    {
+        "article_id": "0853504001",
+        "prod_name": "Tua sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Low platform trainers in cotton canvas with lacing at the top and a wide loop at the back. Cotton linings and insoles. Platform front approx. 2.5 cm. Platform back 5 cm.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 61000
+    },
+    {
+        "article_id": "0843498001",
+        "prod_name": "Amba Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in cotton canvas with platform soles and lacing at the front. Cotton canvas linings and insoles and rubber soles. Platform front 3 cm, back 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0727880003",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 20300
+    },
+    {
+        "article_id": "0698470001",
+        "prod_name": "Elena sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on fabric trainers with a decorative knot detail at the front. Canvas linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 30500
+    },
+    {
+        "article_id": "0580684003",
+        "prod_name": "Svenne sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Slip-on trainers in cotton twill with elastic gores in the sides and a loop at the back. Cotton canvas linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 16000
+    },
+    {
+        "article_id": "0892300001",
+        "prod_name": "Suedie Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trainers in soft imitation suede with a padded top edge and tongue, and lacing at the front. Fabric linings and insoles and textured rubber soles. The polyester content of the trainers is partly recycled.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 45700
+    },
+    {
+        "article_id": "0712058002",
+        "prod_name": "Ryan Chunky Court PQ",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Chunky-sole trainers with a padded top edge and lacing at the front. Leather linings and insoles.",
+        "index_group_name": 1,
+        "age_id": 2,
         "price": 122000
     },
     {
-        "article_id": "0712058001",
-        "prod_name": "라이언 청키 가죽 스니커즈",
+        "article_id": "0622220017",
+        "prod_name": "Gus sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Cotton canvas shoes with lacing at the front, rubber toe caps, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0601728013",
+        "prod_name": "Tyko",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Trainers in cotton canvas with a padded edge, lacing at the front and a loop at the back. Mesh linings, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0488697026",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0873199001",
+        "prod_name": "Trudie Canvas Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Cotton canvas trainers with a padded top edge and tongue, and lacing at the front. Fabric linings and insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 37800
+    },
+    {
+        "article_id": "0892465001",
+        "prod_name": "Stuart Slip on",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Slip-on trainers in cotton canvas with elastic gores in the sides and a grosgrain loop at the back. Imitation leather insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0622220014",
+        "prod_name": "Gus sneaker",
         "product_type_name": "Sneakers",
         "colour_group_name": "White",
-        "detail_desc": "패딩 처리된 상단 가장자리와 앞면에 끈이 달린 청키 솔 스니커즈. 가죽 안감 및 안창이 있습니다.",
+        "detail_desc": "Cotton canvas shoes with lacing at the front, rubber toe caps, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0488697028",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 12200
+    },
+    {
+        "article_id": "0782808001",
+        "prod_name": "Mondo Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with lacing at the front and a padded edge and tongue. Mesh linings and canvas insoles.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 70200
+    },
+    {
+        "article_id": "0806694001",
+        "prod_name": "Alma Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Bronze/Copper",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides. Twill linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0727880001",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 20300
+    },
+    {
+        "article_id": "0806711001",
+        "prod_name": "Picasso Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with lacing at the front, a padded jersey tongue, shimmering metallic heel caps and a patent back section. Jersey linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 38100
+    },
+    {
+        "article_id": "0704630005",
+        "prod_name": "Malva sneaker(1)",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Orange",
+        "detail_desc": "Trainers with lacing at the front and a loop at the back. Mesh linings and insoles and chunky thermoplastic rubber (TPR) soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 32500
+    },
+    {
+        "article_id": "0622966014",
+        "prod_name": "Laura sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with lacing at the front, fabric linings and insoles and rubber soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0808617001",
+        "prod_name": "Selma sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Other Pink",
+        "detail_desc": "Fully-fashioned trainers with mesh insoles and chunky, patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 48300
+    },
+    {
+        "article_id": "0798572001",
+        "prod_name": "Freddie Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Lightweight trainers with a padded edge and tongue, lacing at the front and a grosgrain loop at the back. Jersey linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 40700
+    },
+    {
+        "article_id": "0727880008",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 8100
+    },
+    {
+        "article_id": "0771157010",
+        "prod_name": "Kinen sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Mesh trainers with imitation leather details, a lightly padded edge and tongue, lacing at the front and a loop at the back. Mesh linings and insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 59300
+    },
+    {
+        "article_id": "0853504002",
+        "prod_name": "Tua sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Gold",
+        "detail_desc": "Low platform trainers in cotton canvas with lacing at the top and a wide loop at the back. Cotton linings and insoles. Platform front approx. 2.5 cm. Platform back 5 cm.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 61000
+    },
+    {
+        "article_id": "0825056003",
+        "prod_name": "Cherry Runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Fully-fashioned trainers with lacing at the front and a loop at the back. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 81300
+    },
+    {
+        "article_id": "0860813001",
+        "prod_name": "Russ high top",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Hi-tops in cotton canvas with lacing at the front and rubber toe caps. Canvas linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 50800
+    },
+    {
+        "article_id": "0815314001",
+        "prod_name": "Florian Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with a lightly padded edge and tongue and lacing at the front. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0600707010",
+        "prod_name": "Ravel Runner(1)",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Mesh trainers with rubber details, a padded top edge, lacing at the front and a loop front and back. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 65100
+    },
+    {
+        "article_id": "0643145003",
+        "prod_name": "Liam runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in mesh with rubber details, a padded top edge, lacing at the front and a loop front and back. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0488697038",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0488697004",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 26400
+    },
+    {
+        "article_id": "0631870012",
+        "prod_name": "Christer sock runner (1)",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Fully-fashioned trainers with elastication around the opening, lacing at the front and a loop with a rubber print at the back. Mesh insoles, and EVA (ethylene-vinyl acetate) and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 65100
+    },
+    {
+        "article_id": "0538358023",
+        "prod_name": "Henry court PQ",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Grey",
+        "detail_desc": "Trainers with lacing at the front, leather linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 1,
+        "age_id": 3,
         "price": 122000
     },
     {
         "article_id": "0712058002",
-        "prod_name": "라이언 청키 코트 스니커즈",
+        "prod_name": "Ryan Chunky Court PQ",
         "product_type_name": "Sneakers",
         "colour_group_name": "Black",
-        "detail_desc": "패딩 처리된 상단 가장자리와 앞면에 끈이 달린 청키 솔 스니커즈. 가죽 안감 및 안창이 있습니다.",
+        "detail_desc": "Chunky-sole trainers with a padded top edge and lacing at the front. Leather linings and insoles.",
+        "index_group_name": 1,
+        "age_id": 3,
         "price": 122000
     },
     {
-        "article_id": "0538358023",
-        "prod_name": "헨리 코트 스니커즈",
+        "article_id": "0771157010",
+        "prod_name": "Kinen sneaker",
         "product_type_name": "Sneakers",
-        "colour_group_name": "Grey",
-        "detail_desc": "앞부분에 끈이 달려 있고 가죽 안감과 안창, 열가소성 고무 밑창이 있는 운동화 입니다.",
+        "colour_group_name": "White",
+        "detail_desc": "Mesh trainers with imitation leather details, a lightly padded edge and tongue, lacing at the front and a loop at the back. Mesh linings and insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 59300
+    },
+    {
+        "article_id": "0765915007",
+        "prod_name": "Missy highlift sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trainers with platform soles, elastic gores in the sides and a narrow, padded edge at the back. Jersey linings and insoles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0579838004",
+        "prod_name": "Dolores Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Trainers in imitation suede with a small platform, lacing at the front and a loop at the back. Fabric linings and insoles and rubber soles. Platform front 2.5 cm, back 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 18900
+    },
+    {
+        "article_id": "0806731006",
+        "prod_name": "Citra Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Platform trainers with imitation suede and imitation leather details. Padded edge and tongue, and lacing at the front. Fabric linings and insoles and chunky soles. Height of soles 6.5 cm.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0803625008",
+        "prod_name": "Griswold",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Pink",
+        "detail_desc": "Trainers in mesh and imitation leather with a padded edge, lacing at the front and a loop at the back. Jersey linings, mesh insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 71200
+    },
+    {
+        "article_id": "0736489019",
+        "prod_name": "Zenit highlift sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Platform trainers with lacing at the front, cotton canvas linings and insoles and rubber soles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 50800
+    },
+    {
+        "article_id": "0771157009",
+        "prod_name": "Kinen sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Mesh trainers with imitation leather details, a lightly padded edge and tongue, lacing at the front and a loop at the back. Mesh linings and insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 61000
+    },
+    {
+        "article_id": "0860978002",
+        "prod_name": "Jadyn Fancy Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trainers in mesh with lacing at the front and grosgrain loops front and back. Mesh linings and insoles and fluted soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 50800
+    },
+    {
+        "article_id": "0806694001",
+        "prod_name": "Alma Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Bronze/Copper",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides. Twill linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0727880038",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 19600
+    },
+    {
+        "article_id": "0843982001",
+        "prod_name": "Stellan Canvas Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Canvas trainers with a padded edge, tongue, lacing at the front and ventilating holes with metal eyelets at one side. Fabric linings and insoles and patterned rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0825056003",
+        "prod_name": "Cherry Runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Grey",
+        "detail_desc": "Fully-fashioned trainers with lacing at the front and a loop at the back. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 81300
+    },
+    {
+        "article_id": "0845086001",
+        "prod_name": "Gemini Runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Mesh trainers with a lightly padded edge and tongue and lacing at the front. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 69400
+    },
+    {
+        "article_id": "0631870012",
+        "prod_name": "Christer sock runner (1)",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Fully-fashioned trainers with elastication around the opening, lacing at the front and a loop with a rubber print at the back. Mesh insoles, and EVA (ethylene-vinyl acetate) and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 65100
+    },
+    {
+        "article_id": "0766099001",
+        "prod_name": "Patric Court Sneaker Canvas",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trainers in canvas with lacing at the front and a lightly padded edge and tongue. Canvas linings and insoles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0488697015",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 40700
+    },
+    {
+        "article_id": "0494088025",
+        "prod_name": "Skule sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Yellow",
+        "detail_desc": "Trainers in imitation leather with lacing at the front, mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0915851001",
+        "prod_name": "Ryan Court Chunky",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Chunky-soled trainers with a padded top edge and a tongue and lacing at the front. Leather linings and insoles.",
+        "index_group_name": 1,
+        "age_id": 4,
         "price": 122000
     },
     {
-        "article_id": "0522678003",
-        "prod_name": "아트 레더 스니커즈",
+        "article_id": "0488697026",
+        "prod_name": "Nohar Sneaker",
         "product_type_name": "Sneakers",
-        "colour_group_name": "White",
-        "detail_desc": "앞부분에 끈이 달려 있고 가죽 안감과 안창, 고무 밑창이 있는 스니커즈 입니다.",
-        "price": 101000
-    },
-    {
-        "article_id": "0871909001",
-        "prod_name": "럭스 스니커즈",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "White",
-        "detail_desc": "스웨이드와 메쉬 디테일이 있는 가죽 스니커즈로 패딩 처리된 가장자리와 텅, 앞부분의 끈이 있습니다. 가죽 안감과 안창 및 밑창에 청키한 패턴이 있습니다.",
-        "price": 97600
-    },
-    {
-        "article_id": "0538358016",
-        "prod_name": "헨리 레이싱 코트 스니커즈",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "White",
-        "detail_desc": "앞부분에 레이싱 처리된 스니커즈, 가죽 안감과 안창, 열가소성 고무 밑창이 있습니다..",
-        "price": 97600
-    },
-    {
-        "article_id": "0677993004",
-        "prod_name": "패트릭 코트 스니커즈",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "White",
-        "detail_desc": "강화된 발 보호로, 패딩 처리된 가장자리와 전면에 닫힌 끈이 있는 스니커즈 입니다.",
-        "price": 92900
-    },
-    {
-        "article_id": "0782053001",
-        "prod_name": "페파 스웨이드 부츠",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Black",
-        "detail_desc": "뒷면에 지퍼가 있는 따뜻한 안감의 스웨이드 부츠. 인조 모피 안감, 안창 및 밑창 굽 ​​3.5cm 입니다.",
-        "price": 85400
-    },
-    {
-        "article_id": "0564375001",
-        "prod_name": "윌로우 러닝화",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Black",
-        "detail_desc": "고무 디테일과 앞면의 끈, 앞면과 뒷면의 루프가 있는 메쉬 스니커즈 입니다.",
-        "price": 81300
-    },
-    {
-        "article_id": "0803156001",
-        "prod_name": "토맨 하이 탑",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Yellowish Brown",
-        "detail_desc": "가장자리와 텅 부분이 살짝 패딩 처리된 탑으로, 앞부분에 끈이 달려 있습니다.",
-        "price": 81300
-    },
-    {
-        "article_id": "0803373002",
-        "prod_name": "남성 미디컷 하이 탑r",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "Black",
-        "detail_desc": "가장자리와 텅 부분을 가볍게 패딩 처리한 인조 가죽 하이탑으로, 앞부분에 끈이 달려 있습니다.",
-        "price": 81300
-    },
-    {
-        "article_id": "0564375013",
-        "prod_name": "윌로우 메쉬 러닝화",
-        "product_type_name": "Sneakers",
-        "colour_group_name": "White",
-        "detail_desc": "고무 디테일, 앞면의 끈, 앞면과 뒷면의 루프가 있는 메쉬 스니커즈 입니다.",
-        "price": 81300
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 40700
     },
     {
         "article_id": "0631870014",
-        "prod_name": "크리스터 양말 러닝화",
+        "prod_name": "Christer sock runner (1)",
         "product_type_name": "Sneakers",
         "colour_group_name": "White",
-        "detail_desc": "입구가 양말로 되어 주위에 신축성이 있고 앞면에 끈이 있고 뒷면에 ​​고무 프린트가 있는 루프가 있는 풀 패션 스니커즈 입니다.",
+        "detail_desc": "Fully-fashioned trainers with elastication around the opening, lacing at the front and a loop with a rubber print at the back. Mesh insoles, and EVA (ethylene-vinyl acetate) and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 4,
         "price": 81300
     },
     {
-        "article_id": "0585138001",
-        "prod_name": "레드 하이 탑",
+        "article_id": "0860978002",
+        "prod_name": "Jadyn Fancy Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trainers in mesh with lacing at the front and grosgrain loops front and back. Mesh linings and insoles and fluted soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0889713001",
+        "prod_name": "Lameeka Canvas Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Twill trainers with lacing at the front and a loop at the back. Fabric linings and insoles and patterned rubber soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 34800
+    },
+    {
+        "article_id": "0580684003",
+        "prod_name": "Svenne sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Slip-on trainers in cotton twill with elastic gores in the sides and a loop at the back. Cotton canvas linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 16000
+    },
+    {
+        "article_id": "0825674002",
+        "prod_name": "FREDRIKA SNEAKER",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with a lightly padded edge and tongue, lacing at the front and a loop at the back. Jersey linings and insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 40700
+    },
+    {
+        "article_id": "0736489002",
+        "prod_name": "Zenit highlift sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Platform trainers with lacing at the front, cotton canvas linings and insoles and rubber soles. Platform 3.5 cm.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 30500
+    },
+    {
+        "article_id": "0826154004",
+        "prod_name": "Enzo Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Platform trainers in cotton canvas with lacing at the front and a grosgrain loop at the back. Cotton canvas linings and insoles and rubber soles. Platform approx. 4.5 cm.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0826630001",
+        "prod_name": "Lova slip-in",
         "product_type_name": "Sneakers",
         "colour_group_name": "Beige",
-        "detail_desc": "고무 프린트와 플라스틱 디테일이 있는 캔버스와 메쉬 소재의 하이탑 입니다.",
-        "price": 81300
+        "detail_desc": "Slip-on trainers in imitation suede with a metal buckle on the front. Twill linings, imitation leather insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
     },
     {
-        "article_id": "0803373003",
-        "prod_name": "남성 미디컷 하이 탑",
+        "article_id": "0882034001",
+        "prod_name": "Carlito Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with lacing at the front and a glittery, lightly padded edge at the back. Imitation leather linings and insoles and fluted soles.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 40700
+    },
+    {
+        "article_id": "0860982001",
+        "prod_name": "Pitch sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Yellow",
+        "detail_desc": "Platform trainers with a padded edge and lacing at the front. Mesh linings and insoles and patterned soles. Platform 4.5 cm.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0853510003",
+        "prod_name": "Lindsey espadrille",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with lacing at the front and platform soles covered in braided jute. Canvas insoles and fluted soles. Platform approx. 4 cm.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0728830001",
+        "prod_name": "Beta Low court Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with a padded top edge and lacing at the front. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0488697026",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0538358016",
+        "prod_name": "Henry court PQ",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with lacing at the front, leather linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 97600
+    },
+    {
+        "article_id": "0671809013",
+        "prod_name": "Malin court sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers with a padded top edge and lacing at the front. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 48800
+    },
+    {
+        "article_id": "0488697002",
+        "prod_name": "Nohar Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Beige",
+        "detail_desc": "Slip-on trainers with elastic gores in the sides and a loop at the back. Imitation cork insoles and textured rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 32500
+    },
+    {
+        "article_id": "0643145003",
+        "prod_name": "Liam runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in mesh with rubber details, a padded top edge, lacing at the front and a loop front and back. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 71200
+    },
+    {
+        "article_id": "0712048001",
+        "prod_name": "Delta Court Sneaker",
         "product_type_name": "Sneakers",
         "colour_group_name": "Dark Yellow",
-        "detail_desc": "가장자리와 텅 부분을 가볍게 패딩 처리한 인조 가죽 하이탑, 앞부분에 끈이 달려 있습니다.",
-        "price": 81300
+        "detail_desc": "Trainers in imitation leather with decorative seams, lacing at the front and a padded edge and tongue. Mesh linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 22400
     },
     {
-        "article_id": "0631870009",
-        "prod_name": "크리스터 양말 러닝화",
+        "article_id": "0600707010",
+        "prod_name": "Ravel Runner(1)",
         "product_type_name": "Sneakers",
-        "colour_group_name": "Beige",
-        "detail_desc": "입구 주위에 신축성이 있고 앞면에 끈이 있고 뒷면에 ​​고무 프린트가 있는 루프가 있는 풀 패션 스니커즈 입니다.",
-        "price": 81300
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Mesh trainers with rubber details, a padded top edge, lacing at the front and a loop front and back. Mesh linings and insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 65100
     },
     {
-        "article_id": "0804304001",
-        "prod_name": "트래킹 스니커즈",
+        "article_id": "0601728001",
+        "prod_name": "Tyko",
         "product_type_name": "Sneakers",
-        "colour_group_name": "Light Green",
-        "detail_desc": "인조 스웨이드 디테일, 패딩 처리된 가장자리와 텅과 앞면의 끈, 뒷면의 루프가 있는 스니커즈 입니다. 저지 안감, 메시 안창 및 청키한 밑창이 있습니다.",
-        "price": 81300
+        "colour_group_name": "Black",
+        "detail_desc": "Trainers in cotton canvas with a padded edge, lacing at the front and a loop at the back. Mesh linings, canvas insoles and rubber soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0845086002",
+        "prod_name": "Gemini Runner",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Mesh trainers with a lightly padded edge and tongue and lacing at the front. Mesh linings and insoles and patterned soles.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 71200
+    },
+    {
+        "article_id": "0803625002",
+        "prod_name": "Griswold",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trainers in mesh and imitation leather with a padded edge, lacing at the front and a loop at the back. Jersey linings, mesh insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 45200
+    },
+    {
+        "article_id": "0754005004",
+        "prod_name": "missy sneaker(1)",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Trainers with elastic gores in the sides. Jersey linings and insoles and thermoplastic rubber (TPR) soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0853504002",
+        "prod_name": "Tua sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Gold",
+        "detail_desc": "Low platform trainers in cotton canvas with lacing at the top and a wide loop at the back. Cotton linings and insoles. Platform front approx. 2.5 cm. Platform back 5 cm.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0889713001",
+        "prod_name": "Lameeka Canvas Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Off White",
+        "detail_desc": "Twill trainers with lacing at the front and a loop at the back. Fabric linings and insoles and patterned rubber soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 34800
+    },
+    {
+        "article_id": "0727880001",
+        "prod_name": "Mimmi new",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Cotton canvas trainers with lacing at the front and a loop at the back. Canvas linings and insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0838898002",
+        "prod_name": "Banksy Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in imitation leather with a lightly padded edge and lacing at the front. Mesh linings, fabric insoles and patterned soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0789674005",
+        "prod_name": "Carly fancy sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Trainers with a padded edge and lacing at the front. imitation leather linings and insoles and fluted soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 50200
+    },
+    {
+        "article_id": "0803625001",
+        "prod_name": "Griswold",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "White",
+        "detail_desc": "Trainers in mesh and imitation leather with a padded edge, lacing at the front and a loop at the back. Jersey linings, mesh insoles and chunky soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 71200
+    },
+    {
+        "article_id": "0569355014",
+        "prod_name": "Alma Sneaker",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Gold",
+        "detail_desc": "Slip-on trainers with fabric linings and insoles and rubber soles.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0854184002",
+        "prod_name": "Zoe Highlift",
+        "product_type_name": "Sneakers",
+        "colour_group_name": "Black",
+        "detail_desc": "Trainers in canvas with lacing at the front and a loop at the back. Fabric linings and insoles and patterned soles. Platform 3 cm.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 50800
     }
 ]

@@ -6,7 +6,6 @@ import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
 import { UserStateContext } from "../../App";
-import Login from "../Auth/Login";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
@@ -15,7 +14,6 @@ function MyPage() {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const user = userState.user;
-    const [openLogin, setOpenLogin] = useState(false);
 
     const constantsFirstState = {
         orderHistory: false,
@@ -46,18 +44,26 @@ function MyPage() {
             {user ? (
                 <Container>
                     <UserContainer>
-                        {user ? (
+                        {user.loginType === "BASIC" ||
+                        user.hasAddtionalInfo === true ? (
                             <Intro>
                                 <p> "{user.name}" 님 안녕하세요!</p>
-                                <p>
-                                    {" "}
-                                    ID ▶ {user.userId}{" "}
-                                    {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
-                                </p>
+                                {user.loginType === "BASIC" && (
+                                    <p>
+                                        {" "}
+                                        ID ▶ {user.userId}{" "}
+                                        {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                                    </p>
+                                )}
                             </Intro>
                         ) : (
                             <Intro>
                                 <p> 고객님 안녕하세요!</p>
+                                {user?.hasAddtionalInfo ? (
+                                    <></>
+                                ) : (
+                                    <p> 추가 정보를 입력해주세요.</p>
+                                )}
                             </Intro>
                         )}
                         <div>
@@ -66,7 +72,10 @@ function MyPage() {
                                 disableElevation
                                 disableRipple
                             >
-                                회원 정보 수정
+                                {user.loginType === "BASIC" ||
+                                user.hasAddtionalInfo === true
+                                    ? "회원 정보 수정"
+                                    : "추가 정보 입력"}
                             </Button>
                         </div>
                     </UserContainer>
@@ -126,7 +135,7 @@ function MyPage() {
 }
 
 const Container = styled.div`
-    margin-top: 20px;
+    margin: 30px 0 100px 0;
     display: grid;
     row-gap: 20px;
     place-items: center center;
@@ -134,7 +143,7 @@ const Container = styled.div`
 
 const UserContainer = styled(Box)`
     width: 62%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -160,7 +169,7 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
     height: 80px;
     text-align: center;

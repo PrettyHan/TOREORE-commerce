@@ -3,8 +3,8 @@ import { loginRequired } from "../../middlewares/loginRequired";
 import { ready, approve } from "./paymentService"
 const paymentRouter = Router()
 // paymentRouter.use(loginRequired);
-
-paymentRouter.post('/ready', ready)
+//payments/ready
+paymentRouter.post("/ready/:orderId", ready)
 paymentRouter.post('/approve', approve)
 
 
