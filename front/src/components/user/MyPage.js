@@ -145,7 +145,7 @@ const Container = styled(Grid)`
 
 const UserContainer = styled(Grid)`
     width: 62%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -169,8 +169,13 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
+<<<<<<< HEAD
     box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 20%;
+=======
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    width: 24%;
+>>>>>>> data-analysis-front
     height: 80px;
     text-align: center;
     line-height: 80px;

@@ -136,9 +136,11 @@ const Details = styled.p`
 
 const MainTitle = styled.div`
     cursor: pointer;
-    color: #5e5b52;
+    color: #3d1b54;
     font-size: 80px;
     text-align: center;
+    font-weight: bold;
+    opacity: 0.8;
 `;
 
 const SubTitle = styled.div`

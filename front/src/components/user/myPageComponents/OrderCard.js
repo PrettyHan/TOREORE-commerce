@@ -82,8 +82,15 @@ const Items = styled(Grid)`
 
 const OrderStatus = styled(Grid)`
     width: 20%;
+<<<<<<< HEAD
     height: 50px;
     color: ${(props) => (props.color === "done" ? "gray" : "red")};
+=======
+    height: 160px;
+    text-align: center;
+    line-height: 160px;
+    color: ${(props) => (props.color === "done" ? "gray" : "#f77737")};
+>>>>>>> data-analysis-front
     cursor: pointer;
     text-align: center;
     font-size: 16px;

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
+import { Outlet } from "react-router";
+
 const Category = () => {
     const category = ["T-shirt", "Sweater", "Trousers", "Skirt", "Sneakers"];
 
@@ -45,6 +47,7 @@ const Category = () => {
                     ))}
                 </Grid>
             </CategoryBox>
+            <Outlet />
         </>
     );
 };
