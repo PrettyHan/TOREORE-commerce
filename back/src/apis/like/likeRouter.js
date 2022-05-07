@@ -1,4 +1,3 @@
-import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { likeService } from "./likeService";
@@ -14,18 +13,18 @@ likeRouter.use(loginRequired);
   - 좋아요 수는 저장하지 않음.
 */
 likeRouter.post("/", loginRequired, async function (req, res, next) {
-  try {
-    const currentUserId = req.currentUserId;
-    const proudctlikeId = req.body.productId;
+    try {
+        const currentUserId = req.currentUserId;
+        const proudctlikeId = req.body.productId;
 
-    const updatedlike = await likeService.setLike({
-      currentUserId,
-      proudctlikeId,
-    });
-    res.status(200).json(updatedlike);
-  } catch (error) {
-    next(error);
-  }
+        const updatedlike = await likeService.setLike({
+            currentUserId,
+            proudctlikeId,
+        });
+          res.status(200).json(updatedlike);
+      } catch (error) {
+          next(error);
+      }
 });
 
 /* 
@@ -37,7 +36,7 @@ likeRouter.get("/", loginRequired, async function (req, res, next) {
     try {
         const currentUserId = req.currentUserId;
         const likeproducts = await likeService.getlikeProducts({
-          currentUserId,
+            currentUserId,
         });
         
         if (likeproducts.errorMessage) {
@@ -57,23 +56,23 @@ likeRouter.get("/", loginRequired, async function (req, res, next) {
 */
 
 likeRouter.delete("/:product_id", loginRequired, async function (req, res, next) {
-  try {
-      const currentUserId = req.currentUserId;
-      const productDelId = req.params.product_id
+    try {
+        const currentUserId = req.currentUserId;
+        const productDelId = req.params.product_id
 
-      const dellikeProducts = await likeService.getdellikeProducts({
-        currentUserId,
-        productDelId
-      });
+        const dellikeProducts = await likeService.getdellikeProducts({
+            currentUserId,
+            productDelId
+        });
 
-      if (dellikeProducts.errorMessage) {
-          throw new Error(dellikeProducts.errorMessage);
-      }
+        if (dellikeProducts.errorMessage) {
+            throw new Error(dellikeProducts.errorMessage);
+        }
 
-      res.status(200).json(dellikeProducts);
-  } catch (error) {
-      next(error);
-  }
+        res.status(200).json(dellikeProducts);
+    } catch (error) {
+        next(error);
+    }
 });
 
 
