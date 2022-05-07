@@ -100,8 +100,11 @@ function Cart() {
         try {
             const body = {
                 orderName: "test",
-                zipcode: {},
-                message: "",
+                zipcode: {
+                    address1: "주소",
+                    address2: "상세주소",
+                },
+                message: "메세지",
                 paymentMethod: "none",
             };
 

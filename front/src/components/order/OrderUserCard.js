@@ -119,7 +119,6 @@ function OrderUserCard({ setOrderUser, orderUser }) {
                 <TextField
                   id="address1"
                   name="address1"
-                  label={!orderUser.zipcode.address1 ? "주소" : ""}
                   autoComplete="shipping address-line1"
                   variant="outlined"
                   value={orderUser.zipcode.address1}
@@ -136,7 +135,6 @@ function OrderUserCard({ setOrderUser, orderUser }) {
               <TextField
                 id="address2"
                 name="address2"
-                label={!orderUser.zipcode.address2 ? "상세주소" : ""}
                 value={orderUser.zipcode.address2}
                 autoComplete="shipping address-line2"
                 variant="outlined"
@@ -149,7 +147,7 @@ function OrderUserCard({ setOrderUser, orderUser }) {
                 required
                 id="message"
                 name="message"
-                label={!orderUser.message ? "메세지" : ""}
+                label={"메세지"}
                 value={orderUser.message}
                 autoComplete="message"
                 variant="outlined"
@@ -192,7 +190,7 @@ function OrderUserCard({ setOrderUser, orderUser }) {
                 <TextField
                   id="address1"
                   name="address1"
-                  label=""
+                  label="주소"
                   autoComplete="shipping address-line1"
                   variant="outlined"
                   value={orderUser.zipcode.address1}
@@ -209,7 +207,7 @@ function OrderUserCard({ setOrderUser, orderUser }) {
               <TextField
                 id="address2"
                 name="address2"
-                label={!orderUser.zipcode.address2 ? "상세주소" : ""}
+                label={"상세주소"}
                 value={orderUser.zipcode.address2}
                 autoComplete="shipping address-line2"
                 variant="outlined"
@@ -222,7 +220,7 @@ function OrderUserCard({ setOrderUser, orderUser }) {
                 required
                 id="message"
                 name="message"
-                label={!orderUser.message ? "메세지" : ""}
+                label={"메세지"}
                 value={orderUser.message}
                 autoComplete="message"
                 variant="outlined"

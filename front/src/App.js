@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useReducer, createContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import * as Api from "./api"; // 백엔드 완성 시 작성 예정 (?)
+import * as Api from "./api";
 
 import { loginReducer } from "./reducer";
 // 컴포넌트들
@@ -25,10 +25,6 @@ import styled from "styled-components";
 const ProductDetail = React.lazy(() =>
     import("./components/product/ProductDetail")
 );
-
-// import RegisterForm from "./components/user/RegisterForm";
-// import Portfolio from "./components/Portfolio";
-// import Loading from "./components/Loading";
 
 export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
