@@ -57,6 +57,10 @@ function Order() {
     }
   };
 
+  useEffect(() => {
+    fetchOrderData();
+  }, []);
+
   return (
     <>
       {isPc ? (
@@ -135,7 +139,7 @@ function Order() {
 export default Order;
 
 const Container = styled.div`
-  margin: 30px 0 150px 0;
+  margin: 30px 0 100px 0;
   display: grid;
   row-gap: 20px;
   place-items: center center;
