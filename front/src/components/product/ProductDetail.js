@@ -70,7 +70,7 @@ const ProductDetail = () => {
     };
     const res = await Api.post(`orders/${productId}`, body);
     const orderId = res.data.orderId;
-    navigate(`/orders/${orderId}`);
+    navigate(`/order/${orderId}`);
   };
 
   // 좋아요 버튼 클릭

@@ -30,6 +30,7 @@ function Order() {
   const fetchOrderData = async () => {
     try {
       const res = await Api.get(`orders/${orderId}`);
+      console.log(res);
       const {
         userId,
         products,

@@ -47,8 +47,11 @@ orderRouter.post("/", async (req, res, next) => {
         };
 
         const newOrder = await orderService.createOrder(orderData);
-        const productIdArr = cartlist.map((v) => v.productId)
-        const deleteCart = await cartService.deleteProductOfCart({ userId, productIdArr })
+        const productIdArr = cartlist.map((v) => v.productId);
+        const deleteCart = await cartService.deleteProductOfCart({
+            userId,
+            productIdArr,
+        });
         if (newOrder.errorMessage) {
             throw new Error(newOrder.errorMessage);
         }
@@ -70,13 +73,16 @@ orderRouter.post("/:productId", async (req, res, next) => {
         const { productId } = req.params;
         const orderId = mongoose.Types.ObjectId();
         const userId = req.currentUserId;
-        const products = await productService.getProduct({ productId });
-        if (products.errorMessage) {
-            throw new Error(products.errorMessage);
+        const product = await productService.getProduct({ productId });
+        if (product.errorMessage) {
+            throw new Error(product.errorMessage);
         }
         const { orderName, zipcode, message, paymentMethod, quantity } = req.body; // 입력받을 것
-        const totalPrice = products.price * quantity;
+        const totalPrice = product.price * quantity;
         const isPayed = false;
+        product["quantity"] = quantity;
+
+        const products = [{ cart: [product] }];
         const orderData = {
             products,
             userId,
@@ -149,7 +155,7 @@ orderRouter.put("/:orderId", async (req, res, next) => {
         const zipcode = req.body.zipcode ?? "";
         const message = req.body.message ?? "";
         const paymentMethod = req.body.paymentMethod ?? "";
-        const isPayed = req.body.isPayed ?? false
+        const isPayed = req.body.isPayed ?? false;
 
         const toUpdate = {
             zipcode,
