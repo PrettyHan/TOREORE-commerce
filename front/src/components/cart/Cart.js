@@ -12,6 +12,7 @@ import {
   Grid,
 } from "@mui/material/";
 import styled from "styled-components";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import CartItemCard from "./CartItemCard";
 import CartTableCell from "./CartTableCell";
@@ -25,6 +26,7 @@ function Cart() {
   const userState = useContext(UserStateContext);
   const user = userState.user;
   const isLogin = !!userState.user; // 로그인 여부 판단
+  const isPc = useMediaQuery("(min-width:480px)");
 
   // 카트아이템들 상태 설정
   const [cartItems, setCartItems] = useState([]);
@@ -34,6 +36,7 @@ function Cart() {
       cartItem={cartItem}
       setCartItems={setCartItems}
       index={index + 1}
+      key={index}
     />
   ));
 
@@ -128,87 +131,135 @@ function Cart() {
 
   return (
     <>
-      <div style={{ minHeight: "calc(100vh - 180px)" }}>
-        {isLogin ? (
-          <Container>
-            <Box>
-              <Grid container>
-                <Grid item>
-                  <Typography
-                    component="h2"
-                    variant="h6"
-                    color="inherit"
-                    gutterBottom
-                  >
-                    장바구니
-                  </Typography>
+      {isPc ? (
+        <div style={{ minHeight: "calc(100vh - 180px)" }}>
+          {isLogin ? (
+            <Container>
+              <Box>
+                <Grid container>
+                  <Grid item>
+                    <Typography
+                      component="h2"
+                      variant="h6"
+                      color="inherit"
+                      gutterBottom
+                    >
+                      장바구니
+                    </Typography>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Box>
-            {!isCartEmpty ? (
-              <CartContainer>
-                <Table size="small">
-                  <TableHead>
-                    <TableRow>
-                      <CartTableCell>전체 {cartItems.length}개</CartTableCell>
-                      <CartTableCell>
-                        <Checkbox
-                          disabled={isCartEmpty}
-                          checked={isCheckedAll(cartItems)}
-                          onChange={handleCheck}
-                        ></Checkbox>
-                      </CartTableCell>
-                      <CartTableCell>이미지</CartTableCell>
-                      <CartTableCell>상품명</CartTableCell>
-                      <CartTableCell>판매가</CartTableCell>
-                      <CartTableCell>주문금액</CartTableCell>
-                      <CartTableCell>수량</CartTableCell>
-                      <CartTableCell>주문관리</CartTableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>{cartItemList}</TableBody>
-                </Table>
-              </CartContainer>
-            ) : (
-              <Container>
-                <Image></Image>
-                <Typography>장바구니에 상품을 담아주세요.</Typography>
-              </Container>
-            )}
+              </Box>
+              {!isCartEmpty ? (
+                <CartContainer>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <CartTableCell>전체 {cartItems.length}개</CartTableCell>
+                        <CartTableCell>
+                          <Checkbox
+                            disabled={isCartEmpty}
+                            checked={isCheckedAll(cartItems)}
+                            onChange={handleCheck}
+                          ></Checkbox>
+                        </CartTableCell>
+                        <CartTableCell>이미지</CartTableCell>
+                        <CartTableCell>상품명</CartTableCell>
+                        <CartTableCell>판매가</CartTableCell>
+                        <CartTableCell>주문금액</CartTableCell>
+                        <CartTableCell>수량</CartTableCell>
+                        <CartTableCell>주문관리</CartTableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>{cartItemList}</TableBody>
+                  </Table>
+                </CartContainer>
+              ) : (
+                <Container>
+                  <Image></Image>
+                  <Typography>장바구니에 상품을 담아주세요.</Typography>
+                </Container>
+              )}
 
-            <Box>
-              <Typography>총 결제 금액: {carculateTotal}원</Typography>
-            </Box>
-            <ItemsContainer>
-              <Items>
-                <Button
-                  disabled={isCartEmpty || carculateTotal === 0}
-                  onClick={handleSelectRemove}
-                >
-                  선택삭제
-                </Button>
+              <Box>
+                <Typography>총 결제 금액: {carculateTotal}원</Typography>
+              </Box>
+              <ItemsContainer>
+                <Items>
+                  <Button
+                    disabled={isCartEmpty || carculateTotal === 0}
+                    onClick={handleSelectRemove}
+                  >
+                    선택삭제
+                  </Button>
+                </Items>
+                <Items>
+                  <Button
+                    disabled={isCartEmpty || carculateTotal === 0}
+                    onClick={handleOrder}
+                  >
+                    주문하기
+                  </Button>
+                </Items>
+                <Items>
+                  <Button onClick={() => navigate(-1)}>쇼핑 계속하기</Button>
+                </Items>
+              </ItemsContainer>
+            </Container>
+          ) : (
+            <Container>
+              <Items onClick={() => navigate("/")}>
+                로그인 유저만 사용가능합니다 ^^
               </Items>
-              <Items>
-                <Button
-                  disabled={isCartEmpty || carculateTotal === 0}
-                  onClick={handleOrder}
-                >
-                  주문하기
-                </Button>
+            </Container>
+          )}
+        </div>
+      ) : (
+        <div>
+          {isLogin ? (
+            <Container>
+              {!isCartEmpty ? (
+                <div>
+                  {cartItemList}
+                  <MobileItems>
+                    <Button
+                      disabled={isCartEmpty || carculateTotal === 0}
+                      onClick={handleSelectRemove}
+                    >
+                      선택삭제
+                    </Button>
+                  </MobileItems>
+                  <MobileItems>
+                    <Button
+                      disabled={isCartEmpty || carculateTotal === 0}
+                      onClick={handleOrder}
+                    >
+                      주문하기
+                    </Button>
+                  </MobileItems>
+                  <MobileItems>
+                    <Button onClick={() => navigate(-1)}>쇼핑 계속하기</Button>
+                  </MobileItems>
+                </div>
+              ) : (
+                <Container>
+                  <Image></Image>
+                  <Typography>장바구니에 상품을 담아주세요.</Typography>
+                </Container>
+              )}
+
+              <Box>
+                <Typography>총 결제 금액: {carculateTotal}원</Typography>
+              </Box>
+            </Container>
+          ) : (
+            <Container>
+              <Items onClick={() => navigate("/")}>
+                로그인 유저만 사용가능합니다 ^^
               </Items>
-              <Items>
-                <Button onClick={() => navigate(-1)}>쇼핑 계속하기</Button>
-              </Items>
-            </ItemsContainer>
-          </Container>
-        ) : (
-          <Container>
-            <Items onClick={() => navigate("/")}>
-              로그인 유저만 사용가능합니다 ^^
-            </Items>
-          </Container>
-        )}
-      </div>
+            </Container>
+          )}
+        </div>
+      )}
     </>
   );
 }
@@ -247,6 +298,14 @@ const Items = styled.div`
   text-align: center;
   line-height: 80px;
   cursor: pointer;
+`;
+
+const MobileItems = styled.div`
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 5px 5px 0px 0px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  margin: 10px 0px 10px 0px;
 `;
 
 const Image = styled.div`

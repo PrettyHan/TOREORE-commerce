@@ -7,6 +7,7 @@ import {
   Radio,
   Typography,
 } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Paypal from "./payments/Paypal";
 import Bankbook from "./payments/Bankbook";
@@ -18,9 +19,10 @@ function OrderPaymentCard({
   orderPayment,
   setOrderPayment,
   subTotal,
-  handlePayComplete,
+  // handlePayComplete,
   orderId,
 }) {
+  const isPc = useMediaQuery("(min-width:480px)");
   const handlePaymentCheck = (event) => {
     setOrderPayment((current) => {
       return {
@@ -29,47 +31,6 @@ function OrderPaymentCard({
       };
     });
   };
-
-  // const handlePaymentChange = (orderPayment) => {
-  //   if (orderPayment.paymentMethod === "paypal") {
-  //     setOrderPayment((current) => {
-  //       return {
-  //         ...current,
-  //         paymentMethod: "paypal",
-  //       };
-  //     });
-  //     return (
-  // <Paypal
-  //   subTotal={subTotal}
-  //   handlePayComplete={handlePayComplete}
-  //   setOrderPayment={setOrderPayment}
-  // />
-  //     );
-  //   } else if (orderPayment.paymentMethod === "bankbook") {
-  //     setOrderPayment((current) => {
-  //       return {
-  //         ...current,
-  //         paymentMethod: "bankbook",
-  //       };
-  //     });
-  //     return <Bankbook handlePayComplete={handlePayComplete} />;
-  //   } else if (orderPayment.paymentMethod === "card") {
-  //     setOrderPayment((current) => {
-  //       return {
-  //         ...current,
-  //         paymentMethod: "card",
-  //       };
-  //     });
-  //     return (
-  // <Card
-  //   subTotal={subTotal}
-  //   handlePayComplete={handlePayComplete}
-  //   orderId={orderId}
-  //   setOrderPayment={setOrderPayment}
-  // />;
-  //     );
-  //   }
-  // };
 
   return (
     <Box>
@@ -107,7 +68,12 @@ function OrderPaymentCard({
         {orderUser.zipcode !== null ? (
           {
             none: (
-              <Box style={{ alignItems: "center", justifyContent: "center" }}>
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                flexDirection="column"
+              >
                 <Typography>결제 수단을 선택해 주세요.</Typography>
               </Box>
             ),
@@ -115,7 +81,7 @@ function OrderPaymentCard({
               <Paypal
                 orderUser={orderUser}
                 subTotal={subTotal}
-                handlePayComplete={handlePayComplete}
+                orderPayment={orderPayment}
                 setOrderPayment={setOrderPayment}
               />
             ),
@@ -123,15 +89,16 @@ function OrderPaymentCard({
               <CreditCard
                 orderUser={orderUser}
                 subTotal={subTotal}
-                handlePayComplete={handlePayComplete}
+                orderPayment={orderPayment}
                 orderId={orderId}
                 setOrderPayment={setOrderPayment}
               />
             ),
             bankbook: (
               <Bankbook
+                orderUser={orderUser}
                 subTotal={subTotal}
-                handlePayComplete={handlePayComplete}
+                orderPayment={orderPayment}
                 setOrderPayment={setOrderPayment}
               />
             ),
@@ -139,8 +106,8 @@ function OrderPaymentCard({
               <KakaoPay
                 orderUser={orderUser}
                 subTotal={subTotal}
-                handlePayComplete={handlePayComplete}
                 orderId={orderId}
+                orderPayment={orderPayment}
                 setOrderPayment={setOrderPayment}
               />
             ),

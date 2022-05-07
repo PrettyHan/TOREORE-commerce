@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Button, Box } from "@mui/material";
 
 function CreditCard({
   orderUser,
   subTotal,
-  handlePayComplete,
   orderId,
   setOrderPayment,
+  orderPayment,
 }) {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const jquery = document.createElement("script");
     jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
@@ -25,6 +28,10 @@ function CreditCard({
   const onClickPayment = () => {
     const { IMP } = window;
     IMP.init("imp62990898");
+    const buyer_addr = [
+      orderUser.zipcode.address1,
+      orderUser.zipcode.address2,
+    ].join();
     const data = {
       pg: "html5_inicis",
       pay_method: "card",
@@ -34,7 +41,7 @@ function CreditCard({
       buyer_email: "elice@test.com",
       buyer_name: "엘리스",
       buyer_tel: "010-1234-5678",
-      buyer_addr: "서울특별시 강남구 삼성동",
+      buyer_addr,
       buyer_postcode: "123-456",
     };
     IMP.request_pay(data, callback);
@@ -53,20 +60,26 @@ function CreditCard({
 
     if (success) {
       setOrderPayment((current) => {
-        return {
+        const newCurrent = {
           ...current,
           isPayed: true,
         };
+        return newCurrent;
       });
-      handlePayComplete();
       console.log("결제 성공");
+      navigate("complete", { state: { orderUser, orderPayment } });
     } else {
       console.log(`결제 실패 : ${error_msg}`);
     }
   };
 
   return (
-    <Box>
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+    >
       <Button onClick={onClickPayment}>{subTotal}원 주문하기</Button>
     </Box>
   );
