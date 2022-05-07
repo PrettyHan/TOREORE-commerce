@@ -6,7 +6,7 @@ import * as Api from "../../../api";
 
 const columns = ["주문번호", "주문상품", "합계", "결제여부"];
 
-function OrderHistory() {
+const OrderHistory = () => {
     const [orderList, setOrderList] = useState([]);
     const [isOrder, setIsOrder] = useState(false); // 주문 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
 
@@ -17,7 +17,6 @@ function OrderHistory() {
                 setIsOrder(true);
                 setOrderList(res.data);
             } else {
-                console.log("빈내역 입니다");
                 setIsOrder(false);
             }
         } catch (err) {
@@ -32,6 +31,7 @@ function OrderHistory() {
     return (
         <Container>
             <Title>주문 내역</Title>
+            <Info>(결제 진행중 클릭 시 주문 페이지로 이동합니다. )</Info>
             <ListContainer>
                 <Columns>
                     {columns.map((column, idx) => (
@@ -48,12 +48,12 @@ function OrderHistory() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;
     padding: 5px 0 0 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
     display: flex;
@@ -63,6 +63,13 @@ const Container = styled.div`
 const Title = styled.div`
     font-align: left;
     font-size: 20px;
+    margin: 0 0 3px 23px;
+`;
+
+const Info = styled.div`
+    font-align: left;
+    font-size: 15px;
+    color: gray;
     margin: 0 0 23px 23px;
 `;
 
@@ -74,6 +81,7 @@ const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 17px;
+    white-space: nowrap;
 `;
 
 const Columns = styled.div`

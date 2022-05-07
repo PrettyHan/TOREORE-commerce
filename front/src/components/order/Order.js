@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material/";
 import styled from "styled-components";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import OrderItemCard from "./OrderItemCard";
 import OrderPaymentCard from "./OrderPaymentCard";
@@ -10,16 +11,17 @@ import OrderUserCard from "./OrderUserCard";
 import * as Api from "../../api";
 
 function Order() {
+  const isPc = useMediaQuery("(min-width:480px)");
   const [orderUser, setOrderUser] = useState({
     userId: "",
-    zipcode: {},
-    message: "",
+    zipcode: {
+      address1: "주소",
+      address2: "상세주소",
+    },
+    message: "메세지",
   });
   const [orderItems, setOrderItems] = useState([]);
-  const [orderPayment, setOrderPayment] = useState({
-    paymentMethod: "",
-    isPayed: false,
-  });
+  const [orderPayment, setOrderPayment] = useState({});
   const [subTotal, setSubTotal] = useState(0);
 
   const { orderId } = useParams();
@@ -28,7 +30,6 @@ function Order() {
   const fetchOrderData = async () => {
     try {
       const res = await Api.get(`orders/${orderId}`);
-
       const {
         userId,
         products,
@@ -38,6 +39,7 @@ function Order() {
         paymentMethod,
         isPayed,
       } = res.data;
+
       setOrderUser({
         userId,
         zipcode,
@@ -55,68 +57,81 @@ function Order() {
     }
   };
 
-  const handlePayComplete = async () => {
-    try {
-      const body = {
-        ...orderUser,
-        totalPrice: subTotal,
-        products: orderItems,
-        ...orderPayment,
-      };
-      await Api.put(`orders/${orderId}`, body);
-      return navigate("/order/complete");
-    } catch (err) {
-      alert(`결제에 성공하지 못했습니다 \n ${err}`);
-    }
-  };
-
   useEffect(() => {
     fetchOrderData();
   }, []);
 
   return (
     <>
-      <div div style={{ minHeight: "calc(100vh - 180px)" }}>
-        <Container>
-          <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            주소
-          </Typography>
-          <OrderContainer>
-            <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
-          </OrderContainer>
+      {isPc ? (
+        <div div style={{ minHeight: "calc(100vh - 180px)" }}>
+          <Container>
+            <Typography
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              주소
+            </Typography>
+            <OrderContainer>
+              <OrderUserCard
+                setOrderUser={setOrderUser}
+                orderUser={orderUser}
+              ></OrderUserCard>
+            </OrderContainer>
 
-          <Typography
-            align="center"
-            component="h2"
-            variant="h6"
-            color="primary"
-            gutterBottom
-          >
-            상품 목록
-          </Typography>
-          <OrderContainer>
-            <OrderItemCard orderItems={orderItems}></OrderItemCard>
-          </OrderContainer>
-          <Typography
-            align="center"
-            component="h2"
-            variant="h6"
-            color="primary"
-            gutterBottom
-          >
-            결제
-          </Typography>
-          <OrderContainer>
-            <OrderPaymentCard
-              orderPayment={orderPayment}
-              setOrderPayment={setOrderPayment}
-              subTotal={subTotal}
-              handlePayComplete={handlePayComplete}
-              orderId={orderId}
-            ></OrderPaymentCard>
-          </OrderContainer>
+            <Typography
+              align="center"
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              상품 목록
+            </Typography>
+            <OrderContainer>
+              <OrderItemCard orderItems={orderItems}></OrderItemCard>
+            </OrderContainer>
+            <Typography
+              align="center"
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              결제
+            </Typography>
+            <OrderContainer>
+              {orderPayment.isPayed === false ? (
+                <OrderPaymentCard
+                  orderUser={orderUser}
+                  orderPayment={orderPayment}
+                  setOrderPayment={setOrderPayment}
+                  subTotal={subTotal}
+                  // handlePayComplete={handlePayComplete}
+                  orderId={orderId}
+                ></OrderPaymentCard>
+              ) : (
+                <Typography>이미 결제된 주문입니다.</Typography>
+              )}
+            </OrderContainer>
+          </Container>
+        </div>
+      ) : (
+        <Container>
+          <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
+          <OrderItemCard orderItems={orderItems}></OrderItemCard>
+          <OrderPaymentCard
+            orderUser={orderUser}
+            orderPayment={orderPayment}
+            setOrderPayment={setOrderPayment}
+            subTotal={subTotal}
+            // handlePayComplete={handlePayComplete}
+            orderId={orderId}
+          ></OrderPaymentCard>
         </Container>
-      </div>
+      )}
     </>
   );
 }
@@ -139,22 +154,4 @@ const OrderContainer = styled(Box)`
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px 20px 20px;
-`;
-
-const ItemsContainer = styled(Box)`
-  width: 63.5%;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-`;
-
-const Items = styled.div`
-  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-  width: 24%;
-  height: 80px;
-  text-align: center;
-  line-height: 80px;
-  cursor: pointer;
 `;

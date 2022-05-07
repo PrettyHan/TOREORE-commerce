@@ -1,9 +1,55 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
+import * as Api from "../../api";
 
 function OrderComplete() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { orderId } = useParams();
+  const isKaKao = location.state === null;
+
+  const fetchPayComplete = async () => {
+    try {
+      const { orderUser, orderPayment } = location.state;
+      const body = {
+        zipcode: orderUser.zipcode,
+        message: orderUser.message,
+        ...orderPayment,
+      };
+      await Api.put(`orders/${orderId}`, body);
+    } catch (err) {
+      alert(`결제에 성공하지 못했습니다 \n ${err}`);
+    }
+  };
+
+  const fetchKakaoComplete = async () => {
+    try {
+      const tid = localStorage.getItem("tid");
+      const pgToken = new URLSearchParams(
+        window.location.search.toString()
+      ).get("pg_token");
+      const body = {
+        cid: "TC0ONETIME",
+        tid: `${tid}`,
+        partner_order_id: "partner_order_id",
+        partner_user_id: "partner_user_id",
+        pg_token: `${pgToken}`,
+      };
+      await Api.post("payments/approve", body);
+    } catch (err) {
+      console.log("err", err);
+    }
+  };
+
+  useEffect(() => {
+    if (!isKaKao) {
+      fetchPayComplete();
+    } else {
+      fetchKakaoComplete();
+    }
+  }, []);
+
   return (
     <div style={{ minHeight: "calc(100vh - 180px)" }}>
       <div
@@ -37,11 +83,12 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 300px;
+  height: 300px;
   background-image: url("/Complete.png");
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100%;
 `;
 
 const Button = styled.button`

@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 const bcrypt = require("bcryptjs");
 
-function GeneralMember() {
+const GeneralMember = () => {
     const navigate = useNavigate(); // 취소시, myPage로 다시 돌아감
     const userState = useContext(UserStateContext);
     const user = userState.user;
@@ -104,7 +104,7 @@ function GeneralMember() {
                 });
 
                 alert("변경이 완료되었습니다.");
-                navigate("/myPage");
+                navigate("/");
             } catch (err) {
                 alert("변경에 실패하였습니다", err);
             }
@@ -128,7 +128,7 @@ function GeneralMember() {
     useEffect(() => {
         Api.get("auth/user").then((res) => {
             const result = res.data;
-            console.log(result);
+
             setForm((cur) => {
                 const newForm = {
                     ...cur,
@@ -360,7 +360,7 @@ function GeneralMember() {
             </Grid>
         </div>
     );
-}
+};
 
 export default GeneralMember;
 
@@ -372,7 +372,7 @@ const Grid = styled.div`
 `;
 
 const Container = styled.div`
-    width: 40%;
+    width: 70%;
     padding: 5px 0 0 0;
     box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;

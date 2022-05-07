@@ -18,6 +18,9 @@ import Category from "./components/product/Category";
 import Cart from "./components/cart/Cart";
 import Search from "./components/Layout/Search";
 import Order from "./components/order/Order";
+import OrderComplete from "./components/order/OrderComplete";
+import ArrowUpwardTwoToneIcon from "@mui/icons-material/ArrowUpwardTwoTone";
+import styled from "styled-components";
 
 const ProductDetail = React.lazy(() =>
     import("./components/product/ProductDetail")
@@ -31,6 +34,22 @@ export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
 
 function App() {
+    const [scrollY, setScrollY] = useState(0);
+    const [topBtnShow, setTopBtnShow] = useState(false);
+
+    const handleFollow = () => {
+        setScrollY(window.pageYOffset);
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        setScrollY(0);
+        setTopBtnShow(false);
+    };
+
     // useReducer 훅을 통해 userState 상태와 dispatch함수를 생성함.
     const [userState, dispatch] = useReducer(loginReducer, {
         user: null,
@@ -64,7 +83,23 @@ function App() {
     // useEffect함수를 통해 fetchCurrentUser 함수를 실행함.
     useEffect(() => {
         fetchCurrentUser();
+
+        const watch = () => {
+            window.addEventListener("scroll", handleFollow);
+        };
+        watch();
+        return () => {
+            window.removeEventListener("scroll", handleFollow);
+        };
     }, []);
+
+    useEffect(() => {
+        if (scrollY > 200) {
+            setTopBtnShow(true);
+        } else {
+            setTopBtnShow(false);
+        }
+    }, [scrollY]);
 
     if (!isFetchCompleted) {
         return "isLoading...";
@@ -85,33 +120,57 @@ function App() {
                     <Router>
                         <Header handleOpen={handleOpen} />
                         <Login open={open} handleClose={handleClose} />
-                        <Category />
-                        <Search />
+
                         <Routes>
-                            <Route path="/" exact element={<Main />} />
+                            <Route element={<Category />}>
+                                <Route element={<Search />}>
+                                    <Route path="/" exact element={<Main />} />
+                                    <Route
+                                        path="/myPage"
+                                        element={<MyPage />}
+                                    />
+                                    <Route
+                                        path="/useredit"
+                                        element={<UserEdit />}
+                                    />
+                                    <Route
+                                        path="/auth/:id"
+                                        element={<Main />}
+                                    />
+                                    <Route path="*" element={<NotFound />} />
+                                    <Route
+                                        exact
+                                        path="/products/:category"
+                                        element={<ProductList />}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/products/search/:keyword"
+                                        element={<ProductList />}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/products/:category/:productId"
+                                        element={<ProductDetail />}
+                                    />
+                                    <Route path="/cart" element={<Cart />} />
+                                    <Route
+                                        path="/order/:orderId"
+                                        element={<Order />}
+                                    />
+                                    <Route
+                                        path="/order/:orderId/complete"
+                                        element={<OrderComplete />}
+                                    />
+                                </Route>
+                            </Route>
                             <Route path="/introduce" element={<Introduce />} />
-                            <Route path="/myPage" element={<MyPage />} />
-                            <Route path="/useredit" element={<UserEdit />} />
-                            <Route path="/auth/:id" element={<Main />} />
-                            <Route path="*" element={<NotFound />} />
-                            <Route
-                                exact
-                                path="/products/:category"
-                                element={<ProductList />}
-                            />
-                            <Route
-                                exact
-                                path="/products/search/:keyword"
-                                element={<ProductList />}
-                            />
-                            <Route
-                                exact
-                                path="/products/:category/:productId"
-                                element={<ProductDetail />}
-                            />
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/order/:orderId" element={<Order />} />
                         </Routes>
+                        {topBtnShow && (
+                            <TopBtn onClick={scrollToTop}>
+                                <ArrowUpwardTwoToneIcon />
+                            </TopBtn>
+                        )}
                         <Footer />
                     </Router>
                 </React.Suspense>
@@ -121,3 +180,15 @@ function App() {
 }
 
 export default App;
+
+const TopBtn = styled.button`
+    background-color: #5e5b52;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: white;
+    border: none;
+`;

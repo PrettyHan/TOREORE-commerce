@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Grid from "@mui/material/Grid";
 import * as Api from "../../api";
 
-function Recommend() {
+const Recommend = () => {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const [isLogin, setIsLogin] = useState(false);
@@ -25,8 +25,7 @@ function Recommend() {
         }
     };
 
-    // localhost:5001/products/personal-recommendation
-    //
+    // 15개 응답 온 상품 중 5개만 랜덤으로 뽑는다
     const randomChoice = (targetList) => {
         const newList = [];
         while (true) {
@@ -59,9 +58,16 @@ function Recommend() {
             <RecommendP> My TORE Love It!</RecommendP>
             {isLogin && (
                 <>
-                    <Grid container spacing={{ lg: 1, md: 5, sm: 3, xs: 2 }}>
+                    <Grid container spacing={{ lg: 2, md: 5, sm: 3, xs: 2 }}>
                         {recommendList.map((item, idx) => (
-                            <Grid item xs={5.5} sm={3.8} md={2.3} lg={2.4}>
+                            <Grid
+                                key={`item-${idx}`}
+                                item
+                                xs={5.5}
+                                sm={3.8}
+                                md={2.3}
+                                lg={2.4}
+                            >
                                 <Items
                                     key={`item-${idx}`}
                                     imgUrl={item.image}
@@ -78,45 +84,50 @@ function Recommend() {
             )}
         </Wrapper>
     );
-}
+};
 
 const Wrapper = styled.div`
-    width: 100%;
+    width: 80%;
     height: auto;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0 20px 0 20px;
-    margin: 0 0 80px 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 15px 15px 0px 0px;
+    margin: 0 60px 80px 60px;
+    opacity: 0.8;
+    border: 1px solid #ebebeb;
 `;
 
 const RecommendP = styled.span`
     text-align: left;
-    font-size: 55px;
-    font-style: italic;
-    color: #d0c4df;
-    text-shadow: -1px 0 #5e5b52, 0 1px #5e5b52, 1px 0 #5e5b52, 0 -1px #5e5b52;
+    font-size: 50px;
+    color: #3d1b54;
+    padding: 30px 0 20px 30px;
+    font-weight: 700;
+    margin: 10px 0 30px 0;
 `;
 
 const Items = styled.div`
     width: auto;
     border-radius: 19%;
-    height: 300px;
+    height: 220px;
     background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center center;
-    border: 1px solid #5e5b52;
     cursor: pointer;
+    margin: 10px 0 10px 0;
 `;
 
 const ShowingP = styled.span`
-    margin: 0 0 10px 10px;
+    padding: 0 10px 0 10px;
+    margin: 40px 0 30px 10px;
     text-align: right;
-    font-size: 38px;
-    color: #d0c4df;
-    text-shadow: -1px 0 #5e5b52, 0 1px #5e5b52, 1px 0 #5e5b52, 0 -1px #5e5b52;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3d1b54;
+    font-family: "Nanum Gothic", sans-serif;
+    white-space: nowrap;
 `;
 
 export default Recommend;

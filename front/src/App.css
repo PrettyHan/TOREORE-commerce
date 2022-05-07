@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Goldman:wght@400;700&family=IBM+Plex+Sans+KR:wght@500&family=Lexend+Exa:wght@500&family=Nanum+Gothic:wght@700&display=swap");
+.App {
+    font-family: "Abril Fatface", cursive;
+    font-family: "Goldman", cursive;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-family: "Lexend Exa", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+}

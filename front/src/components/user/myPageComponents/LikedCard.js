@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
 
-function LikedCard({ liked }) {
+const LikedCard = ({ liked }) => {
     const navigate = useNavigate();
-    console.log(liked.image);
 
     function sendProduct() {
         navigate(`/products/${liked.category}/${liked.productId}`);
@@ -24,7 +23,7 @@ function LikedCard({ liked }) {
             <Items>{liked.price}원</Items>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 95%;
@@ -50,6 +49,9 @@ const ItemsClick = styled.div`
     text-align: center;
     line-height: 160px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const Image = styled.div`

@@ -6,7 +6,7 @@ import * as Api from "../../../api";
 
 const columns = ["상품번호", "상품사진", "상품명", "가격"];
 
-function LikedHistory() {
+const LikedHistory = () => {
     const [likedList, setLikedList] = useState([]);
     const [isLiked, setIsLiked] = useState(false); // 좋아요 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
 
@@ -18,7 +18,6 @@ function LikedHistory() {
                 setIsLiked(true);
                 setLikedList(res.data);
             } else {
-                console.log("빈내역 입니다");
                 setIsLiked(false);
             }
         } catch (err) {
@@ -33,6 +32,7 @@ function LikedHistory() {
     return (
         <Container>
             <Title>좋아요</Title>
+            <Info>(상품명 클릭 시 상품페이지로 이동합니다. )</Info>
             <ListContainer>
                 <Columns>
                     {columns.map((column) => (
@@ -49,12 +49,12 @@ function LikedHistory() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;
     padding: 5px 0 0 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
     display: flex;
@@ -64,6 +64,13 @@ const Container = styled.div`
 const Title = styled.div`
     font-align: left;
     font-size: 20px;
+    margin: 0 0 3px 23px;
+`;
+
+const Info = styled.div`
+    font-align: left;
+    font-size: 15px;
+    color: gray;
     margin: 0 0 23px 23px;
 `;
 

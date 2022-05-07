@@ -1,15 +1,14 @@
 import React, { useRef, useState } from "react";
 import Input from "@mui/material/Input";
-
 import styled from "styled-components";
 import { Button } from "@mui/material";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-
 import * as Api from "../../api";
 import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+import { Outlet } from "react-router";
 
-function Search() {
+const Search = () => {
     // 연관 키워드 배열
     const [RelatedKeywords, setRelatedKeywords] = useState([]);
 
@@ -64,32 +63,35 @@ function Search() {
     };
 
     return (
-        <Wrapper>
-            <InputBox
-                variant="contained"
-                color="action"
-                placeholder="상품을 검색해보세요"
-                inputRef={searchKeyword}
-                onChange={handleSearchChange}
-                onKeyPress={onKeyPress}
-            ></InputBox>
-            <Button
-                startIcon={<SearchSharpIcon />}
-                sx={{ width: "4%" }}
-                size="large"
-                color="inherit"
-                disableElevation
-                disableRipple
-                onClick={handleSearchClick}
-            ></Button>
-            <Ul>
-                {RelatedKeywords.map((item) => (
-                    <Li onClick={handleLiClick}>{item}</Li>
-                ))}
-            </Ul>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <InputBox
+                    variant="contained"
+                    color="action"
+                    placeholder="상품을 검색해보세요"
+                    inputRef={searchKeyword}
+                    onChange={handleSearchChange}
+                    onKeyPress={onKeyPress}
+                ></InputBox>
+                <Button
+                    startIcon={<SearchSharpIcon />}
+                    sx={{ width: "4%" }}
+                    size="large"
+                    color="inherit"
+                    disableElevation
+                    disableRipple
+                    onClick={handleSearchClick}
+                ></Button>
+                <Ul>
+                    {RelatedKeywords.map((item) => (
+                        <Li onClick={handleLiClick}>{item}</Li>
+                    ))}
+                </Ul>
+            </Wrapper>
+            <Outlet />
+        </>
     );
-}
+};
 
 const Wrapper = styled.div`
     width: 100%;
@@ -99,7 +101,7 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 40px 0px;
+    margin: 70px 0px;
     position: relative;
 `;
 
