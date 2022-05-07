@@ -88,7 +88,7 @@ function Recommend() {
 }
 
 const Wrapper = styled.div`
-    width: 100%;
+    width: 80%;
     height: 500px;
     flex-grow: 1;
     display: flex;

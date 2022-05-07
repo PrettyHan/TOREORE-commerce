@@ -21,7 +21,7 @@ function Ad() {
 }
 
 const Items = styled(Grid)`
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-image: url(https://images.unsplash.com/photo-1627225793904-a2f900a6e4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
     background-position: center center;
@@ -31,7 +31,7 @@ const Items = styled(Grid)`
 `;
 
 const AdBox1 = styled(Grid)`
-    width: 100%;
+    width: 80%;
     height: 650px;
     flex-grow: 1;
     display: flex;
@@ -53,7 +53,7 @@ const Items2 = styled(Grid)`
     opacity: 0.8;
 `;
 const AdBox2 = styled(Grid)`
-    width: 100%;
+    width: 80%;
     height: 650px;
     flex-grow: 1;
     display: flex;
