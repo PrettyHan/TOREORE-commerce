@@ -128,7 +128,7 @@ function GeneralMember() {
     useEffect(() => {
         Api.get("auth/user").then((res) => {
             const result = res.data;
-            console.log(result);
+
             setForm((cur) => {
                 const newForm = {
                     ...cur,

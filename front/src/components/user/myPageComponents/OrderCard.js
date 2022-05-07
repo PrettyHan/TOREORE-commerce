@@ -22,7 +22,6 @@ function OrderCard({ order }) {
     function sendOrder() {
         if (!orderStatus) {
             navigate(`/order/${order.orderId}`);
-            console.log(order.orderId);
         } else {
             console.log("디테일보여주자");
         }
@@ -64,6 +63,9 @@ const Items = styled.div`
     text-align: center;
     line-height: 160px;
     font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const OrderStatus = styled.div`

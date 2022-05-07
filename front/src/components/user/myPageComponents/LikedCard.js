@@ -5,7 +5,6 @@ import Tooltip from "@mui/material/Tooltip";
 
 function LikedCard({ liked }) {
     const navigate = useNavigate();
-    console.log(liked.image);
 
     function sendProduct() {
         navigate(`/products/${liked.category}/${liked.productId}`);
@@ -50,6 +49,9 @@ const ItemsClick = styled.div`
     text-align: center;
     line-height: 160px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const Image = styled.div`

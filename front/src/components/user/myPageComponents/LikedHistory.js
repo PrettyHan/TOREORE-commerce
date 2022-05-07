@@ -18,7 +18,6 @@ function LikedHistory() {
                 setIsLiked(true);
                 setLikedList(res.data);
             } else {
-                console.log("빈내역 입니다");
                 setIsLiked(false);
             }
         } catch (err) {

@@ -8,7 +8,7 @@ import * as Api from "../../api";
 import styled from "styled-components";
 
 const clientId =
-    "430470352132-0f8bv97e0b17rmsef09boohfdcenagbq.apps.googleusercontent.com";
+    "670521691657-jn740eumm5adf81i4uf853lukuvqqvn8.apps.googleusercontent.com";
 
 export default function Google({ handleClose }) {
     const navigate = useNavigate();

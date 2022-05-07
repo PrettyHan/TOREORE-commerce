@@ -49,7 +49,7 @@ function GeneralMember() {
                 });
 
                 const addUserInfo = res.data;
-                console.log(addUserInfo);
+
                 dispatch({
                     type: "LOGIN_SUCCESS",
                     payload: addUserInfo,

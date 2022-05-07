@@ -200,7 +200,7 @@ const Wrapper = styled.div`
 `;
 
 const Image1 = styled.div`
-    width: 90%;
+    width: 800px;
     height: 50%;
     background-image: url("/30_female.PNG");
     background-size: cover;
@@ -208,7 +208,7 @@ const Image1 = styled.div`
 `;
 
 const Image2 = styled.div`
-    width: 90%;
+    width: 800px;
     height: 50%;
     background-image: url("/50_male.PNG");
     background-size: cover;

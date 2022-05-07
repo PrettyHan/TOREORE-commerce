@@ -17,7 +17,6 @@ function OrderHistory() {
                 setIsOrder(true);
                 setOrderList(res.data);
             } else {
-                console.log("빈내역 입니다");
                 setIsOrder(false);
             }
         } catch (err) {
@@ -82,6 +81,7 @@ const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 17px;
+    white-space: nowrap;
 `;
 
 const Columns = styled.div`
@@ -101,6 +101,9 @@ const Items = styled.div`
     text-align: center;
     line-height: 25px;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const NoOrder = styled.div`

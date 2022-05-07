@@ -82,7 +82,7 @@ function Cart() {
             const productIdArr = checkedCartItems.map((item) => {
                 return item.productId;
             });
-            console.log(productIdArr);
+
             await Api.delete("carts/select", "", {
                 productIdArr,
             });
@@ -118,7 +118,7 @@ function Cart() {
         try {
             const res = await Api.get("carts");
             const fetchedItems = res.data;
-            console.log(fetchedItems);
+
             setCartItems(fetchedItems);
         } catch (err) {
             console.log(err);
