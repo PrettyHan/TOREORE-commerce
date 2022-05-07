@@ -59,7 +59,7 @@ function Recommend() {
             <RecommendP> My TORE Love It!</RecommendP>
             {isLogin && (
                 <>
-                    <Grid container spacing={{ lg: 1, md: 5, sm: 3, xs: 2 }}>
+                    <Grid container spacing={{ lg: 2, md: 5, sm: 3, xs: 2 }}>
                         {recommendList.map((item, idx) => (
                             <Grid
                                 key={`item-${idx}`}
@@ -94,17 +94,23 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+<<<<<<< HEAD
     padding: 0 20px 20px 20px;
     margin: 0 10px 80px 10px;
     opacity: 0.8;
     border: 1px solid #ebebeb;
+=======
+    padding: 0 20px 0 20px;
+    opacity: 0.8;
+    margin-bottom: 50px;
+>>>>>>> de4ceb1d954c422c3baa42ed1849c3a9681f6e9f
 `;
 
 const RecommendP = styled.span`
     text-align: left;
     font-size: 50px;
     color: #3d1b54;
-    padding: 30px 0 0 30px;
+    padding: 30px 0 20px 30px;
     font-weight: 700;
     margin: 10px 0 30px 0;
 `;
