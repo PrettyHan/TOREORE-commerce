@@ -28,6 +28,7 @@ const Items = styled(Grid)`
     background-size: contain;
     line-height: 800px;
     opacity: 0.8;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 `;
 
 const AdBox1 = styled(Grid)`
@@ -50,6 +51,7 @@ const Items2 = styled(Grid)`
     text-align: center;
     line-height: 800px;
     opacity: 0.8;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 `;
 const AdBox2 = styled(Grid)`
     width: 80%;
