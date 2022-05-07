@@ -203,7 +203,10 @@ const Desc = styled.div`
 `;
 
 const PriceTable = styled(Table)`
-    width: 100%;
+    && {
+        width: 70%;
+        min-width: 550px;
+    }
     border: solid 2px black;
 `;
 
