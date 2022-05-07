@@ -1,10 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import { Box, Grid } from "@mui/material";
 import styled from "styled-components";
 
 import { DataAnalysisOne, DataAnalysisTwo } from "./dataAnalysis";
 
-function Introduce() {
+const Introduce = () => {
     const outerDivRef = useRef();
 
     const DIVIDER_HEIGHT = 5;
@@ -152,7 +151,7 @@ function Introduce() {
             </Comment2>
         </>
     );
-}
+};
 
 export default Introduce;
 

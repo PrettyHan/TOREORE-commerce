@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// 준비 중인 서비스 입니다.
-function Coupon() {
+const Coupon = () => {
     return (
         <Container>
             <Title>쿠폰 내역</Title>
@@ -13,7 +12,7 @@ function Coupon() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;

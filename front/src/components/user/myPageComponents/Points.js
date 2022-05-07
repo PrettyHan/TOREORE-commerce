@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Points() {
+const Points = () => {
     return (
         <Container>
             <Title>적립금 내역</Title>
@@ -12,7 +12,7 @@ function Points() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;

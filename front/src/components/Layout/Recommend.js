@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Grid from "@mui/material/Grid";
 import * as Api from "../../api";
 
-function Recommend() {
+const Recommend = () => {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
     const [isLogin, setIsLogin] = useState(false);
@@ -25,8 +25,7 @@ function Recommend() {
         }
     };
 
-    // localhost:5001/products/personal-recommendation
-    //
+    // 15개 응답 온 상품 중 5개만 랜덤으로 뽑는다
     const randomChoice = (targetList) => {
         const newList = [];
         while (true) {
@@ -85,7 +84,7 @@ function Recommend() {
             )}
         </Wrapper>
     );
-}
+};
 
 const Wrapper = styled.div`
     width: 80%;

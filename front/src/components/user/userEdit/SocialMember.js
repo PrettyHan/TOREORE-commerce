@@ -17,7 +17,7 @@ import {
     FormHelperText,
 } from "@mui/material";
 
-function GeneralMember() {
+const SocialMember = () => {
     const navigate = useNavigate(); // 취소시, myPage로 다시 돌아감
     const dispatch = useContext(DispatchContext); // 로그인한 유저 정보를 다시 보내주기 위해
     const [errorMessage, setErrorMessage] = useState({}); // error 메시지 반환
@@ -228,9 +228,9 @@ function GeneralMember() {
             </Grid>
         </div>
     );
-}
+};
 
-export default GeneralMember;
+export default SocialMember;
 
 const Grid = styled.div`
     margin: 20px 0 100px 0;

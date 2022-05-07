@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
 
-function LikedCard({ liked }) {
+const LikedCard = ({ liked }) => {
     const navigate = useNavigate();
 
     function sendProduct() {
@@ -23,7 +23,7 @@ function LikedCard({ liked }) {
             <Items>{liked.price}원</Items>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 95%;

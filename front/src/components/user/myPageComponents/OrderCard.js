@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
 
-function OrderCard({ order }) {
+const OrderCard = ({ order }) => {
     const navigate = useNavigate();
     const cartList = order.products[0].cart; // 주문내역 1개
 
@@ -43,7 +43,7 @@ function OrderCard({ order }) {
             </OrderStatus>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 95%;

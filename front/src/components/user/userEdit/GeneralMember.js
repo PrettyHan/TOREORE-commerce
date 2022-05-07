@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 const bcrypt = require("bcryptjs");
 
-function GeneralMember() {
+const GeneralMember = () => {
     const navigate = useNavigate(); // 취소시, myPage로 다시 돌아감
     const userState = useContext(UserStateContext);
     const user = userState.user;
@@ -360,7 +360,7 @@ function GeneralMember() {
             </Grid>
         </div>
     );
-}
+};
 
 export default GeneralMember;
 

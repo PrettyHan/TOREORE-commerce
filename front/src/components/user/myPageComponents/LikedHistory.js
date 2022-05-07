@@ -6,7 +6,7 @@ import * as Api from "../../../api";
 
 const columns = ["상품번호", "상품사진", "상품명", "가격"];
 
-function LikedHistory() {
+const LikedHistory = () => {
     const [likedList, setLikedList] = useState([]);
     const [isLiked, setIsLiked] = useState(false); // 좋아요 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
 
@@ -49,7 +49,7 @@ function LikedHistory() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;

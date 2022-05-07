@@ -6,7 +6,7 @@ import * as Api from "../../../api";
 
 const columns = ["주문번호", "주문상품", "합계", "결제여부"];
 
-function OrderHistory() {
+const OrderHistory = () => {
     const [orderList, setOrderList] = useState([]);
     const [isOrder, setIsOrder] = useState(false); // 주문 내역이 없을 경우 없다고 표기하기 위해 사용 하는 state
 
@@ -48,7 +48,7 @@ function OrderHistory() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;
@@ -101,9 +101,6 @@ const Items = styled.div`
     text-align: center;
     line-height: 25px;
     font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 `;
 
 const NoOrder = styled.div`

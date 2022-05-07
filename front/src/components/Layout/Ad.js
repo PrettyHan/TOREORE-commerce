@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Grid from "@mui/material/Grid";
 
-function Ad() {
+const Ad = () => {
     return (
         <>
             <AdBox1 container spacing={{ lg: 1, md: 1, sm: 1, xs: 1 }}>
@@ -18,7 +18,7 @@ function Ad() {
             </AdBox2>
         </>
     );
-}
+};
 
 const Items = styled(Grid)`
     width: 80%;

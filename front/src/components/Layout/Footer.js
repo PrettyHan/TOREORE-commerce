@@ -4,7 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 import styled from "styled-components";
 
-function Footer() {
+const Footer = () => {
     return (
         <footer
             style={{
@@ -71,7 +71,7 @@ function Footer() {
             </FooterZone>
         </footer>
     );
-}
+};
 
 export default Footer;
 
