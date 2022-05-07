@@ -4,10 +4,13 @@ import { loginRequired } from "../../middlewares/loginRequired";
 import { orderService } from "./orderService";
 import { userService } from "../user/userService";
 import mongoose from "mongoose";
+import { productService } from "../product/productService";
+import { cartService } from "../cart/cartService";
 
 const orderRouter = Router();
 orderRouter.use(loginRequired);
 
+// 전체 주문용
 orderRouter.post("/", async (req, res, next) => {
     try {
         if (is.emptyObject(req.body)) {
@@ -23,19 +26,16 @@ orderRouter.post("/", async (req, res, next) => {
         if (products.errorMessage) {
             throw new Error(products.errorMessage);
         }
-        const cartlist = products.cart;
-        const cartPrices = cartlist.map((v) => {
-            return v.price;
-        });
-        const totalPrice = cartPrices.reduce((a, b) => {
-            return (a += b);
-        });
+        const temp_cartlist = products.cart;
+        const cartlist = temp_cartlist.filter((v) => v.checked == true);
+        const cartPrices = cartlist.map((v) => v.price);
+        const totalPrice = cartPrices.reduce((a, b) => (a += b));
         const isPayed = false;
 
         const { orderName, zipcode, message, paymentMethod } = req.body; // 입력받을 것
 
         const orderData = {
-            products,
+            products: { cart: cartlist },
             userId,
             orderId,
             totalPrice,
@@ -47,12 +47,56 @@ orderRouter.post("/", async (req, res, next) => {
         };
 
         const newOrder = await orderService.createOrder(orderData);
+        const productIdArr = cartlist.map((v) => v.productId)
+        const deleteCart = await cartService.deleteProductOfCart({ userId, productIdArr })
+        if (newOrder.errorMessage) {
+            throw new Error(newOrder.errorMessage);
+        }
+
+        res.status(201).json(newOrder);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// 바로주문 용 router
+orderRouter.post("/:productId", async (req, res, next) => {
+    try {
+        if (is.emptyObject(req.body)) {
+            throw new Error(
+                "headers의 Content-Type을 application/json으로 설정해주세요",
+            );
+        }
+        const { productId } = req.params;
+        const orderId = mongoose.Types.ObjectId();
+        const userId = req.currentUserId;
+        const products = await productService.getProduct({ productId });
+        if (products.errorMessage) {
+            throw new Error(products.errorMessage);
+        }
+        const { orderName, zipcode, message, paymentMethod, quantity } = req.body; // 입력받을 것
+        const totalPrice = products.price * quantity;
+        const isPayed = false;
+        const orderData = {
+            products,
+            userId,
+            orderId,
+            totalPrice,
+            orderName,
+            zipcode,
+            message,
+            paymentMethod,
+            isPayed,
+            quantity,
+        };
+
+        const newOrder = await orderService.createOrder(orderData);
 
         if (newOrder.errorMessage) {
             throw new Error(newOrder.errorMessage);
         }
 
-        res.status(201).json(products);
+        res.status(201).json(newOrder);
     } catch (error) {
         next(error);
     }
@@ -98,24 +142,20 @@ orderRouter.get("/:orderId", async function (req, res, next) {
     }
 });
 
-orderRouter.put("/orderId", async (req, res, next) => {
+orderRouter.put("/:orderId", async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
 
-        const products = req.body.products ?? null;
-        const totalPrice = req.body.totalPrice ?? null;
-        const orderName = req.body.orderName ?? null;
-        const zipcode = req.body.zipcode ?? null;
-        const message = req.body.message ?? null;
-        const paymentMethod = req.body.paymentMethod ?? null;
+        const zipcode = req.body.zipcode ?? "";
+        const message = req.body.message ?? "";
+        const paymentMethod = req.body.paymentMethod ?? "";
+        const isPayed = req.body.isPayed ?? false
 
         const toUpdate = {
-            products,
-            totalPrice,
-            orderName,
             zipcode,
             message,
             paymentMethod,
+            isPayed,
         };
         const updatedOrder = await orderService.updateOrder({
             orderId,

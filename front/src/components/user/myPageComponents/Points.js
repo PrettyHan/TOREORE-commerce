@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// const orderList = {
-//   [];
-// };
-
-function Points() {
+const Points = () => {
     return (
         <Container>
             <Title>적립금 내역</Title>
@@ -16,12 +12,12 @@ function Points() {
             </ListContainer>
         </Container>
     );
-}
+};
 
 const Container = styled.div`
     width: 63.5%;
     padding: 5px 0 0 0;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-wrap: wrap;
     flex-grow: 1;
     display: flex;

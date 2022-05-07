@@ -1,162 +1,1202 @@
 [
     {
-        "article_id": "0856968001",
-        "prod_name": "루나 실크 티셔츠",
+        "article_id": "0684021062",
+        "prod_name": "Wow printed tee 6.99",
         "product_type_name": "T-shirt",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "라운드 네크라인, 목 뒤쪽의 버튼 여밈, 라운드 헴. 뒤쪽이 약간 더 길고 안감 없고, 부드럽게 드레이핑되는 실크 소재의 스트레이트 컷 반소매 베이지 색 블라우스입니다.",
-        "price": 142400
+        "colour_group_name": "Dark Red",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 14200
     },
     {
-        "article_id": "0856968002",
-        "prod_name": "루나 실크 티셔츠",
+        "article_id": "0685816003",
+        "prod_name": "RONNY R-NECK",
         "product_type_name": "T-shirt",
-        "colour_group_name": "Black",
-        "detail_desc": "라운드 네크라인, 목 뒤쪽의 버튼 여밈, 라운드 헴. 뒤쪽이 약간 더 길고 안감 없고, 부드럽게 드레이핑되는 실크 소재의 스트레이트 컷 반소매 검정색 블라우스입니다.",
-        "price": 113900
+        "colour_group_name": "Grey",
+        "detail_desc": "Round-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 9900
     },
     {
-        "article_id": "0797636001",
-        "prod_name": "차크라 티셔츠",
+        "article_id": "0685816006",
+        "prod_name": "RONNY R-NECK",
         "product_type_name": "T-shirt",
-        "colour_group_name": "Off White",
-        "detail_desc": "라운드 넥과 앞면의 수직 솔기가 있는 실크 저지 소재의 꼭 맞는 상의입니다.",
-        "price": 101700
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Round-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 8100
     },
     {
-        "article_id": "0714637001",
-        "prod_name": "2팩 티셔츠",
+        "article_id": "0570003075",
+        "prod_name": "V-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 16300
+    },
+    {
+        "article_id": "0570002013",
+        "prod_name": "R-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Round-necked T-shirt in soft jersey.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 13000
+    },
+    {
+        "article_id": "0756248001",
+        "prod_name": "NASA tee",
         "product_type_name": "T-shirt",
         "colour_group_name": "White",
-        "detail_desc": "반소매와 네크라인의 골지 디테일을 가지고 있는 면과 실크 혼방 소재의 부드러운 저지 티셔츠입니다.",
-        "price": 81300
+        "detail_desc": "T-shirt in soft jersey with a print motif front and back.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 24400
     },
     {
-        "article_id": "0812179004",
-        "prod_name": "셀리아 울 티셔츠",
+        "article_id": "0633162014",
+        "prod_name": "HALLOUMI",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in cotton jersey with a print motif.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 26400
+    },
+    {
+        "article_id": "0633162015",
+        "prod_name": "HALLOUMI",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in cotton jersey with a print motif.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 21100
+    },
+    {
+        "article_id": "0608945008",
+        "prod_name": "ISAAC RXD RN T-SHIRT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Round-necked T-shirt in sturdy cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0649439007",
+        "prod_name": "NACHO TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Yellow",
+        "detail_desc": "T-shirt in a jacquard-knit cotton blend with short sleeves, an open chest pocket and slits in the sides.",
+        "index_group_name": 1,
+        "age_id": 0,
+        "price": 23800
+    },
+    {
+        "article_id": "0778064004",
+        "prod_name": "Claudine",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Fitted top in soft organic cotton jersey with short sleeves.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 8100
+    },
+    {
+        "article_id": "0737040014",
+        "prod_name": "ESSENTIAL SIGNE BOAT NECK",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Green",
+        "detail_desc": "Straight-cut top in sturdy cotton jersey with a boat neck, 3/4-length sleeves and rounded hem.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 30500
+    },
+    {
+        "article_id": "0554598066",
+        "prod_name": "Nora T-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "T-shirt in soft jersey with a round neck, short sleeves with sewn-in turn-ups, and a rounded hem.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0610776023",
+        "prod_name": "Tilly (1)",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in lightweight jersey with a rounded hem. Slightly longer at the back.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 10100
+    },
+    {
+        "article_id": "0829977001",
+        "prod_name": "Joli Party tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Straight-cut top in jersey made from a cotton blend with beaded embroidery at the top and short sleeves.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0865917002",
+        "prod_name": "Jasmine tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft, printed cotton jersey with a ribbed trim around the neckline and gently dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 16300
+    },
+    {
+        "article_id": "0841402003",
+        "prod_name": "Grimsby",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Fitted, scoop-necked T-shirt in stretch jersey with a sheen.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0841228002",
+        "prod_name": "Whitney tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Straight-cut T-shirt in soft cotton jersey with a narrow, ribbed trim around the neckline.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0835561004",
+        "prod_name": "POLO PIQUE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Polo shirt in soft cotton piqu\u00e9 with a ribbed collar, button placket, short sleeves with narrow ribbed trims, and short slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0814641002",
+        "prod_name": "ESSENTIAL JORDAN TSHIRT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Straight-cut T-shirt in soft jersey with a slightly deeper neckline, chest pocket and rounded hem with short slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 20300
+    },
+    {
+        "article_id": "0684021066",
+        "prod_name": "Wow printed tee 6.99",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 12800
+    },
+    {
+        "article_id": "0636587006",
+        "prod_name": "Ronny R-Neck",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Jersey T-shirt.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 5700
+    },
+    {
+        "article_id": "0653290005",
+        "prod_name": "RAVEN pocket tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Straight-cut T-shirt in soft cotton jersey in a relaxed style with an open chest pocket and short slits in the sides.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0774075006",
+        "prod_name": "BROOKE PIQUE SLIM TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Round-necked T-shirt in soft cotton piqu\u00e9.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 20300
+    },
+    {
+        "article_id": "0699923013",
+        "prod_name": "Mike tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft, printed cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 16300
+    },
+    {
+        "article_id": "0782616017",
+        "prod_name": "FORTUNA TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 21100
+    },
+    {
+        "article_id": "0598755003",
+        "prod_name": "Taz Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Long, round-necked T-shirt in soft jersey with a curved hem.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 16300
+    },
+    {
+        "article_id": "0569996006",
+        "prod_name": "R-NECK SS BASIC FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Round-necked T-shirt in organic cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 10100
+    },
+    {
+        "article_id": "0763275020",
+        "prod_name": "RYAN V-NECK",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 10100
+    },
+    {
+        "article_id": "0782616015",
+        "prod_name": "FORTUNA TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 1,
+        "price": 26400
+    },
+    {
+        "article_id": "0767862001",
+        "prod_name": "Bob v-neck 2-pack",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Fitted T-shirts in soft, stretch organic cotton jersey with a V-neck and straight-cut hem.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 16300
+    },
+    {
+        "article_id": "0841260029",
+        "prod_name": "Jen tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Green",
+        "detail_desc": "T-shirt in soft jersey with a round neckline with a narrow, ribbed trim.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 20300
+    },
+    {
+        "article_id": "0516000091",
+        "prod_name": "ES Agnes LS R-neck",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Fitted top in stretch jersey with a round neck and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 12200
+    },
+    {
+        "article_id": "0844919002",
+        "prod_name": "CNY EQ Susan",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Red",
+        "detail_desc": "Boxy-style T-shirt in organic cotton jersey with narrow ribbing around the neckline.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 14200
+    },
+    {
+        "article_id": "0554598081",
+        "prod_name": "Nora T-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft jersey with a round neck, short sleeves with sewn-in turn-ups, and a rounded hem.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 20300
+    },
+    {
+        "article_id": "0827968002",
+        "prod_name": "Antonia heavy t-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Straight T-shirt in sturdy cotton jersey.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 17600
+    },
+    {
+        "article_id": "0433444021",
+        "prod_name": "Sara s/s 2-pack",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Fitted tops in soft jersey with short sleeves and gathers in the sides for best fit over the tummy. The cotton content of the tops is organic.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 21900
+    },
+    {
+        "article_id": "0634706003",
+        "prod_name": "ES Mona kimono tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Wide-fitting top in cotton jersey with short dolman sleeves.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 30500
+    },
+    {
+        "article_id": "0841632001",
+        "prod_name": "Mika SS",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft, stretch cotton jersey with a boat neck and gathers in the sides for best fit over the tummy.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 27400
+    },
+    {
+        "article_id": "0687426002",
+        "prod_name": "POLO PIQE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Polo shirt in organic cotton piqu\u00e9 with a ribbed collar and button placket. Short sleeves with ribbed trims, and slits in the sides. Slightly longer at the back.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 12200
+    },
+    {
+        "article_id": "0856395003",
+        "prod_name": "ICE striped linen tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "T-shirt in striped, airy linen jersey with a round neckline.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 48000
+    },
+    {
+        "article_id": "0860988007",
+        "prod_name": "LIME TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "T-shirt in soft cotton jersey with a round, rib-trimmed neckline and an open chest pocket.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 26400
+    },
+    {
+        "article_id": "0730609008",
+        "prod_name": "Marvin tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Block-patterned T-shirt in jersey made from a cotton blend.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 26400
+    },
+    {
+        "article_id": "0684021095",
+        "prod_name": "Wow printed tee 6.99",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 14200
+    },
+    {
+        "article_id": "0570003054",
+        "prod_name": "V-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 4000
+    },
+    {
+        "article_id": "0735749001",
+        "prod_name": "SALT regular tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Straight-cut, relaxed-fit T-shirt in soft pima cotton jersey containing some silk.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 32500
+    },
+    {
+        "article_id": "0671777034",
+        "prod_name": "Roll Up Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in printed jersey with a chest pocket and short sleeves with sewn-in turn-ups.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 20300
+    },
+    {
+        "article_id": "0685816045",
+        "prod_name": "RONNY R-NECK",
         "product_type_name": "T-shirt",
         "colour_group_name": "Orange",
-        "detail_desc": "앞면의 플랫록 솔기, 골지 네크라인, 둥근 밑단이 있는 울 저지 소재의 꼭 맞는 티셔츠입니다",
-        "price": 81300
+        "detail_desc": "Round-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 10100
+    },
+    {
+        "article_id": "0774043008",
+        "prod_name": "SCOOP NECK SLIM FIT TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Low-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 16300
+    },
+    {
+        "article_id": "0449263005",
+        "prod_name": "Zero Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft jersey with a slightly wider, raw-edge neckline, seam centre back and short, raw-edged sleeves. Slightly longer and rounded at the back.",
+        "index_group_name": 1,
+        "age_id": 2,
+        "price": 5500
+    },
+    {
+        "article_id": "0793856003",
+        "prod_name": "Grape tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in jersey made from a silk and cotton blend with a ribbed turtle neck and straight-cut hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 61000
+    },
+    {
+        "article_id": "0737040014",
+        "prod_name": "ESSENTIAL SIGNE BOAT NECK",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Green",
+        "detail_desc": "Straight-cut top in sturdy cotton jersey with a boat neck, 3/4-length sleeves and rounded hem.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0836284002",
+        "prod_name": "GOLDY PUFF TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Fitted top in ribbed jersey made from a cotton and modal blend with a rib-trimmed neckline and short puff sleeves with a ribbed trim.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 26400
+    },
+    {
+        "article_id": "0561445005",
+        "prod_name": "Billie",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short-sleeved, fitted jersey top with a slightly deeper neckline.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 10100
+    },
+    {
+        "article_id": "0824764001",
+        "prod_name": "ESSENTIAL LOVA LINEN",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Top in linen jersey with a V-neck and short sleeves.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0615021015",
+        "prod_name": "Luisa tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "T-shirt in jersey with a motif.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 14200
+    },
+    {
+        "article_id": "0866838004",
+        "prod_name": "Power tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Grey",
+        "detail_desc": "Straight-cut T-shirt in a soft modal and cotton blend with a round neckline and shoulder pads.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 49600
+    },
+    {
+        "article_id": "0854092003",
+        "prod_name": "PQ ROLEX LINEN TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "T-shirt in slub linen jersey with a low-cut neckline.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0816431001",
+        "prod_name": "+ Speedy tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Straight-cut sports top in fast-drying mesh with short sleeves and a rounded hem. Slightly longer at the back. The polyester content of the top is recycled.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0832465001",
+        "prod_name": "Chaka linen",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Top in airy linen jersey with a V-neck, button placket and butterfly sleeves.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 30500
+    },
+    {
+        "article_id": "0863952013",
+        "prod_name": "Andre AOP",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Round-necked T-shirt in patterned slub cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 25800
+    },
+    {
+        "article_id": "0699923080",
+        "prod_name": "Mike tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "T-shirt in soft, printed cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 12200
+    },
+    {
+        "article_id": "0542533001",
+        "prod_name": "VICTOR 3PK SLIM VN T-SHIRT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "V-neck T-shirts in soft jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 30500
+    },
+    {
+        "article_id": "0855716004",
+        "prod_name": "Ezra Washed Tee 12.99:-",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "T-shirt in soft cotton jersey with a washed look. Ribbing around the neckline and an open chest pocket.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 26400
+    },
+    {
+        "article_id": "0684021060",
+        "prod_name": "Wow printed tee 6.99",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 14200
+    },
+    {
+        "article_id": "0598755011",
+        "prod_name": "Taz Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Grey",
+        "detail_desc": "Long, round-necked T-shirt in soft jersey with a curved hem.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 16300
+    },
+    {
+        "article_id": "0570003001",
+        "prod_name": "VICTOR SLIM VN T-SHIRT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 16300
+    },
+    {
+        "article_id": "0630823004",
+        "prod_name": "OLIVE LINEN TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Round-necked T-shirt in airy linen jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 24400
+    },
+    {
+        "article_id": "0684021079",
+        "prod_name": "Wow printed tee 6.99",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Purple",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 12800
+    },
+    {
+        "article_id": "0699923100",
+        "prod_name": "Mike tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Green",
+        "detail_desc": "T-shirt in soft, printed cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 3,
+        "price": 20300
+    },
+    {
+        "article_id": "0659323001",
+        "prod_name": "LF Tulipe Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in patterned cotton jersey with embroidery in a straight, wide style with dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 34600
+    },
+    {
+        "article_id": "0844734001",
+        "prod_name": "Jerry",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft jersey made from a modal and cotton blend with a print motif and a studded appliqu\u00e9 on the front.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 15200
+    },
+    {
+        "article_id": "0688341004",
+        "prod_name": "Billie high 2-pack",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Fitted, short-sleeved tops in soft cotton jersey.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 14200
     },
     {
         "article_id": "0832824003",
-        "prod_name": "쿨라 실크 탑",
+        "prod_name": "PQ KULA SILK TOP",
         "product_type_name": "T-shirt",
         "colour_group_name": "Black",
-        "detail_desc": "발레리나 네크라인, 매우 긴 소매인 실크와 면 혼방 소재로 만든 부드러운 저지 소재의 꼭 맞는 탑입니다.",
+        "detail_desc": "Fitted top in soft jersey made from a silk and cotton blend with a ballerina neckline and extra-long sleeves.",
+        "index_group_name": 0,
+        "age_id": 3,
         "price": 81300
     },
     {
-        "article_id": "0810921002",
-        "prod_name": "프리미엄 ICE 저지 폴로",
+        "article_id": "0554598010",
+        "prod_name": "Nora T-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "T-shirt in soft jersey with a round neck, short sleeves with sewn-in turn-ups, and a rounded hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 18300
+    },
+    {
+        "article_id": "0844941001",
+        "prod_name": "PQ NATAL CTN TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Fitted T-shirt in soft pima cotton with a round, ribbed neckline, short, wide sleeves and a gently rounded hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 18300
+    },
+    {
+        "article_id": "0778064003",
+        "prod_name": "Claudine t-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Fitted top in soft organic cotton jersey with short sleeves.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 8700
+    },
+    {
+        "article_id": "0843685001",
+        "prod_name": "Hope",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Straight-style T-shirt in lightweight sweatshirt fabric. Round neckline with a wide, ribbed trim, a visible seam down the back and short slits in the sides of the hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 20300
+    },
+    {
+        "article_id": "0785018008",
+        "prod_name": "Shenzi LP",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Fitted top in soft jersey made from a viscose blend with a polo neck and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 20300
+    },
+    {
+        "article_id": "0865917002",
+        "prod_name": "Jasmine tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft, printed cotton jersey with a ribbed trim around the neckline and gently dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 16300
+    },
+    {
+        "article_id": "0569984026",
+        "prod_name": "R-NECK LS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Top in soft jersey made from a cotton blend with a round neckline and long sleeves.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 20300
+    },
+    {
+        "article_id": "0684021008",
+        "prod_name": "Wow printed tee 6.99",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline and a print motif.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 14200
+    },
+    {
+        "article_id": "0630777017",
+        "prod_name": "Rich Tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Straight-style T-shirt in soft cotton jersey with ribbing around the neckline.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 26400
+    },
+    {
+        "article_id": "0685816036",
+        "prod_name": "RONNY R-NECK",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "Round-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 9400
+    },
+    {
+        "article_id": "0782616015",
+        "prod_name": "FORTUNA TEE",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 26400
+    },
+    {
+        "article_id": "0804610001",
+        "prod_name": "Allington TVP",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Round-necked, straight-cut T-shirt in soft premium cotton jersey with narrow ribbing around the neckline.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 30500
+    },
+    {
+        "article_id": "0570003077",
+        "prod_name": "V-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 13800
+    },
+    {
+        "article_id": "0842761003",
+        "prod_name": "TAZ LS",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Long top in soft cotton jersey with ribbing around the neckline. Straight, relaxed fit with long sleeves and a curved hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 20300
+    },
+    {
+        "article_id": "0620762006",
+        "prod_name": "ICE linen tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in airy linen jersey with a round neckline and straight-cut hem.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 49100
+    },
+    {
+        "article_id": "0570003082",
+        "prod_name": "V-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 4,
+        "price": 16300
+    },
+    {
+        "article_id": "0841402004",
+        "prod_name": "Grimsby",
         "product_type_name": "T-shirt",
         "colour_group_name": "Orange",
-        "detail_desc": "긴소매이고, 목, 소맷단, 밑단 가장자리에 오버록 처리된 실크와 비스코스 혼방 소재로 만든 부드러운 골지 저지 소재의 꼭 맞는 폴로넥 탑입니다.",
-        "price": 80600
+        "detail_desc": "Fitted, scoop-necked T-shirt in stretch jersey with a sheen.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 20300
     },
     {
-        "article_id": "0776781002",
-        "prod_name": "라라 울 저지",
+        "article_id": "0800691013",
+        "prod_name": "Claudine rib",
         "product_type_name": "T-shirt",
-        "colour_group_name": "Dark Turquoise",
-        "detail_desc": "부드러운 울 저지 소재의 핏 탑입니다.",
-        "price": 80000
+        "colour_group_name": "Orange",
+        "detail_desc": "Fitted T-shirt in stretch, ribbed organic cotton jersey.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 11400
     },
     {
-        "article_id": "0714637002",
-        "prod_name": "2팩 티셔츠",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "Black",
-        "detail_desc": "반소매와 네크라인의 골지 디테일을 가지고 있는 면과 실크 혼방 소재의 부드러운 저지 티셔츠입니다.",
-        "price": 65100
-    },
-    {
-        "article_id": "0776781001",
-        "prod_name": "라라 울 저지",
+        "article_id": "0516000087",
+        "prod_name": "ESSENTIAL AGNES",
         "product_type_name": "T-shirt",
         "colour_group_name": "Black",
-        "detail_desc": "부드러운 울 저지 소재의 핏 탑입니다.",
-        "price": 65100
+        "detail_desc": "Fitted top in stretch jersey with a round neck and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 11000
     },
     {
-        "article_id": "0832824001",
-        "prod_name": "쿨라 실크 탑",
+        "article_id": "0516000001",
+        "prod_name": "Agnes LS R-neck",
         "product_type_name": "T-shirt",
-        "colour_group_name": "Dark Pink",
-        "detail_desc": "발레리나 네크라인, 매우 긴 소매인 실크와 면 혼방 소재로 만든 부드러운 저지 소재의 꼭 맞는 탑입니다.",
-        "price": 65100
+        "colour_group_name": "White",
+        "detail_desc": "Fitted top in stretch jersey with a round neck and long sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 16300
+    },
+    {
+        "article_id": "0866465004",
+        "prod_name": "Custard tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Light Purple",
+        "detail_desc": "Short-sleeved T-shirt in soft jersey made from a cotton and silk blend.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 45700
+    },
+    {
+        "article_id": "0713019008",
+        "prod_name": "PRINTED TEE OWN PRINT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft jersey with a print motif on the front.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 14200
     },
     {
         "article_id": "0776746004",
-        "prod_name": "실크 믹스 티셔츠",
+        "prod_name": "PQ CORRES SILK MIX TEE",
         "product_type_name": "T-shirt",
         "colour_group_name": "Off White",
-        "detail_desc": "반소매 스트레이트 컷, 면과 실크 혼방으로 만들어서 부드럽게 드레이핑되는 저지 소재의 클래식 티셔츠입니다.",
+        "detail_desc": "Classic T-shirt in soft, gently draping jersey made from a cotton and silk blend. Straight cut with short sleeves.",
+        "index_group_name": 0,
+        "age_id": 4,
         "price": 61000
     },
     {
-        "article_id": "0849588002",
-        "prod_name": "스콧 티셔츠",
+        "article_id": "0768931009",
+        "prod_name": "Lee longsleeve",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Long-sleeved top in soft cotton jersey with a round neckline.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 19300
+    },
+    {
+        "article_id": "0635789001",
+        "prod_name": "Morley",
         "product_type_name": "T-shirt",
         "colour_group_name": "Black",
-        "detail_desc": "라운드 네크라인, 부드럽게 드롭된 어깨, 넓은 소매가 있는 견고한 면 저지 소재의 오버사이즈 티셔츠입니다.",
-        "price": 61000
+        "detail_desc": "Straight-cut T-shirt in viscose jersey with a sheen, with a wide neckline and low dropped shoulders.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 20300
     },
     {
-        "article_id": "0713743001",
-        "prod_name": "R넥 알링턴 2팩",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "White",
-        "detail_desc": "프리미엄 면 저지 소재의 하얀색 티셔츠 2장입니다.",
-        "price": 61000
-    },
-    {
-        "article_id": "0624684001",
-        "prod_name": "슬림 RN 티셔츠",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "White",
-        "detail_desc": "부드러운 면 저지 소재의 라운드넥 하얀색 티셔츠입니다.",
-        "price": 61000
-    },
-    {
-        "article_id": "0791803001",
-        "prod_name": "저스틴 탑",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "Off White",
-        "detail_desc": "안쪽 처리와 커버된 신축성이 있는 짧은 퍼프 소매, 라운드 네크라인과 밑단에 타이 디테일이 있는 로우 컷 등의 패턴이 있는 린넨 및 면 직조 소재의 짧은 블라우스입니다. ",
-        "price": 61000
-    },
-    {
-        "article_id": "0689108001",
-        "prod_name": "폴로 SS 피닉스",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "측면에 슬릿이 있는 편안한 핏의 가느다란 면과 실크 소재의 스트레이트 컷 티셔츠입니다.",
-        "price": 61000
-    },
-    {
-        "article_id": "0856395004",
-        "prod_name": "스트라이프 리넨 티셔츠",
-        "product_type_name": "T-shirt",
-        "colour_group_name": "Yellowish Brown",
-        "detail_desc": "라운드 네크라인이 있는 통풍이 잘되는 린넨 저지 소재의 티셔츠입니다.",
-        "price": 61000
-    },
-    {
-        "article_id": "0624684002",
-        "prod_name": "알넥 SS 슬림",
+        "article_id": "0610776040",
+        "prod_name": "Tilly",
         "product_type_name": "T-shirt",
         "colour_group_name": "Black",
-        "detail_desc": "부드러운 면 저지 소재의 라운드넥 검정색 티셔츠입니다.",
-        "price": 61000
+        "detail_desc": "T-shirt in lightweight jersey with a rounded hem. Slightly longer at the back.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 10100
     },
     {
-        "article_id": "0856395005",
-        "prod_name": "스트라이프 리넨 티셔츠",
+        "article_id": "0756118012",
+        "prod_name": "SUGARPUFF MUSCLE TEE",
         "product_type_name": "T-shirt",
         "colour_group_name": "Dark Blue",
-        "detail_desc": "라운드 네크라인이 있는 통풍이 잘되는 린넨 저지 소재의 다크 블루 티셔츠입니다.",
-        "price": 61000
+        "detail_desc": "T-shirt in soft cotton jersey with ribbing around the neckline. Muscle Fit \u2013 a fit designed to showcase the body\u2019s physique with narrow shoulders and tapered sleeves to create a flattering silhouette.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 26400
+    },
+    {
+        "article_id": "0804610007",
+        "prod_name": "Allington TVP",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Round-necked, straight-cut T-shirt in soft premium cotton jersey with narrow ribbing around the neckline.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0846973086",
+        "prod_name": "License SS Tee 14.99:-",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in soft, printed cotton jersey. Round neckline with a narrow trim.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0685816048",
+        "prod_name": "RONNY REG RN T-SHIRT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Round-necked T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 10100
+    },
+    {
+        "article_id": "0791837001",
+        "prod_name": "BRADLEY SLIM LS HENLEY",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Long-sleeved Henley top in soft, stretch cotton jersey with a button placket.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0570002082",
+        "prod_name": "R-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "Round-necked T-shirt in soft jersey.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 13000
+    },
+    {
+        "article_id": "0578630026",
+        "prod_name": "R-NECK SS SLIM 3 PK",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Round-necked T-shirts in soft jersey.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0836997005",
+        "prod_name": "RONNY FANCY",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "T-shirt in soft jersey made from a cotton blend with a round, ribbed neckline.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 16000
+    },
+    {
+        "article_id": "0570003069",
+        "prod_name": "V-NECK SS SLIM FIT",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "V-neck T-shirt in soft cotton jersey.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 16300
+    },
+    {
+        "article_id": "0770816006",
+        "prod_name": "Robbie Tee 9.99:-",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Grey",
+        "detail_desc": "T-shirt in soft cotton with contrasting colour panels along the shoulders and sleeves.",
+        "index_group_name": 1,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0767032005",
+        "prod_name": "Greta",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Grey",
+        "detail_desc": "Straight T-shirt in soft, airy viscose slub jersey with a deep V-neck.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 14200
+    },
+    {
+        "article_id": "0561445006",
+        "prod_name": "Billie",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "Short-sleeved, fitted jersey top with a slightly deeper neckline.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 8800
+    },
+    {
+        "article_id": "0832465003",
+        "prod_name": "Chaka linen",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Top in airy linen jersey with a V-neck, button placket and butterfly sleeves.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0778064029",
+        "prod_name": "Claudine",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Blue",
+        "detail_desc": "Fitted top in soft organic cotton jersey with short sleeves.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 10100
+    },
+    {
+        "article_id": "0778064028",
+        "prod_name": "Claudine",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "Fitted top in soft organic cotton jersey with short sleeves.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 10100
+    },
+    {
+        "article_id": "0739529002",
+        "prod_name": "Bianca linen(1)",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in slub linen jersey with a round neckline, short sleeves and straight-cut hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 16300
+    },
+    {
+        "article_id": "0844874010",
+        "prod_name": "ED Jen tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "White",
+        "detail_desc": "T-shirt in soft cotton jersey with a round neckline with a narrow ribbed trim.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0659132001",
+        "prod_name": "ED Nora tee",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Black",
+        "detail_desc": "T-shirt in soft slub jersey made from a modal and cotton blend. Short sleeves with sewn-in turn-ups and a rounded hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 20300
+    },
+    {
+        "article_id": "0554598040",
+        "prod_name": "Nora T-shirt",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "T-shirt in soft jersey with a round neck, short sleeves with sewn-in turn-ups, and a rounded hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 11700
+    },
+    {
+        "article_id": "0814641006",
+        "prod_name": "ESSENTIAL JORDAN TSHIRT TVP",
+        "product_type_name": "T-shirt",
+        "colour_group_name": "Greenish Khaki",
+        "detail_desc": "Straight-cut T-shirt in soft jersey with a slightly deeper neckline, chest pocket and rounded hem with short slits in the sides.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 16400
     }
 ]

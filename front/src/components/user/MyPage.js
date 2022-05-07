@@ -6,25 +6,26 @@ import LikedHistory from "./myPageComponents/LikedHistory";
 import Coupon from "./myPageComponents/Coupon";
 import Points from "./myPageComponents/Points";
 import { UserStateContext } from "../../App";
-import Login from "../Auth/Login";
 
 import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
-function MyPage() {
+const MyPage = () => {
     const navigate = useNavigate();
     const userState = useContext(UserStateContext);
-    const user = userState.user;
-    const [openLogin, setOpenLogin] = useState(false);
+    const user = userState.user; // 로그인한 유저 정보를 저장
 
+    // true로 변환할때, 해당 카드만으로 변하도록 state 초기값 셋팅
     const constantsFirstState = {
         orderHistory: false,
         likedHistory: false,
         coupon: false,
         points: false,
     };
+
     const [isOpen, setIsOpen] = useState(constantsFirstState);
 
+    // 해당하는 카드가 true일때 연결해야하는 컴포넌트 셋팅
     const components = {
         orderHistory: <OrderHistory />,
         likedHistory: <LikedHistory />,
@@ -32,32 +33,41 @@ function MyPage() {
         points: <Points />,
     };
 
-    function whatIsOpen() {
+    // 어떤 카드를 열어야하는지에 대한 함수
+    const whatIsOpen = () => {
         for (const [key, value] of Object.entries(isOpen)) {
             if (value === true) {
                 return components[key];
             }
         }
         return <div></div>;
-    }
+    };
 
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
             {user ? (
                 <Container>
                     <UserContainer>
-                        {user ? (
+                        {user.loginType === "BASIC" ||
+                        user.hasAddtionalInfo === true ? (
                             <Intro>
                                 <p> "{user.name}" 님 안녕하세요!</p>
-                                <p>
-                                    {" "}
-                                    ID ▶ {user.userId}{" "}
-                                    {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
-                                </p>
+                                {user.loginType === "BASIC" && (
+                                    <p>
+                                        {" "}
+                                        ID ▶ {user.userId}{" "}
+                                        {user.gender === 0 ? "🙋🏻‍♀️" : "🙋🏻‍♂️"}{" "}
+                                    </p>
+                                )}
                             </Intro>
                         ) : (
                             <Intro>
                                 <p> 고객님 안녕하세요!</p>
+                                {user?.hasAddtionalInfo ? (
+                                    <></>
+                                ) : (
+                                    <p> 추가 정보를 입력해주세요.</p>
+                                )}
                             </Intro>
                         )}
                         <div>
@@ -66,7 +76,10 @@ function MyPage() {
                                 disableElevation
                                 disableRipple
                             >
-                                회원 정보 수정
+                                {user.loginType === "BASIC" ||
+                                user.hasAddtionalInfo === true
+                                    ? "회원 정보 수정"
+                                    : "추가 정보 입력"}
                             </Button>
                         </div>
                     </UserContainer>
@@ -123,10 +136,10 @@ function MyPage() {
             )}
         </div>
     );
-}
+};
 
 const Container = styled.div`
-    margin-top: 20px;
+    margin: 30px 0 100px 0;
     display: grid;
     row-gap: 20px;
     place-items: center center;
@@ -134,7 +147,7 @@ const Container = styled.div`
 
 const UserContainer = styled(Box)`
     width: 62%;
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -160,7 +173,7 @@ const ItemsContainer = styled(Box)`
 `;
 
 const Items = styled.div`
-    box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+    box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     width: 24%;
     height: 80px;
     text-align: center;

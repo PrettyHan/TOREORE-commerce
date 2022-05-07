@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button, Box } from "@mui/material/";
+import { Box, Typography } from "@mui/material/";
+import styled from "styled-components";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import OrderItemCard from "./OrderItemCard";
 import OrderPaymentCard from "./OrderPaymentCard";
@@ -9,54 +11,17 @@ import OrderUserCard from "./OrderUserCard";
 import * as Api from "../../api";
 
 function Order() {
-  const fakeData = {
-    userId: 1234,
-    products: [
-      {
-        productId: 1234,
-        quantity: 1,
-        price: 10000,
-        name: "울 블렌드 스웨터",
-        image: "image1.com",
-        checked: true,
-      },
-      {
-        productId: 2345,
-        quantity: 2,
-        price: 20000,
-        name: "캐시미어 블렌드 스웨터",
-        image: "image2.com",
-        checked: true,
-      },
-      {
-        productId: 3456,
-        quantity: 3,
-        price: 30000,
-        name: "프리미엄 캐시미어 스웨터",
-        image: "image3.com",
-        checked: true,
-      },
-    ],
-    totalPrice: 500000,
-    zipcode: {
-      address1: "경기도 의정부시 금신로415번길 7",
-      address2: "2층 오른쪽",
-    },
-    message: "잘 갖다주셈",
-    paymentMethod: "kakao",
-    isPayed: false,
-  };
-
+  const isPc = useMediaQuery("(min-width:480px)");
   const [orderUser, setOrderUser] = useState({
     userId: "",
-    zipcode: {},
-    message: "",
+    zipcode: {
+      address1: "주소",
+      address2: "상세주소",
+    },
+    message: "메세지",
   });
   const [orderItems, setOrderItems] = useState([]);
-  const [orderPayment, setOrderPayment] = useState({
-    paymentMethod: "",
-    isPayed: false,
-  });
+  const [orderPayment, setOrderPayment] = useState({});
   const [subTotal, setSubTotal] = useState(0);
 
   const { orderId } = useParams();
@@ -64,9 +29,7 @@ function Order() {
 
   const fetchOrderData = async () => {
     try {
-      // const res = await Api.get(`orders/${orderId}`);
-
-      const res = fakeData;
+      const res = await Api.get(`orders/${orderId}`);
       const {
         userId,
         products,
@@ -75,37 +38,22 @@ function Order() {
         message,
         paymentMethod,
         isPayed,
-      } = res;
+      } = res.data;
+
       setOrderUser({
         userId,
         zipcode,
         message,
       });
-      setOrderItems(products);
+      setOrderItems(products[0].cart);
       setOrderPayment({
         paymentMethod,
         isPayed,
       });
       setSubTotal(totalPrice);
     } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handlePayButton = async () => {
-    try {
-      //   결제창을 띄우고 결제가되면
-      // if (handlePay) {
-      //     await Api.put(`orders/${orderId}`)
-      //     return navigate("/order/complete")
-      // }
-      // 결제에 실패하면
-      // else {
-      // alert(`결제에 성공하지 못했습니다.`)
-      // return navigate(0)
-      // }
-    } catch (err) {
-      alert(`결제에 성공하지 못했습니다 \n ${err}`);
+      alert("주문페이지 생성에 실패하였습니다.", err);
+      navigate(-1);
     }
   };
 
@@ -115,48 +63,95 @@ function Order() {
 
   return (
     <>
-      <div div style={{ minHeight: "calc(100vh - 180px)" }}>
-        <Box sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
-          <Box
-            sx={{ display: "flex", flexDirection: "column", height: 240, p: 2 }}
-          >
-            <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              height: 240,
-              p: 2,
-              mt: 5,
-            }}
-          >
-            <OrderItemCard orderItems={orderItems}></OrderItemCard>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              height: 240,
-              p: 2,
-              mt: 5,
-            }}
-          >
-            <OrderPaymentCard
-              orderPayment={orderPayment}
-              setOrderPayment={setOrderPayment}
-              subTotal={subTotal}
-            ></OrderPaymentCard>
-          </Box>
-          <Box>
-            <Button onClick={handlePayButton}>
-              {orderItems.totalPrice}원 결제하기
-            </Button>
-          </Box>
-        </Box>
-      </div>
+      {isPc ? (
+        <div div style={{ minHeight: "calc(100vh - 180px)" }}>
+          <Container>
+            <Typography
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              주소
+            </Typography>
+            <OrderContainer>
+              <OrderUserCard
+                setOrderUser={setOrderUser}
+                orderUser={orderUser}
+              ></OrderUserCard>
+            </OrderContainer>
+
+            <Typography
+              align="center"
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              상품 목록
+            </Typography>
+            <OrderContainer>
+              <OrderItemCard orderItems={orderItems}></OrderItemCard>
+            </OrderContainer>
+            <Typography
+              align="center"
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom
+            >
+              결제
+            </Typography>
+            <OrderContainer>
+              {orderPayment.isPayed === false ? (
+                <OrderPaymentCard
+                  orderUser={orderUser}
+                  orderPayment={orderPayment}
+                  setOrderPayment={setOrderPayment}
+                  subTotal={subTotal}
+                  // handlePayComplete={handlePayComplete}
+                  orderId={orderId}
+                ></OrderPaymentCard>
+              ) : (
+                <Typography>이미 결제된 주문입니다.</Typography>
+              )}
+            </OrderContainer>
+          </Container>
+        </div>
+      ) : (
+        <Container>
+          <OrderUserCard setOrderUser={setOrderUser}></OrderUserCard>
+          <OrderItemCard orderItems={orderItems}></OrderItemCard>
+          <OrderPaymentCard
+            orderUser={orderUser}
+            orderPayment={orderPayment}
+            setOrderPayment={setOrderPayment}
+            subTotal={subTotal}
+            // handlePayComplete={handlePayComplete}
+            orderId={orderId}
+          ></OrderPaymentCard>
+        </Container>
+      )}
     </>
   );
 }
 
 export default Order;
+
+const Container = styled.div`
+  margin: 30px 0 100px 0;
+  display: grid;
+  row-gap: 20px;
+  place-items: center center;
+`;
+
+const OrderContainer = styled(Box)`
+  width: 61%;
+  box-shadow: black 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+`;

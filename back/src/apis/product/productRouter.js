@@ -1,14 +1,24 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
 import { productService } from "./productService";
+import { loginRequired } from "../../middlewares/loginRequired";
 
 const productRouter = Router();
 
-// product 전체 조회
+productRouter.get("/personal-recomandation", loginRequired, async (req, res, next) => {
+    try {
+        const userId = req.currentUserId;
+        const recomandedProducts = await productService.getRecomandedProducts(userId);
+
+        res.status(200).json(recomandedProducts);
+    } catch (error) {
+        next(error);
+    }
+});
 
 productRouter.get("/", async function (req, res, next) {
     try {
-        const { cid, pid } = req.query ?? null
+        const { cid, pid } = req.query ?? null;
         if (cid || pid) {
             const product = await productService.getProductByQuery({ cid, pid });
 
@@ -17,8 +27,7 @@ productRouter.get("/", async function (req, res, next) {
             }
 
             res.status(200).send(product);
-        }
-        else {
+        } else {
             const products = await productService.getProductList();
 
             if (products.errorMessage) {
@@ -26,8 +35,6 @@ productRouter.get("/", async function (req, res, next) {
             }
             res.status(200).send(products);
         }
-
-
     } catch (error) {
         next(error);
     }
@@ -35,7 +42,7 @@ productRouter.get("/", async function (req, res, next) {
 
 productRouter.get("/search", async function (req, res, next) {
     try {
-        const { keyword } = req.query ?? null
+        const { keyword } = req.query ?? null;
         if (keyword) {
             const product = await productService.getProductBySearch({ keyword });
 
@@ -44,8 +51,7 @@ productRouter.get("/search", async function (req, res, next) {
             }
 
             res.status(200).send(product);
-        }
-        else {
+        } else {
             const products = await productService.getProductList();
 
             if (products.errorMessage) {
@@ -53,13 +59,10 @@ productRouter.get("/search", async function (req, res, next) {
             }
             res.status(200).send(products);
         }
-
-
     } catch (error) {
         next(error);
     }
 });
-
 
 // productId 조회
 productRouter.get("/:productId", async function (req, res, next) {

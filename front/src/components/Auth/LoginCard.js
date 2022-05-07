@@ -13,11 +13,13 @@ import {
   Container,
 } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import styled from "styled-components";
 import { useCookies } from "react-cookie";
-
 import { DispatchContext } from "../../App";
 import * as Api from "../../api";
+
+import Google from "./Google";
 
 const FormHelperTexts = styled(FormHelperText)`
   && {
@@ -33,11 +35,13 @@ const Boxs = styled(Box)`
   }
 `;
 
-function LoginCard({ setIsSigning }) {
+function LoginCard({ setIsSigning, handleClose }) {
   const theme = createTheme();
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useContext(DispatchContext);
+
+  const isPc = useMediaQuery("(min-width:480px)");
 
   // 이메일 및 패스워드 저장 여부
   const [isRemember, setIsRemember] = useState(false);
@@ -124,6 +128,7 @@ function LoginCard({ setIsSigning }) {
       });
       // 유저 정보는 response의 data임.
       const user = res.data;
+
       // JWT 토큰은 유저 정보의 token임.
       const jwtToken = user.accessToken;
       // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
@@ -141,20 +146,6 @@ function LoginCard({ setIsSigning }) {
     }
   };
 
-  const handleGoogleSign = async (event) => {
-    event.preventDefault();
-
-    try {
-      const res = await Api.get("auth/google");
-
-      const user = res.data;
-
-      console.log(user);
-    } catch (err) {
-      console.log("err", err);
-    }
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -166,63 +157,131 @@ function LoginCard({ setIsSigning }) {
             alignItems: "center",
           }}
         >
-          <Boxs
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <FormControl component="fieldset" variant="standard">
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    autoFocus
-                    fullWidth
-                    type="userId"
-                    id="userId"
-                    name="userId"
-                    label="아이디"
-                    autoComplete="userId"
-                    size="small"
-                    value={userId}
-                    onChange={(event) => {
-                      setUserId(event.target.value);
-                    }}
-                    error={(errorMessage.userIdError !== "") | false}
-                  />
+          {isPc ? (
+            <Boxs
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              sx={{ mt: 3 }}
+            >
+              <FormControl component="fieldset" variant="standard">
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <TextField
+                      required
+                      autoFocus
+                      fullWidth
+                      type="userId"
+                      id="userId"
+                      name="userId"
+                      label="아이디"
+                      autoComplete="userId"
+                      size="small"
+                      value={userId}
+                      onChange={(event) => {
+                        setUserId(event.target.value);
+                      }}
+                      error={(errorMessage.userIdError !== "") | false}
+                    />
+                  </Grid>
+                  <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
+                  <Grid item xs={12}>
+                    <TextField
+                      required
+                      fullWidth
+                      type="password"
+                      id="password"
+                      name="password"
+                      label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
+                      autoComplete="off"
+                      size="small"
+                      value={password}
+                      onChange={(event) => {
+                        setPassword(event.target.value);
+                      }}
+                      error={(errorMessage.passwordError !== "") | false}
+                    />
+                  </Grid>
+                  <FormHelperTexts>
+                    {errorMessage.passwordError}
+                  </FormHelperTexts>
+                  <Grid item xs={12}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          onChange={(event) => setIsRemember(!isRemember)}
+                          color="primary"
+                        />
+                      }
+                      label="아이디 저장"
+                    />
+                  </Grid>
                 </Grid>
-                <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
-                    type="password"
-                    id="password"
-                    name="password"
-                    label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
-                    autoComplete="off"
-                    size="small"
-                    value={password}
-                    onChange={(event) => {
-                      setPassword(event.target.value);
-                    }}
-                    error={(errorMessage.passwordError !== "") | false}
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                  size="large"
+                  disabled={!isFormValid}
+                >
+                  로그인
+                </Button>
+                <Button variant="text" onClick={() => setIsSigning(true)}>
+                  회원가입
+                </Button>
+                <Google variant="text" handleClose={handleClose} />
+              </FormControl>
+            </Boxs>
+          ) : (
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
+            >
+              <TextField
+                required
+                autoFocus
+                fullWidth
+                type="userId"
+                id="userId"
+                name="userId"
+                label="아이디"
+                autoComplete="userId"
+                size="small"
+                value={userId}
+                onChange={(event) => {
+                  setUserId(event.target.value);
+                }}
+                error={(errorMessage.userIdError !== "") | false}
+              />
+              <FormHelperTexts>{errorMessage.userIdError}</FormHelperTexts>
+              <TextField
+                required
+                fullWidth
+                type="password"
+                id="password"
+                name="password"
+                label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
+                autoComplete="off"
+                size="small"
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                error={(errorMessage.passwordError !== "") | false}
+              />
+              <FormHelperTexts>{errorMessage.passwordError}</FormHelperTexts>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={(event) => setIsRemember(!isRemember)}
+                    color="primary"
                   />
-                </Grid>
-                <FormHelperTexts>{errorMessage.passwordError}</FormHelperTexts>
-                <Grid item xs={12}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        onChange={(event) => setIsRemember(!isRemember)}
-                        color="primary"
-                      />
-                    }
-                    label="아이디 저장"
-                  />
-                </Grid>
-              </Grid>
+                }
+                label="아이디 저장"
+              />
               <Button
                 type="submit"
                 fullWidth
@@ -236,11 +295,9 @@ function LoginCard({ setIsSigning }) {
               <Button variant="text" onClick={() => setIsSigning(true)}>
                 회원가입
               </Button>
-              <Button variant="text" onClick={handleGoogleSign}>
-                구글 로그인
-              </Button>
-            </FormControl>
-          </Boxs>
+              <Google variant="text" handleClose={handleClose} />
+            </Box>
+          )}
         </Box>
       </Container>
     </ThemeProvider>

@@ -4,12 +4,12 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 import styled from "styled-components";
 
-function Footer() {
+const Footer = () => {
     return (
         <footer
             style={{
                 backgroundColor: "#DDDFDF",
-                height: "160px",
+                height: "auto",
                 marginTop: "auto",
             }}
         >
@@ -61,6 +61,8 @@ function Footer() {
                         fontSize: "15px",
                         color: "#5E5B52",
                         textAlign: "center",
+                        marginBottom: "0px",
+                        paddingBottom: "20px",
                     }}
                 >
                     이 사이트는 12팀 Coding Soon에 의해 제작되었으며 코딩 순의
@@ -69,7 +71,7 @@ function Footer() {
             </FooterZone>
         </footer>
     );
-}
+};
 
 export default Footer;
 

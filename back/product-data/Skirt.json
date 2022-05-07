@@ -1,162 +1,602 @@
 [
     {
-        "article_id": "0694860002",
-        "prod_name": "가죽 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Yellowish Brown",
-        "detail_desc": "위에 단추가 달린 가죽 소재의 롱 랩오버 치마입니다.",
-        "price": 262400
-    },
-    {
-        "article_id": "0839473001",
-        "prod_name": "라미레즈 스모크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Dark Beige",
-        "detail_desc": "리오셀 섬유와 빛이 어떻게 잡느냐에 따라 색이 변하는 실크 블렌드로 만들어진 가볍고 부드럽게 드리핑된 종아리 길이의 치마입니다.",
-        "price": 260300
-    },
-    {
-        "article_id": "0839473002",
-        "prod_name": "라미레즈 스모크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Dark Grey",
-        "detail_desc": "리오셀 섬유와 빛이 어떻게 잡느냐에 따라 색이 변하는 실크 블렌드로 만들어진 가볍고 부드럽게 드리핑된 종아리 길이의 치마입니다.",
-        "price": 205800
-    },
-    {
-        "article_id": "0860904001",
-        "prod_name": "칸 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "폴리에스테르로 만든 튤의 플레어, 무릎 길이의 치마입니다. 장식적인 그로그레인 수평 트림, 허리에는 그로스 그레인 허리 밴드가 있으며 한쪽에는 훅 앤 아이 체결로 지퍼를 숨겼습니다. 상부에 모이고 폭과 안정성을 위해 두 겹의 추가 툴이 있습니다. 재활용 폴리에스테르로 만든 쉬폰 안감입니다. 폴리에스터는 사용한 직물로부터 재활용된 원료로 만들어진 고품질의 폴리에스터입니다.",
-        "price": 201400
-    },
-    {
-        "article_id": "0863732001",
-        "prod_name": "실크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "통기성 실크와 면 혼방의 발목까지 오는 치마입니다. 높은 주름의 허리에는 커버된 탄력이 있고 솔기는 치마를 아래로 내려와 폭이 좁고 집속된 스모킹으로 볼륨을 더합니다.",
-        "price": 193200
-    },
-    {
-        "article_id": "0774126005",
-        "prod_name": "벨 실크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Beige",
-        "detail_desc": "허리 밴딩이 있는 종아리 길이의 실크 치마입니다.",
-        "price": 183000
-    },
-    {
-        "article_id": "0789368001",
-        "prod_name": "알비나 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Orange",
-        "detail_desc": "스튜디오 컬렉션으로 종아리 길이의 비대칭 치마입니다. 통기성, 패턴, 주름 짜임이 특징입니다. 허리 밴드가 강화된 높은 허리, 그리고 한쪽에는 숨겨진 지퍼와 갈고리 모양의 고정 장치가 있습니다.",
-        "price": 162700
-    },
-    {
-        "article_id": "0844099002",
-        "prod_name": "아슬란 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "스튜디오 컬렉션으로 주름 짜임새 있는 종아리 길이의 치마입니다. 한쪽에는 숨겨진 지퍼가 있고 금속 프레스 스터드가 보입니다. 치마는 네모난 컷으로 더 긴 면과 비대칭 드레이핑을 연출하며 밑단에는 통기성 있는 메쉬 디테일로 마무리된 솔기가 있습니다.",
-        "price": 162700
-    },
-    {
-        "article_id": "0844990001",
-        "prod_name": "사이먼 실크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "바삭바삭한 피마 면 짜임으로 종아리 길이 치마입니다. 양쪽에 탭과 단추가 있으며, 뒷면에 숨겨진 지퍼, 플랩과 단추가 있는 큰 패치 앞주머니가 있습니다.",
-        "price": 157000
-    },
-    {
-        "article_id": "0850191001",
-        "prod_name": "카르멜 BA 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Dark Pink",
-        "detail_desc": "브로데리 앵글레이즈가 있는 면 짜임으로 플레어한 종아리 길이의 치마입니다. 한쪽 면에는 숨겨진 지퍼가 있고, 옷자락은 비대칭입니다.",
-        "price": 142400
-    },
-    {
-        "article_id": "0885199005",
-        "prod_name": "마시멜로 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "여유로운 움직임과 폭을 연출할 수 있는 튤의 이중 레이어드 롱 원형 치마입니다. 높은 허리에는 넓고 덮인 탄력성이 있으며 윗부분에는 작은 프릴 트림이 있습니다.",
-        "price": 142400
-    },
-    {
-        "article_id": "0835044007",
-        "prod_name": "마시멜로 튤 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Light Beige",
-        "detail_desc": "이동과 폭을 위한 더블 레이어드 툴의 긴 원형 치마입니다. 보통 허리에는 넓고 덮인 탄력이 있고, 윗부분에는 작은 프릴이 있으며, 가장자리는 날것으로 되어 있습니다.",
-        "price": 142400
-    },
-    {
-        "article_id": "0659301001",
-        "prod_name": "칼라 스웨이드 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "부드럽고 부드러운 스웨이드로 색상과 대비되는 솔기, 윗부분에 숨겨진 단추가 있는 짧은 치마입니다.",
-        "price": 138800
-    },
-    {
-        "article_id": "0774126003",
-        "prod_name": "벨 실크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "허리밴드가 달린 종아리 기장 실크 치마입니다.",
-        "price": 128100
-    },
-    {
-        "article_id": "0774126004",
-        "prod_name": "벨 실크 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Yellowish Brown",
-        "detail_desc": "허리밴드가 달린 종아리 기장 실크 치마입니다.",
-        "price": 128100
-    },
-    {
-        "article_id": "0844935002",
-        "prod_name": "설리 실크 믹스 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Off White",
-        "detail_desc": "부드러운 텐셀 2122 리요셀 저지의 긴 치마입니다. 높은 허리, 커버된 탄성이 특징입니다.",
-        "price": 122000
-    },
-    {
-        "article_id": "0807770001",
-        "prod_name": "안젤리나 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Off White",
-        "detail_desc": "주름진 종아리 길이의 치마입니다. 한쪽은 지퍼와 훅 앤 아이로 고정하며, 가장자리는 날끝으로 되어 있습니다.",
-        "price": 122000
-    },
-    {
-        "article_id": "0876737001",
-        "prod_name": "글로리아 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Light Turquoise",
-        "detail_desc": "통풍이 잘 되는 짜임새로 덮여 있는 송아지 길이의 주름 치마입니다. 높은 허리, 눈에 보이는 신축성 있는 리빙, 부드러운 드레이핑이 특징입니다.",
-        "price": 122000
-    },
-    {
-        "article_id": "0840021001",
-        "prod_name": "페라 치마",
-        "product_type_name": "Skirt",
-        "colour_group_name": "Black",
-        "detail_desc": "반짝이는 실과 함께 통기성이 좋은 짜임새로 덮여 있는 송아지 길이의 주름 치마입니다. 부드럽게 드레이핑하고 뒷부분에 숨겨진 지퍼가 달려 있습니다.",
-        "price": 122000
-    },
-    {
-        "article_id": "0878082001",
-        "prod_name": "클레마티스 프릴 치마",
+        "article_id": "0786197005",
+        "prod_name": "Coco skirt",
         "product_type_name": "Skirt",
         "colour_group_name": "Light Pink",
-        "detail_desc": "바람이 잘 통하고 가볍게 구겨지는 짜임새 있는 면 혼방과 뒤쪽에 숨겨진 지퍼와 세로로 부풀어 오르는 수직 플라워로 만들어진 플레어 치마입니다.",
-        "price": 120400
+        "detail_desc": "Short, A-line skirt in a sturdy, textured weave with a high waist and concealed zip at the back. Satin inner skirt.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 71200
+    },
+    {
+        "article_id": "0851090001",
+        "prod_name": "Martine",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Flared, calf-length skirt in patterned cotton. High waist with a concealed hook-and-eye fastener and zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 26400
+    },
+    {
+        "article_id": "0787559001",
+        "prod_name": "Patti",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Short skirt in woven fabric with a high, frill-trimmed elasticated waist and side pockets. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 22800
+    },
+    {
+        "article_id": "0851400005",
+        "prod_name": "Florida skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Pink",
+        "detail_desc": "Pleated, calf-length skirt in woven fabric with a high, elasticated waist. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 71200
+    },
+    {
+        "article_id": "0652730013",
+        "prod_name": "Katie Skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Green",
+        "detail_desc": "Knee-length skirt with decorative buttons down the front and a concealed zip at the back.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 61000
+    },
+    {
+        "article_id": "0735537001",
+        "prod_name": "EDC Holiday Skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "White",
+        "detail_desc": "Short skirt in an airy organic cotton weave with broderie anglaise. High waist, a concealed zip in one side and two flounced tiers to the hem. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 42700
+    },
+    {
+        "article_id": "0867044003",
+        "prod_name": "Tiffanie",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Green",
+        "detail_desc": "Calf-length, bell-shaped skirt in a patterned viscose weave with a high waist, concealed zip in one side and high slits in the sides. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 30500
+    },
+    {
+        "article_id": "0827704006",
+        "prod_name": "Toulouse",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Pink",
+        "detail_desc": "Calf-length skirt in a patterned viscose cr\u00eape weave with a high waist and concealed zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 40700
+    },
+    {
+        "article_id": "0843373003",
+        "prod_name": "Jorah romantic skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Short skirt in a cotton weave. Regular waist with elasticated smocking, and a seam at the hem with a wide broderie anglaise flounce. Lined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 61000
+    },
+    {
+        "article_id": "0836367002",
+        "prod_name": "Scarlett skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Long skirt in pleated, heavily draping satin. High waist with covered elastication at the back and a concealed zip in one side. Lined.",
+        "index_group_name": 0,
+        "age_id": 0,
+        "price": 101700
+    },
+    {
+        "article_id": "0751784004",
+        "prod_name": "Kenntucky skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Short skirt in sturdy, stretch, textured jersey with large patch pockets, an extended waistband with a press-stud at the front, and a visible zip down the front.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 48500
+    },
+    {
+        "article_id": "0834340002",
+        "prod_name": "Sparkling WIne Skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Yellow",
+        "detail_desc": "Calf-length skirt in satin with a high waist and decorative ties at the front. Concealed zip in one side and a sewn-in wrapover at the front. Unlined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 101700
+    },
+    {
+        "article_id": "0781841001",
+        "prod_name": "Note skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Pink",
+        "detail_desc": "Calf-length, batik-patterned skirt in Tencel\u2122 lyocell with a tie-front and concealed zip at the back. Lined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 53000
+    },
+    {
+        "article_id": "0715116002",
+        "prod_name": "Arya frill skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Short skirt in woven fabric with smocking at the waist and a flounce at the hem. Unlined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 30500
+    },
+    {
+        "article_id": "0771643001",
+        "prod_name": "Tina J",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in a crinkled weave with an elasticated waist and faux wrapover with ties at the front.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 12200
+    },
+    {
+        "article_id": "0827704004",
+        "prod_name": "Toulouse",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Beige",
+        "detail_desc": "Calf-length skirt in a patterned viscose cr\u00eape weave with a high waist and concealed zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 40700
+    },
+    {
+        "article_id": "0821759001",
+        "prod_name": "Bird skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Red",
+        "detail_desc": "Flared, pleated, knee-length skirt in a rib knit with a sheen. High, elasticated waist.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 71200
+    },
+    {
+        "article_id": "0775931002",
+        "prod_name": "Chicago wrap skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Short skirt in woven fabric with a sewn-in wrapover with ties and a concealed zip at one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 36600
+    },
+    {
+        "article_id": "0708588001",
+        "prod_name": "Pearl PU",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in imitation leather with a high waist, concealed zip in one side and decorative seams. Lined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 27400
+    },
+    {
+        "article_id": "0761559002",
+        "prod_name": "Selma plisse dip dye",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "Pleated, calf-length skirt in woven fabric with a sheen. High, elasticated waist. Lined.",
+        "index_group_name": 0,
+        "age_id": 1,
+        "price": 61000
+    },
+    {
+        "article_id": "0807765002",
+        "prod_name": "Shona skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Calf-length skirt in a viscose weave. High waist with pleats, buttons down the front and high slits. Unlined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 48800
+    },
+    {
+        "article_id": "0811239001",
+        "prod_name": "SPEED Cordelia skirt V5",
+        "product_type_name": "Skirt",
+        "colour_group_name": "White",
+        "detail_desc": "Knee-length, A-line skirt in ribbed jersey with concealed elastication at the waist. Jersey lining.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 28500
+    },
+    {
+        "article_id": "0631269003",
+        "prod_name": "Rose high rise rope",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Grey",
+        "detail_desc": "High-waisted shorts in soft, washed Tencel\u2122 lyocell with a rope-look tie belt, concealed hook-and-eye fastening and zip fly. Pleats at the top, side pockets and sewn-in turn-ups at the hems.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 16300
+    },
+    {
+        "article_id": "0831052002",
+        "prod_name": "Roomservice skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Orange",
+        "detail_desc": "Short, fitted skirt in woven fabric with a high waist, detachable belt and a concealed zip and slit at the back. Unlined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 61000
+    },
+    {
+        "article_id": "0726362001",
+        "prod_name": "Sasha Denim Skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Short, 5-pocket skirt in washed denim with decorative buttons down the front, a fake fly and raw-edge, cut-off hem. Wide ribbing at the waist for optimum fit.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 42700
+    },
+    {
+        "article_id": "0778476001",
+        "prod_name": "Simone skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Knee-length skirt in a sturdy weave with decorative metal rings at the top, a slit at the front and a concealed zip at the back. Lined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 71200
+    },
+    {
+        "article_id": "0806306001",
+        "prod_name": "CNY Skirt Pencil HW Cara",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Blue",
+        "detail_desc": "Knee-length skirt in washed cotton denim with a high waist, zip fly and button, coin pocket, front and back pockets and slit at the back.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 32500
+    },
+    {
+        "article_id": "0715474004",
+        "prod_name": "Alhambra skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "White",
+        "detail_desc": "Short skirt in woven fabric with a high paper bag waist, detachable tie belt, pleats at the top and side pockets. Decorative buttons at the front and a concealed zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 20400
+    },
+    {
+        "article_id": "0771603001",
+        "prod_name": "Alhambra",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Blue",
+        "detail_desc": "Short skirt in woven fabric made from a linen blend with a high paper bag waist, detachable tie belt, pleats at the top, buttons down the front and diagonal side pockets. Unlined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 34600
+    },
+    {
+        "article_id": "0738590004",
+        "prod_name": "Selma Plisse Skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Pink",
+        "detail_desc": "Calf-length skirt in softly draping, pleated satin with a visible, elasticated, ribbed waistband. Lined.",
+        "index_group_name": 0,
+        "age_id": 2,
+        "price": 50800
+    },
+    {
+        "article_id": "0774148004",
+        "prod_name": "Uno",
+        "product_type_name": "Skirt",
+        "colour_group_name": "White",
+        "detail_desc": "Short skirt in a soft weave with a high waist and sewn-in belt with metal D-rings. Side pockets, pleats front and back and a concealed zip and button at the back.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 34600
+    },
+    {
+        "article_id": "0836367002",
+        "prod_name": "Scarlett skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Long skirt in pleated, heavily draping satin. High waist with covered elastication at the back and a concealed zip in one side. Lined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 101700
+    },
+    {
+        "article_id": "0879166004",
+        "prod_name": "Debra",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Pink",
+        "detail_desc": "Long, pleated skirt in a softly draping cr\u00eape weave with a high waist and a concealed zip and hook-and-eye fastening in one side. Lined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 81300
+    },
+    {
+        "article_id": "0790663007",
+        "prod_name": "Sally Skirt(1)",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "Knee-length skirt in jersey cr\u00eape with a high waist with concealed elastication, a wrapover front with a draped knot detail at one side and an asymmetric hem.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 61000
+    },
+    {
+        "article_id": "0857762001",
+        "prod_name": "Annie skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "Knee-length skirt in soft jersey made from a modal blend. The skirt fits over the tummy and has concealed elastication at the waistband. Decorative seams down the front and back. Unlined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 40700
+    },
+    {
+        "article_id": "0858460001",
+        "prod_name": "Ocean skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Fitted, knee-length skirt in sturdy, patterned jersey with a high waist and concealed zip at the back. Double-layered waistband and a slit at the back of the hem. Unlined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 26400
+    },
+    {
+        "article_id": "0677351003",
+        "prod_name": "Field",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "Short, bell-shaped skirt in woven fabric with a concealed zip and button at the back, and seam with a flare to the hem. Unlined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 32500
+    },
+    {
+        "article_id": "0827698001",
+        "prod_name": "Metro",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in boucl\u00e9 made from a cotton blend. Concealed zip in one side with a hook-and-eye fastening at the top and fake front pockets with a decorative flap. Lined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 30500
+    },
+    {
+        "article_id": "0803399001",
+        "prod_name": "Trudilutt skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "Short, circular skirt woven in an airy linen blend with a concealed zip at the waist and a gathered seam at the hips. Lined.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 69400
+    },
+    {
+        "article_id": "0785593009",
+        "prod_name": "MC Brix skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Red",
+        "detail_desc": "Short, gently flared skirt in woven fabric with a concealed zip at the back and a high waist with a decorative metal buckle at the front.",
+        "index_group_name": 0,
+        "age_id": 3,
+        "price": 48800
+    },
+    {
+        "article_id": "0906645009",
+        "prod_name": "Slinky skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Orange",
+        "detail_desc": "Calf-length skirt in softly draping jersey. High waist with concealed elastication and a wide seam centre front to create a draped effect. Unlined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 61000
+    },
+    {
+        "article_id": "0791787002",
+        "prod_name": "MOscow skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Greyish Beige",
+        "detail_desc": "Calf-length skirt in a soft knit containing some wool. High waist with a wide, ribbed waistband, a ribbed hem and a slit at the back. The polyester content of the skirt is recycled.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 30500
+    },
+    {
+        "article_id": "0849257001",
+        "prod_name": "Libra skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in a softly draping weave with a high waist and detachable tie belt. Concealed zip at the back, side pockets and pleats at the top to create soft draping. Unlined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0751784004",
+        "prod_name": "Kenntucky skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Beige",
+        "detail_desc": "Short skirt in sturdy, stretch, textured jersey with large patch pockets, an extended waistband with a press-stud at the front, and a visible zip down the front.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 48500
+    },
+    {
+        "article_id": "0791122001",
+        "prod_name": "Karla knitted skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in a soft, fine-knit viscose blend with a high, ribbed waistband, and a slit at the back of the hem.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 29300
+    },
+    {
+        "article_id": "0625342002",
+        "prod_name": "Enna essential",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in woven fabric with a high waist and a concealed zip and button at the back. Lined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 32500
+    },
+    {
+        "article_id": "0879166004",
+        "prod_name": "Debra",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Pink",
+        "detail_desc": "Long, pleated skirt in a softly draping cr\u00eape weave with a high waist and a concealed zip and hook-and-eye fastening in one side. Lined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 81300
+    },
+    {
+        "article_id": "0846829003",
+        "prod_name": "Judi skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Green",
+        "detail_desc": "High-waisted, calf-length skirt in chiffon with double pleats at the top, a sewn-in tie belt, concealed zip at the back and diagonal side pockets. Lined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 71200
+    },
+    {
+        "article_id": "0734282003",
+        "prod_name": "Christina mid",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Calf-length skirt in woven fabric with a high waist, concealed zip in one side and wide tie belt. Sewn-in wrapover at the front with draping. Unlined.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 50800
+    },
+    {
+        "article_id": "0774148004",
+        "prod_name": "Uno",
+        "product_type_name": "Skirt",
+        "colour_group_name": "White",
+        "detail_desc": "Short skirt in a soft weave with a high waist and sewn-in belt with metal D-rings. Side pockets, pleats front and back and a concealed zip and button at the back.",
+        "index_group_name": 0,
+        "age_id": 4,
+        "price": 34600
+    },
+    {
+        "article_id": "0894273002",
+        "prod_name": "Tokyo TU",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Wide, calf-length skirt in an airy cotton weave with a high waist and concealed zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 71500
+    },
+    {
+        "article_id": "0840027001",
+        "prod_name": "Selina skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Long skirt in a Tencel\u2122 lyocell and viscose weave with a high waist, concealed zip at the back and gently flared hem with a slit at the front. Slightly longer at the back. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 81300
+    },
+    {
+        "article_id": "0793917001",
+        "prod_name": "Tyrell striped skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Off White",
+        "detail_desc": "Short skirt in a soft weave with buttons down the front, a high waist, detachable tie belt, pleats at the top and side pockets. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0906645007",
+        "prod_name": "Slinky skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Calf-length skirt in softly draping jersey. High waist with concealed elastication and a wide seam centre front to create a draped effect. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 51100
+    },
+    {
+        "article_id": "0879949001",
+        "prod_name": "Frill skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Black",
+        "detail_desc": "Short skirt in patterned viscose jersey with wide smocking at the waist for best fit over the tummy. Sewn-in wrapover at the front and a seam with a flounce at the hem.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 40700
+    },
+    {
+        "article_id": "0817069001",
+        "prod_name": "Linus flounce skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Dark Blue",
+        "detail_desc": "Short, tiered skirt in an airy cotton weave. Regular waist with wide smocking.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 30500
+    },
+    {
+        "article_id": "0879176002",
+        "prod_name": "Cora",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Light Green",
+        "detail_desc": "Long, pleated skirt in an airy weave. High waist with covered elastication and a small frill trim. Lined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 80300
+    },
+    {
+        "article_id": "0746326003",
+        "prod_name": "Samantha slip skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Yellowish Brown",
+        "detail_desc": "Gently flared, calf-length skirt in a viscose weave with a sheen. Concealed zip and hook-and-eye fastener at one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 50800
+    },
+    {
+        "article_id": "0861121001",
+        "prod_name": "James",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Beige",
+        "detail_desc": "Flared, knee-length skirt in cotton satin. High, elasticated paper bag waist with a small frill trim, a detachable, braided belt and a large flap patch pocket on each side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 61000
+    },
+    {
+        "article_id": "0766495014",
+        "prod_name": "Kevin skirt",
+        "product_type_name": "Skirt",
+        "colour_group_name": "Blue",
+        "detail_desc": "Calf-length skirt in a softly draping weave with a high waist and concealed zip in one side. Unlined.",
+        "index_group_name": 0,
+        "age_id": 5,
+        "price": 61000
     }
 ]

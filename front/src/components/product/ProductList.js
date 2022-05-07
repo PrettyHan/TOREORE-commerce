@@ -1,13 +1,12 @@
-import React, { useEffect, useReducer, useContext } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import ProductItem from "./ProductItem";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import styled from "styled-components";
 import * as Api from "../../api";
-
-import { UserStateContext } from "../../App";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -24,11 +23,10 @@ export const getProductIdArr = (arr) => {
 };
 
 const ProductList = () => {
-    const { user } = useContext(UserStateContext);
+    // '좋아요' 누른 제품 배열
+    const [likeIds, setLikeIds] = useState([]);
 
-    const userLikeArr = getProductIdArr(user?.bookmark || []);
-
-    const { category, keyword } = useParams();
+    const { category, keyword = "" } = useParams();
 
     const [productList, dispatch] = useReducer(reducer, []);
 
@@ -48,35 +46,68 @@ const ProductList = () => {
 
     useEffect(() => {
         getData();
+        async function getLikeArr() {
+            const res = await Api.get("liked");
+            const userLikeArr = res.data.map((item) => item.productId);
+            setLikeIds(userLikeArr);
+        }
+        getLikeArr();
     }, [category, keyword]);
 
     return (
         <>
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                }}
-            >
-                <Grid
-                    maxWidth="lg"
-                    container
-                    spacing={{ xs: 2, md: 3 }}
-                    columns={{ xs: 4, sm: 8, md: 12 }}
-                >
-                    {productList.map((item, index) => (
-                        <Grid item xs={12} sm={4} md={4} key={index}>
-                            <ProductItem
-                                key={item.productId}
-                                {...item}
-                                userLikeArr={userLikeArr}
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+            <ProductListBox>
+                {productList.length === 0 ? (
+                    <Info>
+                        검색 "<Keyword>{keyword}</Keyword>"과(와) 일치하는
+                        결과가 없습니다.
+                    </Info>
+                ) : (
+                    <Grid
+                        container
+                        spacing={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                        columns={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+                    >
+                        {productList.map((item, index) => (
+                            <Grid
+                                item
+                                xs={12}
+                                sm={6}
+                                md={6}
+                                lg={4}
+                                xl={3}
+                                key={index}
+                            >
+                                <ProductItem
+                                    key={item.productId}
+                                    {...item}
+                                    userLikeArr={likeIds}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                )}
+            </ProductListBox>
         </>
     );
 };
 
 export default ProductList;
+
+const Info = styled.div`
+    width: 60%;
+    height: 300px;
+    padding: 100px;
+    text-align: center;
+`;
+
+const Keyword = styled.span`
+    font-weight: bold;
+`;
+
+const ProductListBox = styled(Box)`
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+`;

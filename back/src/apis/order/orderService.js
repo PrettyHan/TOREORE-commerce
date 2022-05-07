@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 class orderService {
     static async createOrder(orderData) {
         const {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} = orderData
-
         const newOrder = {products,userId,totalPrice,orderName,zipcode,message,paymentMethod,isPayed, orderId} 
         // db에 저장
         const createdNewOrder = await Order.create( {newOrder} );
@@ -13,10 +12,6 @@ class orderService {
         return createdNewOrder;
       }
 
-      
-    
-    
-    
     static async getOrders({userId}) {
         const orders = await Order.findByUserId({userId});
         if (!orders) {
@@ -50,25 +45,6 @@ class orderService {
             const errorMessage = "주문 정보가 없습니다. 다시 한 번 확인해 주세요.";
             return { errorMessage };
         }
-
-        if (toUpdate.products) {
-            const fieldToUpdate = "products";
-            const newValue = toUpdate.products;
-            order = await Order.update({ orderId, fieldToUpdate, newValue });
-        }
-
-        if (toUpdate.totalPrice) {
-            const fieldToUpdate = "totalPrice";
-            const newValue = toUpdate.totalPrice;
-            order = await Order.update({ orderId, fieldToUpdate, newValue });
-        }
-
-        if (toUpdate.orderName) {
-            const fieldToUpdate = "orderName";
-            const newValue = toUpdate.orderName;
-            order = await Order.update({ orderId, fieldToUpdate, newValue });
-        }
-
         if (toUpdate.zipcode) {
             const fieldToUpdate = "zipcode";
             const newValue = toUpdate.zipcode;
@@ -77,13 +53,18 @@ class orderService {
 
         if (toUpdate.message) {
             const fieldToUpdate = "message";
-            const newValue = toUpdate.phone;
+            const newValue = toUpdate.message;
             order = await Order.update({ orderId, fieldToUpdate, newValue });
         }
 
         if (toUpdate.paymentMethod) {
             const fieldToUpdate = "paymentMethod";
-            const newValue = toUpdate.birth;
+            const newValue = toUpdate.paymentMethod;
+            order = await Order.update({ orderId, fieldToUpdate, newValue });
+        }
+        if (toUpdate.isPayed) {
+            const fieldToUpdate = "isPayed";
+            const newValue = toUpdate.isPayed;
             order = await Order.update({ orderId, fieldToUpdate, newValue });
         }
 
@@ -91,12 +72,10 @@ class orderService {
     }
     static async deleteOrder({ orderId }) {
         const deletedOrder = await Order.deleteByOrderId({ orderId });
-
         if (!deletedOrder) {
             const errorMessage = "일치하는 주문 정보가 없습니다.";
             return { errorMessage };
         }
-
         return deletedOrder;
     }
 }

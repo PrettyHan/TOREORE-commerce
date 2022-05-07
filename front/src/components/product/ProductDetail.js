@@ -1,19 +1,18 @@
 import Button from "@mui/material/Button";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import "../../style/productDetail.css";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import styled from "styled-components";
 import * as Api from "../../api";
-import { getProductIdArr } from "./ProductList"; // 배열 요소: 제품 정보(객체) => 제품 ID(스트링)
 import { formatPrice } from "./ProductItem";
-import { UserStateContext } from "../../App";
 
 const ProductDetail = () => {
-    const { user } = useContext(UserStateContext);
-    const userLikeArr = getProductIdArr(user?.bookmark || []);
-
     const navigate = useNavigate();
     const { category, productId } = useParams();
 
@@ -21,7 +20,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({});
 
     // '좋아요' 누른 제품 배열
-    const [likeIds, setLikeIds] = useState(userLikeArr);
+    const [likeIds, setLikeIds] = useState([]);
 
     const isLike = React.useMemo(() => {
         return likeIds.includes(productId);
@@ -71,87 +70,181 @@ const ProductDetail = () => {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        Api.get("products", { cid: category, pid: productId }, true).then(
-            (res) => {
-                setProduct(res.data[0]);
-            }
-        );
+        async function getProductDetail() {
+            const res = await Api.get(
+                "products",
+                { cid: category, pid: productId },
+                true
+            );
+            setProduct(res.data[0]);
+        }
+        getProductDetail();
+
+        async function getLikeArr() {
+            const res = await Api.get("liked");
+            const userLikeArr = res.data.map((item) => item.productId);
+            setLikeIds(userLikeArr);
+        }
+        getLikeArr();
     }, []);
 
     return (
-        <section className="item-detail-container">
-            <div className="container-flexbox">
-                <div className="item product-name">{product.name}</div>
-                <div className="item product-img">
-                    <img
-                        src={product.image}
-                        alt={"상품 이미지"}
-                        className="item-img"
-                    />
-                    <div className="like-btn" onClick={handleLikeClick}>
-                        {isLike ? (
-                            <FavoriteIcon
-                                style={{ fontSize: 40, color: "red" }}
-                            />
-                        ) : (
-                            <FavoriteBorderIcon style={{ fontSize: 40 }} />
-                        )}
-                    </div>
-                </div>
-                <div className="item product-content">
-                    <div className="content-flexbox">
-                        <div className="product-desc">
-                            {product.description}
-                        </div>
-                        <div className="product-price">
-                            <table>
-                                <tr>
-                                    <th>Price</th>
-                                    <td>
-                                        <Button onClick={handleCntClick}>
-                                            -
-                                        </Button>
-                                        <input
-                                            value={cnt}
-                                            className="product-cnt"
-                                        />
-                                        <Button onClick={handleCntClick}>
-                                            +
-                                        </Button>
-                                    </td>
-                                    <td>{formatPrice(product.price)}</td>
-                                </tr>
-                                <tr>
-                                    <th>Total Price</th>
-                                    <td></td>
-                                    <td>{formatPrice(product.price * cnt)}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+        <Wrapper>
+            <Name>{product.name}</Name>
+            <ImgWrapper>
+                <Img src={product.image} alt={"상품 이미지"} />
+                <Like onClick={handleLikeClick}>
+                    {isLike ? (
+                        <FavoriteIcon style={{ fontSize: 50, color: "red" }} />
+                    ) : (
+                        <FavoriteBorderIcon
+                            style={{ fontSize: 50, color: "ivory" }}
+                        />
+                    )}
+                </Like>
+            </ImgWrapper>
+            <Content>
+                <Desc>{product.description}</Desc>
+                <PriceTable>
+                    <TableBody>
+                        <PriceTableRow>
+                            <RowTitle>Price</RowTitle>
+                            <RowCounter>
+                                <Button onClick={handleCntClick}>-</Button>
+                                <Input value={cnt} />
+                                <Button onClick={handleCntClick}>+</Button>
+                            </RowCounter>
+                            <RowPrice>{formatPrice(product.price)}</RowPrice>
+                        </PriceTableRow>
+                        <PriceTableRow>
+                            <RowTitle>Total Price</RowTitle>
+                            <RowCounter></RowCounter>
+                            <RowPrice>
+                                {formatPrice(product.price * cnt)}
+                            </RowPrice>
+                        </PriceTableRow>
+                    </TableBody>
+                </PriceTable>
 
-                    <div className="item-btn-group">
-                        <Button
-                            size="large"
-                            variant="outlined"
-                            sx={{ ml: 1, mr: 1 }}
-                            onClick={handleCartClick}
-                        >
-                            👜 장바구니
-                        </Button>
-                        <Button
-                            size="large"
-                            variant="outlined"
-                            sx={{ ml: 1, mr: 1 }}
-                            onClick={handleOrderClick}
-                        >
-                            💰 바로 구매
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <ButtonGroup>
+                    <Button
+                        size="large"
+                        variant="outlined"
+                        sx={{ ml: 1, mr: 1 }}
+                        onClick={handleCartClick}
+                    >
+                        👜 장바구니
+                    </Button>
+                    <Button
+                        size="large"
+                        variant="outlined"
+                        sx={{ ml: 1, mr: 1 }}
+                        onClick={handleOrderClick}
+                    >
+                        💰 바로 구매
+                    </Button>
+                </ButtonGroup>
+            </Content>
+        </Wrapper>
     );
 };
 
 export default ProductDetail;
+
+const Wrapper = styled.div`
+    max-width: 70%;
+    margin: 30px auto 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+`;
+
+const Name = styled.div`
+    border-bottom: solid 1px gray;
+    min-height: 50px;
+    width: 100%;
+    font-size: 2rem;
+`;
+
+const ImgWrapper = styled.div`
+    min-height: 600px;
+    width: 400px;
+    position: relative;
+    border: solid rgba(149, 157, 165, 0.3);
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+`;
+
+const Img = styled.img`
+    width: 100%;
+    height: 100%;
+`;
+
+const Like = styled.div`
+    position: absolute;
+    z-index: 1;
+    bottom: 20px;
+    right: 25px;
+`;
+
+const Content = styled.div`
+    min-height: 400px;
+    width: calc(100% - 450px);
+    min-width: 550px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+`;
+
+const Desc = styled.div`
+    width: 100%;
+    min-height: 120px;
+`;
+
+const PriceTable = styled(Table)`
+    && {
+        width: 70%;
+        min-width: 550px;
+    }
+    border: solid 2px black;
+`;
+
+const PriceTableRow = styled(TableRow)`
+    height: 70px;
+`;
+
+const RowTitle = styled(TableCell)`
+    width: 30%;
+    && {
+        text-align: center;
+        font-weight: bold;
+    }
+`;
+
+const RowCounter = styled(TableCell)`
+    && {
+        min-height: 100px;
+        text-align: center;
+    }
+`;
+
+const RowPrice = styled(TableCell)`
+    width: 30%;
+    && {
+        min-height: 100px;
+        text-align: right;
+        font-weight: bold;
+    }
+`;
+
+const ButtonGroup = styled.div`
+    position: absolute;
+    bottom: 0px;
+`;
+
+const Input = styled.input`
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+`;

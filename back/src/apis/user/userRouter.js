@@ -2,8 +2,8 @@ import is from "@sindresorhus/is";
 import { Router } from "express";
 import { loginRequired } from "../../middlewares/loginRequired";
 import { userService } from "./userService";
-import passport from "passport";
-import cors from "cors";
+import { googleLoginProcess } from "../../config/googleLogin";
+import axios from "axios";
 
 const userRouter = Router();
 
@@ -39,30 +39,20 @@ userRouter.post("/signup", async (req, res, next) => {
     }
 });
 
-// google login
-userRouter.get(
-    "/google",
-    cors(),
-    passport.authenticate("google", { scope: ["profile", "email"] }),
-);
+// get google Authentication code(accessToken) and get user data
+userRouter.post("/google", async (req, res, next) => {
+    try {
+        const { accessToken } = req.body;
+        const userData = await axios.get(
+            `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${accessToken}`,
+        );
 
-userRouter.get(
-    "/google/callback",
-    passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
-    (req, res) => {
-        console.log("callback 함수에서 받은 리퀘스트: user정보 >> ", req.user); // 여기에 엑세스토큰이 담겨있으면 그걸 프론트에 응답
-        const { user, isMember } = req.user;
-
-        // 기존에 회원이 아니었던 사람 -> 바로 추가정보 입력 페이지로 이동
-        // 기존에 회원가입한 소셜로그인 유저이지만, 추가정보를 입력하지 않은 경우 -> 추가정보 입력 페이지로 이동
-        if (isMember === false || (isMember && user.hasAddtionalInfo === false)) {
-            // 추가정보 입력 페이지로 이동 --> 서버에서 이동시키는 건 아닌듯?
-            // 프론트에 신호를 줘서 회원정보 수정 페이지로 이동하게 해야할듯?
-            res.status(302).redirect("/edit-info");
-        }
-        res.status(302).redirect("/main"); // 로그인 성공 시 메인 페이지(프론트메인페이지)로 이동(백엔드에서 처리하는게 맞는지?) -> jwt 토큰 응답으로 바꾸기
-    },
-);
+        const userDataWithToken = await googleLoginProcess(userData.data);
+        res.status(200).json(userDataWithToken);
+    } catch (error) {
+        next(error);
+    }
+});
 
 userRouter.post("/login", async (req, res, next) => {
     try {
@@ -81,6 +71,7 @@ userRouter.post("/login", async (req, res, next) => {
     }
 });
 
+// 일반 회원수정
 userRouter.put("/user", loginRequired, async (req, res, next) => {
     try {
         const userId = req.currentUserId;
@@ -105,11 +96,6 @@ userRouter.put("/user", loginRequired, async (req, res, next) => {
 
         if (updatedUser.errorMessage) {
             throw new Error(updatedUser.errorMessage);
-        }
-
-        if (updatedUser.ourAccessToken) {
-            res.status(200).json({ accessToken: updatedUser.ourAccessToken });
-            return;
         }
 
         res.status(200).json(updatedUser);

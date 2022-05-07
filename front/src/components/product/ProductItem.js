@@ -1,11 +1,10 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import "../../style/productItem.css";
+import styled from "styled-components";
 import * as Api from "../../api";
 
 // 가격 표시 형식
@@ -21,21 +20,14 @@ const ProductItem = ({
     price,
     userLikeArr,
 }) => {
-    const navigate = useNavigate();
-
-    // 아이템 클릭 => 제품 상세 페이지로 이동
-    const handleItemClick = React.useCallback(() => {
-        navigate(`/products/${category}/${productId}`);
-    }, [navigate, category, productId]);
-
     // '좋아요' 누른 제품 배열
     const [likeIds, setLikeIds] = useState(userLikeArr);
-    // 해당 제품에 대한 '좋아요' 여부
-    // const [isLike, setIsLike] = useState(userLikeArr.includes(productId));
 
     const isLike = React.useMemo(() => {
         return likeIds.includes(productId);
     }, [likeIds, productId]);
+
+    const navigate = useNavigate();
 
     // 좋아요 클릭
     const handleLikeClick = async (e) => {
@@ -45,32 +37,74 @@ const ProductItem = ({
         setLikeIds(ids);
     };
 
-    /**
-     * https://ko.reactjs.org/docs/hooks-reference.html
-     */
-    // useEffect(() => {
-    // setIsLike(likeArr.includes(productId));
-    // }, [likeArr, productId]);
+    // 아이템 클릭 => 제품 상세 페이지로 이동
+    const handleItemClick = React.useCallback(() => {
+        navigate(`/products/${category}/${productId}`);
+    }, [navigate, category, productId]);
 
     return (
-        <div className="item-container" onClick={handleItemClick}>
-            <div className="img">
-                <img src={image} alt={"상품 이미지"} className="item-img" />
-                <div className="like-btn" onClick={handleLikeClick}>
+        <Wrapper onClick={handleItemClick}>
+            <ImgWrapper>
+                <Img src={image} alt={"상품 이미지"} />
+                <Like onClick={handleLikeClick}>
                     {isLike ? (
                         <FavoriteIcon style={{ fontSize: 40, color: "red" }} />
                     ) : (
-                        <FavoriteBorderIcon style={{ fontSize: 40 }} />
+                        <FavoriteBorderIcon
+                            style={{ fontSize: 40, color: "ivory" }}
+                        />
                     )}
-                </div>
-            </div>
-            <ul className="item">
-                <li className="item-name">{name}</li>
-                <li className="item-price">{formatPrice(price)}</li>
-                <li className="item-color"></li>
-            </ul>
-        </div>
+                </Like>
+            </ImgWrapper>
+            <Ul>
+                <Name>{name}</Name>
+                <Price>{formatPrice(price)}</Price>
+            </Ul>
+        </Wrapper>
     );
 };
 
 export default ProductItem;
+
+const Wrapper = styled.div`
+    min-width: 200px;
+    height: fit-content;
+    margin: 0px auto;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+    position: relative;
+    border: solid rgba(149, 157, 165, 0.3);
+`;
+
+const ImgWrapper = styled.div`
+    position: relative;
+`;
+
+const Img = styled.img`
+    width: 100%;
+    height: 450px;
+`;
+
+const Like = styled.div`
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    right: 15px;
+    font-size: 2rem;
+`;
+
+const Ul = styled.ul`
+    list-style: none;
+    margin: 20px 20px;
+    padding: 0px;
+`;
+
+const Name = styled.li`
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 10px;
+`;
+
+const Price = styled.li`
+    font-size: larger;
+    color: gray;
+`;

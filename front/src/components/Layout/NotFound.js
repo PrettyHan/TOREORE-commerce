@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-function NotFound() {
+const NotFound = () => {
     const navigate = useNavigate();
     return (
         <div style={{ minHeight: "calc(100vh - 180px)" }}>
@@ -21,7 +21,7 @@ function NotFound() {
             </Container>
         </div>
     );
-}
+};
 
 const Container = styled.div`
     display: flex;

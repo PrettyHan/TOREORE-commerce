@@ -20,6 +20,7 @@ class cartService {
             description: productInfo.description,
             image: productInfo.image,
             quantity: quantity,
+            checked : true,
         };
 
         if (carts.length === 0) {
@@ -48,7 +49,7 @@ class cartService {
     }
 
     // 유저의 카트 리스트 수정 -> 수량 정보 업데이트
-    static async updateCartList({ userId, productId, quantity }) {
+    static async updateCartList({ userId, productId, quantity, checked }) {
         const user = await User.findByUserId({ userId });
         const carts = user.cart; // cart list
 
@@ -59,8 +60,36 @@ class cartService {
 
         const newCartList = carts.map((productObject) => {
             if (productObject.productId === productId) {
-                return { ...productObject, quantity: quantity };
+                return { ...productObject, quantity: quantity, checked : checked };
             }
+            return productObject;
+        });
+
+        const fieldToUpdate = "cart";
+        const newValue = newCartList;
+        const updateCartList = await User.update({ userId, fieldToUpdate, newValue });
+        console.log("장바구니가 업데이트(수량변경)된 유저 정보 >> ", updateCartList);
+
+        return newCartList;
+    }
+    static async updateCartSelect({ userId }) {
+        const user = await User.findByUserId({ userId });
+        const carts = user.cart; // cart list
+
+        if (carts.length === 0) {
+            const errorMessage = "장바구니가 비었습니다.";
+            return { errorMessage };
+        }
+        const every = carts.every((v) => v.checked)
+
+        const newCartList = carts.map((productObject) => {
+            if (every) {
+                return { ...productObject, checked : false };
+            }
+            if (!every) {
+                return { ...productObject, checked : true };
+            }
+            return productObject;
         });
 
         const fieldToUpdate = "cart";

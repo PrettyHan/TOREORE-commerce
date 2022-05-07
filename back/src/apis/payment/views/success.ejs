@@ -16,7 +16,7 @@
                 partner_user_id: 'partner_user_id',
                 pg_token: `${pgToken}`
             };
-            axios.post('http://localhost:5001/payments/approve', data).then(data => console.log('success response', data.data));
+            axios.post('http://localhost:5001/payments/approve', data).then(data => console.log('success response', data.data).then());
         </script>
     </head>
     <body>
