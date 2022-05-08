@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
+import Grid from "@mui/material/Grid";
 
 const OrderCard = ({ order }) => {
     const navigate = useNavigate();
@@ -22,17 +23,32 @@ const OrderCard = ({ order }) => {
     function sendOrder() {
         if (!orderStatus) {
             navigate(`/order/${order.orderId}`);
+            console.log(order.orderId);
         } else {
             console.log("디테일보여주자");
         }
     }
 
     return (
-        <Container>
-            <Items>{order._id}</Items>
-            <Items>{productName}</Items>
-            <Items>{order.totalPrice}원</Items>
-            <OrderStatus color={orderStatus} onClick={sendOrder}>
+        <Container container spacing={{ lg: 1, md: 2, sm: 1, xs: 1 }}>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {order._id}
+            </Items>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {productName}
+            </Items>
+            <Items item lg={3} md={6} sm={12} xs={12}>
+                {order.totalPrice} 원
+            </Items>
+            <OrderStatus
+                item
+                lg={3}
+                md={6}
+                sm={12}
+                xs={12}
+                color={orderStatus}
+                onClick={sendOrder}
+            >
                 {orderStatus ? (
                     "주문완료"
                 ) : (
@@ -45,7 +61,7 @@ const OrderCard = ({ order }) => {
     );
 };
 
-const Container = styled.div`
+const Container = styled(Grid)`
     width: 95%;
     margin-bottom: 20px;
     border: 1px solid #5e5b52;
@@ -56,25 +72,22 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-const Items = styled.div`
-    margin-left: 8px;
+const Items = styled(Grid)`
     width: 20%;
-    height: 160px;
+    height: 50px;
     text-align: center;
-    line-height: 160px;
-    font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 15px;
+    line-height: 25px;
 `;
 
-const OrderStatus = styled.div`
+const OrderStatus = styled(Grid)`
     width: 20%;
-    height: 160px;
-    text-align: center;
-    line-height: 160px;
-    color: ${(props) => (props.color === "done" ? "gray" : "#f77737")};
+    height: 50px;
+    color: ${(props) => (props.color === true ? "gray" : "#f77737")};
     cursor: pointer;
-    font-size: 16px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: bold;
 `;
 export default OrderCard;

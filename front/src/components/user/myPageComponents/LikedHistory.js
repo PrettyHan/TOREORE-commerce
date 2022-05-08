@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import LikedCard from "./LikedCard";
+import Grid from "@mui/material/Grid";
 
 import * as Api from "../../../api";
 
@@ -18,6 +19,7 @@ const LikedHistory = () => {
                 setIsLiked(true);
                 setLikedList(res.data);
             } else {
+                console.log("빈내역 입니다");
                 setIsLiked(false);
             }
         } catch (err) {
@@ -31,47 +33,67 @@ const LikedHistory = () => {
 
     return (
         <Container>
-            <Title>좋아요</Title>
-            <Info>(상품명 클릭 시 상품페이지로 이동합니다. )</Info>
-            <ListContainer>
-                <Columns>
-                    {columns.map((column) => (
-                        <Items>{column}</Items>
-                    ))}
-                </Columns>
-                {isLiked ? (
-                    likedList.map((liked, idx) => (
-                        <LikedCard key={`liked-${idx}`} liked={liked} />
-                    ))
-                ) : (
-                    <NoLiked>"좋아요 내역이 없습니다."</NoLiked>
-                )}
-            </ListContainer>
+            <Wrapper>
+                <Title>좋아요</Title>
+                <Info>(상품명 클릭 시 상품페이지로 이동합니다. )</Info>
+                <ListContainer>
+                    <Columns container spacing={{ lg: 1, md: 2, sm: 1, xs: 1 }}>
+                        {columns.map((column, idx) => (
+                            <Items
+                                item
+                                lg={3}
+                                md={6}
+                                sm={12}
+                                xs={12}
+                                key={`item-${idx}`}
+                            >
+                                {column}
+                            </Items>
+                        ))}
+                    </Columns>
+                    {isLiked ? (
+                        likedList.map((liked, idx) => (
+                            <LikedCard key={`liked-${idx}`} liked={liked} />
+                        ))
+                    ) : (
+                        <NoLiked>"좋아요 내역이 없습니다."</NoLiked>
+                    )}
+                </ListContainer>
+            </Wrapper>
         </Container>
     );
 };
 
 const Container = styled.div`
-    width: 63.5%;
     padding: 5px 0 0 0;
+    row-gap: 20px;
+    width: 68%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+`;
+
+const Wrapper = styled.div`
+    width: 90%;
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
-    flex-wrap: wrap;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 0 20px 0 20px;
 `;
 
 const Title = styled.div`
     font-align: left;
     font-size: 20px;
-    margin: 0 0 3px 23px;
+    margin: 0 0 3px 20px;
 `;
 
 const Info = styled.div`
     font-align: left;
-    font-size: 15px;
+    font-size: 13px;
     color: gray;
-    margin: 0 0 23px 23px;
+    margin: 0 0 23px 20px;
 `;
 
 const ListContainer = styled.div`
@@ -84,22 +106,19 @@ const ListContainer = styled.div`
     font-size: 17px;
 `;
 
-const Columns = styled.div`
+const Columns = styled(Grid)`
     width: 95%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #5e5b52;
     flex-wrap: wrap;
     flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 `;
 
-const Items = styled.div`
+const Items = styled(Grid)`
     width: 20%;
-    height: 25px;
+    height: 40px;
     text-align: center;
-    line-height: 25px;
+    line-height: 17px;
     font-weight: bold;
 `;
 

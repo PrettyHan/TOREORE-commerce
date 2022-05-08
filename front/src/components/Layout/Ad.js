@@ -39,7 +39,7 @@ const AdBox1 = styled(Grid)`
     justify-content: center;
     align-items: center;
     margin: 50px 0 80px 0;
-    padding: 0 70px 0 70px;
+    padding: 0 50px 0 50px;
 `;
 
 const Items2 = styled(Grid)`
@@ -52,6 +52,7 @@ const Items2 = styled(Grid)`
     line-height: 800px;
     opacity: 0.8;
 `;
+
 const AdBox2 = styled(Grid)`
     width: 80%;
     height: 650px;
@@ -61,22 +62,26 @@ const AdBox2 = styled(Grid)`
     justify-content: center;
     align-items: center;
     margin: 50px 0 150px 0;
-    padding: 0 70px 0 70px;
+    padding: 0 50px 0 50px;
 `;
 
 const AdP1 = styled(Grid)`
-    font-size: 55px;
+    font-size: 50px;
     font-weight: bold;
     color: #f77737;
     text-align: center;
+    word-break: break-all;
+    white-space: nowrap;
 `;
 
 const AdP2 = styled.div`
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     color: #f77737;
     font-style: italic;
+    word-break: normal;
     white-space: nowrap;
+    word-wrap: break-word;
 `;
 
 export default Ad;
