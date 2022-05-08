@@ -146,14 +146,14 @@ const Container = styled.div`
 `;
 
 const UserContainer = styled(Box)`
-    width: 62%;
+    width: 61%;
     box-shadow: #5e5b52 0px 0px 0px 1px, #dddfdf 10px 10px 0px 0px;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 20px;
+    padding: 0 25px 0 25px;
 `;
 
 const Intro = styled.div`
@@ -162,7 +162,7 @@ const Intro = styled.div`
 `;
 
 const ItemsContainer = styled(Box)`
-    width: 63.5%;
+    width: 64%;
     flex-wrap: wrap;
     flex-grow: 1;
     justify-content: space-between;
